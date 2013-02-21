@@ -26,7 +26,7 @@ Author URI: http://www.itro.eu/
 */
 
 define('mainLocalPath', __DIR__);
-define('itroPath', plugins_url() . '/itro-plugin/');
+define('itroPath', plugins_url() . '/itro-popup/');
 include_once ('functions/admin-function.php');
 include_once ('functions/core-function.php');
 include_once ('functions/database-function.php');

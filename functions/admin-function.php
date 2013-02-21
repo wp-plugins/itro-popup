@@ -108,8 +108,9 @@ function itro_plugin_options() {
 			<input type="hidden" name="hosted_button_id" value="L2QKQKSPMY3RU">
 			<table style="float:right;">
 				<tr><td><input type="hidden" name="on0" value="Make your donation">Make your donation</td></tr><tr><td><select name="os0">
-				<option value="little donation">thiny donation &#8364;1,00 EUR</option>
-				<option value="not much litle donation">little donation &#8364;5,00 EUR</option>
+				<option value="thiny donation">thiny donation &#8364;1,00 EUR</option>
+				<option value="little donation">little donation &#8364;2,00 EUR</option>
+				<option value="right donation">right donation &#8364;5,00 EUR</option>
 				<option value="normal donation">normal donation &#8364;10,00 EUR</option>
 				<option value="good donation">good donation &#8364;20,00 EUR</option>
 				<option value="great donation">great donation &#8364;50,00 EUR</option>
