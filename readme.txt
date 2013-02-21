@@ -1,5 +1,5 @@
 === ITRO Popup Plugin ===
-Contributors: I.T.RO.® Corp. and my lovely girlfriend
+Contributors: I.T.RO. &#174; Corp
 Donate link: http://www.itro.eu/index.php/donate/
 Tags: popup, age, restriction
 Requires at least: 3.0.1
