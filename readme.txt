@@ -36,7 +36,7 @@ In the first one are stored all small data option, in the other one bigger data 
 
 == Screenshots ==
 
-1. no screenshot available
+
 
 == Changelog ==
 
@@ -47,15 +47,13 @@ no changes yet...
 
 no upgrade available
 
-== Arbitrary section ==
+== Notes ==
 
 This is a totaly free software we have spent a lot of time to develop it. In the future we'll update 
 and add new features and we accept all kind of (smart) suggestion. So please donate something 
 to help us continue our work.
 
-== A brief Markdown Example ==
-
-Unordered list:
+== Features ==
 
 * Fully translated in Italian. Ready for multilingual translation.
 * Perfectly centered popup, also with resized windows
@@ -65,14 +63,3 @@ Unordered list:
 * Possibility to block for adult-content site
 * Custom HTML code to display whatever you want
 * All in a very easy way to use!
-
-Here's a link to [WordPress](http://wordpress.org/ "Your favorite software") and one to [Markdown's Syntax Documentation][markdown syntax].
-Titles are optional, naturally.
-
-[markdown syntax]: http://daringfireball.net/projects/markdown/syntax
-            "Markdown is what the parser uses to process much of the readme file"
-
-Markdown uses email style notation for blockquotes and I've been told:
-> Asterisks for *emphasis*. Double it up  for **strong**.
-
-`<?php code(); // goes in backticks ?>`
