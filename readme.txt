@@ -48,7 +48,8 @@ First released version.
 
 == Upgrade Notice ==
 
-no upgrade available
+= 1.0.1 =
+need to upgrade, now the color table works right.
 
 == Notes ==
 
