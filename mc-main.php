@@ -21,7 +21,7 @@ Plugin URI: http://www.itro.eu/index.php/sezione-informatica/sviluppo-software/
 Description: Show a customizable popup and a popup-system for age-restricted site
 Author: I.T.RO.(c) Sez. Informatica
 E-mail: support.itro@live.com
-Version: 1.0
+Version: 1.0.1
 Author URI: http://www.itro.eu/
 */
 
