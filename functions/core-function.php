@@ -78,7 +78,7 @@ function display_popup()
 				var w = window, d = document, e = d.documentElement, g = d.getElementsByTagName('body')[0], x = w.innerWidth||e.clientWidth||g.clientWidth ;
 				var y = w.innerHeight||e.clientHeight||g.clientHeight ;
 				var popupHeight = document.getElementById('popup').offsetHeight ; 		//display the actual px size of popup div
-				poupTopMargin = (y - popupHeight)/2; 									//calculate the top margin 
+				poupTopMargin = (y - popupHeight)/8; 									//calculate the top margin 
 				document.getElementById('popup').style.marginTop = poupTopMargin ; 		//update the top margin of popup
 			}
 		</script>

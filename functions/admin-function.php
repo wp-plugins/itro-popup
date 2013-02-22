@@ -60,7 +60,7 @@ function itro_plugin_options() {
 
 		// See if the user has posted us some information
 		// If they did, this hidden field will be set to 'Y'
-		if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' ) 
+		if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y')
 		{
 			// Read their posted value
 			if(isset($_POST[$opt_name[$i]])){$opt_val[$i] = $_POST[ $opt_name[$i] ];}
@@ -128,6 +128,44 @@ function itro_plugin_options() {
 		<embed id="colorTable" src="<?php echo itroPath . 'other/color.swf'?>" width="100" height="100">
 		</embed>
 	</object>
+	<?php
+		//---Image manager form for the popup image
+		
+		echo itro_onOff('imgManagerForm');//the hide-show function?>
+		<p class="wpstyle" onClick="onOff_imgManagerForm();"><?php _e("Popup image settings:", 'itro-plugin' ); ?> </p>
+		<?php 
+		if(!empty($_REQUEST['submitUpload'])) {itro_image_uploader(); itro_update_option('img_url_check',NULL);}//if use has uploaded an image
+		if(!empty($_REQUEST['submitDelete']) || !empty($_REQUEST['submitSelect'])) {itro_image_manager(); itro_update_option('img_url_check',NULL);}//if use has managed images
+		if( isset($_POST[ 'img_url_check' ]) && $_POST[ 'image_manager' ] == 'Y' ) //if user has selcted the direct url
+		{
+			itro_update_option('img_url_check',$_POST['img_url_check']);
+			itro_update_option('img_source',$_POST['img_source']);
+			itro_update_option('img_direct_url',$_POST['img_source']);
+		}
+		?>
+		<form id="imgManagerForm" action="#imgManagerForm" method="post" enctype="multipart/form-data">
+			<input type="hidden" name="image_manager" value="Y">
+			<?php echo itro_onOff_checkbox('imgUrlCheck','imgUploader','true');?>
+			<p><?php _e("Use direck url:", 'itro-plugin' ); ?>
+				<input id="imgUrlCheck" type="checkbox" onClick="imgUrlCheck_checkbox_imgUploader()" name="img_url_check" value="yes" <?php if(itro_get_option('img_url_check')=='yes' ){echo 'checked="checked"';} ?> />
+				<input type="text" name="<?php echo 'img_source'; ?>" value="<?php echo itro_get_option('img_direct_url'); ?>" size="50">
+				<input class="button-primary" type="submit" name="submitImgUrl" value="<?php _e("Save", 'itro-plugin')?>">
+			</p>
+			<div id="imgUploader" style="height:<?php if(itro_get_option('img_url_check')=='yes'){echo '0px;';}?>">
+				<p><?php _e('Current image link:','itro-plugin')?><a href="<?php echo itro_get_option('img_source');?>"><?php echo itro_get_option('img_source');?></a></p>
+				<select name="selected_image" style="min-width:100px;">
+					<?php itro_image_list(); ?>
+				</select>
+				<input class="button-primary" type="submit" name="submitSelect" value="<?php _e("Select", 'itro-plugin')?>">
+				<input class="button-primary" type="submit" name="submitDelete" value="<?php _e("Delete", 'itro-plugin')?>">
+				<p>
+					<label for="file"><?php _e("Select the image", 'itro-plugin')?></label>
+					<input type="file" name="file" id="file"><br>
+					<input class="button-primary" type="submit" name="submitUpload" value="<?php _e("Upload", 'itro-plugin')?>">
+					<input type="checkbox" name="overwrite" value="yes"><?php _e("Overwrite", 'itro-plugin')?>
+				</p>
+			</div>
+		</form>
 </div>
 
 <div id="leftColumn">
@@ -165,14 +203,14 @@ function itro_plugin_options() {
 			<?php echo itro_onOff('customHtmlForm');?>
 			<p class="wpstyle" onClick="onOff_customHtmlForm();"><?php _e("Custom HTML code:", 'itro-plugin' ); ?> </p>
 			<p id="customHtmlForm">
-				<textarea rows="10" cols="70" name="<?php echo $field_name[0]; ?>"><?php echo $field_value[0]; ?></textarea>
+				<textarea rows="9" cols="70" name="<?php echo $field_name[0]; ?>"><?php echo $field_value[0]; ?></textarea>
 			</p>
 
 			<!------------ Age restriction option  ---------->
 			<?php echo itro_onOff('ageRestSettings');?>
 			<p class="wpstyle" onClick="onOff_ageRestSettings();"><?php _e("Age restriction settings:", 'itro-plugin' ); ?> </p>
 			<div id="ageRestSettings">
-				<?php echo itro_onOff_checkbox('ageCheck','ageRest');?>
+				<?php echo itro_onOff_checkbox('ageCheck','ageRest','false');?>
 				<p><?php _e("Age restricted page:", 'itro-plugin' ); ?>
 				<input id="ageCheck" type="checkbox" onClick="ageCheck_checkbox_ageRest()" name="<?php echo $opt_name[6]; ?>" value="yes" <?php if($opt_val[6]=='yes' ){echo 'checked="checked"';} ?> />
 				</p>
@@ -210,28 +248,6 @@ function itro_plugin_options() {
 			<p class="submit">
 			<input type="submit" name="Submit" class="button-primary" value="<?php esc_attr_e('Save Changes') ?>" />
 			</p>
-		</form>
-		
-		<?php
-		//---Image manager form for the popup image
-		echo itro_onOff('imgManagerForm');?>
-		<p class="wpstyle" onClick="onOff_imgManagerForm();"><?php _e("Popup image settings:", 'itro-plugin' ); ?> </p>
-		<?php 
-		if(!empty($_REQUEST['submitUpload'])) {itro_image_uploader();}
-		if(!empty($_REQUEST['submitDelete']) || !empty($_REQUEST['submitSelect']) ) {itro_image_manager();}
-		?>
-		<form id="imgManagerForm" action="#imgManagerForm" method="post" enctype="multipart/form-data">
-			<input type="hidden" name="image_manager" value="Y">
-			<select name="selected_image" style="min-width:100px;">
-				<?php itro_image_list(); ?>
-			</select>
-			<input class="button-primary" type="submit" name="submitSelect" value="<?php _e("Select", 'itro-plugin')?>">
-			<input class="button-primary" type="submit" name="submitDelete" value="<?php _e("Delete", 'itro-plugin')?>">
-			<p><?php _e('Current image link:','itro-plugin')?><a href="<?php echo itro_get_option('img_source');?>"><?php echo itro_get_option('img_source');?></a></p>
-			<label for="file"><?php _e("Select the image", 'itro-plugin')?></label>
-			<input type="file" name="file" id="file"><br>
-			<input class="button-primary" type="submit" name="submitUpload" value="<?php _e("Upload", 'itro-plugin')?>">
-			<input type="checkbox" name="overwrite" value="yes"><?php _e("Overwrite", 'itro-plugin')?>
 		</form>
 	</div>	
 </div>

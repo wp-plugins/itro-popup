@@ -31,13 +31,13 @@ function itro_onOff($tag_id){
 <?php 
 }
 
-function itro_onOff_checkbox($box_id,$tag_id){
+function itro_onOff_checkbox($box_id,$tag_id,$init_state){
 ?>
 <style>#<?php echo $tag_id;?>{overflow:hidden;}</style>
 <script>
 	function <?php echo $box_id;?>_checkbox_<?php echo $tag_id;?>()
 	{
-		if (<?php echo $box_id;?>.checked==false) {document.getElementById('<?php echo $tag_id;?>').style.height='0px';}
+		if (<?php echo $box_id;?>.checked==<?php echo $init_state ?>) {document.getElementById('<?php echo $tag_id;?>').style.height='0px';}
 		else {document.getElementById('<?php echo $tag_id;?>').style.height='auto';}
 	}
 </script>

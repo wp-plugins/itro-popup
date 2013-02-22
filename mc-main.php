@@ -18,7 +18,8 @@ This file is part of ITRO Popup Plugin.
 
 Plugin Name: ITRO Popup Plugin
 Plugin URI: http://www.itro.eu/index.php/sezione-informatica/sviluppo-software/
-Description: Show a customizable popup and a popup-system for age-restricted site
+Description: EN - Show a perfecly centered customizable popup and a popup-system for age-restricted site and allow to insert own HTML code. 
+IT- Visualizza un popup perfettamente centrato e personalizzabile con possibile blocco per i siti con restrizioni di età e permette di inserire il proprio codice HTML.
 Author: I.T.RO.(c) Sez. Informatica
 E-mail: support.itro@live.com
 Version: 1.0.1
@@ -32,7 +33,7 @@ include_once ('functions/core-function.php');
 include_once ('functions/database-function.php');
 include_once ('functions/js-function.php');
 include_once ('css/itro-style.php');
-load_plugin_textdomain('itro-popup', false, basename( dirname( __FILE__ ) ) . '/languages' );
+load_plugin_textdomain('itro-plugin', false, basename( dirname( __FILE__ ) ) . '/languages' );
 
 //Function that load all the scripts and the style-sheet files
 function load_itro_scripts()

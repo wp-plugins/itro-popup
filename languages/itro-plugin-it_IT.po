@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mc-plugin\n"
-"POT-Creation-Date: 2013-02-19 16:31+0100\n"
-"PO-Revision-Date: 2013-02-19 16:31+0100\n"
+"POT-Creation-Date: 2013-02-22 13:26+0100\n"
+"PO-Revision-Date: 2013-02-22 13:26+0100\n"
 "Last-Translator: \n"
 "Language-Team: ITRO Corp\n"
 "Language: ITALIANO\n"
@@ -30,119 +30,119 @@ msgstr "Impostazioni"
 msgid "HELP US TO CONTINUE OUR DEVELOPING WORK. PLEASE DONATE!"
 msgstr "AIUTACI A CONTINUARE IL NOSTRO LAVORO. DONA ORA!"
 
-#: functions/admin-function.php:140
+#: functions/admin-function.php:141
 msgid "General Popup Option:"
 msgstr "Impostazioni Generali"
 
-#: functions/admin-function.php:143
+#: functions/admin-function.php:144
 msgid "Popup seconds:"
 msgstr "Secondi di visualizzazione del popup:"
 
-#: functions/admin-function.php:146
+#: functions/admin-function.php:147
 msgid "Cookie Time Expiration (hours):"
 msgstr "Prossima visualizzazione del popup (ore):"
 
-#: functions/admin-function.php:149
+#: functions/admin-function.php:150
 msgid "Popup width (%):"
 msgstr "Larghezza Popup (%):"
 
-#: functions/admin-function.php:152
+#: functions/admin-function.php:153
 msgid "Popup background color"
 msgstr "Colore di sfondo:"
 
-#: functions/admin-function.php:155
+#: functions/admin-function.php:156
 msgid "Popup border color:"
 msgstr "Colore bordo:"
 
-#: functions/admin-function.php:158
+#: functions/admin-function.php:159
 msgid "Only in home page:"
 msgstr "Solo in home page:"
 
-#: functions/admin-function.php:165
+#: functions/admin-function.php:166
 msgid "Custom HTML code:"
 msgstr "Codice HTML personalizzato:"
 
-#: functions/admin-function.php:172
+#: functions/admin-function.php:173
 msgid "Age restriction settings:"
 msgstr "Sito con restrizioni di età:"
 
-#: functions/admin-function.php:175
+#: functions/admin-function.php:176
 msgid "Age restricted page:"
 msgstr "Sito con restrizioni di età:"
 
-#: functions/admin-function.php:179
+#: functions/admin-function.php:180
 msgid "Enter button text:"
 msgstr "Inserire il testo del bottone:"
 
-#: functions/admin-function.php:180
+#: functions/admin-function.php:181
 msgid "i.e.: I AM OVER 18 - ENTER"
 msgstr "es: HO PI&#218; DI 18 ANNI - ENTRA"
 
-#: functions/admin-function.php:182
+#: functions/admin-function.php:183
 msgid "Enter button background color:"
 msgstr "Colore di sfondo bottone di ingresso:"
 
-#: functions/admin-function.php:185
+#: functions/admin-function.php:186
 msgid "Enter button border color:"
 msgstr "Colore bordo pulsante di ingresso:"
 
-#: functions/admin-function.php:188
+#: functions/admin-function.php:189
 msgid "Enter button font color:"
 msgstr "Colore font pulsante di ingresso:"
 
-#: functions/admin-function.php:191
+#: functions/admin-function.php:192
 msgid "Leave button text:"
 msgstr "Testo pulsante di allontanamento:"
 
-#: functions/admin-function.php:192
+#: functions/admin-function.php:193
 msgid "i.e.: I AM UNDER 18 - LEAVE"
 msgstr "es: HO MENO DI 18 ANNI - ALLONTANAMI DAL SITO"
 
-#: functions/admin-function.php:194
+#: functions/admin-function.php:195
 msgid "Leave button url:"
 msgstr "Url bottone di allontanamento:"
 
-#: functions/admin-function.php:195
+#: functions/admin-function.php:196
 msgid "i.e.: http://www.mysite.com/leave.html"
 msgstr "es.: http://www.mysite.com/leave.html"
 
-#: functions/admin-function.php:197
+#: functions/admin-function.php:198
 msgid "Leave button background color:"
 msgstr "Colore di sfondo pulsante di allontanamento:"
 
-#: functions/admin-function.php:200
+#: functions/admin-function.php:201
 msgid "Leave button border color:"
 msgstr "Colore bordo pulsante allontanamento:"
 
-#: functions/admin-function.php:203
+#: functions/admin-function.php:204
 msgid "Leave button font color:"
 msgstr "Colore font pulsante allontanamento:"
 
-#: functions/admin-function.php:217
+#: functions/admin-function.php:218
 msgid "Popup image settings:"
 msgstr "Impostazioni immagine popup:"
 
-#: functions/admin-function.php:227
+#: functions/admin-function.php:228
 msgid "Select"
 msgstr "Seleziona"
 
-#: functions/admin-function.php:228
+#: functions/admin-function.php:229
 msgid "Delete"
 msgstr "Elimina"
 
-#: functions/admin-function.php:229
+#: functions/admin-function.php:230
 msgid "Current image link:"
 msgstr "Link immagine attuale:"
 
-#: functions/admin-function.php:230
+#: functions/admin-function.php:231
 msgid "Select the image"
 msgstr "Seleziona l'immagine:"
 
-#: functions/admin-function.php:232
+#: functions/admin-function.php:233
 msgid "Upload"
 msgstr "Carica"
 
-#: functions/admin-function.php:233
+#: functions/admin-function.php:234
 msgid "Overwrite"
 msgstr "Sovrascrivi"
 
