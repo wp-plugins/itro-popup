@@ -8,9 +8,9 @@ Stable tag: 1.0.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-EN: ITRO Popup Plugin enable user to add a full-optional popup to their Wordpress site, also with legal block for adult-content site and
+ITRO Popup Plugin enable user to add a full-optional popup to their Wordpress site, also with legal block for adult-content site and
 custom HTML code.
-IT: ITRO Popup Plugin permette di aggiungere un popup totalmente personalizzabile, con la possibilità di inserire il blocco legale per 
+ITRO Popup Plugin permette di aggiungere un popup totalmente personalizzabile, con la possibilità di inserire il blocco legale per 
 siti con contentuti non adatti a fascie di età protette (violenza, vendita tabacco o alcool, linguaggio forte, ecc...). Possibilità di 
 inserire codice HTML personalizzato.
 
@@ -22,7 +22,7 @@ With "Age restricted site"  option, the popup block the navigation until the use
 It is useful for adult content site (tobacco & alcohol-selling, violence, bad language, etc...). The leave and the enter button 
 are separately customizable. Advanced user can also add their own HTML code. 
 
-MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/ “Sustain free software”)
+MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
 
 == Installation ==
 
