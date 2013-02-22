@@ -1,0 +1,178 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: mc-plugin\n"
+"POT-Creation-Date: 2013-02-22 13:26+0100\n"
+"PO-Revision-Date: 2013-02-22 13:26+0100\n"
+"Last-Translator: \n"
+"Language-Team: ITRO Corp\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: functions/admin-function.php:94
+msgid "settings saved."
+msgstr ""
+
+#: functions/admin-function.php:99
+msgid "I.T.RO. Popup Plugin"
+msgstr ""
+
+#: functions/admin-function.php:100
+msgid "Settings"
+msgstr ""
+
+#: functions/admin-function.php:105
+msgid "HELP US TO CONTINUE OUR DEVELOPING WORK. PLEASE DONATE!"
+msgstr ""
+
+#: functions/admin-function.php:141
+msgid "General Popup Option:"
+msgstr ""
+
+#: functions/admin-function.php:144
+msgid "Popup seconds:"
+msgstr ""
+
+#: functions/admin-function.php:147
+msgid "Cookie Time Expiration (hours):"
+msgstr ""
+
+#: functions/admin-function.php:150
+msgid "Popup width (%):"
+msgstr ""
+
+#: functions/admin-function.php:153
+msgid "Popup background color"
+msgstr ""
+
+#: functions/admin-function.php:156
+msgid "Popup border color:"
+msgstr ""
+
+#: functions/admin-function.php:159
+msgid "Only in home page:"
+msgstr ""
+
+#: functions/admin-function.php:166
+msgid "Custom HTML code:"
+msgstr ""
+
+#: functions/admin-function.php:173
+msgid "Age restriction settings:"
+msgstr ""
+
+#: functions/admin-function.php:176
+msgid "Age restricted page:"
+msgstr ""
+
+#: functions/admin-function.php:180
+msgid "Enter button text:"
+msgstr ""
+
+#: functions/admin-function.php:181
+msgid "i.e.: I AM OVER 18 - ENTER"
+msgstr ""
+
+#: functions/admin-function.php:183
+msgid "Enter button background color:"
+msgstr ""
+
+#: functions/admin-function.php:186
+msgid "Enter button border color:"
+msgstr ""
+
+#: functions/admin-function.php:189
+msgid "Enter button font color:"
+msgstr ""
+
+#: functions/admin-function.php:192
+msgid "Leave button text:"
+msgstr ""
+
+#: functions/admin-function.php:193
+msgid "i.e.: I AM UNDER 18 - LEAVE"
+msgstr ""
+
+#: functions/admin-function.php:195
+msgid "Leave button url:"
+msgstr ""
+
+#: functions/admin-function.php:196
+msgid "i.e.: http://www.mysite.com/leave.html"
+msgstr ""
+
+#: functions/admin-function.php:198
+msgid "Leave button background color:"
+msgstr ""
+
+#: functions/admin-function.php:201
+msgid "Leave button border color:"
+msgstr ""
+
+#: functions/admin-function.php:204
+msgid "Leave button font color:"
+msgstr ""
+
+#: functions/admin-function.php:218
+msgid "Popup image settings:"
+msgstr ""
+
+#: functions/admin-function.php:228
+msgid "Select"
+msgstr ""
+
+#: functions/admin-function.php:229
+msgid "Delete"
+msgstr ""
+
+#: functions/admin-function.php:230
+msgid "Current image link:"
+msgstr ""
+
+#: functions/admin-function.php:231
+msgid "Select the image"
+msgstr ""
+
+#: functions/admin-function.php:233
+msgid "Upload"
+msgstr ""
+
+#: functions/admin-function.php:234
+msgid "Overwrite"
+msgstr ""
+
+#: functions/core-function.php:43
+msgid "This popup will be closed in: "
+msgstr ""
+
+#: functions/core-function.php:44
+msgid "CLOSE NOW"
+msgstr ""
+
+#: functions/core-function.php:101
+msgid "Warning file is too big, this may cause problems!"
+msgstr ""
+
+#: functions/core-function.php:112
+msgid "already exists. Please check the overwrite option"
+msgstr ""
+
+#: functions/core-function.php:154
+msgid "No file selected"
+msgstr ""
+
+#: functions/core-function.php:159
+msgid " successfully deleted"
+msgstr ""
+
+#: functions/core-function.php:169
+msgid "No image used"
+msgstr ""
+
+#: functions/core-function.php:175
+msgid " selected"
+msgstr ""
