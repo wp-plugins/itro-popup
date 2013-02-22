@@ -4,7 +4,7 @@ Donate link: http://www.itro.eu/index.php/donate/
 Tags: popup, age, restriction, block, violence
 Requires at least: 3.0.1
 Tested up to: 3.5.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -32,7 +32,6 @@ MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu
 4. Enjoy
 
 == Frequently Asked Questions ==
-
 = How can i quickly test my settings and delete cookie so the page display the popup? =
 
 You need to set the "Cookie expiration time" to zero and refresh your website page a couple of time.
@@ -50,6 +49,10 @@ In the first one are stored all small data option, in the other one bigger data 
 
 
 == Changelog ==
+= 1.0.2 =
+bugs fixed;
+now popup is better centered;
+added the possibility to insert a direct url for the popup image.
 
 = 1.0.1 =
 bug fixed: color table now works in admin pannel.
@@ -58,6 +61,10 @@ bug fixed: color table now works in admin pannel.
 First released version.
 
 == Upgrade Notice ==
+= 1.0.2 =
+bugs fixed;
+added the possibility to insert a direct url for the popup image;
+100% of compability;
 
 = 1.0.1 =
 need to upgrade, now the color table works right.

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mc-plugin\n"
-"POT-Creation-Date: 2013-02-22 13:26+0100\n"
-"PO-Revision-Date: 2013-02-22 13:26+0100\n"
+"POT-Creation-Date: 2013-02-22 21:24+0100\n"
+"PO-Revision-Date: 2013-02-22 21:24+0100\n"
 "Last-Translator: \n"
 "Language-Team: ITRO Corp\n"
 "MIME-Version: 1.0\n"
@@ -29,120 +29,128 @@ msgstr ""
 msgid "HELP US TO CONTINUE OUR DEVELOPING WORK. PLEASE DONATE!"
 msgstr ""
 
-#: functions/admin-function.php:141
-msgid "General Popup Option:"
-msgstr ""
-
-#: functions/admin-function.php:144
-msgid "Popup seconds:"
-msgstr ""
-
-#: functions/admin-function.php:147
-msgid "Cookie Time Expiration (hours):"
-msgstr ""
-
-#: functions/admin-function.php:150
-msgid "Popup width (%):"
-msgstr ""
-
-#: functions/admin-function.php:153
-msgid "Popup background color"
-msgstr ""
-
-#: functions/admin-function.php:156
-msgid "Popup border color:"
-msgstr ""
-
-#: functions/admin-function.php:159
-msgid "Only in home page:"
-msgstr ""
-
-#: functions/admin-function.php:166
-msgid "Custom HTML code:"
-msgstr ""
-
-#: functions/admin-function.php:173
-msgid "Age restriction settings:"
-msgstr ""
-
-#: functions/admin-function.php:176
-msgid "Age restricted page:"
-msgstr ""
-
-#: functions/admin-function.php:180
-msgid "Enter button text:"
-msgstr ""
-
-#: functions/admin-function.php:181
-msgid "i.e.: I AM OVER 18 - ENTER"
-msgstr ""
-
-#: functions/admin-function.php:183
-msgid "Enter button background color:"
-msgstr ""
-
-#: functions/admin-function.php:186
-msgid "Enter button border color:"
-msgstr ""
-
-#: functions/admin-function.php:189
-msgid "Enter button font color:"
-msgstr ""
-
-#: functions/admin-function.php:192
-msgid "Leave button text:"
-msgstr ""
-
-#: functions/admin-function.php:193
-msgid "i.e.: I AM UNDER 18 - LEAVE"
-msgstr ""
-
-#: functions/admin-function.php:195
-msgid "Leave button url:"
-msgstr ""
-
-#: functions/admin-function.php:196
-msgid "i.e.: http://www.mysite.com/leave.html"
-msgstr ""
-
-#: functions/admin-function.php:198
-msgid "Leave button background color:"
-msgstr ""
-
-#: functions/admin-function.php:201
-msgid "Leave button border color:"
-msgstr ""
-
-#: functions/admin-function.php:204
-msgid "Leave button font color:"
-msgstr ""
-
-#: functions/admin-function.php:218
+#: functions/admin-function.php:135
 msgid "Popup image settings:"
 msgstr ""
 
-#: functions/admin-function.php:228
-msgid "Select"
+#: functions/admin-function.php:149
+msgid "Use direck url:"
 msgstr ""
 
-#: functions/admin-function.php:229
-msgid "Delete"
+#: functions/admin-function.php:152
+msgid "Save"
 msgstr ""
 
-#: functions/admin-function.php:230
+#: functions/admin-function.php:155
 msgid "Current image link:"
 msgstr ""
 
-#: functions/admin-function.php:231
+#: functions/admin-function.php:159
+msgid "Select"
+msgstr ""
+
+#: functions/admin-function.php:160
+msgid "Delete"
+msgstr ""
+
+#: functions/admin-function.php:162
 msgid "Select the image"
 msgstr ""
 
-#: functions/admin-function.php:233
+#: functions/admin-function.php:164
 msgid "Upload"
 msgstr ""
 
-#: functions/admin-function.php:234
+#: functions/admin-function.php:165
 msgid "Overwrite"
+msgstr ""
+
+#: functions/admin-function.php:179
+msgid "General Popup Option:"
+msgstr ""
+
+#: functions/admin-function.php:182
+msgid "Popup seconds:"
+msgstr ""
+
+#: functions/admin-function.php:185
+msgid "Cookie Time Expiration (hours):"
+msgstr ""
+
+#: functions/admin-function.php:188
+msgid "Popup width (%):"
+msgstr ""
+
+#: functions/admin-function.php:191
+msgid "Popup background color"
+msgstr ""
+
+#: functions/admin-function.php:194
+msgid "Popup border color:"
+msgstr ""
+
+#: functions/admin-function.php:197
+msgid "Only in home page:"
+msgstr ""
+
+#: functions/admin-function.php:204
+msgid "Custom HTML code:"
+msgstr ""
+
+#: functions/admin-function.php:211
+msgid "Age restriction settings:"
+msgstr ""
+
+#: functions/admin-function.php:214
+msgid "Age restricted page:"
+msgstr ""
+
+#: functions/admin-function.php:218
+msgid "Enter button text:"
+msgstr ""
+
+#: functions/admin-function.php:219
+msgid "i.e.: I AM OVER 18 - ENTER"
+msgstr ""
+
+#: functions/admin-function.php:221
+msgid "Enter button background color:"
+msgstr ""
+
+#: functions/admin-function.php:224
+msgid "Enter button border color:"
+msgstr ""
+
+#: functions/admin-function.php:227
+msgid "Enter button font color:"
+msgstr ""
+
+#: functions/admin-function.php:230
+msgid "Leave button text:"
+msgstr ""
+
+#: functions/admin-function.php:231
+msgid "i.e.: I AM UNDER 18 - LEAVE"
+msgstr ""
+
+#: functions/admin-function.php:233
+msgid "Leave button url:"
+msgstr ""
+
+#: functions/admin-function.php:234
+msgid "i.e.: http://www.mysite.com/leave.html"
+msgstr ""
+
+#: functions/admin-function.php:236
+msgid "Leave button background color:"
+msgstr ""
+
+#: functions/admin-function.php:239
+msgid "Leave button border color:"
+msgstr ""
+
+#: functions/admin-function.php:242
+msgid "Leave button font color:"
 msgstr ""
 
 #: functions/core-function.php:43
