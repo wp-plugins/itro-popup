@@ -23,6 +23,8 @@ Author: I.T.RO.(c) Sez. Informatica
 E-mail: support.itro@live.com
 Version: 1.0.1
 Author URI: http://www.itro.eu/
+Text Domain:   itro-popup
+Domain Path:   /languages/
 */
 
 define('mainLocalPath', __DIR__);
