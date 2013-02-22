@@ -17,7 +17,7 @@ ITRO Popup is a very lightweight (less than 200Kb!) Plugin which allow users to 
 It has a very user-friendly interface, which allow inexpert user to easily modify all  settings needed for a popup. 
 With "Age restricted site"  option, the popup block the navigation until the user declare that is above the local country legal age. 
 It is useful for adult content site (tobacco & alcohol-selling, violence, bad language, etc...). The leave and the enter button 
-are separately customizable. Advanced user can also add their own HTML code. 
+are separately customizable. Advanced user can also add their own HTML code.
 
 == Installation ==
 
@@ -28,7 +28,7 @@ are separately customizable. Advanced user can also add their own HTML code.
 
 == Frequently Asked Questions ==
 
-= How can i quickly test my settings and delete cookie so the page display the popup?=
+= How can i quickly test my settings and delete cookie so the page display the popup? =
 
 You need to set the "Cookie expiration time" to zero and refresh your website page a couple of time.
 
@@ -59,7 +59,7 @@ need to upgrade, now the color table works right.
 
 == Notes ==
 
-This is a totaly free software we have spent a lot of time to develop it. In the future we'll update 
+This is a totaly free software and we have spent a lot of time to develop it. In the future we'll update 
 and add new features and we accept all kind of (smart) suggestion. So please donate something 
 to help us continue our work.
 
