@@ -28,7 +28,7 @@ are separately customizable. Advanced user can also add their own HTML code.
 
 == Frequently Asked Questions ==
 
-= How can i quickly test my settings and delete cookie so the page display the popup?=
+= How can i quickly test my settings and delete cookie so the page display the popup? =
 
 You need to set the "Cookie expiration time" to zero and refresh your website page a couple of time.
 
