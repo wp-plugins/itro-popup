@@ -24,7 +24,7 @@ are separately customizable. Advanced user can also add their own HTML code.
 1. Unzip `itro-plugin.7z or itro-plugin.zip` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Go to "Settings->ITRO Popup" in the admin menu
-4 Enjoy
+4. Enjoy
 
 == Frequently Asked Questions ==
 
