@@ -42,8 +42,7 @@ Yes. The tables are "wp_itro_plugin_option" "wp_itro_plugin_field".
 In the first one are stored all small data option, in the other one bigger data as custom HTML code.
 
 == Screenshots ==
-
-
+no screenshot avaliable
 
 == Changelog ==
 = 1.0.2 =
