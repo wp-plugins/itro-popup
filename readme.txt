@@ -8,7 +8,8 @@ Stable tag: 1.0.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-ITRO Popup Plugin enable user to add a full-optional popup to their Wordpress site, also with legal block for adult-content site.
+ITRO Popup Plugin enable user to add a full-optional popup to their Wordpress site, also with legal block for adult-content site and
+custom HTML code.
 
 == Description ==
 
@@ -16,15 +17,20 @@ ITRO Popup is a very lightweight (less than 200Kb!) Plugin which allow users to 
 It has a very user-friendly interface, which allow inexpert user to easily modify all  settings needed for a popup. 
 With "Age restricted site"  option, the popup block the navigation until the user declare that is above the local country legal age. 
 It is useful for adult content site (tobacco & alcohol-selling, violence, bad language, etc...). The leave and the enter button 
-are separately customizable.
+are separately customizable. Advanced user can also add their own HTML code. 
 
 == Installation ==
 
 1. Unzip `itro-plugin.7z or itro-plugin.zip` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Enjoy
+3. Go to "Settings->ITRO Popup" in the admin menu
+4 Enjoy
 
 == Frequently Asked Questions ==
+
+= How can i quickly test my settings and delete cookie so the page display the popup?=
+
+You need to set the "Cookie expiration time" to zero and refresh your website page a couple of time.
 
 = Does the plugin add some tables in my Wordpress database? =
 
