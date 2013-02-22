@@ -96,6 +96,7 @@ function get_itro_style() { ?>
 	margin-left:10%;
 }
 
+/* POPUP */
 #popup_text {
 	z-index:99999;
 }

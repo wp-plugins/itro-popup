@@ -22,9 +22,14 @@ are separately customizable.
 
 1. Unzip `itro-plugin.7z or itro-plugin.zip` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Enjoy
+3. Go to "Settings->ITRO Popup" in the admin menu
+4 Enjoy
 
 == Frequently Asked Questions ==
+
+= How can i quickly test my settings and delete cookie so the page display the popup?=
+
+You need to set the "Cookie expiration time" to zero and refresh your website page a couple of time.
 
 = Does the plugin add some tables in my Wordpress database? =
 
