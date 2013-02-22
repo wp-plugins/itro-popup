@@ -10,9 +10,6 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 ITRO Popup Plugin enable user to add a full-optional popup to their Wordpress site, also with legal block for adult-content site and
 custom HTML code.
-ITRO Popup Plugin permette di aggiungere un popup totalmente personalizzabile, con la possibilità di inserire il blocco legale per 
-siti con contentuti non adatti a fascie di età protette (violenza, vendita tabacco o alcool, linguaggio forte, ecc...). Possibilità di 
-inserire codice HTML personalizzato.
 
 == Description ==
 
