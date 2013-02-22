@@ -1,7 +1,7 @@
 === ITRO Popup Plugin ===
 Contributors: I.T.RO. &#174; Corp
 Donate link: http://www.itro.eu/index.php/donate/
-Tags: popup, age, restriction
+Tags: popup, age, restriction, block, violence
 Requires at least: 3.0.1
 Tested up to: 3.5.1
 Stable tag: 1.0.1
@@ -21,7 +21,7 @@ are separately customizable. Advanced user can also add their own HTML code.
 
 == Installation ==
 
-1. Unzip `itro-plugin.7z or itro-plugin.zip` to the `/wp-content/plugins/` directory
+1. Unzip `itro-plugin.zip` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Go to "Settings->ITRO Popup" in the admin menu
 4. Enjoy
