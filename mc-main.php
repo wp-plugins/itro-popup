@@ -32,7 +32,7 @@ include_once ('functions/core-function.php');
 include_once ('functions/database-function.php');
 include_once ('functions/js-function.php');
 include_once ('css/itro-style.php');
-load_plugin_textdomain('itro-plugin', false, basename( dirname( __FILE__ ) ) . '/languages' );
+load_plugin_textdomain('itro-popup', false, basename( dirname( __FILE__ ) ) . '/languages' );
 
 //Function that load all the scripts and the style-sheet files
 function load_itro_scripts()

@@ -1,7 +1,7 @@
 === ITRO Popup Plugin ===
 Contributors: I.T.RO. &#174; Corp
 Donate link: http://www.itro.eu/index.php/donate/
-Tags: popup, age, restriction
+Tags: popup, age, restriction, block, violence
 Requires at least: 3.0.1
 Tested up to: 3.5.1
 Stable tag: 1.0.1
@@ -17,14 +17,14 @@ ITRO Popup is a very lightweight (less than 200Kb!) Plugin which allow users to 
 It has a very user-friendly interface, which allow inexpert user to easily modify all  settings needed for a popup. 
 With "Age restricted site"  option, the popup block the navigation until the user declare that is above the local country legal age. 
 It is useful for adult content site (tobacco & alcohol-selling, violence, bad language, etc...). The leave and the enter button 
-are separately customizable. Advanced user can also add their own HTML code.
+are separately customizable. Advanced user can also add their own HTML code. 
 
 == Installation ==
 
-1. Unzip `itro-plugin.7z or itro-plugin.zip` to the `/wp-content/plugins/` directory
+1. Unzip `itro-plugin.zip` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Go to "Settings->ITRO Popup" in the admin menu
-4 Enjoy
+4. Enjoy
 
 == Frequently Asked Questions ==
 
@@ -59,7 +59,7 @@ need to upgrade, now the color table works right.
 
 == Notes ==
 
-This is a totaly free software and we have spent a lot of time to develop it. In the future we'll update 
+This is a totaly free software we have spent a lot of time to develop it. In the future we'll update 
 and add new features and we accept all kind of (smart) suggestion. So please donate something 
 to help us continue our work.
 
