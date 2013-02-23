@@ -203,7 +203,7 @@ function itro_plugin_options() {
 			<?php echo itro_onOff('customHtmlForm');?>
 			<p class="wpstyle" onClick="onOff_customHtmlForm();"><?php _e("Custom HTML code:", 'itro-plugin' ); ?> </p>
 			<p id="customHtmlForm">
-				<textarea rows="9" cols="70" name="<?php echo $field_name[0]; ?>"><?php echo $field_value[0]; ?></textarea>
+				<textarea rows="9" cols="70" name="<?php echo $field_name[0]; ?>"><?php echo stripslashes($field_value[0]); ?></textarea>
 			</p>
 
 			<!------------ Age restriction option  ---------->

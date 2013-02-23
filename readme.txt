@@ -4,7 +4,7 @@ Donate link: http://www.itro.eu/index.php/donate/
 Tags: popup, age, restriction, block, violence
 Requires at least: 3.0.1
 Tested up to: 3.5.1
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -42,10 +42,13 @@ Yes. The tables are "wp_itro_plugin_option" "wp_itro_plugin_field".
 In the first one are stored all small data option, in the other one bigger data as custom HTML code.
 
 == Screenshots ==
-
-
+no screenshot avaliable
 
 == Changelog ==
+
+= 1.0.3 =
+important bux fixed: now custom HTML code works right.
+
 = 1.0.2 =
 bugs fixed;
 now popup is better centered;
@@ -58,6 +61,9 @@ bug fixed: color table now works in admin pannel.
 First released version.
 
 == Upgrade Notice ==
+= 1.0.3 =
+important bux fixed: now custom HTML code works right.
+
 = 1.0.2 =
 bugs fixed;
 added the possibility to insert a direct url for the popup image;

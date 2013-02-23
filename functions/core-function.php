@@ -50,7 +50,7 @@ function display_popup()
 				</p>
 				<?php }?>
 				<div id="customHtml">
-				<?php echo itro_get_field('custom_html'); //insert custom html code?>
+				<?php echo stripslashes(itro_get_field('custom_html')); //insert custom html code?>
 				</div>
 		</div>
 		<script>
