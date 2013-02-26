@@ -1,5 +1,5 @@
 === ITRO Popup Plugin ===
-Contributors: I.T.RO. &#174; Corp
+Contributors: I.T.RO.
 Donate link: http://www.itro.eu/index.php/donate/
 Tags: popup, age, restriction, block, violence
 Requires at least: 3.0.1
@@ -21,6 +21,12 @@ are separately customizable. Advanced user can also add their own HTML code.
 This plugin is basic-user oriented, no code knowledge is required.
 
 MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
+
+Like this plugin? Say it to your friend! Sustain free software! https://www.facebook.com/ITRO.Popup
+
+Any suggestions for new features implementation which you need? 
+Need personal implementation for your businnes or your interest?
+Email to support.itro@live.com
 
 == Installation ==
 
