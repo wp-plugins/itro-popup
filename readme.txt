@@ -22,12 +22,6 @@ This plugin is basic-user oriented, no code knowledge is required.
 
 MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
 
-Like this plugin? Say it to your friend! Sustain free software! https://www.facebook.com/ITRO.Popup
-
-Any suggestions for new features implementation which you need? 
-Need personal implementation for your businnes or your interest?
-Email to support.itro@live.com
-
 == Installation ==
 
 1. Unzip `itro-plugin.zip` to the `/wp-content/plugins/` directory
@@ -95,6 +89,12 @@ need to upgrade, now the color table works right.
 This is a totaly free software we have spent a lot of time to develop it. In the future we'll update 
 and add new features and we accept all kind of (smart) suggestion. So please donate something 
 to help us continue our work.
+
+Like this plugin? Say it to your friend! Sustain free software! https://www.facebook.com/ITRO.Popup
+
+Any suggestions for new features implementation which you need? 
+Need personal implementation for your businnes or your interest?
+Email to support.itro@live.com
 
 == Features ==
 * Can be multiple selcted pages where user want to display the popup. NO SHORTCUTS NEEDED!
