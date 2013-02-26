@@ -25,10 +25,18 @@ function set_popup_cookie()
 }
 
 //--------------------------DISPLAY THE POPUP
-function display_popup() 
+function itro_display_popup()
 {
-	//this condition, control if the popup must or not by displayed only in homepage and if the cookie expired
-	if ( ( itro_get_option('only_home')==NULL || ( is_home() || is_front_page() && itro_get_option('only_home')=='yes' ) ) && !isset($_COOKIE['popup_cookie']) )
+	//this condition, control if the popup must or not by displayed in a specified page
+	$selected_page_id = json_decode(itro_get_option('selected_page_id'));
+	$id_match = NULL;
+	if( isset($selected_page_id) ) 
+	{
+		foreach ($selected_page_id as $single_id)
+		{if ($single_id==get_the_id()) $id_match++; }
+	}
+	if(itro_get_option('page_selection')!='any')
+	if( ($id_match != NULL) || (itro_get_option('page_selection')=='all') )
 	{ ?>
 		<!--------------start popoup div and js--------------->	
 		<div id="opaco"></div>
@@ -40,8 +48,8 @@ function display_popup()
 				<?php 
 				}
 				if (itro_get_option('age_restriction')==NULL) {?>
-				<p id="popup_text" align="center"><?php _e('This popup will be closed in: ','itro-plugin'); ?> <b id="timer"></b>
-				<a class="popup" href="javascript:void(0)" onclick="popup.style.visibility='Hidden',opaco.style.visibility='Hidden'">&nbsp <?php _e('CLOSE NOW','itro-plugin'); ?></a>
+				<p id="popup_text" align="center"><?php _e('This popup will be closed in: ','itro-plugin'); ?> <b id="timer"></b>&nbsp 
+				<a class="popup" href="javascript:void(0)" onclick="popup.style.visibility='Hidden',opaco.style.visibility='Hidden'"><?php _e('CLOSE NOW','itro-plugin'); ?></a>
 				</p>
 				<?php } else {?>
 				<p id="age_button_area" align="center" style="padding-top:10px;">
@@ -49,9 +57,16 @@ function display_popup()
 				<input type="button" id="ageLeaveButton" onClick="javascript:window.open('<?php echo itro_get_option('leave_button_url')?>','_self');" value="<?php echo itro_get_option('leave_button_text');?>">
 				</p>
 				<?php }?>
-				<div id="customHtml">
-				<?php echo stripslashes(itro_get_field('custom_html')); //insert custom html code?>
-				</div>
+				<script>
+				function lastLoad() 
+				{
+					var customHtml = document.getElementById('customHtml');
+					var html = '<?php echo stripslashes(itro_get_field('custom_html')); //insert custom html code?>';
+					customHtml.innerHTML = html;
+				}
+				window.onload = lastLoad;
+				</script>
+				<div id="customHtml"></div>
 		</div>
 		<script>
 			<?php 
@@ -151,7 +166,7 @@ function itro_image_manager()
 	//delete image
 	if(!empty($_REQUEST['submitDelete'])) 
 	{ 
-		if(empty($_POST['selected_image'])){_e('No file selected','itro-plugin');}
+		if(empty($_POST['selected_image'])){_e('No image selected','itro-plugin');}
 		else
 		{
 			unlink(mainLocalPath . "\\images\\" . $_POST['selected_image']);
@@ -176,4 +191,37 @@ function itro_image_manager()
 		}
 	}
 }
-?>
+
+//------------------------- SELECT PAGES FUNCTIONS
+function itro_check_selected_id($id_to_check)
+{
+	if(itro_get_option('selected_page_id') != NULL)
+	{
+		$selected_page_id = json_decode(itro_get_option('selected_page_id'));
+		$id_match = NULL;
+		if( isset($selected_page_id) ) 
+		{
+			foreach ($selected_page_id as $single_id)
+			{if ($single_id == $id_to_check) return (true); }
+		}
+	}
+}
+
+function itro_list_pages()
+{?>				
+	<select name="selected_page_id[]" multiple> 
+	 <?php 
+	  $pages = get_pages(); 
+	  foreach ( $pages as $page ) 
+	  {
+		$option = '<option value="'. $page->ID .'"';
+		if(itro_check_selected_id($page->ID)){$option .='selected="select"';} 
+		$option .= '>';
+		$option .= $page->post_title;
+		$option .= '</option>';
+		echo $option;
+	  }
+	 ?>
+	</select>
+<?php
+}

@@ -31,7 +31,7 @@ function itro_plugin_options() {
 	{
 		$opt_name=array(
 		/*opt 0*/'popup_time',
-		/*opt 1*/'only_home',
+		/*opt 1*/ '', //emply slot... :)
 		/*opt 2*/'cookie_time_exp',
 		/*opt 3*/'popup_width',
 		/*opt 4*/'popup_background',
@@ -46,13 +46,25 @@ function itro_plugin_options() {
 		/*opt 13*/'leave_button_border_color',
 		/*opt 14*/'enter_button_font_color',
 		/*opt 15*/'leave_button_font_color',
+		/*opt 16*/'popup_position',
+		/*opt 17*/'popup_height',
+		/*opt 18*/'page_selection',
 		);
 		$field_name=array(
 		/*fld 1*/'custom_html',
 		);
 		$submitted_form = 'mt_submit_hidden';
 	}
-	
+	//unsorted option and field
+	if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y')
+	{
+		if( isset($_POST['selected_page_id']) ) 
+		{
+			$selected_page_id=json_encode($_POST['selected_page_id']);
+			itro_update_option('selected_page_id',$selected_page_id);
+		}
+	}
+	//ordered options
 	for($i=0;$i<count($opt_name); $i++)
 	{
 		// Read in existing option value from database
@@ -70,6 +82,8 @@ function itro_plugin_options() {
 			itro_update_option( $opt_name[$i], $opt_val[$i] );
 		}
 	}
+	
+	//ordered field
 	for($i=0;$i<count($field_name); $i++)
 	{
 		// Read in existing option value from database
@@ -95,10 +109,15 @@ function itro_plugin_options() {
 		<?php
 	}
 	?>
+	<script>
+		function itroShow(x) {document.getElementById(x).style.height='auto';}
+		function itroHide(x) {document.getElementById(x).style.height='0px';}
+	</script>
+	
 	<img style="position:absolute" src="http://www.gnu.org/graphics/gplv3-88x31.png">
-<h1 style="text-align:center"><?php _e( 'I.T.RO. Popup Plugin', 'itro-plugin') ?></h1>
-<h2 style="text-align:center"><?php _e( 'Settings', 'itro-plugin') ?></h2>
-<div id="rightColumn">
+	<h1 style="text-align:center"><?php _e( 'I.T.RO. Popup Plugin', 'itro-plugin') ?></h1>
+	<h2 style="text-align:center"><?php _e( 'Settings', 'itro-plugin') ?></h2>
+	<div id="rightColumn">
 
 	<!-- Donation form - please don't change or remove!!! thanks !-->
 	<div id="donateForm">
@@ -169,7 +188,6 @@ function itro_plugin_options() {
 </div>
 
 <div id="leftColumn">
-
 	<!-- Settings form !-->
 	<div id="formContainer">
 		<form id="settingsForm" method="post" action="#settingsForm">
@@ -179,33 +197,52 @@ function itro_plugin_options() {
 			<p class="wpstyle" onClick="onOff_genOption();"><?php _e("General Popup Option:", 'itro-plugin' ); ?> </p>
 			<div id="genOption">
 				<input type="hidden" name="<?php echo $submitted_form; ?>" value="Y">
-				<p><?php _e("Popup seconds:", 'itro-plugin' ); ?> 
+				<p><?php _e("Popup seconds:", 'itro-plugin' ); ?> <sup style="text-decoration:underline; color:blue; cursor:help;" title="<?php _e("Set seconds until the popup automatically close",'itro-plugin');?>" >?</sup>
 					<input type="text" name="<?php echo $opt_name[0]; ?>" value="<?php echo $opt_val[0]; ?>" size="10">
 				</p>
-				<p><?php _e("Cookie Time Expiration (hours):", 'itro-plugin' ); ?> 
+				<p><?php _e("Next time visualization (hours):", 'itro-plugin' ); ?> <sup style="text-decoration:underline; color:blue; cursor:help;" title="<?php _e("Set hours until the popup will appear again",'itro-plugin');?>" >?</sup>
 					<input type="text" name="<?php echo $opt_name[2]; ?>" value="<?php echo $opt_val[2]; ?>" size="10">
 				</p>
-				<p><?php _e("Popup width (%):", 'itro-plugin' ); ?> 
+				<p><?php _e("Popup position:", 'itro-plugin' ); ?> <sup style="text-decoration:underline; color:blue; cursor:help;" title="<?php _e("Setting ABSOLUTE the popup will be static on the page. Setting FIXED it will scroll with the page.",'itro-plugin');?>" >?</sup>
+					<select name="<?php echo $opt_name[16]; ?>"  style="min-width:100px;">
+						<option value="absolute" <?php if(itro_get_option($opt_name[16])=='absolute') {echo 'selected="select"';} ?> >Absolute</option>
+						<option value="fixed" <?php if(itro_get_option($opt_name[16])=='fixed') {echo 'selected="select"';} ?> >Fixed</option>
+					</select>
+				</p>
+				<p><?php _e("Popup width:", 'itro-plugin' ); ?> <sup style="text-decoration:underline; color:blue; cursor:help;" title="<?php _e("Use the % to change width dinamically with the browser window i.e: 30%",'itro-plugin');?>" >?</sup>
 					<input type="text" name="<?php echo $opt_name[3]; ?>" value="<?php echo $opt_val[3]; ?>" size="10">
 				</p>
-				<p><?php _e("Popup background color", 'itro-plugin' ); ?> 
+				<p><?php _e("Popup height:", 'itro-plugin' ); ?> <sup style="text-decoration:underline; color:blue; cursor:help;" title="<?php _e("Leave it blank to maintain the aspect ratio",'itro-plugin');?>" >?</sup>
+					<input type="text" name="<?php echo $opt_name[17]; ?>" value="<?php echo $opt_val[17]; ?>" size="10">
+				</p>
+				<p><?php _e("Popup background color", 'itro-plugin' ); ?> <sup style="text-decoration:underline; color:blue; cursor:help;" title="<?php _e("RGB code i.e.: rgb(255,0,0) HEX code i.e.: #FF0000",'itro-plugin');?>" >?</sup>
 					<input type="text" name="<?php echo $opt_name[4]; ?>" value="<?php echo $opt_val[4]; ?>" size="10">
 				</p>
-				<p><?php _e("Popup border color:", 'itro-plugin' ); ?> 
+				<p><?php _e("Popup border color:", 'itro-plugin' ); ?> <sup style="text-decoration:underline; color:blue; cursor:help;" title="<?php _e("RGB code i.e.: rgb(255,0,0) HEX code i.e.: #FF0000",'itro-plugin');?>" >?</sup>
 					<input type="text" name="<?php echo $opt_name[5]; ?>" value="<?php echo $opt_val[5]; ?>" size="10">
 				</p>
-				<p><?php _e("Only in home page:", 'itro-plugin' ); ?> 
-					<input type="checkbox" name="<?php echo $opt_name[1]; ?>" value="yes" <?php if($opt_val[1]=='yes' ){echo 'checked="checked"';} ?> />
+				<p>
+					<fieldset>
+						<legend><?php _e("Decide where the popup will be displayed ")?></legend>
+						<?php _e("Only selected pages", 'itro-plugin' ); ?><sup style="text-decoration:underline; color:blue; cursor:help;" title="<?php _e("Multiple choise with CTRL+Click or SHIFT+Arrow up or down",'itro-plugin');?>">?</sup><input type="radio" name="<?php echo $opt_name[18];?>" value="some"<?php if($opt_val[18]=='some'){echo 'checked="checked"';} ?>/>&nbsp;&nbsp;&nbsp;
+						<?php _e("All pages", 'itro-plugin' ); ?><input type="radio" name="<?php echo $opt_name[18];?>" value="all" <?php if($opt_val[18]=='all' ){echo 'checked="checked"';} ?>/>&nbsp;&nbsp;&nbsp;
+						<?php _e("Any pages", 'itro-plugin' ); ?><input type="radio" name="<?php echo $opt_name[18];?>" value="any" <?php if($opt_val[18]=='any' ){echo 'checked="checked"';} ?>/>
+					</fieldset>
+					<?php
+					itro_list_pages();
+					?>
 				</p>
+				<input type="button" class="button-primary" onClick="popup.style.visibility=''; opaco.style.visibility='';" value="<?php echo _e("Preview")?>">
+				 														
 			</div>
 			
 			<!------- Custom html field -------->
-			<?php echo itro_onOff('customHtmlForm');?>
+			<?php echo itro_onOff('customHtmlForm'); ?>
 			<p class="wpstyle" onClick="onOff_customHtmlForm();"><?php _e("Custom HTML code:", 'itro-plugin' ); ?> </p>
 			<p id="customHtmlForm">
 				<textarea rows="9" cols="70" name="<?php echo $field_name[0]; ?>"><?php echo stripslashes($field_value[0]); ?></textarea>
 			</p>
-
+			
 			<!------------ Age restriction option  ---------->
 			<?php echo itro_onOff('ageRestSettings');?>
 			<p class="wpstyle" onClick="onOff_ageRestSettings();"><?php _e("Age restriction settings:", 'itro-plugin' ); ?> </p>
@@ -251,4 +288,65 @@ function itro_plugin_options() {
 		</form>
 	</div>	
 </div>
+
+<!-----------------------------------------------------------start popoup div and js preview--------------------------------------------------->	
+<div id="opaco" style="visibility:hidden;"></div>
+<div id="popup" style="visibility:hidden;">
+		<?php 
+		if (itro_get_option('img_source')!=NULL) 
+		{?>
+			<img id="popup_image" src="<?php echo itro_get_option('img_source');?>" style="padding-top:10px;">
+		<?php 
+		}
+		if (itro_get_option('age_restriction')==NULL) {?>
+		<p id="popup_text" align="center"><?php _e('This popup will be closed in: ','itro-plugin'); ?> <b id="timer"></b>&nbsp 
+		<a class="popup" href="javascript:void(0)" onclick="popup.style.visibility='Hidden',opaco.style.visibility='Hidden'"><?php _e('CLOSE NOW','itro-plugin'); ?></a>
+		</p>
+		<?php } else {?>
+		<p id="age_button_area" align="center" style="padding-top:10px;">
+		<input type="button" id="ageEnterButton" onClick="popup.style.visibility='Hidden',opaco.style.visibility='Hidden'" value="<?php echo itro_get_option('enter_button_text');?>">
+		<input type="button" id="ageLeaveButton" onClick="javascript:window.open('<?php echo itro_get_option('leave_button_url')?>','_self');" value="<?php echo itro_get_option('leave_button_text');?>">
+		</p>
+		<?php }?>
+		<script>
+		function lastLoad() 
+		{
+			var customHtml = document.getElementById('customHtml');
+			var html = '<?php echo stripslashes(itro_get_field('custom_html')); //insert custom html code?>';
+			customHtml.innerHTML = html;
+		}
+		window.onload = lastLoad;
+		</script>
+		<div id="customHtml"></div>
+</div>
+<script>
+	<?php 
+	if (itro_get_option('age_restriction')==NULL) //if is not set age restriction option popup will be closed automatically
+	{ ?>
+		var popTime=<?php echo itro_get_option('popup_time'); ?>;
+
+		setInterval(function(){popTimer()},1000); //the countdown 
+		function popTimer()
+		{
+			if (popTime>0){
+			document.getElementById("timer").innerHTML=popTime;
+			popTime--;
+			}
+			else {popup.style.visibility='Hidden'; opaco.style.visibility='Hidden';
+			}
+		}
+	<?php 
+	}?>
+	setInterval(function(){marginRefresh()},100); //refresh every 0.1 second the popup top margin (needed for browser window resizeing)
+	function marginRefresh()
+	{
+		//assign to x the window width and to y the window height
+		var w = window, d = document, e = d.documentElement, g = d.getElementsByTagName('body')[0], x = w.innerWidth||e.clientWidth||g.clientWidth ;
+		var y = w.innerHeight||e.clientHeight||g.clientHeight ;
+		var popupHeight = document.getElementById('popup').offsetHeight ; 		//display the actual px size of popup div
+		poupTopMargin = (y - popupHeight - 600)/8; 									//calculate the top margin 
+		document.getElementById('popup').style.marginTop = poupTopMargin ; 		//update the top margin of popup
+	}
+</script>
+<!--------------------------------------------------------------end popoup div and js---------------------------------------------------->
 <?php } ?>

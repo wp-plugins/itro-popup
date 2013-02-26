@@ -73,7 +73,7 @@ function get_itro_style() { ?>
 
 #popup
 {
-	position: fixed;
+	position: <?php echo itro_get_option('popup_position');?>;
 	margin: 0 auto;
 	left:30px;
 	right:30px;
@@ -82,7 +82,8 @@ function get_itro_style() { ?>
 	z-index: 999999;
 	border: 4px solid <?php echo itro_get_option('popup_border_color');?>;
 	border-radius: 8px 8px 8px 8px;
-	width: <?php echo itro_get_option('popup_width');?>%;
+	width: <?php echo itro_get_option('popup_width');?>;
+	height: <?php echo itro_get_option('popup_height');?>;
 	background-color: <?php echo itro_get_option('popup_background'); ?>;
 }
 
