@@ -1,27 +1,15 @@
 <?php
 /*
-Copyright 2013  I.T.RO.® Corp  (email : support.itro@live.com)
+Copyright 2013  I.T.RO.® (email : support.itro@live.com)
 This file is part of ITRO Popup Plugin.
-
-    ITRO Popup Plugin is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    ITRO Popup Plugin is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with ITRO Popup Plugin.  If not, see <http://www.gnu.org/licenses/>.
+All Right Reserved.
 
 Plugin Name: ITRO Popup Plugin
 Plugin URI: http://www.itro.eu/index.php/sezione-informatica/sviluppo-software/
 Description: EN - Show a perfecly centered customizable popup and a popup-system for age-restricted site and allow to insert own HTML code. IT- Visualizza un popup perfettamente centrato e personalizzabile con possibile blocco per i siti con restrizioni di età e permette di inserire il proprio codice HTML.
 Author: I.T.RO.(c) Sez. Informatica
 E-mail: support.itro@live.com
-Version: 2.0
+Version: 2.1
 Author URI: http://www.itro.eu/
 */
 
@@ -42,9 +30,11 @@ function load_itro_scripts()
 	//wp_enqueue_script('itro-script',  itroPath.'/script/itro-script.js');
 	}
 }
+
 register_activation_hook( __FILE__, 'itro_db_init' );
-add_action( 'init', 'load_itro_scripts' ); //Load All Scripts
-add_action( 'init', 'set_popup_cookie');
+add_action('init','itro_ie_compatibility');
+add_action('init', 'load_itro_scripts' ); //Load All Scripts
+add_action('init', 'set_popup_cookie');
 add_action('init','get_itro_style');
 add_action('init','itro_db_init');
 add_action('get_header','itro_display_popup');

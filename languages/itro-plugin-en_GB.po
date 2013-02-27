@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mc-plugin\n"
-"POT-Creation-Date: 2013-02-26 20:45+0100\n"
-"PO-Revision-Date: 2013-02-26 20:45+0100\n"
+"POT-Creation-Date: 2013-02-27 10:55+0100\n"
+"PO-Revision-Date: 2013-02-27 10:55+0100\n"
 "Last-Translator: \n"
 "Language-Team: ITRO Corp\n"
 "MIME-Version: 1.0\n"
@@ -13,228 +13,224 @@ msgstr ""
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: functions/admin-function.php:108
+#: functions/admin-function.php:96
 msgid "settings saved."
 msgstr ""
 
-#: functions/admin-function.php:118
-msgid "I.T.RO. Popup Plugin"
+#: functions/admin-function.php:106
+msgid "I.T.RO. Popup Plugin - Settings"
 msgstr ""
 
-#: functions/admin-function.php:119
-msgid "Settings"
-msgstr ""
-
-#: functions/admin-function.php:124
+#: functions/admin-function.php:111
 msgid "HELP US TO CONTINUE OUR DEVELOPING WORK. PLEASE DONATE!"
 msgstr ""
 
-#: functions/admin-function.php:154
+#: functions/admin-function.php:141
 msgid "Popup image settings:"
 msgstr ""
 
-#: functions/admin-function.php:168
+#: functions/admin-function.php:155
 msgid "Use direck url:"
 msgstr ""
 
-#: functions/admin-function.php:171
+#: functions/admin-function.php:158
 msgid "Save"
 msgstr ""
 
-#: functions/admin-function.php:174
+#: functions/admin-function.php:161
 msgid "Current image link:"
 msgstr ""
 
-#: functions/admin-function.php:178
+#: functions/admin-function.php:165
 msgid "Select"
 msgstr ""
 
-#: functions/admin-function.php:179
+#: functions/admin-function.php:166
 msgid "Delete"
 msgstr ""
 
-#: functions/admin-function.php:181
+#: functions/admin-function.php:168
 msgid "Select the image"
 msgstr ""
 
-#: functions/admin-function.php:183
+#: functions/admin-function.php:170
 msgid "Upload"
 msgstr ""
 
-#: functions/admin-function.php:184
+#: functions/admin-function.php:171
 msgid "Overwrite"
 msgstr ""
 
-#: functions/admin-function.php:197
+#: functions/admin-function.php:184
 msgid "General Popup Option:"
 msgstr ""
 
-#: functions/admin-function.php:200
+#: functions/admin-function.php:187
 msgid "Popup seconds:"
 msgstr ""
 
-#: functions/admin-function.php:200
+#: functions/admin-function.php:187
 msgid "Set seconds until the popup automatically close"
 msgstr ""
 
-#: functions/admin-function.php:203
+#: functions/admin-function.php:190
 msgid "Next time visualization (hours):"
 msgstr ""
 
-#: functions/admin-function.php:203
+#: functions/admin-function.php:190
 msgid "Set hours until the popup will appear again"
 msgstr ""
 
-#: functions/admin-function.php:206
+#: functions/admin-function.php:193
 msgid "Popup position:"
 msgstr ""
 
-#: functions/admin-function.php:206
+#: functions/admin-function.php:193
 msgid ""
 "Setting ABSOLUTE the popup will be static on the page. Setting FIXED it will "
 "scroll with the page."
 msgstr ""
 
-#: functions/admin-function.php:212
+#: functions/admin-function.php:199
 msgid "Popup width:"
 msgstr ""
 
-#: functions/admin-function.php:212
+#: functions/admin-function.php:199
 msgid "Use the % to change width dinamically with the browser window i.e: 30%"
 msgstr ""
 
-#: functions/admin-function.php:215
+#: functions/admin-function.php:202
 msgid "Popup height:"
 msgstr ""
 
-#: functions/admin-function.php:215
+#: functions/admin-function.php:202
 msgid "Leave it blank to maintain the aspect ratio"
 msgstr ""
 
-#: functions/admin-function.php:218
+#: functions/admin-function.php:205
 msgid "Popup background color"
 msgstr ""
 
-#: functions/admin-function.php:218 functions/admin-function.php:221
+#: functions/admin-function.php:205 functions/admin-function.php:208
 msgid "RGB code i.e.: rgb(255,0,0) HEX code i.e.: #FF0000"
 msgstr ""
 
-#: functions/admin-function.php:221
+#: functions/admin-function.php:208
 msgid "Popup border color:"
 msgstr ""
 
-#: functions/admin-function.php:226
-msgid "Decide where the popup will be displayed "
+#: functions/admin-function.php:213
+msgid "Decide where the popup will be displayed"
 msgstr ""
 
-#: functions/admin-function.php:227
+#: functions/admin-function.php:214
 msgid "Only selected pages"
 msgstr ""
 
-#: functions/admin-function.php:227
+#: functions/admin-function.php:214
 msgid "Multiple choise with CTRL+Click or SHIFT+Arrow up or down"
 msgstr ""
 
-#: functions/admin-function.php:228
+#: functions/admin-function.php:215
 msgid "All pages"
 msgstr ""
 
-#: functions/admin-function.php:229
+#: functions/admin-function.php:216
 msgid "Any pages"
 msgstr ""
 
-#: functions/admin-function.php:235
+#: functions/admin-function.php:222
 msgid "Preview"
 msgstr ""
 
-#: functions/admin-function.php:241
+#: functions/admin-function.php:228
 msgid "Custom HTML code:"
 msgstr ""
 
-#: functions/admin-function.php:248
+#: functions/admin-function.php:235
 msgid "Age restriction settings:"
 msgstr ""
 
-#: functions/admin-function.php:251
+#: functions/admin-function.php:238
 msgid "Age restricted page:"
 msgstr ""
 
-#: functions/admin-function.php:255
+#: functions/admin-function.php:242
 msgid "Enter button text:"
 msgstr ""
 
-#: functions/admin-function.php:256
+#: functions/admin-function.php:243
 msgid "i.e.: I AM OVER 18 - ENTER"
 msgstr ""
 
-#: functions/admin-function.php:258
+#: functions/admin-function.php:245
 msgid "Enter button background color:"
 msgstr ""
 
-#: functions/admin-function.php:261
+#: functions/admin-function.php:248
 msgid "Enter button border color:"
 msgstr ""
 
-#: functions/admin-function.php:264
+#: functions/admin-function.php:251
 msgid "Enter button font color:"
 msgstr ""
 
-#: functions/admin-function.php:267
+#: functions/admin-function.php:254
 msgid "Leave button text:"
 msgstr ""
 
-#: functions/admin-function.php:268
+#: functions/admin-function.php:255
 msgid "i.e.: I AM UNDER 18 - LEAVE"
 msgstr ""
 
-#: functions/admin-function.php:270
+#: functions/admin-function.php:257
 msgid "Leave button url:"
 msgstr ""
 
-#: functions/admin-function.php:271
+#: functions/admin-function.php:258
 msgid "i.e.: http://www.mysite.com/leave.html"
 msgstr ""
 
-#: functions/admin-function.php:273
+#: functions/admin-function.php:260
 msgid "Leave button background color:"
 msgstr ""
 
-#: functions/admin-function.php:276
+#: functions/admin-function.php:263
 msgid "Leave button border color:"
 msgstr ""
 
-#: functions/admin-function.php:279
+#: functions/admin-function.php:266
 msgid "Leave button font color:"
 msgstr ""
 
-#: functions/admin-function.php:302 functions/core-function.php:51
+#: functions/admin-function.php:289 functions/core-function.php:42
 msgid "This popup will be closed in: "
 msgstr ""
 
-#: functions/admin-function.php:303 functions/core-function.php:52
+#: functions/admin-function.php:290 functions/core-function.php:43
 msgid "CLOSE NOW"
 msgstr ""
 
-#: functions/core-function.php:116
+#: functions/core-function.php:107
 msgid "Warning file is too big, this may cause problems!"
 msgstr ""
 
-#: functions/core-function.php:127
+#: functions/core-function.php:118
 msgid "already exists. Please check the overwrite option"
 msgstr ""
 
-#: functions/core-function.php:169
+#: functions/core-function.php:160
 msgid "No image selected"
 msgstr ""
 
-#: functions/core-function.php:174
+#: functions/core-function.php:165
 msgid " successfully deleted"
 msgstr ""
 
-#: functions/core-function.php:184
+#: functions/core-function.php:175
 msgid "No image used"
 msgstr ""
 
-#: functions/core-function.php:190
+#: functions/core-function.php:181
 msgid " selected"
 msgstr ""

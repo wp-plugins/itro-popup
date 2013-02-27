@@ -1,20 +1,8 @@
 <?php
 /*
-Copyright 2013  I.T.RO.® Corp  (email : support.itro@live.com)
+Copyright 2013  I.T.RO.® (email : support.itro@live.com)
 This file is part of ITRO Popup Plugin.
-
-    ITRO Popup Plugin is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    ITRO Popup Plugin is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with ITRO Popup Plugin.  If not, see <http://www.gnu.org/licenses/>.
+All Right Reserved.
 */
 
 // Administration menu
@@ -114,11 +102,10 @@ function itro_plugin_options() {
 		function itroHide(x) {document.getElementById(x).style.height='0px';}
 	</script>
 	
-	<img style="position:absolute" src="http://www.gnu.org/graphics/gplv3-88x31.png">
-	<h1 style="text-align:center"><?php _e( 'I.T.RO. Popup Plugin', 'itro-plugin') ?></h1>
-	<h2 style="text-align:center"><?php _e( 'Settings', 'itro-plugin') ?></h2>
-	<div id="rightColumn">
-
+	<img style="position:relative; float:right;" src="">
+	<h1><?php _e( 'I.T.RO. Popup Plugin - Settings', 'itro-plugin');?></h1>
+	
+<div id="rightColumn">
 	<!-- Donation form - please don't change or remove!!! thanks !-->
 	<div id="donateForm">
 		<h3><?php _e("HELP US TO CONTINUE OUR DEVELOPING WORK. PLEASE DONATE!")?></h3>
@@ -223,7 +210,7 @@ function itro_plugin_options() {
 				</p>
 				<p>
 					<fieldset>
-						<legend><?php _e("Decide where the popup will be displayed ")?></legend>
+						<legend><?php _e("Decide where the popup will be displayed","itro-plugin")?></legend>
 						<?php _e("Only selected pages", 'itro-plugin' ); ?><sup style="text-decoration:underline; color:blue; cursor:help;" title="<?php _e("Multiple choise with CTRL+Click or SHIFT+Arrow up or down",'itro-plugin');?>">?</sup><input type="radio" name="<?php echo $opt_name[18];?>" value="some"<?php if($opt_val[18]=='some'){echo 'checked="checked"';} ?>/>&nbsp;&nbsp;&nbsp;
 						<?php _e("All pages", 'itro-plugin' ); ?><input type="radio" name="<?php echo $opt_name[18];?>" value="all" <?php if($opt_val[18]=='all' ){echo 'checked="checked"';} ?>/>&nbsp;&nbsp;&nbsp;
 						<?php _e("Any pages", 'itro-plugin' ); ?><input type="radio" name="<?php echo $opt_name[18];?>" value="any" <?php if($opt_val[18]=='any' ){echo 'checked="checked"';} ?>/>
@@ -320,23 +307,19 @@ function itro_plugin_options() {
 		<div id="customHtml"></div>
 </div>
 <script>
-	<?php 
-	if (itro_get_option('age_restriction')==NULL) //if is not set age restriction option popup will be closed automatically
-	{ ?>
-		var popTime=<?php echo itro_get_option('popup_time'); ?>;
+	var popTime=<?php echo itro_get_option('popup_time'); ?>;
 
-		setInterval(function(){popTimer()},1000); //the countdown 
-		function popTimer()
-		{
-			if (popTime>0){
-			document.getElementById("timer").innerHTML=popTime;
-			popTime--;
-			}
-			else {popup.style.visibility='Hidden'; opaco.style.visibility='Hidden';
-			}
+	setInterval(function(){popTimer()},1000); //the countdown 
+	function popTimer()
+	{
+		if (popTime>0){
+		document.getElementById("timer").innerHTML=popTime;
+		popTime--;
 		}
-	<?php 
-	}?>
+		else {popup.style.visibility='Hidden'; opaco.style.visibility='Hidden';
+		}
+	}
+
 	setInterval(function(){marginRefresh()},100); //refresh every 0.1 second the popup top margin (needed for browser window resizeing)
 	function marginRefresh()
 	{
