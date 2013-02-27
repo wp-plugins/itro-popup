@@ -219,7 +219,7 @@ function itro_plugin_options() {
 					itro_list_pages();
 					?>
 				</p>
-				<input type="button" class="button-primary" onClick="popup.style.visibility=''; opaco.style.visibility='';" value="<?php echo _e("Preview")?>">
+				<!---<input type="button" class="button-primary" onClick="popup.style.visibility=''; opaco.style.visibility='';" value="<?php echo _e("Preview")?>"> ----!>
 				 														
 			</div>
 			
