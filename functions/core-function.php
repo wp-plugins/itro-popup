@@ -48,46 +48,8 @@ function itro_display_popup()
 				<input type="button" id="ageLeaveButton" onClick="javascript:window.open('<?php echo itro_get_option('leave_button_url')?>','_self');" value="<?php echo itro_get_option('leave_button_text');?>">
 				</p>
 				<?php }?>
-				<script>
-				function lastLoad() 
-				{
-					var customHtml = document.getElementById('customHtml');
-					var html = '<?php echo stripslashes(itro_get_field('custom_html')); //insert custom html code?>';
-					customHtml.innerHTML = html;
-				}
-				window.onload = lastLoad;
-				</script>
 				<div id="customHtml"></div>
 		</div>
-		<script>
-			<?php 
-			if (itro_get_option('age_restriction')==NULL) //if is not set age restriction option popup will be closed automatically
-			{ ?>
-				var popTime=<?php echo itro_get_option('popup_time'); ?>;
-
-				setInterval(function(){popTimer()},1000); //the countdown 
-				function popTimer()
-				{
-					if (popTime>0){
-					document.getElementById("timer").innerHTML=popTime;
-					popTime--;
-					}
-					else {popup.style.visibility='Hidden'; opaco.style.visibility='Hidden';
-					}
-				}
-			<?php 
-			}?>
-			setInterval(function(){marginRefresh()},100); //refresh every 0.1 second the popup top margin (needed for browser window resizeing)
-			function marginRefresh()
-			{
-				//assign to x the window width and to y the window height
-				var w = window, d = document, e = d.documentElement, g = d.getElementsByTagName('body')[0], x = w.innerWidth||e.clientWidth||g.clientWidth ;
-				var y = w.innerHeight||e.clientHeight||g.clientHeight ;
-				var popupHeight = document.getElementById('popup').offsetHeight ; 		//display the actual px size of popup div
-				poupTopMargin = (y - popupHeight)/8; 									//calculate the top margin 
-				document.getElementById('popup').style.marginTop = poupTopMargin ; 		//update the top margin of popup
-			}
-		</script>
 		<!---------end popoup div and js--------->
 <?php 
 	} 

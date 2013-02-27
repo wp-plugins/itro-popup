@@ -96,7 +96,7 @@ function itro_plugin_options() {
 		<div class="updated"><p><strong><?php _e('settings saved.', 'itro-plugin' ); ?></strong></p></div>
 		<?php
 	}
-	?>
+	?>  
 	<script>
 		function itroShow(x) {document.getElementById(x).style.height='auto';}
 		function itroHide(x) {document.getElementById(x).style.height='0px';}
@@ -131,7 +131,8 @@ function itro_plugin_options() {
 	<!-- Color Table !-->
 	<object>
 		<param name="movie" value="file.swf">
-		<embed id="colorTable" src="<?php echo itroPath . 'other/color.swf'?>" width="100" height="100">
+		<embed wmode="transparent" id="colorTable" src="<?php echo itroPath . 'other/color.swf'?>" width="100" height="100">
+		<param name="wmode" value="transparent" />
 		</embed>
 	</object>
 	<?php
@@ -219,7 +220,7 @@ function itro_plugin_options() {
 					itro_list_pages();
 					?>
 				</p>
-				<!---<input type="button" class="button-primary" onClick="popup.style.visibility=''; opaco.style.visibility='';" value="<?php echo _e("Preview")?>"> ----!>
+				<input type="button" class="button-primary" onClick="popup.style.visibility=''; opaco.style.visibility='';" value="<?php echo _e("Preview")?>">
 				 														
 			</div>
 			
@@ -303,33 +304,44 @@ function itro_plugin_options() {
 			customHtml.innerHTML = html;
 		}
 		window.onload = lastLoad;
+		document.onkeydown = function(event) 
+		{
+			event = event || window.event;
+			var key = event.keyCode;
+			if(key==27){popup.style.visibility='Hidden'; opaco.style.visibility='Hidden';} 
+		}
 		</script>
 		<div id="customHtml"></div>
 </div>
 <script>
-	var popTime=<?php echo itro_get_option('popup_time'); ?>;
+		<?php
+		if (itro_get_option('age_restriction')==NULL) //if is not set age restriction option popup will be closed automatically
+		{ ?>
+			var popTime=<?php echo itro_get_option('popup_time'); ?>;
 
-	setInterval(function(){popTimer()},1000); //the countdown 
-	function popTimer()
-	{
-		if (popTime>0){
-		document.getElementById("timer").innerHTML=popTime;
-		popTime--;
+			setInterval(function(){popTimer()},1000); //the countdown 
+			function popTimer()
+			{
+				if (popTime>0){
+				document.getElementById("timer").innerHTML=popTime;
+				popTime--;
+				}
+				else {popup.style.visibility='Hidden'; opaco.style.visibility='Hidden';
+				}
+			}
+		<?php 
+		}?>
+		setInterval(function(){marginRefresh()},100); //refresh every 0.1 second the popup top margin (needed for browser window resizeing)
+		function marginRefresh()
+		{
+			//assign to x the window width and to y the window height
+			var w = window, d = document, e = d.documentElement, g = d.getElementsByTagName('body')[0], x = w.innerWidth||e.clientWidth||g.clientWidth ;
+			var y = w.innerHeight||e.clientHeight||g.clientHeight ;
+			var popupHeight = document.getElementById('popup').offsetHeight ; 		//display the actual px size of popup div
+			poupTopMargin = (y - popupHeight - 20)/2;								//calculate the top margin 
+			if(poupTopMargin > 0) {poupTopMargin = poupTopMargin/10};
+			document.getElementById('popup').style.marginTop = poupTopMargin ; 		//update the top margin of popup
 		}
-		else {popup.style.visibility='Hidden'; opaco.style.visibility='Hidden';
-		}
-	}
-
-	setInterval(function(){marginRefresh()},100); //refresh every 0.1 second the popup top margin (needed for browser window resizeing)
-	function marginRefresh()
-	{
-		//assign to x the window width and to y the window height
-		var w = window, d = document, e = d.documentElement, g = d.getElementsByTagName('body')[0], x = w.innerWidth||e.clientWidth||g.clientWidth ;
-		var y = w.innerHeight||e.clientHeight||g.clientHeight ;
-		var popupHeight = document.getElementById('popup').offsetHeight ; 		//display the actual px size of popup div
-		poupTopMargin = (y - popupHeight - 600)/8; 									//calculate the top margin 
-		document.getElementById('popup').style.marginTop = poupTopMargin ; 		//update the top margin of popup
-	}
 </script>
 <!--------------------------------------------------------------end popoup div and js---------------------------------------------------->
 <?php } ?>
