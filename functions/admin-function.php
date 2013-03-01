@@ -51,7 +51,8 @@ function itro_plugin_options() {
 			$selected_page_id=json_encode($_POST['selected_page_id']);
 			itro_update_option('selected_page_id',$selected_page_id);
 		}
-		itro_update_option('auto_margin_check',$_POST['auto_margin_check']);
+		if( isset($_POST['auto_margin_check']) ) { itro_update_option('auto_margin_check',$_POST['auto_margin_check']); }
+		else itro_update_option('auto_margin_check',NULL);
 	}
 	//ordered options
 	for($i=0;$i<count($opt_name); $i++)
