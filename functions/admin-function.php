@@ -19,7 +19,7 @@ function itro_plugin_options() {
 	{
 		$opt_name=array(
 		/*opt 0*/'popup_time',
-		/*opt 1*/ '', //emply slot... :)
+		/*opt 1*/'popup_top_margin',
 		/*opt 2*/'cookie_time_exp',
 		/*opt 3*/'popup_width',
 		/*opt 4*/'popup_background',
@@ -51,6 +51,7 @@ function itro_plugin_options() {
 			$selected_page_id=json_encode($_POST['selected_page_id']);
 			itro_update_option('selected_page_id',$selected_page_id);
 		}
+		itro_update_option('auto_margin_check',$_POST['auto_margin_check']);
 	}
 	//ordered options
 	for($i=0;$i<count($opt_name); $i++)
@@ -197,6 +198,15 @@ function itro_plugin_options() {
 						<option value="fixed" <?php if(itro_get_option($opt_name[16])=='fixed') {echo 'selected="select"';} ?> >Fixed</option>
 					</select>
 				</p>
+				<?php echo itro_onOff_checkbox('autoMarginCheck','marginDiv','true');?>
+				<p><?php _e("Use automatic top margin:", 'itro-plugin' ); ?><sup style="text-decoration:underline; color:blue; cursor:help;" title="<?php _e("The system will try to auto center the popup, in case of problem deselect this option",'itro-plugin');?>" >?</sup>
+					<input id="autoMarginCheck" type="checkbox" onClick="autoMarginCheck_checkbox_marginDiv()" name="auto_margin_check" value="yes" <?php if(itro_get_option('auto_margin_check')=='yes' ){echo 'checked="checked"';} ?> />
+				</p>
+				<div id="marginDiv" style="height:<?php if(itro_get_option('auto_margin_check')=='yes'){echo '0px;';}?>">
+				<p><?php _e("Popup top margin:", 'itro-plugin' ); ?> <sup style="text-decoration:underline; color:blue; cursor:help;" title="<?php _e("Select manually the top margin to vertical align the popup i.e.: 20px or 10%",'itro-plugin');?>" >?</sup>
+					<input type="text" name="<?php echo $opt_name[1]; ?>" value="<?php echo $opt_val[1]; ?>" size="10">
+				</p>
+				</div>
 				<p><?php _e("Popup width:", 'itro-plugin' ); ?> <sup style="text-decoration:underline; color:blue; cursor:help;" title="<?php _e("Use the % to change width dinamically with the browser window i.e: 30%",'itro-plugin');?>" >?</sup>
 					<input type="text" name="<?php echo $opt_name[3]; ?>" value="<?php echo $opt_val[3]; ?>" size="10">
 				</p>
@@ -278,6 +288,8 @@ function itro_plugin_options() {
 </div>
 
 <!-----------------------------------------------------------start popoup div and js preview--------------------------------------------------->	
+<?php get_itro_style();?>
+
 <div id="opaco" style="visibility:hidden;"></div>
 <div id="popup" style="visibility:hidden;">
 		<?php 
@@ -330,18 +342,22 @@ function itro_plugin_options() {
 				}
 			}
 		<?php 
-		}?>
-		setInterval(function(){marginRefresh()},100); //refresh every 0.1 second the popup top margin (needed for browser window resizeing)
-		function marginRefresh()
-		{
-			//assign to x the window width and to y the window height
-			var w = window, d = document, e = d.documentElement, g = d.getElementsByTagName('body')[0], x = w.innerWidth||e.clientWidth||g.clientWidth ;
-			var y = w.innerHeight||e.clientHeight||g.clientHeight ;
-			var popupHeight = document.getElementById('popup').offsetHeight ; 		//display the actual px size of popup div
-			poupTopMargin = (y - popupHeight - 20)/2;								//calculate the top margin 
-			if(poupTopMargin > 0) {poupTopMargin = poupTopMargin/10};
-			document.getElementById('popup').style.marginTop = poupTopMargin ; 		//update the top margin of popup
 		}
+		if( itro_get_option('auto_margin_check') != NULL )
+		{?>
+			setInterval(function(){marginRefresh()},100); //refresh every 0.1 second the popup top margin (needed for browser window resizeing)
+			function marginRefresh()
+			{
+				//assign to x the window width and to y the window height
+				var w = window, d = document, e = d.documentElement, g = d.getElementsByTagName('body')[0], x = w.innerWidth||e.clientWidth||g.clientWidth ;
+				var y = w.innerHeight||e.clientHeight||g.clientHeight ;
+				var popupHeight = document.getElementById('popup').offsetHeight ; 		//display the actual px size of popup div
+				poupTopMargin = (y - popupHeight)/2; 									//calculate the top margin
+				if(poupTopMargin > 0) {poupTopMargin = poupTopMargin/8};
+				document.getElementById('popup').style.marginTop = poupTopMargin ; 		//update the top margin of popup
+			}
+		<?php 
+		}?>
 </script>
 <!--------------------------------------------------------------end popoup div and js---------------------------------------------------->
 <?php } ?>
