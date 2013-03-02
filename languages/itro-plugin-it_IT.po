@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mc-plugin\n"
 "POT-Creation-Date: 2013-03-02 00:44+0100\n"
-"PO-Revision-Date: 2013-03-02 00:45+0100\n"
+"PO-Revision-Date: 2013-03-02 10:02+0100\n"
 "Last-Translator: \n"
 "Language-Team: ITRO Corp\n"
 "Language: ITALIANO\n"
@@ -130,7 +130,7 @@ msgstr ""
 
 #: functions/admin-function.php:213
 msgid "Popup height:"
-msgstr "Larghezza Popup:"
+msgstr "Altezza Popup:"
 
 #: functions/admin-function.php:213
 msgid "Leave it blank to maintain the aspect ratio"
