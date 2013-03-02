@@ -1,0 +1,255 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: mc-plugin\n"
+"POT-Creation-Date: 2013-03-02 00:44+0100\n"
+"PO-Revision-Date: 2013-03-02 00:44+0100\n"
+"Last-Translator: \n"
+"Language-Team: ITRO Corp\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: functions/admin-function.php:97
+msgid "settings saved."
+msgstr ""
+
+#: functions/admin-function.php:107
+msgid "I.T.RO. Popup Plugin - Settings"
+msgstr ""
+
+#: functions/admin-function.php:112
+msgid "HELP US TO CONTINUE OUR DEVELOPING WORK. PLEASE DONATE!"
+msgstr ""
+
+#: functions/admin-function.php:143
+msgid "Popup image settings:"
+msgstr ""
+
+#: functions/admin-function.php:157
+msgid "Use direck url:"
+msgstr ""
+
+#: functions/admin-function.php:160
+msgid "Save"
+msgstr ""
+
+#: functions/admin-function.php:163
+msgid "Current image link:"
+msgstr ""
+
+#: functions/admin-function.php:167
+msgid "Select"
+msgstr ""
+
+#: functions/admin-function.php:168
+msgid "Delete"
+msgstr ""
+
+#: functions/admin-function.php:170
+msgid "Select the image"
+msgstr ""
+
+#: functions/admin-function.php:172
+msgid "Upload"
+msgstr ""
+
+#: functions/admin-function.php:173
+msgid "Overwrite"
+msgstr ""
+
+#: functions/admin-function.php:186
+msgid "General Popup Option:"
+msgstr ""
+
+#: functions/admin-function.php:189
+msgid "Popup seconds:"
+msgstr ""
+
+#: functions/admin-function.php:189
+msgid "Set seconds until the popup automatically close"
+msgstr ""
+
+#: functions/admin-function.php:192
+msgid "Next time visualization (hours):"
+msgstr ""
+
+#: functions/admin-function.php:192
+msgid "Set hours until the popup will appear again"
+msgstr ""
+
+#: functions/admin-function.php:195
+msgid "Popup position:"
+msgstr ""
+
+#: functions/admin-function.php:195
+msgid ""
+"Setting ABSOLUTE the popup will be static on the page. Setting FIXED it will "
+"scroll with the page."
+msgstr ""
+
+#: functions/admin-function.php:202
+msgid "Use automatic top margin:"
+msgstr ""
+
+#: functions/admin-function.php:202
+msgid ""
+"The system will try to auto center the popup, in case of problem deselect "
+"this option"
+msgstr ""
+
+#: functions/admin-function.php:206
+msgid "Popup top margin:"
+msgstr ""
+
+#: functions/admin-function.php:206
+msgid ""
+"Select manually the top margin to vertical align the popup i.e.: 20px or 10%"
+msgstr ""
+
+#: functions/admin-function.php:210
+msgid "Popup width:"
+msgstr ""
+
+#: functions/admin-function.php:210
+msgid "Use the % to change width dinamically with the browser window i.e: 30%"
+msgstr ""
+
+#: functions/admin-function.php:213
+msgid "Popup height:"
+msgstr ""
+
+#: functions/admin-function.php:213
+msgid "Leave it blank to maintain the aspect ratio"
+msgstr ""
+
+#: functions/admin-function.php:216
+msgid "Popup background color"
+msgstr ""
+
+#: functions/admin-function.php:216 functions/admin-function.php:219
+msgid "RGB code i.e.: rgb(255,0,0) HEX code i.e.: #FF0000"
+msgstr ""
+
+#: functions/admin-function.php:219
+msgid "Popup border color:"
+msgstr ""
+
+#: functions/admin-function.php:224
+msgid "Decide where the popup will be displayed"
+msgstr ""
+
+#: functions/admin-function.php:225
+msgid "Only selected pages"
+msgstr ""
+
+#: functions/admin-function.php:225
+msgid "Multiple choise with CTRL+Click or SHIFT+Arrow up or down"
+msgstr ""
+
+#: functions/admin-function.php:226
+msgid "All pages"
+msgstr ""
+
+#: functions/admin-function.php:227
+msgid "Any pages"
+msgstr ""
+
+#: functions/admin-function.php:233
+msgid "Preview"
+msgstr ""
+
+#: functions/admin-function.php:239
+msgid "Custom HTML code:"
+msgstr ""
+
+#: functions/admin-function.php:246
+msgid "Age restriction settings:"
+msgstr ""
+
+#: functions/admin-function.php:249
+msgid "Age restricted page:"
+msgstr ""
+
+#: functions/admin-function.php:253
+msgid "Enter button text:"
+msgstr ""
+
+#: functions/admin-function.php:254
+msgid "i.e.: I AM OVER 18 - ENTER"
+msgstr ""
+
+#: functions/admin-function.php:256
+msgid "Enter button background color:"
+msgstr ""
+
+#: functions/admin-function.php:259
+msgid "Enter button border color:"
+msgstr ""
+
+#: functions/admin-function.php:262
+msgid "Enter button font color:"
+msgstr ""
+
+#: functions/admin-function.php:265
+msgid "Leave button text:"
+msgstr ""
+
+#: functions/admin-function.php:266
+msgid "i.e.: I AM UNDER 18 - LEAVE"
+msgstr ""
+
+#: functions/admin-function.php:268
+msgid "Leave button url:"
+msgstr ""
+
+#: functions/admin-function.php:269
+msgid "i.e.: http://www.mysite.com/leave.html"
+msgstr ""
+
+#: functions/admin-function.php:271
+msgid "Leave button background color:"
+msgstr ""
+
+#: functions/admin-function.php:274
+msgid "Leave button border color:"
+msgstr ""
+
+#: functions/admin-function.php:277
+msgid "Leave button font color:"
+msgstr ""
+
+#: functions/admin-function.php:302 functions/core-function.php:42
+msgid "This popup will be closed in: "
+msgstr ""
+
+#: functions/admin-function.php:303 functions/core-function.php:43
+msgid "CLOSE NOW"
+msgstr ""
+
+#: functions/core-function.php:69
+msgid "Warning file is too big, this may cause problems!"
+msgstr ""
+
+#: functions/core-function.php:80
+msgid "already exists. Please check the overwrite option"
+msgstr ""
+
+#: functions/core-function.php:122
+msgid "No image selected"
+msgstr ""
+
+#: functions/core-function.php:127
+msgid " successfully deleted"
+msgstr ""
+
+#: functions/core-function.php:137
+msgid "No image used"
+msgstr ""
+
+#: functions/core-function.php:143
+msgid " selected"
+msgstr ""
