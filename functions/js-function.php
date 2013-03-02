@@ -64,8 +64,10 @@ function itro_popup_js()
 			function lastLoad() 
 			{
 				var customHtml = document.getElementById('customHtml');
-				var html = '<?php echo stripslashes(itro_get_field('custom_html')); //insert custom html code?>';
-				customHtml.innerHTML = html;
+				customHtml.innerHTML = '<?php 
+											$custom_field = stripslashes(itro_get_field('custom_html')); //insert custom html code 
+											echo str_replace("\r\n",'',$custom_field); //return the string whitout new line
+											?>';
 			}
 			window.onload = lastLoad;
 		</script>

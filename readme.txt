@@ -4,7 +4,7 @@ Donate link: http://www.itro.eu/index.php/donate/
 Tags: popup, age, restriction, block, violence, compability, ie9
 Requires at least: 3.0.1
 Tested up to: 3.5.1
-Stable tag: 2.1.6
+Stable tag: 2.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -60,6 +60,9 @@ In the first one are stored all small data option, in the other one bigger data 
 no screenshot avaliable
 
 == Changelog ==
+= 2.2 =
+Now automatic centering works great. Important custom HTML cod fixed.
+
 = 2.1.6 =
 Now automatic centering works great.
 
@@ -100,6 +103,9 @@ bug fixed: color table now works in admin pannel.
 First released version.
 
 == Upgrade Notice ==
+= 2.2 =
+Now automatic centering works great. Important custom HTML cod fixed.
+
 = 2.1.6 =
 Now automatic centering works great.
 NEED TO UPGRADE!
