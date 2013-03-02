@@ -37,6 +37,9 @@ Email to support.itro@live.com
 4. Enjoy
 
 == Frequently Asked Questions ==
+= How can i close the preview? =
+Simply press ESC button on your keyboard.
+
 = How can i have a preview of my settings? =
 Select in the section "Decide where the popup will be displayed" "Any pages", remember to save options
 than click on the "Preview" button.
