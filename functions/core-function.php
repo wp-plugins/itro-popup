@@ -26,7 +26,7 @@ function itro_display_popup()
 		foreach ($selected_page_id as $single_id)
 		{if ($single_id==get_the_id()) $id_match++; }
 	}
-	if(itro_get_option('page_selection')!='any')
+	if(itro_get_option('page_selection')!='any' && !isset($_COOKIE['popup_cookie']) )
 	if( ($id_match != NULL) || (itro_get_option('page_selection')=='all') )
 	{ ?>
 		<!--------------start popoup div and js--------------->	

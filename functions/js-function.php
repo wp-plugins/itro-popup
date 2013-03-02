@@ -6,61 +6,73 @@ All Right Reserved.
 */
 function itro_popup_js()
 { 
+	//this condition, control if the popup must or not by displayed in a specified page
+	$selected_page_id = json_decode(itro_get_option('selected_page_id'));
+	$id_match = NULL;
+	if( isset($selected_page_id) ) 
+	{
+		foreach ($selected_page_id as $single_id)
+		{if ($single_id==get_the_id()) $id_match++; }
+	}
+	if(itro_get_option('page_selection')!='any' && !isset($_COOKIE['popup_cookie']) )
+	if( ($id_match != NULL) || (itro_get_option('page_selection')=='all') )
+	{
 	?>
-	<script type="text/javascript">
-	<?php
-	if (itro_get_option('age_restriction')==NULL)
-	{?>
-		document.onkeydown = function(event) 
-		{
-			event = event || window.event;
-			var key = event.keyCode;
-			if(key==27){popup.style.visibility='Hidden'; opaco.style.visibility='Hidden';} 
-		}
-	<?php
-	}?>
-	
-	<?php 
-		if (itro_get_option('age_restriction')==NULL) //if is not set age restriction option popup will be closed automatically
-		{ ?>
-			var popTime=<?php echo itro_get_option('popup_time'); ?>;
-
-			setInterval(function(){popTimer()},1000); //the countdown 
-			function popTimer()
-			{
-				if (popTime>0){
-				document.getElementById("timer").innerHTML=popTime;
-				popTime--;
-				}
-				else {popup.style.visibility='Hidden'; opaco.style.visibility='Hidden';
-				}
-			}
-		<?php 
-		}
-		if( itro_get_option('auto_margin_check') != NULL )
+		<script type="text/javascript">
+		<?php
+		if (itro_get_option('age_restriction')==NULL)
 		{?>
-			setInterval(function(){marginRefresh()},100); //refresh every 0.1 second the popup top margin (needed for browser window resizeing)
-			function marginRefresh()
+			document.onkeydown = function(event) 
 			{
-				//assign to x the window width and to y the window height
-				var w = window, d = document, e = d.documentElement, g = d.getElementsByTagName('body')[0], x = w.innerWidth||e.clientWidth||g.clientWidth ;
-				var y = w.innerHeight||e.clientHeight||g.clientHeight ;
-				var popupHeight = document.getElementById('popup').offsetHeight ; 		//display the actual px size of popup div
-				poupTopMargin = (y - popupHeight)/2; 									//calculate the top margin
-				if(poupTopMargin > 0) {poupTopMargin = poupTopMargin/8};
-				document.getElementById('popup').style.marginTop = poupTopMargin ; 		//update the top margin of popup
+				event = event || window.event;
+				var key = event.keyCode;
+				if(key==27){popup.style.visibility='Hidden'; opaco.style.visibility='Hidden';} 
 			}
-		<?php 
+		<?php
 		}?>
-		function lastLoad() 
-		{
-			var customHtml = document.getElementById('customHtml');
-			var html = '<?php echo stripslashes(itro_get_field('custom_html')); //insert custom html code?>';
-			customHtml.innerHTML = html;
-		}
-		window.onload = lastLoad;
-	</script>
-<?php
+		
+		<?php 
+			if (itro_get_option('age_restriction')==NULL) //if is not set age restriction option popup will be closed automatically
+			{ ?>
+				var popTime=<?php echo itro_get_option('popup_time'); ?>;
+
+				setInterval(function(){popTimer()},1000); //the countdown 
+				function popTimer()
+				{
+					if (popTime>0){
+					document.getElementById("timer").innerHTML=popTime;
+					popTime--;
+					}
+					else {popup.style.visibility='Hidden'; opaco.style.visibility='Hidden';
+					}
+				}
+			<?php 
+			}
+			if( itro_get_option('auto_margin_check') != NULL )
+			{?>
+				setInterval(function(){marginRefresh()},100); //refresh every 0.1 second the popup top margin (needed for browser window resizeing)
+				function marginRefresh()
+				{
+					//assign to x the window width and to y the window height
+					var w = window, d = document, e = d.documentElement, g = d.getElementsByTagName('body')[0], x = w.innerWidth||e.clientWidth||g.clientWidth ;
+					var y = w.innerHeight||e.clientHeight||g.clientHeight ;
+					var popupHeight = document.getElementById('popup').offsetHeight ; 		//display the actual px size of popup div
+					poupTopMargin = (y - popupHeight)/2; 									//calculate the top margin
+					if(poupTopMargin > 0) {poupTopMargin = poupTopMargin/8};
+					document.getElementById('popup').style.marginTop = poupTopMargin ; 		//update the top margin of popup
+				}
+			<?php 
+			}?>
+			function lastLoad() 
+			{
+				var customHtml = document.getElementById('customHtml');
+				var html = '<?php echo stripslashes(itro_get_field('custom_html')); //insert custom html code?>';
+				customHtml.innerHTML = html;
+			}
+			window.onload = lastLoad;
+		</script>
+<?php	
+	}
 }
 
 function itro_onOff($tag_id){
