@@ -38,6 +38,7 @@ function itro_display_popup()
 					<img id="popup_image" src="<?php echo itro_get_option('img_source');?>" style="padding-top:10px;">
 				<?php 
 				}
+				?><div id="customHtml"></div><?php
 				if (itro_get_option('age_restriction')==NULL) {?>
 				<p id="popup_text" align="center"><?php _e('This popup will be closed in: ','itro-plugin'); ?> <b id="timer"></b>&nbsp 
 				<a class="popup" href="javascript:void(0)" onclick="popup.style.visibility='Hidden',opaco.style.visibility='Hidden'"><?php _e('CLOSE NOW','itro-plugin'); ?></a>
@@ -48,7 +49,6 @@ function itro_display_popup()
 				<input type="button" id="ageLeaveButton" onClick="javascript:window.open('<?php echo itro_get_option('leave_button_url')?>','_self');" value="<?php echo itro_get_option('leave_button_text');?>">
 				</p>
 				<?php }?>
-				<div id="customHtml"></div>
 		</div>
 		<!---------end popoup div and js--------->
 <?php 
