@@ -104,7 +104,7 @@ function itro_plugin_options() {
 		function itroHide(x) {document.getElementById(x).style.height='0px';}
 	</script>
 	
-	<img style="position:relative; float:right;" src="">
+	<!-- <img style="position:relative; float:right;" src=""> !-->
 	<h1><?php _e( 'I.T.RO. Popup Plugin - Settings', 'itro-plugin');?></h1>
 	
 <div id="rightColumn">
