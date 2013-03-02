@@ -60,6 +60,9 @@ In the first one are stored all small data option, in the other one bigger data 
 no screenshot avaliable
 
 == Changelog ==
+= 2.1.4 =
+Cookie bug fixed.
+
 = 2.1.3 =
 Italian translation error fixed.
 
@@ -91,6 +94,12 @@ bug fixed: color table now works in admin pannel.
 First released version.
 
 == Upgrade Notice ==
+= 2.1.4 =
+Cookie bug fixed.
+
+= 2.1.3 =
+Italian translation error fixed.
+
 = 2.1.2 =
 Preview refresh bug fixed. Added the possibility to select manually the top margin, in case of problem.
 
