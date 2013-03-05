@@ -333,14 +333,17 @@ function itro_plugin_options()
 			<?php
 			if (itro_get_option('age_restriction')==NULL) //if is not set age restriction option popup will be closed automatically
 			{ ?>
+				var restart
+				function startTimer() { restart = true; }
 				var popTime=<?php echo itro_get_option('popup_time'); ?>;
-
 				setInterval(function(){popTimer()},1000); //the countdown 
 				function popTimer()
 				{
-					if (popTime>0){
-					document.getElementById("timer").innerHTML=popTime;
-					popTime--;
+					if(restart){popTime=<?php echo itro_get_option('popup_time'); ?>; restart = !restart;}
+					if (popTime>0)
+					{
+						document.getElementById("timer").innerHTML=popTime;
+						popTime--;
 					}
 					else {popup.style.visibility='Hidden'; opaco.style.visibility='Hidden';
 					}
