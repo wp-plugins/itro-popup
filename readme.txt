@@ -14,20 +14,20 @@ custom HTML code.
 == Description ==
 
 ITRO Popup is a very lightweight (less than 200Kb!) Plugin which allow users to add a fully-customizable  and perfectly centered popup. 
-It has a very user-friendly interface, which allow inexpert user to easily modify all  settings needed for a popup. 
+It has a very user-friendly interface, which allow normal user to easily modify all settings needed for a popup, without coding. 
 With "Age restricted site"  option, the popup block the navigation until the user declare that is above the local country legal age. 
-It is useful for adult content site (tobacco & alcohol-selling, violence, bad language, etc...). The leave and the enter button 
+It is useful for adult content site (tobacco & alcohol selling, violence, bad language, etc...). The leave and the enter button 
 are separately customizable. Advanced user can also add their own HTML code.
 This plugin is basic-user oriented, no code knowledge is required.
-It also fix the Internet Explorer complabiliy problem, for all version.
+It also fix the Internet Explorer complabiliy problem, for all IE version.
 
 MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
-
-Like this plugin? Say it to your friend! Sustain free software! https://www.facebook.com/ITRO.Popup
 
 Any suggestions for new features implementation which you need? 
 Need personal implementation for your businnes or your interest?
 Email to support.itro@live.com
+
+Like this plugin? Say it to your friend! Sustain free software! https://www.facebook.com/ITRO.Popup
 
 == Installation ==
 
