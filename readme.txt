@@ -14,7 +14,7 @@ custom HTML code.
 == Description ==
 
 ITRO Popup is a very lightweight (less than 200Kb!) Plugin which allow users to add a fully-customizable  and perfectly centered popup. 
-It has a very user-friendly interface, which allow normal user to easily modify all settings needed for a popup, without coding. 
+It has a very user-friendly interface, which allow users to easily modify all settings needed for a popup, without coding. 
 With "Age restricted site"  option, the popup block the navigation until the user declare that is above the local country legal age. 
 It is useful for adult content site (tobacco & alcohol selling, violence, bad language, etc...). The leave and the enter button 
 are separately customizable. Advanced user can also add their own HTML code.
