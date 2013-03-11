@@ -5,14 +5,16 @@ This file is part of ITRO Popup Plugin.
 All Right Reserved.
 */
 
-//----------------------- ADD META TAG FOR IE COMPATIBILITY
-function itro_ie_compatibility(){echo '<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>';}
-
-//----------------------SET THE COOKIE FOR THE ONE-TIME VISUALIZATION OF POPUP
-function set_popup_cookie() 
+//---------------------- SEND HEADER
+function itro_send_header() 
 {
+	//set the cookie for one-time visualization
 	$expiration_time = itro_get_option('cookie_time_exp') ;
 	setcookie("popup_cookie" , "one_time_popup" , time() + $expiration_time * 3600) ;
+	
+	//add meta tag for IE compability
+	if ( itro_get_option('ie_compability') == 'yes' )
+	{ echo '<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>'; }
 }
 
 //--------------------------DISPLAY THE POPUP
@@ -28,30 +30,8 @@ function itro_display_popup()
 	}
 	if(itro_get_option('page_selection')!='any' && !isset($_COOKIE['popup_cookie']) )
 	if( ($id_match != NULL) || (itro_get_option('page_selection')=='all') )
-	{ ?>
-		<!--------------start popoup div and js--------------->	
-		<div id="opaco"></div>
-		<div id="popup">
-				<?php 
-				if (itro_get_option('img_source')!=NULL) 
-				{?>
-					<img id="popup_image" src="<?php echo itro_get_option('img_source');?>" style="padding-top:10px;">
-				<?php 
-				}
-				?><div id="customHtml"></div><?php
-				if (itro_get_option('age_restriction')==NULL) {?>
-				<p id="popup_text" align="center"><?php _e('This popup will be closed in: ','itro-plugin'); ?> <b id="timer"></b>&nbsp 
-				<a class="popup" href="javascript:void(0)" onclick="popup.style.visibility='Hidden',opaco.style.visibility='Hidden'"><?php _e('CLOSE NOW','itro-plugin'); ?></a>
-				</p>
-				<?php } else {?>
-				<p id="age_button_area" align="center" style="padding-top:10px;">
-				<input type="button" id="ageEnterButton" onClick="popup.style.visibility='Hidden',opaco.style.visibility='Hidden'" value="<?php echo itro_get_option('enter_button_text');?>">
-				<input type="button" id="ageLeaveButton" onClick="javascript:window.open('<?php echo itro_get_option('leave_button_url')?>','_self');" value="<?php echo itro_get_option('leave_button_text');?>">
-				</p>
-				<?php }?>
-		</div>
-		<!---------end popoup div and js--------->
-<?php 
+	{ 
+		echo include( 'wp-content/plugins/itro-popup/templates/itro-popup-template.php' );
 	} 
 }
 
@@ -66,24 +46,19 @@ function itro_image_uploader()
 	|| ($_FILES["file"]["type"] == "image/pjpeg"))
 	&& in_array($extension, $allowedExts))
 	{
-		if($_FILES["file"]["size"] > 2048000){echo'<script>alert("'; _e('Warning file is too big, this may cause problems!','itro-plugin'); echo'");</script>';}
-		if ($_FILES["file"]["error"] > 0){ echo "Return Code: " . $_FILES["file"]["error"] . "<br>"; }
+		if ($_FILES["file"]["size"] > 2048000){echo'<script>alert("'; _e('Warning file is too big, this may cause problems!','itro-plugin'); echo'");</script>';}
+		if ($_FILES["file"]["error"] > 0){ echo "Error Code: " . $_FILES["file"]["error"] . "<br>"; }
 		else
 		{
-			echo "Upload: " . $_FILES["file"]["name"] . "<br>";
-			echo "Type: " . $_FILES["file"]["type"] . "<br>";
-			//echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
-			//echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br>";
-
 			if(!isset($_POST['overwrite'])){$_POST['overwrite']='no';}
-			if (file_exists(mainLocalPath . "\\images\\" . $_FILES["file"]["name"]) && $_POST['overwrite']!='yes')
-			{ echo $_FILES["file"]["name"] ; _e('already exists. Please check the overwrite option','itro-prugin'); }
+			if (file_exists(mainLocalPath . "/uploaded-images/" . $_FILES["file"]["name"]) && $_POST['overwrite']!='yes')
+			{ echo '<b style="color: red;">"' . $_FILES["file"]["name"] ; _e('" already exists. Please check the overwrite option','itro-prugin'); echo '</b><br><br>'; }
 			else
 			{
 				move_uploaded_file($_FILES["file"]["tmp_name"],
-				mainLocalPath . "\\images\\" . $_FILES["file"]["name"]);
-				$img_source = itroPath . "images/" . $_FILES["file"]["name"];
-				echo $img_source;
+				mainLocalPath . "/uploaded-images/" . $_FILES["file"]["name"]);
+				$img_source = itroPath . "uploaded-images/" . $_FILES["file"]["name"];
+				echo '<b style="color: green;">"' . $_FILES["file"]["name"]; _e('" successfully uploaded'); echo '"</b><br>Image link: ' . $img_source . '<br><br>' ;
 				itro_update_option('img_source',$img_source);
 				itro_update_option('selected_image',$_FILES["file"]["name"]);
 			}
@@ -95,12 +70,17 @@ function itro_image_uploader()
 	}
 }
 
-//------------------- SELECT AND DELETE UPLOADED IMAGES
-function itro_image_list()
-{
-	if($handle = opendir(mainLocalPath . '\images'))
+//------------------- IMAGES MANAGER
+//image listing
+function itro_image_list($img)
+{	
+	if($handle = opendir(mainLocalPath . '\uploaded-images'))
 	{
-		$selected_img = itro_get_option('selected_image');
+		if ($img == 'ins') 
+		{$selected_img = itro_get_option('selected_image');} 
+		else 
+		{$selected_img = itro_get_option('bg_selected_image');}
+		
 		echo '<option></option>';
 		while (false !== ($entry = readdir($handle))) 
 		{
@@ -116,32 +96,67 @@ function itro_image_list()
 
 function itro_image_manager()
 {
-	//delete image
-	if(!empty($_REQUEST['submitDelete'])) 
-	{ 
-		if(empty($_POST['selected_image'])){_e('No image selected','itro-plugin');}
-		else
+	//----select inserted image
+	if( empty($_POST['selected_image']) && !isset($_POST[ 'img_url_check']) )
+	{
+		itro_update_option('img_source' , NULL);
+		itro_update_option('selected_image' , NULL);
+		echo '<b style="color:red;">';
+		_e('Any image selected','itro-plugin'); 
+		echo '</b><br>';
+		
+	} 
+	else 
+	{
+		if ( !empty($_POST['selected_image']) )
 		{
-			unlink(mainLocalPath . "\\images\\" . $_POST['selected_image']);
-			if (itro_get_option('selected_image') == $_POST['selected_image']) {itro_update_option('img_source' , NULL); }
-			echo $_POST['selected_image'] ; _e(' successfully deleted','itro-plugin');
+			itro_update_option('img_source', itroPath . "uploaded-images/" . $_POST['selected_image']);
+			itro_update_option('selected_image',$_POST['selected_image']);
+			echo '<b style="color:green;">"';
+			echo $_POST['selected_image'] . '"'; _e(' added in popup','itro-plugin');
+			echo '</b><br>';
 		}
 	}
-	//select image
-	if(!empty($_REQUEST['submitSelect'])) 
+	//--select background image
+	if( empty($_POST['bg_selected_image']) && !isset($_POST[ 'bg_url_check']) )
 	{
-		if(empty($_POST['selected_image']))
+		itro_update_option('background_source' , NULL);
+		itro_update_option('bg_selected_image' , NULL);
+		echo '<b style="color:red;">';
+		_e('Any background image used','itro-plugin');
+		echo '</b><br>';
+	} 
+	else 
+	{
+		if ( !empty($_POST['bg_selected_image']) )
 		{
-			itro_update_option('img_source' , NULL);
-			itro_update_option('selected_image' , NULL);
-			_e('No image used','itro-plugin');
-		} 
-		else 
-		{
-			itro_update_option('img_source', itroPath . "images/" . $_POST['selected_image']);
-			itro_update_option('selected_image',$_POST['selected_image']);
-			echo $_POST['selected_image'] ; _e(' selected','itro-plugin');
+			itro_update_option('background_source', itroPath . "uploaded-images/" . $_POST['bg_selected_image']);
+			itro_update_option('bg_selected_image',$_POST['bg_selected_image']);
+			echo '<b style="color:green;">"';
+			echo $_POST['bg_selected_image'] . '"'; _e(' selected as background','itro-plugin');
+			echo '</b><br>';
 		}
+	}
+}
+	//delete image
+function itro_delete_image()
+{
+	if(empty($_POST['deleted_image']))
+	{
+		echo '<b style="color:red;">';
+		_e('Any image selected. Please select one.','itro-plugin');
+		echo '</b><br><br>';
+	}
+	else
+	{
+		if ( unlink(mainLocalPath . "/uploaded-images/" . $_POST['deleted_image']) )
+		{
+			if (itro_get_option('deleted_image') == $_POST['deleted_image']) {itro_update_option('background_source' , NULL); }
+			echo '<b style="color:green;">"';
+			echo $_POST['deleted_image'] ; _e('" successfully deleted','itro-plugin');
+			echo '</b><br><br>';
+		}
+		else {echo '<b style="color:red;">"'; _e('Error, can\'t delete image.','itro-plugin');echo '"</b><br><br>';}
 	}
 }
 

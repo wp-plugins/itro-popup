@@ -4,7 +4,7 @@ Donate link: http://www.itro.eu/index.php/donate/
 Tags: popup, age, restriction, block, violence, compability, ie9
 Requires at least: 3.0.1
 Tested up to: 3.5.1
-Stable tag: 2.2.1
+Stable tag: 3.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -38,29 +38,28 @@ Like this plugin? Say it to your friend! Sustain free software! https://www.face
 
 == Frequently Asked Questions ==
 
-= How can i close the preview? =
-Simply press ESC button on your keyboard.
-
 = How can i have a preview of my settings? =
-Select in the section "Decide where the popup will be displayed" "Any pages", remember to save options
-than click on the "Preview" button.
+For now preview button is disabled. We are working for it in the new release.
+Select in the section "Decide where the popup will be displayed" "Only selected pages" and use a page for your preview
+Remember to save options
 
 = How can i quickly test my settings and delete cookie so the page display the popup? =
-
 You need to set the "Cookie expiration time" to zero and refresh your website page a couple of time.
 
 = Does the plugin add some tables in my Wordpress database? =
-
 Yes. The tables are "wp_itro_plugin_option" "wp_itro_plugin_field".
 
 = What are they for? =
-
 In the first one are stored all small data option, in the other one bigger data as custom HTML code.
 
 == Screenshots ==
 no screenshot avaliable
 
 == Changelog ==
+= 3.0 =
+New user interface, minor bug fixed, new color picker (thanks to Jan Odvarko with jscolor), new features
+and customizations (background image, bg text color, etc...)
+
 = 2.2.1 =
 Preview bug fixed. Now countdown works right.
 
@@ -107,6 +106,10 @@ bug fixed: color table now works in admin pannel.
 First released version.
 
 == Upgrade Notice ==
+= 3.0 =
+New user interface, minor bug fixed, new color picker (thanks to Jan Odvarko with jscolor), new features
+and customizations (background image, bg text color, etc...)
+
 = 2.2.1 =
 Preview bug fixed. Now countdown works right.
 

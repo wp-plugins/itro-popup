@@ -5,7 +5,7 @@ This file is part of ITRO Popup Plugin.
 All Right Reserved.
 */
 function itro_popup_js()
-{ 
+{
 	//this condition, control if the popup must or not by displayed in a specified page
 	$selected_page_id = json_decode(itro_get_option('selected_page_id'));
 	$id_match = NULL;
@@ -17,11 +17,12 @@ function itro_popup_js()
 	if(itro_get_option('page_selection')!='any' && !isset($_COOKIE['popup_cookie']) )
 	if( ($id_match != NULL) || (itro_get_option('page_selection')=='all') )
 	{
+	//------------------------- insert script under this line to load it only if popup is displayed
 	?>
-		<script type="text/javascript">
+		<script type="text/javascript">		
 		<?php
-		if (itro_get_option('age_restriction')==NULL)
-		{?>
+		if (itro_get_option('age_restriction') == NULL) //insert script here to show when is not age restricted
+		{?>			
 			document.onkeydown = function(event) 
 			{
 				event = event || window.event;
@@ -61,15 +62,6 @@ function itro_popup_js()
 				}
 			<?php 
 			}?>
-			function lastLoad() 
-			{
-				var customHtml = document.getElementById('customHtml');
-				customHtml.innerHTML = '<?php 
-											$custom_field = stripslashes(itro_get_field('custom_html')); //insert custom html code 
-											echo str_replace("\r\n",'',$custom_field); //return the string whitout new line
-											?>';
-			}
-			window.onload = lastLoad;
 		</script>
 <?php	
 	}
