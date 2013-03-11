@@ -109,6 +109,10 @@ bug fixed: color table now works in admin pannel.
 First released version.
 
 == Upgrade Notice ==
+== Changelog ==
+= 3.1 =
+Listing image bug fixed.
+
 = 3.0 =
 New user interface, minor bug fixed, new color picker (thanks to Jan Odvarko with jscolor), new features
 and customizations (background image, bg text color, etc...)
