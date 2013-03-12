@@ -37,7 +37,7 @@ Like this plugin? Say it to your friend! Sustain free software! https://www.face
 4. Enjoy
 
 == Frequently Asked Questions ==
-= What is the ITRO - Preview in my pages?=
+= What is the ITRO Preview in my pages?=
 This page is automatically created to correctly display preview. DO NOT DELETE IT. Popup cookie doesn't
 work in this page.
 
