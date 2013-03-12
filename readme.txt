@@ -4,7 +4,7 @@ Donate link: http://www.itro.eu/index.php/donate/
 Tags: popup, age, restriction, block, violence, compability, ie9
 Requires at least: 3.0.1
 Tested up to: 3.5.1
-Stable tag: 3.2
+Stable tag: 3.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -37,25 +37,28 @@ Like this plugin? Say it to your friend! Sustain free software! https://www.face
 4. Enjoy
 
 == Frequently Asked Questions ==
+= What is the "ITRO - Preview" in my pages?=
+This page is automatically created to correctly display preview. DO NOT DELETE IT. Popup cookie doesn't
+work in this page.
 
 = How can i have a preview of my settings? =
-For now preview button is disabled. We are working for it in the new release.
-Select in the section "Decide where the popup will be displayed" "Only selected pages" and use a page for your preview
-Remember to save options
-
-= How can i quickly test my settings and delete cookie so the page display the popup? =
-You need to set the "Cookie expiration time" to zero and refresh your website page a couple of time.
+Save settings than click on preview button. Will be opened a preview page, this is needed to display 
+correctly the popup, with theme style.
 
 = Does the plugin add some tables in my Wordpress database? =
 Yes. The tables are "wp_itro_plugin_option" "wp_itro_plugin_field".
 
 = What are they for? =
-In the first one are stored all small data option, in the other one bigger data as custom HTML code.
+In the first one are stored all small data options, in the other one bigger data as custom HTML code.
 
 == Screenshots ==
 no screenshot avaliable
 
 == Changelog ==
+= 3.3 =
+Added WP editor to custom text field. Restored preview button, now it open a new window whith popup integrated
+in the theme. Uninstall bug solved, now clear all data and tables.
+
 = 3.2 =
 Big uploaded images truble solved! Now when you update the plugin your uploaded images remain in your site
 (is not necessary to upload everything every time). Automatic centering now works perfectly. Custom text 
@@ -65,7 +68,7 @@ border bug fixed.
 Listing image bug fixed.
 
 = 3.0 =
-New user interface, minor bug fixed, new color picker (thanks to Jan Odvarko with jscolor), new features
+New user interface, minor bug fixed, new color picker (thanks to Jan Odvarko for jscolor), new features
 and customizations (background image, bg text color, etc...)
 
 = 2.2.1 =
@@ -114,72 +117,20 @@ bug fixed: color table now works in admin pannel.
 First released version.
 
 == Upgrade Notice ==
-= 3.2 =
-Big uploaded images truble solved! Now when you update the plugin your uploaded images remain in your site
-(is not necessary to upload everything every time). Automatic centering now works perfectly. Custom text 
-border bug fixed.
-
-= 3.1 =
-Listing image bug fixed.
-
-= 3.0 =
-New user interface, minor bug fixed, new color picker (thanks to Jan Odvarko with jscolor), new features
-and customizations (background image, bg text color, etc...)
-
-= 2.2.1 =
-Preview bug fixed. Now countdown works right.
-
-= 2.2 =
-Now automatic centering works great. Important custom HTML cod fixed.
-
-= 2.1.6 =
-Now automatic centering works great.
-NEED TO UPGRADE!
-
-= 2.1.5 =
-Important cookie bug fxed and some js bug fixed.
-NEED TO UPGRADE!
-
-= 2.1.4 =
-Cookie bug fixed.
-
-= 2.1.3 =
-Italian translation error fixed.
-
-= 2.1.2 =
-Preview refresh bug fixed. Added the possibility to select manually the top margin, in case of problem.
-
-= 2.1.1 =
-preview bug fixed.
-
-= 2.1 =
-Minor bug fixed. Internet Explorer compability fixed.
-
-= 2.0 =
-Important bug fixed. Very important function implemented. Now user can select the single page where
-the popup will be displayed. Now position can be selected between "Absolute" and "Fixed".
-
-= 1.0.3 =
-important bux fixed: now custom HTML code works right.
-
-= 1.0.2 =
-bugs fixed;
-added the possibility to insert a direct url for the popup image;
-100% of compability;
-
-= 1.0.1 =
-need to upgrade, now the color table works right.
+NO NOTICE.
 
 == Notes ==
 
 This is a totaly free software we have spent a lot of time to develop it. In the future we'll update 
 and add new features and we accept all kind of (smart) suggestion. So please donate something 
 to help us continue our work.
+Thanks to Jan Odvarko for jscolor: http://jscolor.com/
 
 == Features ==
 * Fix Internet Explorer compatibility problem for your WP site, also whith no popup displayed.
 * Can be multiple selcted pages where user want to display the popup. NO SHORTCUTS NEEDED!.
 * Fully translated in Italian. Ready for multilingual translation.
+* Close popup with ESC button (not when "age restricted option" is checked).
 * Perfectly centered popup, also with resized windows.
 * Fully and easy customizable aspect (background, border, color, etc...).
 * Settable countdown for automatic closing.

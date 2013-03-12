@@ -5,6 +5,30 @@ This file is part of ITRO Popup Plugin.
 All Right Reserved.
 */
 
+//-------------- CREATE PREVIEW PAGE
+
+function itro_create_preview()
+{
+	if ( get_bloginfo('language') == 'en-US') { $preview_text = 'ITRO - Preview page. This page is used to rightly diplay preview of your popup with site theme.'; }
+	if ( get_bloginfo('language') == 'it_IT') { $preview_text = 'ITRO - Pagina di anteprima. Questa pagina è utilizzata per visualizzare correttamente il popup, integrato con lo stile del tema.'; }
+	
+	if ( itro_get_option('preview_id') == NULL )
+	{
+		// Create post object
+		$preview_post = array(
+		  'post_title'    => 'ITRO - Preview',
+		  'post_name'    => 'itro-preview',
+		  'post_content'  => $preview_text,
+		  'post_status'   => 'private',
+		  'post_author'   => 1,
+		  'post_type'   => 'page',
+		);
+		// Insert the post into the database
+		$preview_id = wp_insert_post( $preview_post );
+		itro_update_option('preview_id',$preview_id);
+	}
+}
+
 //---------------------- SEND HEADER
 function itro_send_header() 
 {
@@ -36,9 +60,15 @@ function itro_display_popup()
 	}
 	if(itro_get_option('page_selection')!='any' && !isset($_COOKIE['popup_cookie']) )
 	if( ($id_match != NULL) || (itro_get_option('page_selection')=='all') )
-	{ 
+	{
+		echo itro_popup_js();
 		include( 'wp-content/plugins/itro-popup/templates/itro-popup-template.php' );
-	} 
+	}
+	if ( itro_get_option('preview_id') == get_the_id() )
+	{
+		echo itro_popup_js();
+		include( 'wp-content/plugins/itro-popup/templates/itro-popup-template.php' );
+	}
 }
 
 //--------------------------------FILE UPLOADER FOR POPUP IMAGE

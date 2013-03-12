@@ -43,7 +43,7 @@ function itro_plugin_options()
 		/*opt 21*/'count_font_color',
 		);
 		$field_name=array(
-		/*fld 1*/'custom_html',
+		/*fld 0*/'custom_html',
 		);
 		$submitted_form = 'mt_submit_hidden';
 	}
@@ -109,6 +109,7 @@ function itro_plugin_options()
 		<div class="updated"><p><strong><?php _e('settings saved.', 'itro-plugin' ); ?></strong></p></div>
 		<?php
 	}
+	
 	?>
 	<script type="text/javascript" src="<?php echo itroPath . 'scripts/'; ?>jscolor/jscolor.js"></script>
 	<script type="text/javascript" src="../wp-includes/js/tinymce/tiny_mce.js"></script>
@@ -120,7 +121,7 @@ function itro_plugin_options()
 	<h1><?php _e( 'I.T.RO. Popup Plugin - Settings', 'itro-plugin');?></h1>
 	
 	<form id="optionForm" method="post">
-
+		
 		<div id="leftColumn">
 			<!-- Settings form !-->
 			<div id="formContainer">
@@ -179,23 +180,9 @@ function itro_plugin_options()
 						<?php
 						itro_list_pages();
 						?>
-					</p>
-					<!--- <input type="button" class="button-primary" onClick="popup.style.visibility=''; opaco.style.visibility=''; startTimer();" value="<?php echo _e("Preview")?>"> !---->
-																			
+					</p>																			
 				</div>
 				
-				<!------- Custom html field -------->
-				<?php echo itro_onOff('customHtmlForm'); ?>
-				<p class="wpstyle" onClick="onOff_customHtmlForm();"><?php _e("Your text (or HTML code:)", 'itro-plugin' ); ?> </p>
-				<p id="customHtmlForm">
-					<textarea id="editorContent" rows="9" cols="70" name="<?php echo $field_name[0]; ?>"><?php echo stripslashes($field_value[0]); ?></textarea>
-					<p><?php _e("Text background color", 'itro-plugin' ); ?>
-						<input type="text" class="color" name="<?php echo $opt_name[19]; ?>" value="<?php echo $opt_val[19]; ?>" size="10">
-					</p>
-					<p><?php _e("Text border color:", 'itro-plugin' ); ?>
-						<input type="text" class="color" name="<?php echo $opt_name[20]; ?>" value="<?php echo $opt_val[20]; ?>" size="10">
-					</p>
-				</p>
 				<!------------ Age restriction option  ---------->
 				<?php echo itro_onOff('ageRestSettings');?>
 				<p class="wpstyle" onClick="onOff_ageRestSettings();"><?php _e("Age restriction settings:", 'itro-plugin' ); ?> </p>
@@ -206,7 +193,7 @@ function itro_plugin_options()
 					</p>
 					<div id="ageRest" style="height:<?php if($opt_val[6]!='yes' ){echo '0px;';}?>">
 						<p><?php _e("Enter button text:", 'itro-plugin' ); ?> 
-							<input type="text" name="<?php echo $opt_name[7]; ?>" value="<?php if($opt_val[7]==NULL){_e("i.e.: I AM OVER 18 - ENTER", 'itro-plugin' );} else{echo $opt_val[7];} ?>" size="40">
+							<input type="text" name="<?php echo $opt_name[7]; ?>" value="<?php echo $opt_val[7]; ?>" placeholder="<?php _e("i.e.: I AM OVER 18 - ENTER", 'itro-plugin' ); ?>"  size="40">
 						</p>
 						<p><?php _e("Enter button background color:", 'itro-plugin' ); ?> 
 							<input type="text" class="color" name="<?php echo $opt_name[10]; ?>" value="<?php echo $opt_val[10]; ?>" size="10">
@@ -218,7 +205,7 @@ function itro_plugin_options()
 							<input type="text" class="color" name="<?php echo $opt_name[14]; ?>" value="<?php echo $opt_val[14]; ?>" size="10">
 						</p>
 						<p><?php _e("Leave button text:", 'itro-plugin' ); ?> 
-							<input type="text" name="<?php echo $opt_name[8]; ?>" value="<?php if(!isset($opt_val[8])){_e("i.e.: I AM UNDER 18 - LEAVE", 'itro-plugin' );} else{echo $opt_val[8];} ?>" size="40">
+							<input type="text" name="<?php echo $opt_name[8]; ?>" value="<?php echo $opt_val[8] ?>" placeholder="<?php _e("i.e.: I AM UNDER 18 - LEAVE", 'itro-plugin' ); ?>" size="40">
 						</p>
 						<p><?php _e("Leave button url:", 'itro-plugin' ); ?> 
 							<input type="text" name="<?php echo $opt_name[9]; ?>" value="<?php if(!isset($opt_val[9])){_e("i.e.: http://www.mysite.com/leave.html", 'itro-plugin' );} else{echo $opt_val[9];} ?>" size="40">
@@ -236,11 +223,29 @@ function itro_plugin_options()
 				</div>
 			</div>
 			<p class="submit">
-				<input type="submit" name="Submit" class="button-primary" value="<?php esc_attr_e('Save Changes') ?>" />
+				<input type="submit" name="Submit" class="button-primary" value="<?php esc_attr_e('Save Changes') ?>" />&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="button" target="_blank" class="button-primary" onClick="window.open('/?page_id=<?php echo itro_get_option('preview_id') ?>')" value="<?php echo _e('Preview page','itro-plugin' )?>">
 			</p>
 		</div>
 
 		<div id="rightColumn">
+			<input type="hidden" name="<?php echo $submitted_form; ?>" value="Y">
+			<!------- Custom html field -------->
+				<?php echo itro_onOff('customHtmlForm'); ?>
+				<p class="wpstyle" onClick="onOff_customHtmlForm();"><?php _e("Your text (or HTML code:)", 'itro-plugin' ); ?> </p>
+				<div id="customHtmlForm">
+					<?php
+					$content = stripslashes($field_value[0]);
+					wp_editor( $content, 'editorid', array('textarea_name'=> 'custom_html','teeny'=>false, 'media_buttons'=>false) );
+					?>
+					<p><?php _e("Text background color", 'itro-plugin' ); ?>
+						<input type="text" class="color" name="<?php echo $opt_name[19]; ?>" value="<?php echo $opt_val[19]; ?>" size="10">
+					</p>
+					<p><?php _e("Text border color:", 'itro-plugin' ); ?>
+						<input type="text" class="color" name="<?php echo $opt_name[20]; ?>" value="<?php echo $opt_val[20]; ?>" size="10">
+					</p>
+				</div>
+				
 			<?php
 			//---Image manager for popup images
 			echo itro_onOff('imgManagerDiv');//the hide-show function?>
@@ -374,67 +379,5 @@ function itro_plugin_options()
 			</form>
 		</div>
 	</div>
-	<!-----------------------------------------------------------start popoup div and js preview--------------------------------------------------->	
-	
-
-	<div id="opaco" style="visibility:hidden;"></div>
-	<div id="popup" style="visibility:hidden;">
-		<?php
-		if ( itro_get_option('img_source') != NULL ) 
-		{?>
-			<img id="popup_image" src="<?php echo itro_get_option('img_source');?>">
-		<?php 
-		}
-		?><div id="customHtml">
-		<?php 
-			$custom_field = stripslashes(itro_get_field('custom_html')); //insert custom html code 
-			echo str_replace("\r\n",'',$custom_field); //return the string whitout new line
-			?>
-		</div><?php
-		if ( itro_get_option('age_restriction') == NULL ) 
-		{?>
-			
-			<img src="<?php echo itroPath . 'images/close-icon.png'; ?>" title="<?php _e('CLOSE','itro-plugin'); ?>" style="cursor:pointer; width:20px; position:absolute; top:-22px; right:-22px;" onclick="popup.style.visibility='Hidden',opaco.style.visibility='Hidden'">
-			<?php if( itro_get_option('show_countdown') != NULL )
-			{?>
-				<p id="popup_countdown" align="center"><?php _e('This popup will be closed in: ','itro-plugin'); ?> <b id="timer"></b></p>
-			<?php
-			} ?>
-			<script>
-			document.onkeydown = function(event) 
-			{
-				event = event || window.event;
-				var key = event.keyCode;
-				if(key==27){popup.style.visibility='Hidden'; opaco.style.visibility='Hidden';} 
-			}
-			
-			var restart
-			function startTimer() { restart = true; }
-			var popTime=<?php echo itro_get_option('popup_time'); ?>;
-			setInterval(function(){popTimer()},1000); //the countdown 
-			function popTimer()
-			{
-				if(restart){popTime=<?php echo itro_get_option('popup_time'); ?>; restart = !restart;}
-				if (popTime>0)
-				{
-					document.getElementById("timer").innerHTML=popTime;
-					popTime--;
-				}
-				else {popup.style.visibility='Hidden'; opaco.style.visibility='Hidden';
-				}
-			}
-			</script><?php 
-			
-		} 
-		else 
-		{?>
-			<p id="age_button_area" align="center" style="padding-top:10px;">
-			<input type="button" id="ageEnterButton" onClick="popup.style.visibility='Hidden',opaco.style.visibility='Hidden'" value="<?php echo itro_get_option('enter_button_text');?>">
-			<input type="button" id="ageLeaveButton" onClick="javascript:window.open('<?php echo itro_get_option('leave_button_url')?>','_self');" value="<?php echo itro_get_option('leave_button_text');?>">
-			</p>
-			<?php 
-		}?>
-	</div>
-	<!--------------------------------------------------------------end popoup div and js---------------------------------------------------->
 	<?php 
 } ?>

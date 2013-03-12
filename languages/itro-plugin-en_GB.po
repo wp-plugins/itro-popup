@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mc-plugin\n"
-"POT-Creation-Date: 2013-03-11 14:59+0100\n"
-"PO-Revision-Date: 2013-03-11 14:59+0100\n"
+"POT-Creation-Date: 2013-03-12 23:11+0100\n"
+"PO-Revision-Date: 2013-03-12 23:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: ITRO Corp\n"
 "MIME-Version: 1.0\n"
@@ -17,303 +17,303 @@ msgstr ""
 msgid "settings saved."
 msgstr ""
 
-#: functions/admin-function.php:120
+#: functions/admin-function.php:121
 msgid "I.T.RO. Popup Plugin - Settings"
 msgstr ""
 
-#: functions/admin-function.php:126
-msgid "Popup image settings:"
-msgstr ""
-
-#: functions/admin-function.php:142
-msgid "Added image from direct url"
-msgstr ""
-
-#: functions/admin-function.php:149
-msgid "Added background from direct url"
-msgstr ""
-
-#: functions/admin-function.php:158
-msgid "INSERTED IMAGE"
-msgstr ""
-
-#: functions/admin-function.php:162
-msgid "Image size (%):"
-msgstr ""
-
-#: functions/admin-function.php:162
-msgid "Insert pure number whithout %"
-msgstr ""
-
-#: functions/admin-function.php:165 functions/admin-function.php:184
-msgid "Use direck url:"
-msgstr ""
-
-#: functions/admin-function.php:171 functions/admin-function.php:190
-msgid "Current image link:"
-msgstr ""
-
-#: functions/admin-function.php:180
-msgid "BACKGROUND IMAGE"
-msgstr ""
-
-#: functions/admin-function.php:201
-msgid "UPLOAD AND DELETE IMAGES"
-msgstr ""
-
-#: functions/admin-function.php:211
-msgid "Delete"
-msgstr ""
-
-#: functions/admin-function.php:218
-msgid "Select the image"
-msgstr ""
-
-#: functions/admin-function.php:220
-msgid "Upload"
-msgstr ""
-
-#: functions/admin-function.php:221
-msgid "Overwrite"
-msgstr ""
-
-#: functions/admin-function.php:228
-msgid "HELP US TO CONTINUE OUR DEVELOPING WORK. PLEASE DONATE!"
-msgstr ""
-
-#: functions/admin-function.php:256
+#: functions/admin-function.php:131
 msgid "General Popup Option:"
 msgstr ""
 
-#: functions/admin-function.php:259
+#: functions/admin-function.php:134
 msgid "Enable IE compability:"
 msgstr ""
 
-#: functions/admin-function.php:259
+#: functions/admin-function.php:134
 msgid ""
 "If your site is has visualization issues in Internet Explorer, check this "
 "box to solve the compatibility problem."
 msgstr ""
 
-#: functions/admin-function.php:262
+#: functions/admin-function.php:137
 msgid "Popup seconds:"
 msgstr ""
 
-#: functions/admin-function.php:262
+#: functions/admin-function.php:137
 msgid "Set seconds until the popup automatically close"
 msgstr ""
 
-#: functions/admin-function.php:265
+#: functions/admin-function.php:140
 msgid "Show countdown:"
 msgstr ""
 
-#: functions/admin-function.php:265
+#: functions/admin-function.php:140
 msgid ""
 "Show the countdown at the bottom of the popup which dispay the time before "
 "popup will close"
 msgstr ""
 
-#: functions/admin-function.php:267
+#: functions/admin-function.php:142
 msgid "Countdown font color:"
 msgstr ""
 
-#: functions/admin-function.php:270
+#: functions/admin-function.php:145
 msgid "Next time visualization (hours):"
 msgstr ""
 
-#: functions/admin-function.php:270
+#: functions/admin-function.php:145
 msgid "Set hours until the popup will appear again"
 msgstr ""
 
-#: functions/admin-function.php:273
+#: functions/admin-function.php:148
 msgid "Popup position:"
 msgstr ""
 
-#: functions/admin-function.php:273
+#: functions/admin-function.php:148
 msgid ""
 "Setting ABSOLUTE the popup will be static on the page. Setting FIXED it will "
 "scroll with the page."
 msgstr ""
 
-#: functions/admin-function.php:280
+#: functions/admin-function.php:155
 msgid "Use automatic top margin:"
 msgstr ""
 
-#: functions/admin-function.php:280
+#: functions/admin-function.php:155
 msgid ""
 "The system will try to auto center the popup, in case of problem deselect "
 "this option"
 msgstr ""
 
-#: functions/admin-function.php:284
+#: functions/admin-function.php:159
 msgid "Popup top margin:"
 msgstr ""
 
-#: functions/admin-function.php:284
+#: functions/admin-function.php:159
 msgid ""
 "Select manually the top margin to vertical align the popup i.e.: 20px or 10%"
 msgstr ""
 
-#: functions/admin-function.php:288
+#: functions/admin-function.php:163
 msgid "Popup width:"
 msgstr ""
 
-#: functions/admin-function.php:288
+#: functions/admin-function.php:163
 msgid "Use the % to change width dinamically with the browser window i.e: 30%"
 msgstr ""
 
-#: functions/admin-function.php:290
+#: functions/admin-function.php:165
 msgid "Popup height:"
 msgstr ""
 
-#: functions/admin-function.php:290
+#: functions/admin-function.php:165
 msgid "Leave it blank to maintain the aspect ratio"
 msgstr ""
 
-#: functions/admin-function.php:293
+#: functions/admin-function.php:168
 msgid "Popup background color"
 msgstr ""
 
-#: functions/admin-function.php:295
+#: functions/admin-function.php:170
 msgid "Popup border color:"
 msgstr ""
 
-#: functions/admin-function.php:299
+#: functions/admin-function.php:174
 msgid "DECIDE WHERE POPUP WILL BE DISPLAYED"
 msgstr ""
 
-#: functions/admin-function.php:301
+#: functions/admin-function.php:176
 msgid "Only selected pages"
 msgstr ""
 
-#: functions/admin-function.php:301
+#: functions/admin-function.php:176
 msgid "Multiple choise with CTRL+Click or SHIFT+Arrow up or down"
 msgstr ""
 
-#: functions/admin-function.php:302
+#: functions/admin-function.php:177
 msgid "All pages"
 msgstr ""
 
-#: functions/admin-function.php:303
+#: functions/admin-function.php:178
 msgid "Any pages"
 msgstr ""
 
-#: functions/admin-function.php:309
-msgid "Preview"
+#: functions/admin-function.php:184
+msgid "Preview page"
 msgstr ""
 
-#: functions/admin-function.php:315
-msgid "Your text (or HTML code:)"
-msgstr ""
-
-#: functions/admin-function.php:318
-msgid "Text background color"
-msgstr ""
-
-#: functions/admin-function.php:321
-msgid "Text border color:"
-msgstr ""
-
-#: functions/admin-function.php:327
+#: functions/admin-function.php:190
 msgid "Age restriction settings:"
 msgstr ""
 
-#: functions/admin-function.php:330
+#: functions/admin-function.php:193
 msgid "Age restricted page:"
 msgstr ""
 
-#: functions/admin-function.php:334
+#: functions/admin-function.php:197
 msgid "Enter button text:"
 msgstr ""
 
-#: functions/admin-function.php:335
+#: functions/admin-function.php:198
 msgid "i.e.: I AM OVER 18 - ENTER"
 msgstr ""
 
-#: functions/admin-function.php:337
+#: functions/admin-function.php:200
 msgid "Enter button background color:"
 msgstr ""
 
-#: functions/admin-function.php:340
+#: functions/admin-function.php:203
 msgid "Enter button border color:"
 msgstr ""
 
-#: functions/admin-function.php:343
+#: functions/admin-function.php:206
 msgid "Enter button font color:"
 msgstr ""
 
-#: functions/admin-function.php:346
+#: functions/admin-function.php:209
 msgid "Leave button text:"
 msgstr ""
 
-#: functions/admin-function.php:347
+#: functions/admin-function.php:210
 msgid "i.e.: I AM UNDER 18 - LEAVE"
 msgstr ""
 
-#: functions/admin-function.php:349
+#: functions/admin-function.php:212
 msgid "Leave button url:"
 msgstr ""
 
-#: functions/admin-function.php:350
+#: functions/admin-function.php:213
 msgid "i.e.: http://www.mysite.com/leave.html"
 msgstr ""
 
-#: functions/admin-function.php:352
+#: functions/admin-function.php:215
 msgid "Leave button background color:"
 msgstr ""
 
-#: functions/admin-function.php:355
+#: functions/admin-function.php:218
 msgid "Leave button border color:"
 msgstr ""
 
-#: functions/admin-function.php:358
+#: functions/admin-function.php:221
 msgid "Leave button font color:"
 msgstr ""
 
-#: functions/admin-function.php:391 templates/itro-popup-template.php:17
-msgid "CLOSE"
+#: functions/admin-function.php:236
+msgid "Your text (or HTML code:)"
 msgstr ""
 
-#: functions/admin-function.php:394 templates/itro-popup-template.php:20
-msgid "This popup will be closed in: "
+#: functions/admin-function.php:242
+msgid "Text background color"
 msgstr ""
 
-#: functions/core-function.php:49
+#: functions/admin-function.php:245
+msgid "Text border color:"
+msgstr ""
+
+#: functions/admin-function.php:253
+msgid "Popup image settings:"
+msgstr ""
+
+#: functions/admin-function.php:269
+msgid "Added image from direct url"
+msgstr ""
+
+#: functions/admin-function.php:276
+msgid "Added background from direct url"
+msgstr ""
+
+#: functions/admin-function.php:286
+msgid "INSERTED IMAGE"
+msgstr ""
+
+#: functions/admin-function.php:290
+msgid "Image size (%):"
+msgstr ""
+
+#: functions/admin-function.php:290
+msgid "Insert pure number whithout %"
+msgstr ""
+
+#: functions/admin-function.php:293 functions/admin-function.php:312
+msgid "Use direck url:"
+msgstr ""
+
+#: functions/admin-function.php:299 functions/admin-function.php:318
+msgid "Current image link:"
+msgstr ""
+
+#: functions/admin-function.php:308
+msgid "BACKGROUND IMAGE"
+msgstr ""
+
+#: functions/admin-function.php:336
+msgid "Upload and delete images"
+msgstr ""
+
+#: functions/admin-function.php:347
+msgid "Delete"
+msgstr ""
+
+#: functions/admin-function.php:354
+msgid "Select the image"
+msgstr ""
+
+#: functions/admin-function.php:356
+msgid "Upload"
+msgstr ""
+
+#: functions/admin-function.php:357
+msgid "Overwrite"
+msgstr ""
+
+#: functions/admin-function.php:363
+msgid "HELP US TO CONTINUE OUR DEVELOPING WORK. PLEASE DONATE!"
+msgstr ""
+
+#: functions/core-function.php:85
 msgid "Warning file is too big, this may cause problems!"
 msgstr ""
 
-#: functions/core-function.php:55
+#: functions/core-function.php:91
 msgid "\" already exists. Please check the overwrite option"
 msgstr ""
 
-#: functions/core-function.php:61
+#: functions/core-function.php:97
 msgid "\" successfully uploaded"
 msgstr ""
 
-#: functions/core-function.php:105
+#: functions/core-function.php:152
 msgid "Any image selected"
 msgstr ""
 
-#: functions/core-function.php:116
+#: functions/core-function.php:163
 msgid " added in popup"
 msgstr ""
 
-#: functions/core-function.php:126
+#: functions/core-function.php:173
 msgid "Any background image used"
 msgstr ""
 
-#: functions/core-function.php:136
+#: functions/core-function.php:183
 msgid " selected as background"
 msgstr ""
 
-#: functions/core-function.php:147
+#: functions/core-function.php:194
 msgid "Any image selected. Please select one."
 msgstr ""
 
-#: functions/core-function.php:156
+#: functions/core-function.php:205
 msgid "\" successfully deleted"
 msgstr ""
 
-#: functions/core-function.php:159
+#: functions/core-function.php:208
 msgid "Error, can't delete image."
+msgstr ""
+
+#: templates/itro-popup-template.php:21
+msgid "CLOSE"
+msgstr ""
+
+#: templates/itro-popup-template.php:24
+msgid "This popup will be closed in: "
 msgstr ""
