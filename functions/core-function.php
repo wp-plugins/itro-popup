@@ -37,7 +37,7 @@ function itro_display_popup()
 	if(itro_get_option('page_selection')!='any' && !isset($_COOKIE['popup_cookie']) )
 	if( ($id_match != NULL) || (itro_get_option('page_selection')=='all') )
 	{ 
-		echo include( 'wp-content/plugins/itro-popup/templates/itro-popup-template.php' );
+		include( 'wp-content/plugins/itro-popup/templates/itro-popup-template.php' );
 	} 
 }
 
