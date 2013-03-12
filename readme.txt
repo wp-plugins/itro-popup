@@ -4,7 +4,7 @@ Donate link: http://www.itro.eu/index.php/donate/
 Tags: popup, age, restriction, block, violence, compability, ie9
 Requires at least: 3.0.1
 Tested up to: 3.5.1
-Stable tag: 3.1
+Stable tag: 3.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -56,6 +56,11 @@ In the first one are stored all small data option, in the other one bigger data 
 no screenshot avaliable
 
 == Changelog ==
+= 3.2 =
+Big uploaded images truble solved! Now when you update the plugin your uploaded images remain in your site
+(is not necessary to upload everything every time). Automatic centering now works perfectly. Custom text 
+border bug fixed.
+
 = 3.1 =
 Listing image bug fixed.
 
@@ -109,7 +114,11 @@ bug fixed: color table now works in admin pannel.
 First released version.
 
 == Upgrade Notice ==
-== Changelog ==
+= 3.2 =
+Big uploaded images truble solved! Now when you update the plugin your uploaded images remain in your site
+(is not necessary to upload everything every time). Automatic centering now works perfectly. Custom text 
+border bug fixed.
+
 = 3.1 =
 Listing image bug fixed.
 

@@ -39,7 +39,7 @@ function itro_plugin_options()
 		/*opt 17*/'popup_height',
 		/*opt 18*/'page_selection',
 		/*opt 19*/'text_bg_color',
-		/*opt 20*/'text_border_image',
+		/*opt 20*/'text_border_color',
 		/*opt 21*/'count_font_color',
 		);
 		$field_name=array(
@@ -244,7 +244,7 @@ function itro_plugin_options()
 			<?php
 			//---Image manager for popup images
 			echo itro_onOff('imgManagerDiv');//the hide-show function?>
-			<p class="wpstyle" onClick="onOff_imgManagerDiv();"><?php _e("Popup image settings:", 'itro-plugin' ); ?> </p>
+			<p id="imgSettings" class="wpstyle" onClick="onOff_imgManagerDiv();"><?php _e("Popup image settings:", 'itro-plugin' ); ?> </p>
 			<?php 		
 			if( isset($_POST[ 'image_manager']) && $_POST[ 'image_manager' ] == 'Y' )
 			{
@@ -270,6 +270,8 @@ function itro_plugin_options()
 					echo '<b style="color:green">'; _e('Added background from direct url','itro-plugin'); echo '</b>';
 				}
 			}
+			if ( isset($_POST['delete_image']) && $_POST[ 'delete_image' ] == 'Y' ) { itro_delete_image(); }
+			if( isset($_POST['image_uploader']) ) {itro_image_uploader();}//if user has uploaded an image 
 			?>
 			<div id="imgManagerDiv">
 				<input type="hidden" name="image_manager" value="Y">
@@ -288,7 +290,7 @@ function itro_plugin_options()
 				</p>
 				<div id="imgManager" style="height:<?php if(itro_get_option('img_url_check')=='yes'){echo '0px;';}?>">
 					<p>
-						<a href="<?php echo itro_get_option('img_source');?>"><?php _e('Current image link:','itro-plugin')?></a>
+						<a href="<?php if ( itro_get_option('img_source') == NULL ) {echo '#';} else { echo itro_get_option('img_source'); }?>"><?php _e('Current image link:','itro-plugin')?></a>
 						<input type="text" readonly onClick="select();" value="<?php echo itro_get_option('img_source'); ?>" size="50">
 					</p>
 					<select name="selected_image" style="min-width:100px;">
@@ -307,7 +309,7 @@ function itro_plugin_options()
 				</p>
 				<div id="bgManager" style="height:<?php if(itro_get_option('bg_url_check')=='yes'){echo '0px;';}?>">
 					<p>
-					<a href="<?php echo itro_get_option('background_source');?>"><?php _e('Current image link:','itro-plugin')?></a>
+					<a href="<?php if ( itro_get_option('background_source') == NULL ) {echo '#';} else { echo itro_get_option('img_source'); }?>"><?php _e('Current image link:','itro-plugin')?></a>
 					<input type="text" readonly onClick="select();" value="<?php echo itro_get_option('background_source'); ?>" size="50">
 					</p>
 					<select name="bg_selected_image" style="min-width:100px;">
@@ -330,19 +332,17 @@ function itro_plugin_options()
 		<div id="imgManagerDiv2">
 			<!--------- image deleteing !--------->
 			<?php
-			if ( isset($_POST['delete_image']) && $_POST[ 'delete_image' ] == 'Y' ) { itro_delete_image(); }
-			if( isset($_POST['image_uploader']) ) {itro_image_uploader();}//if user has uploaded an image 
 			?>
-			<form id="deleteImgForm" action="#deleteImgForm" method="post">
+			<form id="deleteImgForm" action="#imgSettings" method="post">
 				<input type="hidden" name="delete_image" value="Y">
 				<select name="deleted_image" style="min-width:100px;">
-					<?php itro_image_list(); ?>
+					<?php itro_image_list('no_select'); ?>
 				</select>
 				<input class="button-primary" type="submit" name="submitImgDelete" value="<?php _e("Delete", 'itro-plugin')?>">
 			</form>
 			
 			<!--------- image uploading !---------->
-			<form id="imgUploaderForm" action="#imgUploaderForm" method="post" enctype="multipart/form-data">
+			<form id="imgUploaderForm" action="#imgSettings" method="post" enctype="multipart/form-data">
 				<input type="hidden" name="image_uploader" value="Y">
 				<p>
 					<label for="file"><?php _e("Select the image", 'itro-plugin')?></label>

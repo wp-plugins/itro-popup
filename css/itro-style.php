@@ -32,9 +32,7 @@ function itro_style() { ?>
 			font-size: 10px;
 			font-family: Verdana;
 			z-index: 999999;
-			<?php if( itro_get_option('auto_margin_check') == NULL  ) {echo 'margin-top:' . itro_get_option('popup_top_margin') . ';' ;}
-			else {echo 'top:50%;';}
-			?>
+			<?php if( itro_get_option('auto_margin_check') == NULL  ) {echo 'margin-top:' . itro_get_option('popup_top_margin') . ';' ;}?>
 			border: 4px solid <?php echo itro_get_option('popup_border_color');?>;
 			border-radius: 8px 8px 8px 8px;
 			width: <?php echo itro_get_option('popup_width');?>;
@@ -59,8 +57,12 @@ function itro_style() { ?>
 		{
 			position: relative;
 			background-color: <?php echo itro_get_option('text_bg_color') ?>;
-			border-top: 3px solid <?php echo itro_get_option('text_border_color') ?>;
-			border-bottom: 3px solid <?php echo itro_get_option('text_border_color') ?>;
+			<?php
+			if (itro_get_option('text_border_color') != NULL )
+			{
+				echo 'border-top: 3px solid' . itro_get_option('text_border_color') . ';' ;
+				echo 'border-bottom: 3px solid' . itro_get_option('text_border_color') . ';' ;
+			} ?>
 			color: <?php echo itro_get_option('text_color') ?>;
 			padding-left:10px;
 			padding-right: 10px;
@@ -114,12 +116,14 @@ function itro_admin_style ()
 		#leftColumn
 		{
 			float:left;
+			width:450px;
 		}
 
 		#rightColumn
 		{
 			float:right;
 			margin-right:10%;
+			width:450px;
 		}
 		
 		#rightColumn2
@@ -127,6 +131,7 @@ function itro_admin_style ()
 			clear:right;
 			float:right;
 			margin-right:10%;
+			width:450px;
 		}
 
 		#donateForm

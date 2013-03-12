@@ -6,6 +6,7 @@ All Right Reserved.
 */
 function itro_popup_js()
 {
+	echo '<script src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>';
 	//this condition, control if the popup must or not by displayed in a specified page
 	$selected_page_id = json_decode(itro_get_option('selected_page_id'));
 	$id_match = NULL;
@@ -20,21 +21,15 @@ function itro_popup_js()
 	//------------------------- insert script under this line to load it only if popup is displayed
 	?>
 		<script type="text/javascript">		
-		<?php
-		if (itro_get_option('age_restriction') == NULL) //insert script here to show when is not age restricted
-		{?>			
-			document.onkeydown = function(event) 
-			{
-				event = event || window.event;
-				var key = event.keyCode;
-				if(key==27){popup.style.visibility='Hidden'; opaco.style.visibility='Hidden';} 
-			}
-		<?php
-		}?>
-		
-		<?php 
-			if (itro_get_option('age_restriction')==NULL) //if is not set age restriction option popup will be closed automatically
-			{ ?>
+			<?php
+			if (itro_get_option('age_restriction') == NULL) //insert script here to show when is not age restricted
+			{?>			
+				document.onkeydown = function(event) 
+				{
+					event = event || window.event;
+					var key = event.keyCode;
+					if(key==27){popup.style.visibility='Hidden'; opaco.style.visibility='Hidden';} 
+				}
 				var popTime=<?php echo itro_get_option('popup_time'); ?>;
 
 				setInterval(function(){popTimer()},1000); //the countdown 
@@ -47,18 +42,33 @@ function itro_popup_js()
 					else {popup.style.visibility='Hidden'; opaco.style.visibility='Hidden';
 					}
 				}
-			<?php 
+				<?php 
 			}
 			if( itro_get_option('auto_margin_check') != NULL )
 			{?>
-				var a=1;
+				var browserWidth = 0, browserHeight = 0;
+				
 				setInterval(function(){marginRefresh()},100); //refresh every 0.1 second the popup top margin (needed for browser window resizeing)
 				function marginRefresh()
-				{
-					//assign to x the window width and to y the window height
-					var popupHeight = document.getElementById('popup').offsetHeight ; 		//display the actual px size of popup div
-					poupTopMargin = -popupHeight/2; 									//calculate the top margin
-					document.getElementById('popup').style.marginTop = poupTopMargin ; 		//update the top margin of popup
+				{	
+					if( typeof( window.innerWidth ) == 'number' ) 
+					{
+						//Non-IE
+						browserWidth = window.innerWidth;
+						browserHeight = window.innerHeight;
+					} else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) 
+					{
+						//IE 6+ in 'standards compliant mode'
+						browserWidth = document.documentElement.clientWidth;
+						browserHeight = document.documentElement.clientHeight;
+					} else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) 
+					{
+						//IE 4 compatible
+						browserWidth = document.body.clientWidth;
+						browserHeight = document.body.clientHeight;
+					}
+					popupHeight = document.getElementById('popup').offsetHeight ; 			//get the actual px size of popup div
+					document.getElementById('popup').style.top = (browserHeight - popupHeight)/2; //update the top margin of popup					
 				}
 			<?php 
 			}?>

@@ -17,6 +17,12 @@ function itro_send_header()
 	{ echo '<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>'; }
 }
 
+//----------------------------- CREATE UPLOAD FOLDER
+function itro_upload_dir()
+{
+	if( !is_dir(itroUploadDir . 'itro-upload') ) { mkdir( itroUploadDir . 'itro-upload/' ); }
+}
+
 //--------------------------DISPLAY THE POPUP
 function itro_display_popup()
 {
@@ -51,16 +57,14 @@ function itro_image_uploader()
 		else
 		{
 			if(!isset($_POST['overwrite'])){$_POST['overwrite']='no';}
-			if (file_exists(mainLocalPath . "/uploaded-images/" . $_FILES["file"]["name"]) && $_POST['overwrite']!='yes')
+			if (file_exists(itroUploadDir . 'itro-upload/' . $_FILES["file"]["name"]) && $_POST['overwrite']!='yes')
 			{ echo '<b style="color: red;">"' . $_FILES["file"]["name"] ; _e('" already exists. Please check the overwrite option','itro-prugin'); echo '</b><br><br>'; }
 			else
 			{
 				move_uploaded_file($_FILES["file"]["tmp_name"],
-				mainLocalPath . "/uploaded-images/" . $_FILES["file"]["name"]);
-				$img_source = itroPath . "uploaded-images/" . $_FILES["file"]["name"];
+				itroUploadDir . 'itro-upload/' . $_FILES["file"]["name"]);
+				$img_source = itroUploadUrl . 'itro-upload/' . $_FILES["file"]["name"];
 				echo '<b style="color: green;">"' . $_FILES["file"]["name"]; _e('" successfully uploaded'); echo '"</b><br>Image link: ' . $img_source . '<br><br>' ;
-				itro_update_option('img_source',$img_source);
-				itro_update_option('selected_image',$_FILES["file"]["name"]);
 			}
 		}
 	}
@@ -72,22 +76,35 @@ function itro_image_uploader()
 
 //------------------- IMAGES MANAGER
 //image listing
-function itro_image_list($img)
+function itro_image_list($opt)
 {	
-	if($handle = opendir(mainLocalPath . '/uploaded-images'))
+	if( $handle = opendir(itroUploadDir . 'itro-upload/') )
 	{
-		if ($img == 'ins') 
-		{$selected_img = itro_get_option('selected_image');} 
-		else 
-		{$selected_img = itro_get_option('bg_selected_image');}
-		
-		echo '<option></option>';
-		while (false !== ($entry = readdir($handle))) 
+		if ($opt != 'no_select')
 		{
-			if ($entry != "." && $entry != "..")
+			if ($opt == 'ins') 
+			{$selected_img = itro_get_option('selected_image');} 
+			else 
+			{$selected_img = itro_get_option('bg_selected_image');}
+			echo '<option></option>';
+			while (false !== ($entry = readdir($handle))) 
 			{
-				if($entry === $selected_img){echo '<option selected="select">' . $entry . '</option>';}
-				else { echo '<option>' . $entry . '</option>'; }
+				if ($entry != "." && $entry != "..")
+				{
+					if($entry === $selected_img){echo '<option selected="select">' . $entry . '</option>';}
+					else { echo '<option>' . $entry . '</option>'; }
+				}
+			}
+		}
+		else
+		{
+			echo '<option></option>';
+			while (false !== ($entry = readdir($handle))) 
+			{
+				if ($entry != "." && $entry != "..")
+				{
+					echo '<option>' . $entry . '</option>'; 
+				}
 			}
 		}
 	}
@@ -108,9 +125,9 @@ function itro_image_manager()
 	} 
 	else 
 	{
-		if ( !empty($_POST['selected_image']) )
+		if ( !empty($_POST['selected_image']) && !isset($_POST[ 'img_url_check']))
 		{
-			itro_update_option('img_source', itroPath . "uploaded-images/" . $_POST['selected_image']);
+			itro_update_option('img_source', itroUploadUrl . 'itro-upload/' . $_POST['selected_image']);
 			itro_update_option('selected_image',$_POST['selected_image']);
 			echo '<b style="color:green;">"';
 			echo $_POST['selected_image'] . '"'; _e(' added in popup','itro-plugin');
@@ -128,9 +145,9 @@ function itro_image_manager()
 	} 
 	else 
 	{
-		if ( !empty($_POST['bg_selected_image']) )
+		if ( !empty($_POST['bg_selected_image']) && !isset($_POST[ 'bg_url_check']) )
 		{
-			itro_update_option('background_source', itroPath . "uploaded-images/" . $_POST['bg_selected_image']);
+			itro_update_option('background_source', itroUploadUrl . 'itro-upload/' . $_POST['bg_selected_image']);
 			itro_update_option('bg_selected_image',$_POST['bg_selected_image']);
 			echo '<b style="color:green;">"';
 			echo $_POST['bg_selected_image'] . '"'; _e(' selected as background','itro-plugin');
@@ -149,9 +166,11 @@ function itro_delete_image()
 	}
 	else
 	{
-		if ( unlink(mainLocalPath . "/uploaded-images/" . $_POST['deleted_image']) )
+		if ( unlink(itroUploadDir . 'itro-upload/' . $_POST['deleted_image']) )
 		{
-			if (itro_get_option('deleted_image') == $_POST['deleted_image']) {itro_update_option('background_source' , NULL); }
+			if (itro_get_option('bg_selected_image') == $_POST['deleted_image']) {itro_update_option('background_source' , NULL); }
+			if (itro_get_option('selected_image') == $_POST['deleted_image']) {itro_update_option('img_source' , NULL); }
+			
 			echo '<b style="color:green;">"';
 			echo $_POST['deleted_image'] ; _e('" successfully deleted','itro-plugin');
 			echo '</b><br><br>';
