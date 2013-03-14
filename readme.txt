@@ -23,11 +23,8 @@ It also fix the Internet Explorer complabiliy problem, for all IE version.
 
 MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
 
-Any suggestions for new features implementation which you need? 
-Need personal implementation for your businnes or your interest?
+Any suggestions for new features implementation which you need?
 Email to support.itro@live.com
-
-Like this plugin? Say it to your friend! Sustain free software! https://www.facebook.com/ITRO.Popup
 
 == Installation ==
 
