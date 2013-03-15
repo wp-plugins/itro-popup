@@ -114,7 +114,8 @@ bug fixed: color table now works in admin pannel.
 First released version.
 
 == Upgrade Notice ==
-NO NOTICE.
+Added WP editor to custom text field. Restored preview button, now it open a new window whith popup integrated
+in the theme. Uninstall bug solved, now clear all data and tables.
 
 == Notes ==
 
