@@ -111,5 +111,20 @@ function itro_list_pages()
 <?php
 }
 
-//------------------------- ZIPPING OLD UPLOADED IMAGES
-//------------------------- ()
+//---------------REVERSE WPAUTOP
+function reverse_wpautop($s)
+{
+    //remove any new lines already in there
+    $s = str_replace("\n", "", $s);
+
+    //remove all <p>
+    $s = str_replace("<p>", "", $s);
+
+    //replace <br /> with \n
+    $s = str_replace(array("<br />", "<br>", "<br/>"), "\n", $s);
+
+    //replace </p> with \n\n
+    $s = str_replace("</p>", "\n\n", $s);       
+
+    return $s;      
+}

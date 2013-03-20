@@ -28,7 +28,20 @@ function itro_style() { ?>
 			background:<?php echo itro_get_option('leave_button_bg_color')?>;
 			color: <?php echo itro_get_option('leave_button_font_color');?>;
 		}
-
+		
+		#popup_content
+		{
+			<?php 
+			if( preg_match('/px/', itro_get_option('popup_height')) || preg_match('/%/', itro_get_option('popup_height')) ) 
+			{echo 'overflow-y:auto;';} 
+			else { echo 'overflow-y:hidden;'; }
+			?>
+			overflow-x: auto;
+			height: 100%;
+			width:100%;
+			
+		}
+		
 		#popup
 		{
 			color: <?php echo itro_get_option('text_color') ?>;
@@ -48,7 +61,7 @@ function itro_style() { ?>
 			width: <?php echo itro_get_option('popup_width');?>;
 			height: <?php echo itro_get_option('popup_height');?>;
 			background-color: <?php echo itro_get_option('popup_background'); ?>;
-			overflow-x: hidden;
+			<?php if( itro_get_option('show_countdown') != NULL ) { echo 'padding-bottom: 15px;'; } ?>
 		}
 
 		#popup_image
@@ -61,11 +74,11 @@ function itro_style() { ?>
 		#popup_countdown 
 		{
 			color: <?php echo itro_get_option('count_font_color') ?>;
-			position: relative;
 			width: 100%;
-			bottom: 5px;
-			padding-top:5px;
-			/* background-color: <?php echo itro_get_option('popup_border_color');?>; */
+			bottom: 15px;
+			padding-top: 3px;
+			padding-bottom: 3px;
+			background-color: <?php echo itro_get_option('popup_border_color');?>;
 		}
 
 		#opaco{
@@ -112,7 +125,12 @@ function itro_admin_style ()
 			-moz-user-select: none;
 			cursor: pointer;
 		}
-	
+		
+		#wp-custom_html-editor-container #custom_html_ifr
+		{ 
+			width: 450px !important;
+		}
+		
 		#leftColumn
 		{
 			float:left;
@@ -132,6 +150,11 @@ function itro_admin_style ()
 			float:right;
 			margin-right:10%;
 			width:450px;
+		}
+		
+		#customHtmlForm
+		{
+			overflow: show;
 		}
 
 		#donateForm

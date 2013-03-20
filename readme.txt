@@ -1,10 +1,10 @@
 === ITRO Popup Plugin ===
 Contributors: I.T.RO.
 Donate link: http://www.itro.eu/index.php/donate/
-Tags: popup, age, restriction, block, violence, compability, ie9, age validation, internet explorer compability
+Tags: popup, age, restriction, block, violence, compability, ie9, age validation, internet explorer compability, adult, adult content
 Requires at least: 3.0.1
 Tested up to: 3.5.1
-Stable tag: 3.4
+Stable tag: 3.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -53,6 +53,9 @@ In the first one are stored all small data options, in the other one bigger data
 no screenshot avaliable
 
 == Changelog ==
+= 3.5 =
+WP editor visualization bug fixed. Better visualization for countdown and close cross. UI more friendly.
+
 = 3.4 =
 Added media button in WP editor. Integrated WP media uploading for images. WP editor paragraph bug fixed.
 Now popup can be displayed in blog homepage. Minor bug fixed. Now content can scroll vertically.
@@ -119,8 +122,7 @@ bug fixed: color table now works in admin pannel.
 First released version.
 
 == Upgrade Notice ==
-Added media button in WP editor. Integrated WP media uploading for images. WP editor paragraph bug fixed.
-Now popup can be displayed in blog homepage. Minor bug fixed. Now can scroll content vertically.
+WP editor visualization bug fixed. Better visualization for countdown and close cross. UI more friendly.
 
 == Notes ==
 

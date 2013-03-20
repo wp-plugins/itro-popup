@@ -11,7 +11,7 @@ function itro_plugin_menu() {
 }
 
 function itro_plugin_options() 
-{
+{	
 	if ( !current_user_can( 'manage_options' ) )  {
 		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
 	}
@@ -39,7 +39,7 @@ function itro_plugin_options()
 		/*opt 17*/'popup_height',
 		/*opt 18*/'page_selection',
 		/*opt 19*/'blog_home',
-		/*opt 20*/'',
+		/*opt 20*/'wpautop_select',
 		/*opt 21*/'count_font_color',
 		/*opt 22*/'background_select',
 		);
@@ -74,6 +74,7 @@ function itro_plugin_options()
 	for($i=0;$i<count($field_name); $i++)
 	{
 		// Read in existing option value from database
+		
 		$field_value[$i] = itro_get_field( $field_name[$i] );
 
 		// See if the user has posted us some information
@@ -81,7 +82,7 @@ function itro_plugin_options()
 		if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' ) 
 		{
 			// Read their posted value
-			if(isset($_POST[$field_name[$i]])){$field_value[$i] = wpautop($_POST[ $field_name[$i] ]);}
+			if(isset($_POST[$field_name[$i]])) {$field_value[$i] = $_POST[ $field_name[$i] ]; }
 			else{$field_value[$i] = NULL;}
 			
 			// Save the posted value in the database
@@ -109,7 +110,7 @@ function itro_plugin_options()
 		if( empty($_POST['background_source']) ) { $opt_val[22] = NULL; itro_update_option('background_source',NULL); }
 		else { itro_update_option('background_source',$_POST['background_source']); }
 	}
-	
+	itro_admin_style();
 	// Put an settings updated message on the screen
 	if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' ) {
 		?>
@@ -119,11 +120,7 @@ function itro_plugin_options()
 	
 	?>
 	<script type="text/javascript" src="<?php echo itroPath . 'scripts/'; ?>jscolor/jscolor.js"></script>
-	<script>
-		function itroShow(x) {document.getElementById(x).style.height='auto';}
-		function itroHide(x) {document.getElementById(x).style.height='0px';}
-	</script>
-	<!-- <img style="position:relative; float:right;" src=""> !-->
+	
 	<div style="display:table; width:100%;">
 		<h1 style="float:left;"><?php _e( 'I.T.RO. Popup Plugin - Settings', 'itro-plugin');?></h1>
 		<h4 style="float:right;">VER <?php echo get_option('itro_curr_ver');	?></h4>
@@ -136,19 +133,23 @@ function itro_plugin_options()
 			<div id="formContainer">
 				
 				<!--------- General options --------->
-				<?php echo itro_onOff('genOption');?>
+				<?php echo itro_onOff('genOption','hidden');?>
 				<p class="wpstyle" onClick="onOff_genOption();"><?php _e("General Popup Option:", 'itro-plugin' ); ?> </p>
 				<div id="genOption">
 					<input type="hidden" name="<?php echo $submitted_form; ?>" value="Y">
-					<p><?php _e("Enable IE compability:", 'itro-plugin' ); ?><img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>"title="<?php _e('If your site is has visualization issues in Internet Explorer, check this box to solve the compatibility problem.','itro-plugin');?>" >
-						<input type="checkbox" name="ie_compability" value="yes" <?php if(itro_get_option('ie_compability')=='yes' ){echo 'checked="checked"';} ?> />
+					<p>
+						<input type="checkbox" id="ie_compability" name="ie_compability" value="yes" <?php if(itro_get_option('ie_compability')=='yes' ){echo 'checked="checked"';} ?> />
+						<span onclick="itro_mutual_check('ie_compability','','')"><?php _e("Enable IE compability", 'itro-plugin' ); ?></span>
+						<img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>"title="<?php _e('If your site is has visualization issues in Internet Explorer, check this box to solve the compatibility problem.','itro-plugin');?>" >
 					</p>
 					<p><?php _e("Popup seconds:", 'itro-plugin' ); ?> <img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e("Set seconds until the popup automatically close. Leave it blank to disable countdown.",'itro-plugin');?>" >
 						<input type="text" name="<?php echo $opt_name[0]; ?>" value="<?php echo $opt_val[0]; ?>" size="10">
 					</p>
-					<p><?php _e("Show countdown:", 'itro-plugin' ); ?><img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e('Show the countdown at the bottom of the popup which dispay the time before popup will close','itro-plugin');?>" >
-						<input type="checkbox" name="show_countdown" value="yes" <?php if(itro_get_option('show_countdown')=='yes' ){echo 'checked="checked"';} ?> />&nbsp;&nbsp;
-						<?php _e("Countdown font color:", 'itro-plugin' ); ?>
+					<p>
+						<input type="checkbox" name="show_countdown" id="show_countdown" value="yes" <?php if(itro_get_option('show_countdown')=='yes' ){echo 'checked="checked"';} ?> />&nbsp;&nbsp;
+						<span onclick="itro_mutual_check('show_countdown','','')"><?php _e("Show countdown", 'itro-plugin' ); ?></span>
+						<img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e('Show the countdown at the bottom of the popup which dispay the time before popup will close','itro-plugin');?>" >
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php _e("Countdown font color:", 'itro-plugin' ); ?>
 						<input type="text" class="color" name="<?php echo $opt_name[21]; ?>" value="<?php echo $opt_val[21]; ?>" size="10">
 					</p>
 					<p><?php _e("Next time visualization (hours):", 'itro-plugin' ); ?> <img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e("Set hours until the popup will appear again",'itro-plugin');?>" >
@@ -160,18 +161,19 @@ function itro_plugin_options()
 							<option value="fixed" <?php if(itro_get_option($opt_name[16])=='fixed') {echo 'selected="select"';} ?> >Fixed</option>
 						</select>
 					</p>
-					<?php echo itro_onOff_checkbox('autoMarginCheck','marginDiv','true');?>
-					<p><?php _e("Use automatic top margin:", 'itro-plugin' ); ?><img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e("The system will try to auto center the popup, in case of problem deselect this option",'itro-plugin');?>" >
-						<input id="autoMarginCheck" type="checkbox" onClick="autoMarginCheck_checkbox_marginDiv()" name="auto_margin_check" value="yes" <?php if(itro_get_option('auto_margin_check')=='yes' ){echo 'checked="checked"';} ?> />
-					</p>
-					<div id="marginDiv" style="height:<?php if(itro_get_option('auto_margin_check')=='yes'){echo '0px;';}?>">
-					<p><?php _e("Popup top margin:", 'itro-plugin' ); ?> <img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e("Select manually the top margin to vertical align the popup i.e.: 20px or 10%",'itro-plugin');?>" >
-						<input type="text" name="<?php echo $opt_name[1]; ?>" value="<?php echo $opt_val[1]; ?>" size="10">
-					</p>
-					</div>
-					<p><?php _e("Popup width:", 'itro-plugin' ); ?> <img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e("Use the % to change width dinamically with the browser window i.e: 30%",'itro-plugin');?>" >
+					<p>
+						<input id="autoMarginCheck" type="checkbox" name="auto_margin_check" value="yes" <?php if(itro_get_option('auto_margin_check')=='yes' ){echo 'checked="checked"';} ?> />
+						<span onclick="itro_mutual_check('autoMarginCheck','','');"><?php _e("Automatic top margin:", 'itro-plugin' ); ?></span>
+						<img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e("The system will try to auto center the popup, in case of problem deselect this option",'itro-plugin');?>" >
+						&nbsp;&nbsp;&nbsp;
+						<span id="marginDiv" style="height:<?php if(itro_get_option('auto_margin_check')=='yes'){echo '0px;';}?>">					
+							<?php _e("Popup top margin:", 'itro-plugin' ); ?> <img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e("Select manually the top margin to vertical align the popup i.e.: 20px or 10%",'itro-plugin');?>" >
+							<input type="text" name="<?php echo $opt_name[1]; ?>" value="<?php echo $opt_val[1]; ?>" size="10">
+						</span>
+					</p>					
+					<p><?php _e("Popup width:", 'itro-plugin' ); ?> <img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e("Use the % to change width dinamically with the browser window , or px for fixed dimension i.e: 30% or 200px",'itro-plugin');?>" >
 						<input type="text" name="<?php echo $opt_name[3]; ?>" value="<?php echo $opt_val[3]; ?>" size="10">&nbsp;&nbsp;&nbsp;&nbsp;
-						<?php _e("Popup height:", 'itro-plugin' ); ?> <img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e("Leave it blank to maintain the aspect ratio",'itro-plugin');?>" >
+						<?php _e("Popup height:", 'itro-plugin' ); ?>
 						<input type="text" name="<?php echo $opt_name[17]; ?>" value="<?php echo $opt_val[17]; ?>" size="10">
 					</p>
 					<p><?php _e("Popup background color", 'itro-plugin' ); ?>
@@ -197,12 +199,13 @@ function itro_plugin_options()
 				</div>
 				
 				<!------------ Age restriction option  ---------->
-				<?php echo itro_onOff('ageRestSettings');?>
+				<?php echo itro_onOff('ageRestSettings','hidden');?>
 				<p class="wpstyle" onClick="onOff_ageRestSettings();"><?php _e("Age restriction settings:", 'itro-plugin' ); ?> </p>
 				<div id="ageRestSettings">
 					<?php echo itro_onOff_checkbox('ageCheck','ageRest','false');?>
-					<p><?php _e("Age restricted page:", 'itro-plugin' ); ?>
+					<p>
 					<input id="ageCheck" type="checkbox" onClick="ageCheck_checkbox_ageRest()" name="<?php echo $opt_name[6]; ?>" value="yes" <?php if($opt_val[6]=='yes' ){echo 'checked="checked"';} ?> />
+					<span onclick="itro_mutual_check('ageCheck','','');ageCheck_checkbox_ageRest();"><?php _e("Enable age validation", 'itro-plugin' ); ?></span>
 					</p>
 					<div id="ageRest" style="height:<?php if($opt_val[6]!='yes' ){echo '0px;';}?>">
 						<p><?php _e("Enter button text:", 'itro-plugin' ); ?> 
@@ -244,37 +247,36 @@ function itro_plugin_options()
 		<div id="rightColumn">
 			<input type="hidden" name="<?php echo $submitted_form; ?>" value="Y">
 			<!------- Custom html field -------->
-				<?php echo itro_onOff('customHtmlForm');?>
-				<p class="wpstyle" onClick="onOff_customHtmlForm();"><?php _e("Your text (or HTML code:)", 'itro-plugin' ); ?> </p>
-				<div id="customHtmlForm">
-					<?php
-					$content = stripslashes($field_value[0]);
-					$content = wpautop($content);
-					wp_editor( $content, 'custom_html', array('textarea_name'=> 'custom_html','teeny'=>false, 'media_buttons'=>true, 'wpautop'=>true) );
-					?>
-					<h4><?php _e("BACKGROUND IMAGE",'itro-plugin');?></h4>
-						<a href="<?php if ( itro_get_option('background_source') == NULL ) {echo '#customHtmlForm';} else { echo itro_get_option('background_source'); }?>"><?php _e('Show image','itro-plugin')?></a>
-						
-						<?php //------------------- check version to retrieve old uploaded images 
-						if ( get_option('itro_perv_ver') < 3.4 || get_option('itro_perv_ver') == NULL ) 
-						{ ?>
-							<span style="float: right;">
-							<a href="<?php echo itroUploadUrl; ?>"><?php _e('Where are my old images?','itro-plugin'); ?></a>
-							<img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e("If your plugin version is older than 3.4 here you can found your old uploaded images.",'itro-plugin');?>" >
-							</span>
-							<br><?php 
-						} ?>
-						
-						<input type="radio" name="<?php echo $opt_name[22];?>" value="" <?php if($opt_val[22]== 'no' || $opt_val[22]== NULL ){echo 'checked="checked"';} ?>/>
-						<?php _e("No background",'itro-plugin');?><br>
-						<input type="radio" id="yes_bg" name="<?php echo $opt_name[22];?>" value="yes" <?php if( $opt_val[22]== 'yes' ){echo 'checked="checked"';} ?>/>
-						<input class="upload" onClick="select(); document.getElementById('yes_bg').checked=true" type="text" name="background_source" size="50" value="<?php echo itro_get_option('background_source'); ?>" />
-						<input class="button" id="upload_button" type="button" name="bg_upload_button" value="<?php _e('Upload Image','itro-plugin') ?>" />
-			<hr>
-			<p class="submit">
-				<input type="submit" name="Submit" class="button-primary" value="<?php esc_attr_e('Save Changes') ?>" />&nbsp;&nbsp;&nbsp;&nbsp;
-				<input type="button" target="_blank" class="button" onClick="window.open('/?page_id=<?php echo itro_get_option('preview_id') ?>')" value="<?php echo _e('Preview page','itro-plugin' )?>">
-			</p>
+			<?php echo itro_onOff('customHtmlForm','hidden');?>
+			<p class="wpstyle" onClick="onOff_customHtmlForm();"><?php _e("Your text (or HTML code:)", 'itro-plugin' ); ?> </p>
+			<div id="customHtmlForm">
+				<?php					
+				$content = stripslashes($field_value[0]);
+				wp_editor( $content, 'custom_html', array('textarea_name'=> 'custom_html','teeny'=>false, 'media_buttons'=>true, 'wpautop'=>false ) );
+				?>
+				<h4><?php _e("BACKGROUND IMAGE",'itro-plugin');?></h4>
+				<a href="<?php if ( itro_get_option('background_source') == NULL ) {echo '#customHtmlForm';} else { echo itro_get_option('background_source'); }?>"><?php _e('Show image','itro-plugin')?></a>
+				
+				<?php //------------------- check version to retrieve old uploaded images 
+				if ( get_option('itro_perv_ver') < 3.4 || get_option('itro_perv_ver') == NULL ) 
+				{ ?>
+					<span style="float: right;">
+					<a href="<?php echo itroUploadUrl; ?>"><?php _e('Where are my old images?','itro-plugin'); ?></a>
+					<img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e("If your plugin version is older than 3.4 here you can found your old uploaded images.",'itro-plugin');?>" >
+					</span>
+					<br><?php 
+				} ?>
+				
+				<input type="radio" name="<?php echo $opt_name[22];?>" value="" <?php if($opt_val[22]== 'no' || $opt_val[22]== NULL ){echo 'checked="checked"';} ?>/>
+				<?php _e("No background",'itro-plugin');?><br>
+				<input type="radio" id="yes_bg" name="<?php echo $opt_name[22];?>" value="yes" <?php if( $opt_val[22]== 'yes' ){echo 'checked="checked"';} ?>/>
+				<input class="upload" onClick="select(); document.getElementById('yes_bg').checked=true" type="text" name="background_source" size="50" value="<?php echo itro_get_option('background_source'); ?>" />
+				<input class="button" id="upload_button" type="button" name="bg_upload_button" value="<?php _e('Upload Image','itro-plugin') ?>" />
+				<hr>
+				<p class="submit">
+					<input type="submit" name="Submit" class="button-primary" value="<?php esc_attr_e('Save Changes') ?>" />&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="button" target="_blank" class="button" onClick="window.open('/?page_id=<?php echo itro_get_option('preview_id') ?>')" value="<?php echo _e('Preview page','itro-plugin' )?>">
+				</p>
 			</div>
 		</div>
 	</form>

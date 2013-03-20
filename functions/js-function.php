@@ -68,6 +68,23 @@ function itro_popup_js()
 function itro_admin_js()
 { ?>
 	<script>
+		function itro_mutual_check(checkbox_id_1,checkbox_id_2,box)
+		{
+			if (!box)
+			{
+				if( checkbox_id_2 == '' ) {document.getElementById(checkbox_id_1).checked = !document.getElementById(checkbox_id_1).checked; return 1;}
+				if( checkbox_id_1 == '' ) {return 0;}
+				if(checkbox_id_1 == checkbox_id_2) { return 0; }
+				document.getElementById(checkbox_id_1).checked = !document.getElementById(checkbox_id_1).checked;
+				if( document.getElementById(checkbox_id_1).checked || document.getElementById(checkbox_id_2).checked )
+				{ document.getElementById(checkbox_id_2).checked = !document.getElementById(checkbox_id_1).checked; }
+			}
+			else
+			{
+				if( document.getElementById(checkbox_id_1).checked || document.getElementById(checkbox_id_2).checked )
+				{ document.getElementById(checkbox_id_2).checked = !document.getElementById(checkbox_id_1).checked; }
+			}
+		}
 		jQuery(document).ready(function() {
 		
 		var orig_send_to_editor = window.send_to_editor;
@@ -99,9 +116,10 @@ function itro_admin_js()
 	</script><?php
 } 
 
-function itro_onOff($tag_id){
-?>
-<style>#<?php echo $tag_id;?>{overflow:hidden;}</style>
+function itro_onOff($tag_id,$overflow){
+if( $overflow == 'hidden') {?>
+	<style>#<?php echo $tag_id;?>{overflow:hidden;}</style><?php
+} ?>
 <script>
 	var <?php echo $tag_id;?>_flag=true;
 	function onOff_<?php echo $tag_id;?>() {
