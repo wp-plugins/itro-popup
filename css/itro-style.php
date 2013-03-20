@@ -6,6 +6,15 @@ All Right Reserved.
 */
 function itro_style() { ?>
 	<style>
+		#age_button_area
+		{
+			padding-top:10px;
+			position: relative;
+			width: 100%;
+			bottom: 5px;
+			padding-top:5px;
+		}
+		
 		#ageEnterButton
 		{
 			border-color:<?php echo itro_get_option('enter_button_border_color')?>;
@@ -22,8 +31,9 @@ function itro_style() { ?>
 
 		#popup
 		{
+			color: <?php echo itro_get_option('text_color') ?>;
 			position: <?php echo itro_get_option('popup_position');?>;
-			background-image: url('<?php echo itro_get_option('background_source');?>');
+			background-image: <?php if (itro_get_option('background_select') != NULL ) { echo 'url("' . itro_get_option('background_source') . '");'; } ?>
 			background-repeat: no-repeat;
 			background-position: center center;
 			margin: 0 auto;
@@ -32,12 +42,13 @@ function itro_style() { ?>
 			font-size: 10px;
 			font-family: Verdana;
 			z-index: 999999;
-			<?php if( itro_get_option('auto_margin_check') == NULL  ) {echo 'margin-top:' . itro_get_option('popup_top_margin') . ';' ;}?>
-			border: 4px solid <?php echo itro_get_option('popup_border_color');?>;
+			<?php if( itro_get_option('auto_margin_check') == NULL  ) {echo 'margin-top:' . itro_get_option('popup_top_margin') . ';' ;}
+			if (itro_get_option('popup_border_color') != NULL ) {echo 'border: 4px solid' . itro_get_option('popup_border_color') . ';';}?>			
 			border-radius: 8px 8px 8px 8px;
 			width: <?php echo itro_get_option('popup_width');?>;
 			height: <?php echo itro_get_option('popup_height');?>;
 			background-color: <?php echo itro_get_option('popup_background'); ?>;
+			overflow-x: hidden;
 		}
 
 		#popup_image
@@ -50,22 +61,11 @@ function itro_style() { ?>
 		#popup_countdown 
 		{
 			color: <?php echo itro_get_option('count_font_color') ?>;
-			padding:2px;
-		}
-
-		#customHtml
-		{
 			position: relative;
-			background-color: <?php echo itro_get_option('text_bg_color') ?>;
-			<?php
-			if (itro_get_option('text_border_color') != NULL )
-			{
-				echo 'border-top: 3px solid' . itro_get_option('text_border_color') . ';' ;
-				echo 'border-bottom: 3px solid' . itro_get_option('text_border_color') . ';' ;
-			} ?>
-			color: <?php echo itro_get_option('text_color') ?>;
-			padding-left:10px;
-			padding-right: 10px;
+			width: 100%;
+			bottom: 5px;
+			padding-top:5px;
+			/* background-color: <?php echo itro_get_option('popup_border_color');?>; */
 		}
 
 		#opaco{

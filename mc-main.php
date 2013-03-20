@@ -13,12 +13,13 @@ Version: 3.3
 Author URI: http://www.itro.eu/
 */
 
-
+global $ITRO_VER;
+$ITRO_VER = 3.3;
 define('itroLocalPath', __DIR__);
 define('itroPath', plugins_url() . '/itro-popup/');
+define('itroImages', plugins_url() . '/itro-popup/images/');
 $updir = wp_upload_dir();
-define ('itroUploadDir', $updir['basedir'] . '/');
-define ('itroUploadUrl', $updir['baseurl'] . '/');
+define ('itroUploadUrl', $updir['baseurl'] . '/itro-upload');
 
 include_once ('functions/admin-function.php');
 include_once ('functions/admin-function.php');
@@ -28,16 +29,27 @@ include_once ('functions/js-function.php');
 include_once ('css/itro-style.php');
 load_plugin_textdomain('itro-plugin', false, basename( dirname( __FILE__ ) ) . '/languages' );
 
-register_activation_hook( __FILE__, 'itro_db_init' );
-register_activation_hook( __FILE__, 'itro_create_preview' );
+register_activation_hook( __FILE__, 'itro_init' );
 
+function itro_admin_scripts()
+{
+	wp_enqueue_script('media-upload');
+	wp_enqueue_script('thickbox');
+}
+
+function itro_admin_styles() 
+{
+	wp_enqueue_style('thickbox');
+}
 
 add_action( 'init','itro_send_header' );
-add_action( 'init','itro_upload_dir' );
 
 add_action( 'get_header','itro_style' );
 add_action( 'get_header','itro_display_popup' );
 
+add_action('admin_head', 'itro_admin_js');
+add_action('admin_print_scripts', 'itro_admin_scripts');
+add_action('admin_print_styles', 'itro_admin_styles');
 add_action( 'admin_head', 'itro_admin_style' );
 add_action( 'admin_menu', 'itro_plugin_menu' );
 

@@ -17,19 +17,21 @@ function itro_popup_js()
 				var key = event.keyCode;
 				if(key==27){popup.style.visibility='Hidden'; opaco.style.visibility='Hidden';} 
 			}
-			var popTime=<?php echo itro_get_option('popup_time'); ?>;
+			<?php if ( itro_get_option('popup_time') != NULL )
+			{ ?>
+				var popTime=<?php echo itro_get_option('popup_time'); ?>;
 
-			setInterval(function(){popTimer()},1000); //the countdown 
-			function popTimer()
-			{
-				if (popTime>0){
-				document.getElementById("timer").innerHTML=popTime;
-				popTime--;
-				}
-				else {popup.style.visibility='Hidden'; opaco.style.visibility='Hidden';
-				}
+				setInterval(function(){popTimer()},1000); //the countdown 
+				function popTimer()
+				{
+					if (popTime>0){
+					document.getElementById("timer").innerHTML=popTime;
+					popTime--;
+					}
+					else {popup.style.visibility='Hidden'; opaco.style.visibility='Hidden';
+					}
+				} <?php
 			}
-			<?php 
 		}
 		if( itro_get_option('auto_margin_check') != NULL )
 		{?>
@@ -62,6 +64,40 @@ function itro_popup_js()
 	</script>
 <?php	
 }
+
+function itro_admin_js()
+{ ?>
+	<script>
+		jQuery(document).ready(function() {
+		
+		var orig_send_to_editor = window.send_to_editor;
+		var uploadID = ''; /*setup the var in a global scope*/
+
+		jQuery('#upload_button').click(function() {
+		uploadID = jQuery(this).prev('input'); /*set the uploadID variable to the value of the input before the upload button*/
+		formfield = jQuery('.upload').attr('name');
+		tb_show('', 'media-upload.php?type=image&amp;amp;amp;TB_iframe=true');
+		
+		//restore send_to_editor() when tb closed
+		jQuery("#TB_window").bind('tb_unload', function () {
+		window.send_to_editor = orig_send_to_editor;
+		});
+		
+		//temporarily redefine send_to_editor()
+		window.send_to_editor = function(html) {
+		imgurl = jQuery('img',html).attr('src');
+		uploadID.val(imgurl); /*assign the value of the image src to the input*/
+		document.getElementById('yes_bg').checked=true
+		tb_remove();
+		};
+		
+		return false;
+		});
+
+		
+		});
+	</script><?php
+} 
 
 function itro_onOff($tag_id){
 ?>

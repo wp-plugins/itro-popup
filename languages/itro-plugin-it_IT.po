@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mc-plugin\n"
-"POT-Creation-Date: 2013-03-12 23:22+0100\n"
-"PO-Revision-Date: 2013-03-12 23:22+0100\n"
+"POT-Creation-Date: 2013-03-20 00:37+0100\n"
+"PO-Revision-Date: 2013-03-20 00:37+0100\n"
 "Last-Translator: \n"
 "Language-Team: ITRO Corp\n"
 "Language: ITALIANO\n"
@@ -14,23 +14,23 @@ msgstr ""
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: functions/admin-function.php:109
+#: functions/admin-function.php:116
 msgid "settings saved."
 msgstr "Impostazioni salvate"
 
-#: functions/admin-function.php:121
+#: functions/admin-function.php:128
 msgid "I.T.RO. Popup Plugin - Settings"
 msgstr "ITRO Popup Plugin - Impostazioni"
 
-#: functions/admin-function.php:131
+#: functions/admin-function.php:140
 msgid "General Popup Option:"
 msgstr "Impostazioni Generali"
 
-#: functions/admin-function.php:134
+#: functions/admin-function.php:143
 msgid "Enable IE compability:"
 msgstr "Usare la compatibilitò per IE:"
 
-#: functions/admin-function.php:134
+#: functions/admin-function.php:143
 msgid ""
 "If your site is has visualization issues in Internet Explorer, check this "
 "box to solve the compatibility problem."
@@ -38,19 +38,23 @@ msgstr ""
 "Se il tuo sito ha problemi di visualizzazione su Internet Explorer, spunta "
 "questa casella per risolvere il problema di compatibilità"
 
-#: functions/admin-function.php:137
+#: functions/admin-function.php:146
 msgid "Popup seconds:"
 msgstr "Secondi di visualizzazione del popup:"
 
-#: functions/admin-function.php:137
-msgid "Set seconds until the popup automatically close"
-msgstr "Imposta i secondi prima che il popup si chiuda automaticamente."
+#: functions/admin-function.php:146
+msgid ""
+"Set seconds until the popup automatically close. Leave it blank to disable "
+"countdown."
+msgstr ""
+"Imposta i secondi prima che il popup si chiuda automaticamente. Lasciare "
+"vuoto per disabilitare il conto alla rovescia."
 
-#: functions/admin-function.php:140
+#: functions/admin-function.php:149
 msgid "Show countdown:"
 msgstr "Visualizza conto alla rovescia:"
 
-#: functions/admin-function.php:140
+#: functions/admin-function.php:149
 msgid ""
 "Show the countdown at the bottom of the popup which dispay the time before "
 "popup will close"
@@ -58,24 +62,24 @@ msgstr ""
 "Visualizza il conto alla rovescia prima che il popup si chiuda, in fondo "
 "allo stesso."
 
-#: functions/admin-function.php:142
+#: functions/admin-function.php:151
 msgid "Countdown font color:"
 msgstr "Colore font conto alla rovescia:"
 
-#: functions/admin-function.php:145
+#: functions/admin-function.php:154
 msgid "Next time visualization (hours):"
 msgstr "Prossima visualizzazione del popup (ore):"
 
-#: functions/admin-function.php:145
+#: functions/admin-function.php:154
 msgid "Set hours until the popup will appear again"
 msgstr ""
 "Imposta quante ore passerano prima della prossima visualizzazione del popup."
 
-#: functions/admin-function.php:148
+#: functions/admin-function.php:157
 msgid "Popup position:"
 msgstr "Posizione del popup:"
 
-#: functions/admin-function.php:148
+#: functions/admin-function.php:157
 msgid ""
 "Setting ABSOLUTE the popup will be static on the page. Setting FIXED it will "
 "scroll with the page."
@@ -83,11 +87,11 @@ msgstr ""
 "Impostare ABSOLUTE per avere il popup fisso sulla pagina, FIXED per farlo "
 "scorrere con la pagina."
 
-#: functions/admin-function.php:155
+#: functions/admin-function.php:164
 msgid "Use automatic top margin:"
 msgstr "Margine superiore automatico:"
 
-#: functions/admin-function.php:155
+#: functions/admin-function.php:164
 msgid ""
 "The system will try to auto center the popup, in case of problem deselect "
 "this option"
@@ -95,243 +99,279 @@ msgstr ""
 "Il sistema proverà a centrare automaticamente il popup, in caso di problemi "
 "deselezionare questa opzione."
 
-#: functions/admin-function.php:159
+#: functions/admin-function.php:168
 msgid "Popup top margin:"
 msgstr "Margine superiore popup:"
 
-#: functions/admin-function.php:159
+#: functions/admin-function.php:168
 msgid ""
 "Select manually the top margin to vertical align the popup i.e.: 20px or 10%"
 msgstr ""
 "Selezionare manualmente il margine superiore del popup per centrarlo es: "
 "10px o 20%"
 
-#: functions/admin-function.php:163
+#: functions/admin-function.php:172
 msgid "Popup width:"
 msgstr "Larghezza Popup:"
 
-#: functions/admin-function.php:163
+#: functions/admin-function.php:172
 msgid "Use the % to change width dinamically with the browser window i.e: 30%"
 msgstr ""
 "Usare il % per far cambiare dinamicamente le dimensioni con il "
 "ridimensionamento della finestra. es: 30%"
 
-#: functions/admin-function.php:165
+#: functions/admin-function.php:174
 msgid "Popup height:"
 msgstr "Altezza Popup:"
 
-#: functions/admin-function.php:165
+#: functions/admin-function.php:174
 msgid "Leave it blank to maintain the aspect ratio"
 msgstr "Lasciare bianco per mantenere le proporzioni dell'immagine."
 
-#: functions/admin-function.php:168
+#: functions/admin-function.php:177
 msgid "Popup background color"
 msgstr "Colore di sfondo:"
 
-#: functions/admin-function.php:170
+#: functions/admin-function.php:179
 msgid "Popup border color:"
 msgstr "Colore bordo:"
 
-#: functions/admin-function.php:174
+#: functions/admin-function.php:183
 msgid "DECIDE WHERE POPUP WILL BE DISPLAYED"
 msgstr "DECIDERE DOVE VISUALIZZARE IL POPUP"
 
-#: functions/admin-function.php:176
+#: functions/admin-function.php:186
+msgid "Blog homepage"
+msgstr "Blog homepage"
+
+#: functions/admin-function.php:186
+msgid ""
+"If in your Settings->Reading you have set 'Front page displays: Your latest "
+"posts' and want to display the popup in the home, check this box."
+msgstr ""
+"Se in Impostazioni->Lettura è stato selezionato 'La pagina iniziale mostra: "
+"Gli ultimi articoli' e su vuole visualizzare il popup in home, sezionare la "
+"casella."
+
+#: functions/admin-function.php:189
 msgid "Only selected pages"
 msgstr "Solo pagine selezionate"
 
-#: functions/admin-function.php:176
+#: functions/admin-function.php:189
 msgid "Multiple choise with CTRL+Click or SHIFT+Arrow up or down"
 msgstr "Scelta multipla con CTRL+Click o SHIFT+Freccia su o giu"
 
-#: functions/admin-function.php:177
+#: functions/admin-function.php:190
 msgid "All pages"
 msgstr "Tutte le pagine"
 
-#: functions/admin-function.php:178
+#: functions/admin-function.php:191
 msgid "Any pages"
 msgstr "Nessuna pagina"
 
-#: functions/admin-function.php:184
-msgid "Preview page"
-msgstr "Pagina di anteprima"
-
-#: functions/admin-function.php:190
+#: functions/admin-function.php:201
 msgid "Age restriction settings:"
 msgstr "Sito con restrizioni di età:"
 
-#: functions/admin-function.php:193
+#: functions/admin-function.php:204
 msgid "Age restricted page:"
 msgstr "Sito con restrizioni di età:"
 
-#: functions/admin-function.php:197
+#: functions/admin-function.php:208
 msgid "Enter button text:"
 msgstr "Inserire il testo del bottone:"
 
-#: functions/admin-function.php:198
+#: functions/admin-function.php:209
 msgid "i.e.: I AM OVER 18 - ENTER"
 msgstr "es: HO PI&#218; DI 18 ANNI - ENTRA"
 
-#: functions/admin-function.php:200
+#: functions/admin-function.php:211
 msgid "Enter button background color:"
 msgstr "Colore di sfondo bottone di ingresso:"
 
-#: functions/admin-function.php:203
+#: functions/admin-function.php:214
 msgid "Enter button border color:"
 msgstr "Colore bordo pulsante di ingresso:"
 
-#: functions/admin-function.php:206
+#: functions/admin-function.php:217
 msgid "Enter button font color:"
 msgstr "Colore font pulsante di ingresso:"
 
-#: functions/admin-function.php:209
+#: functions/admin-function.php:220
 msgid "Leave button text:"
 msgstr "Testo pulsante di allontanamento:"
 
-#: functions/admin-function.php:210
+#: functions/admin-function.php:221
 msgid "i.e.: I AM UNDER 18 - LEAVE"
 msgstr "es: HO MENO DI 18 ANNI - ALLONTANAMI DAL SITO"
 
-#: functions/admin-function.php:212
+#: functions/admin-function.php:223
 msgid "Leave button url:"
 msgstr "Url bottone di allontanamento:"
 
-#: functions/admin-function.php:213
+#: functions/admin-function.php:224
 msgid "i.e.: http://www.mysite.com/leave.html"
 msgstr "es.: http://www.mysite.com/leave.html"
 
-#: functions/admin-function.php:215
+#: functions/admin-function.php:226
 msgid "Leave button background color:"
 msgstr "Colore di sfondo pulsante di allontanamento:"
 
-#: functions/admin-function.php:218
+#: functions/admin-function.php:229
 msgid "Leave button border color:"
 msgstr "Colore bordo pulsante allontanamento:"
 
-#: functions/admin-function.php:221
+#: functions/admin-function.php:232
 msgid "Leave button font color:"
 msgstr "Colore font pulsante allontanamento:"
 
-#: functions/admin-function.php:236
+#: functions/admin-function.php:240 functions/admin-function.php:276
+msgid "Preview page"
+msgstr "Pagina di anteprima"
+
+#: functions/admin-function.php:248
 msgid "Your text (or HTML code:)"
 msgstr "Il tuo testo (o il codice HTML)"
 
-#: functions/admin-function.php:242
-msgid "Text background color"
-msgstr "Colore di sfondo testo personalizzato:"
-
-#: functions/admin-function.php:245
-msgid "Text border color:"
-msgstr "Colore bordo box del testo personalizzato:"
-
-#: functions/admin-function.php:253
-msgid "Popup image settings:"
-msgstr "Impostazioni immagine popup:"
-
-#: functions/admin-function.php:269
-msgid "Added image from direct url"
-msgstr "Aggiunta immagine dal link inserito."
-
-#: functions/admin-function.php:276
-msgid "Added background from direct url"
-msgstr "Aggiunto sfondo dal link inserito."
-
-#: functions/admin-function.php:286
-msgid "INSERTED IMAGE"
-msgstr "IMMAGINE DA INSERIRE"
-
-#: functions/admin-function.php:290
-msgid "Image size (%):"
-msgstr "Grandezza immagine (%):"
-
-#: functions/admin-function.php:290
-msgid "Insert pure number whithout %"
-msgstr "Inserire un numero puro senza il simbolo %"
-
-#: functions/admin-function.php:293 functions/admin-function.php:312
-msgid "Use direck url:"
-msgstr "Inserisci url immagine:"
-
-#: functions/admin-function.php:299 functions/admin-function.php:318
-msgid "Current image link:"
-msgstr "Link immagine attuale:"
-
-#: functions/admin-function.php:308
+#: functions/admin-function.php:255
 msgid "BACKGROUND IMAGE"
 msgstr "IMMAGINE DI SFONDO"
 
-#: functions/admin-function.php:336
-msgid "Upload and delete images"
-msgstr "Carica ed elimina le immagini"
+#: functions/admin-function.php:256
+msgid "Show image"
+msgstr "Visualizza immagine"
 
-#: functions/admin-function.php:347
-msgid "Delete"
-msgstr "Elimina"
+#: functions/admin-function.php:262
+msgid "Where are my old images?"
+msgstr "Dove sono le mie vecchie immagini?"
 
-#: functions/admin-function.php:354
-msgid "Select the image"
-msgstr "Seleziona l'immagine:"
-
-#: functions/admin-function.php:356
-msgid "Upload"
-msgstr "Carica"
-
-#: functions/admin-function.php:357
-msgid "Overwrite"
-msgstr "Sovrascrivi"
-
-#: functions/admin-function.php:363
-msgid "HELP US TO CONTINUE OUR DEVELOPING WORK. PLEASE DONATE!"
-msgstr "AIUTACI A CONTINUARE IL NOSTRO LAVORO. DONA ORA!"
-
-#: functions/core-function.php:85
-msgid "Warning file is too big, this may cause problems!"
+#: functions/admin-function.php:263
+msgid ""
+"If your plugin version is older than 3.4 here you can found your old "
+"uploaded images."
 msgstr ""
-"Attenzione! Il file è troppo grande, questo pu&#242; causare dei problemi."
+"Se la versione installata del plugin è precedente alla 3.4 il link mostrerà "
+"le vecchie immagini caricate."
 
-#: functions/core-function.php:91
-msgid "\" already exists. Please check the overwrite option"
-msgstr "\" esiste già. Perfavore selezione l'opzione sovrascrivi."
+#: functions/admin-function.php:269
+msgid "No background"
+msgstr "Nessuno sfondo"
 
-#: functions/core-function.php:97
-msgid "\" successfully uploaded"
-msgstr "\" eliminato con successo."
+#: functions/admin-function.php:272
+msgid "Upload Image"
+msgstr "Carica Immagine"
 
-#: functions/core-function.php:152
-msgid "Any image selected"
-msgstr "Nessuna immagine selezionata."
+#: functions/admin-function.php:284
+msgid "Like it? Offer us a coffee! ;-)"
+msgstr "Il plugin ti piace? Offrici un caffè! ;-)"
 
-#: functions/core-function.php:163
-msgid " added in popup"
-msgstr "aggiunto al popup."
+#: functions/admin-function.php:289
+msgid "Make your donation"
+msgstr "Fai la tua donazione"
 
-#: functions/core-function.php:173
-msgid "Any background image used"
-msgstr "Nessuno sfondo selezionatao."
+#: functions/admin-function.php:290 functions/admin-function.php:292
+msgid "thiny donation"
+msgstr "donazione minima"
 
-#: functions/core-function.php:183
-msgid " selected as background"
-msgstr "selezionato come sfondo"
+#: functions/admin-function.php:291
+msgid "little donation"
+msgstr "donazione piccola"
 
-#: functions/core-function.php:194
-msgid "Any image selected. Please select one."
-msgstr "Nessuna immagine selezionata. Selezionarne una."
+#: functions/admin-function.php:293
+msgid "normal donation"
+msgstr "donazione normale"
 
-#: functions/core-function.php:205
-msgid "\" successfully deleted"
-msgstr "\" eliminato con successo."
+#: functions/admin-function.php:294
+msgid "good donation"
+msgstr "donazione corposa"
 
-#: functions/core-function.php:208
-msgid "Error, can't delete image."
-msgstr "Errore, impossibile eleiminare l'immagine."
+#: functions/admin-function.php:295
+msgid "great donation"
+msgstr "donazione grande"
 
-#: templates/itro-popup-template.php:21
+#: templates/itro-popup-template.php:15
 msgid "CLOSE"
 msgstr "CHIUDI"
 
-#: templates/itro-popup-template.php:24
+#: templates/itro-popup-template.php:18
 msgid "This popup will be closed in: "
 msgstr "Questo popup verr&agrave; chiuso tra:"
+
+#~ msgid "Select Image"
+#~ msgstr "Carica Immagine"
+
+#~ msgid "Text background color"
+#~ msgstr "Colore di sfondo testo personalizzato:"
+
+#~ msgid "Text border color:"
+#~ msgstr "Colore bordo box del testo personalizzato:"
+
+#~ msgid "Popup image settings:"
+#~ msgstr "Impostazioni immagine popup:"
+
+#~ msgid "Added image from direct url"
+#~ msgstr "Aggiunta immagine dal link inserito."
+
+#~ msgid "Added background from direct url"
+#~ msgstr "Aggiunto sfondo dal link inserito."
+
+#~ msgid "INSERTED IMAGE"
+#~ msgstr "IMMAGINE DA INSERIRE"
+
+#~ msgid "Image size (%):"
+#~ msgstr "Grandezza immagine (%):"
+
+#~ msgid "Insert pure number whithout %"
+#~ msgstr "Inserire un numero puro senza il simbolo %"
+
+#~ msgid "Use direck url:"
+#~ msgstr "Inserisci url immagine:"
+
+#~ msgid "Current image link:"
+#~ msgstr "Link immagine attuale:"
+
+#~ msgid "Upload and delete images"
+#~ msgstr "Carica ed elimina le immagini"
+
+#~ msgid "Delete"
+#~ msgstr "Elimina"
+
+#~ msgid "Overwrite"
+#~ msgstr "Sovrascrivi"
+
+#~ msgid "HELP US TO CONTINUE OUR DEVELOPING WORK. PLEASE DONATE!"
+#~ msgstr "AIUTACI A CONTINUARE IL NOSTRO LAVORO. DONA ORA!"
+
+#~ msgid "Warning file is too big, this may cause problems!"
+#~ msgstr ""
+#~ "Attenzione! Il file è troppo grande, questo pu&#242; causare dei problemi."
+
+#~ msgid "\" already exists. Please check the overwrite option"
+#~ msgstr "\" esiste già. Perfavore selezione l'opzione sovrascrivi."
+
+#~ msgid "\" successfully uploaded"
+#~ msgstr "\" eliminato con successo."
+
+#~ msgid "Any image selected"
+#~ msgstr "Nessuna immagine selezionata."
+
+#~ msgid " added in popup"
+#~ msgstr "aggiunto al popup."
+
+#~ msgid "Any background image used"
+#~ msgstr "Nessuno sfondo selezionatao."
+
+#~ msgid " selected as background"
+#~ msgstr "selezionato come sfondo"
+
+#~ msgid "Any image selected. Please select one."
+#~ msgstr "Nessuna immagine selezionata. Selezionarne una."
+
+#~ msgid "\" successfully deleted"
+#~ msgstr "\" eliminato con successo."
+
+#~ msgid "Error, can't delete image."
+#~ msgstr "Errore, impossibile eleiminare l'immagine."
 
 #~ msgid "UPLOAD AND DELETE IMAGES"
 #~ msgstr "CARICA ED ELIMINA LE IMMAGINI"
@@ -353,6 +393,3 @@ msgstr "Questo popup verr&agrave; chiuso tra:"
 
 #~ msgid "Settings"
 #~ msgstr "Impostazioni"
-
-#~ msgid "Only in home page:"
-#~ msgstr "Solo in home page:"

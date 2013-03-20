@@ -1,29 +1,30 @@
 === ITRO Popup Plugin ===
 Contributors: I.T.RO.
 Donate link: http://www.itro.eu/index.php/donate/
-Tags: popup, age, restriction, block, violence, compability, ie9
+Tags: popup, age, restriction, block, violence, compability, ie9, age validation, internet explorer compability
 Requires at least: 3.0.1
 Tested up to: 3.5.1
-Stable tag: 3.3
+Stable tag: 3.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-ITRO Popup Plugin enable user to add a full-optional popup to their Wordpress site, also with legal block for adult-content site and
+ITRO Popup Plugin enable user to add a full-optional popup to their Wordpress site, also with age validation for adult-content site and
 custom HTML code.
 
 == Description ==
 
 ITRO Popup is a very lightweight (less than 200Kb!) Plugin which allow users to add a fully-customizable  and perfectly centered popup. 
 It has a very user-friendly interface, which allow users to easily modify all settings needed for a popup, without coding. 
-With "Age restricted site"  option, the popup block the navigation until the user declare that is above the local country legal age. 
+With "Age restricted site"  option, the popup block the navigation (for age validation) until the user declare that is above the local country legal age. 
 It is useful for adult content site (tobacco & alcohol selling, violence, bad language, etc...). The leave and the enter button 
-are separately customizable. Advanced user can also add their own HTML code.
+are separately customizable. Is embedded the Wordpress editor to simply put whatever you want in your popup.
 This plugin is basic-user oriented, no code knowledge is required.
 It also fix the Internet Explorer complabiliy problem, for all IE version.
 
 MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
 
 Any suggestions for new features implementation which you need?
+Need something for your interest or your bisiness?
 Email to support.itro@live.com
 
 == Installation ==
@@ -52,6 +53,10 @@ In the first one are stored all small data options, in the other one bigger data
 no screenshot avaliable
 
 == Changelog ==
+= 3.4 =
+Added media button in WP editor. Integrated WP media uploading for images. WP editor paragraph bug fixed.
+Now popup can be displayed in blog homepage. Minor bug fixed. Now content can scroll vertically.
+
 = 3.3 =
 Added WP editor to custom text field. Restored preview button, now it open a new window whith popup integrated
 in the theme. Uninstall bug solved, now clear all data and tables.
@@ -114,8 +119,8 @@ bug fixed: color table now works in admin pannel.
 First released version.
 
 == Upgrade Notice ==
-Added WP editor to custom text field. Restored preview button, now it open a new window whith popup integrated
-in the theme. Uninstall bug solved, now clear all data and tables.
+Added media button in WP editor. Integrated WP media uploading for images. WP editor paragraph bug fixed.
+Now popup can be displayed in blog homepage. Minor bug fixed. Now can scroll content vertically.
 
 == Notes ==
 
@@ -134,6 +139,6 @@ Thanks to Jan Odvarko for jscolor: http://jscolor.com/
 * Settable countdown for automatic closing.
 * Settable coockie expiration time for the next popup visualization.
 * Add block for adult-content site.
-* Custom HTML code to display whatever you want.
+* Custom text to display whatever you want with WP editor.
 * All great explaned by tips in admin pannel.
 * All in a very easy way to use!
