@@ -9,7 +9,7 @@ License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 ITRO Popup Plugin enable user to add a full-optional popup to their Wordpress site, also with age validation for adult-content site and
-custom HTML code.
+custom text.
 
 == Description ==
 
