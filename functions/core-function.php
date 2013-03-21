@@ -50,7 +50,8 @@ function itro_send_header()
 {
 	//set the cookie for one-time visualization
 	$expiration_time = itro_get_option('cookie_time_exp') ;
-	setcookie("popup_cookie" , "one_time_popup" , time() + $expiration_time * 3600) ;
+	if (!isset($_COOKIE['popup_cookie'])) {
+	setcookie("popup_cookie" , "one_time_popup" , time() + $expiration_time * 3600) ; }
 	
 	//add meta tag for IE compability
 	if ( itro_get_option('ie_compability') == 'yes' )
