@@ -35,6 +35,9 @@ Email to support.itro@live.com
 4. Enjoy
 
 == Frequently Asked Questions ==
+= How do I solve the Headers already sent warning problem? =
+[CLICK HERE!](http://codex.wordpress.org/FAQ_Troubleshooting#How_do_I_solve_the_Headers_already_sent_warning_problem.3F)
+
 = What is the "ITRO - Preview" in my pages? =
 This page is automatically created to correctly display preview. DO NOT DELETE IT. Popup cookie doesn't
 work in this page.
