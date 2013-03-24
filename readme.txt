@@ -1,7 +1,7 @@
 === ITRO Popup Plugin ===
 Contributors: I.T.RO.
 Donate link: http://www.itro.eu/index.php/donate/
-Tags: popup, age, restriction, block, violence, compability, ie9, age validation, internet explorer compability, adult, adult content
+Tags: popup, age, restriction, block, violence, compability, ie9, age validation, internet explorer compability, adult, adult content, content warning
 Requires at least: 3.0.1
 Tested up to: 3.5.1
 Stable tag: 3.5.1
