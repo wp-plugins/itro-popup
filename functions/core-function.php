@@ -5,6 +5,12 @@ This file is part of ITRO Popup Plugin.
 All Right Reserved.
 */
 
+
+//------------------ADD MENU PAGE
+function itro_plugin_menu() {
+	add_options_page( 'Popup Plugin Options', 'ITRO Popup', 'manage_options', 'itro-popup/admin/popup-admin.php', '' );
+}
+
 //-------------- INITIALIZATION
 
 function itro_init()

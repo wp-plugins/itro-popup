@@ -1,5 +1,5 @@
-<div id="opaco"></div>
-<div id="popup">
+<div id="opaco" <?php if( itro_get_option('popup_delay') != NULL ) { echo ' style="visibility:hidden;" '; } ?>></div>
+<div id="popup" <?php if( itro_get_option('popup_delay') != NULL ) { echo ' style="visibility:hidden;" '; } ?> >
 	<div id="popup_content"><?php 
 		$custom_field = stripslashes(itro_get_field('custom_html')); //insert custom html code 
 		echo str_replace("\r\n",'',$custom_field); //return the string whitout new line
@@ -13,11 +13,8 @@
 	</div> <?php
 	if ( itro_get_option('age_restriction') == NULL ) 
 		{?>
-			<img src="<?php echo itroPath . 'images/close-icon.png'; ?>" title="<?php _e('CLOSE','itro-plugin'); ?>" style="cursor:pointer; width:20px; position:absolute; top:-22px; right:-22px;" onclick="popup.style.visibility='Hidden',opaco.style.visibility='Hidden'">
-			<?php if( itro_get_option('show_countdown') != NULL )
-			{?>
-				<div id="popup_countdown" align="center"><?php _e('This popup will be closed in: ','itro-plugin'); ?> <b id="timer"></b></div>
+			<img id="close_cross" src="<?php echo itroPath . 'images/close-icon.png'; ?>" title="<?php _e('CLOSE','itro-plugin'); ?>" onclick="popup.style.visibility='Hidden',opaco.style.visibility='Hidden'">
+			<div id="popup_countdown" align="center"><?php _e('This popup will be closed in: ','itro-plugin'); ?> <b id="timer"></b></div>
 			<?php
-			}
 		} ?>
 </div>

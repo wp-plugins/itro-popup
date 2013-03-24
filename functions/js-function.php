@@ -10,17 +10,34 @@ function itro_popup_js()
 	<script type="text/javascript">		
 		<?php
 		if (itro_get_option('age_restriction') == NULL) //insert script here to show when is not age restricted
-		{?>			
-			document.onkeydown = function(event) 
-			{
-				event = event || window.event;
-				var key = event.keyCode;
-				if(key==27){popup.style.visibility='Hidden'; opaco.style.visibility='Hidden';} 
-			}
-			<?php if ( itro_get_option('popup_time') != NULL )
+		{
+			if( itro_get_option('popup_unlockable') != 'yes' )
 			{ ?>
-				var popTime=<?php echo itro_get_option('popup_time'); ?>;
-
+				document.onkeydown = function(event) 
+				{
+					event = event || window.event;
+					var key = event.keyCode;
+					if(key==27){popup.style.visibility='Hidden'; opaco.style.visibility='Hidden';} 
+				}; <?php
+			}
+			if( itro_get_option('popup_delay') != NULL )
+			{ ?>
+				var delay = <?php echo itro_get_option('popup_delay') . '+' . '1'; ?> ;
+				interval_id = setInterval(function(){popup_delay();},1000);
+				function popup_delay() 
+				{ 
+					delay--;
+					if(delay <= 0) { clearInterval(interval_id); popup.style.visibility = 'visible'; opaco.style.visibility = 'visible'; } 
+				}
+			<?php
+			}
+			
+			if ( itro_get_option('popup_time') != NULL )
+			{ ?>
+				var popTime=<?php 
+							if( itro_get_option('popup_delay')  != NULL ) { echo itro_get_option('popup_time') . '+' . itro_get_option('popup_delay'); }
+							else { echo itro_get_option('popup_time'); }
+							?>;
 				setInterval(function(){popTimer()},1000); //the countdown 
 				function popTimer()
 				{

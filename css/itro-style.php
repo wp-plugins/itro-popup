@@ -63,6 +63,16 @@ function itro_style() { ?>
 			background-color: <?php echo itro_get_option('popup_background'); ?>;
 			<?php if( itro_get_option('show_countdown') != NULL ) { echo 'padding-bottom: 15px;'; } ?>
 		}
+		
+		#close_cross
+		
+		{
+			cursor:pointer; 
+			width:20px; 
+			position:absolute; 
+			top:-22px; 
+			right:-22px;
+		}
 
 		#popup_image
 		{
@@ -76,9 +86,13 @@ function itro_style() { ?>
 			color: <?php echo itro_get_option('count_font_color') ?>;
 			width: 100%;
 			bottom: 15px;
-			padding-top: 3px;
-			padding-bottom: 3px;
+			padding-top: <?php if( itro_get_option('show_countdown') != 'yes' ) { echo '0px'; } else {echo '3px';}?> ;
+			padding-bottom:<?php if( itro_get_option('show_countdown') != 'yes' ) { echo '0px'; } else {echo '3px';}?> ;
 			background-color: <?php echo itro_get_option('popup_border_color');?>;
+			height: <?php if( itro_get_option('show_countdown') != 'yes' ) { echo '0px'; }?> ;
+			overflow: hidden;
+			
+			
 		}
 
 		#opaco{

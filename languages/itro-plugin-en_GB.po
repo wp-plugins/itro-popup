@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mc-plugin\n"
-"POT-Creation-Date: 2013-03-20 20:54+0100\n"
-"PO-Revision-Date: 2013-03-20 20:54+0100\n"
+"POT-Creation-Date: 2013-03-24 00:59+0100\n"
+"PO-Revision-Date: 2013-03-24 00:59+0100\n"
 "Last-Translator: \n"
 "Language-Team: ITRO Corp\n"
 "MIME-Version: 1.0\n"
@@ -13,256 +13,277 @@ msgstr ""
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: functions/admin-function.php:117
+#: admin/popup-admin.php:112
 msgid "settings saved."
 msgstr ""
 
-#: functions/admin-function.php:125
+#: admin/popup-admin.php:120
 msgid "I.T.RO. Popup Plugin - Settings"
 msgstr ""
 
-#: functions/admin-function.php:137
+#: admin/popup-admin.php:132
 msgid "General Popup Option:"
 msgstr ""
 
-#: functions/admin-function.php:142
+#: admin/popup-admin.php:137
 msgid "Enable IE compability"
 msgstr ""
 
-#: functions/admin-function.php:143
+#: admin/popup-admin.php:138
 msgid ""
 "If your site is has visualization issues in Internet Explorer, check this "
 "box to solve the compatibility problem."
 msgstr ""
 
-#: functions/admin-function.php:145
+#: admin/popup-admin.php:141
+msgid "Disable ESC key"
+msgstr ""
+
+#: admin/popup-admin.php:142
+msgid ""
+"If you set this option popup can not be closed with ESC button of keyboard."
+msgstr ""
+
+#: admin/popup-admin.php:144
 msgid "Popup seconds:"
 msgstr ""
 
-#: functions/admin-function.php:145
+#: admin/popup-admin.php:144
 msgid ""
 "Set seconds until the popup automatically close. Leave it blank to disable "
 "countdown."
 msgstr ""
 
-#: functions/admin-function.php:150
+#: admin/popup-admin.php:147
+msgid "Popup delay:"
+msgstr ""
+
+#: admin/popup-admin.php:147
+msgid "Set the delay before popup will be displayed"
+msgstr ""
+
+#: admin/popup-admin.php:152
 msgid "Show countdown"
 msgstr ""
 
-#: functions/admin-function.php:151
+#: admin/popup-admin.php:153
 msgid ""
 "Show the countdown at the bottom of the popup which dispay the time before "
-"popup will close"
+"popup will close. If is hidden, it run anyway."
 msgstr ""
 
-#: functions/admin-function.php:152
+#: admin/popup-admin.php:155
 msgid "Countdown font color:"
 msgstr ""
 
-#: functions/admin-function.php:155
+#: admin/popup-admin.php:156
+msgid "Select the countdown font color."
+msgstr ""
+
+#: admin/popup-admin.php:159
 msgid "Next time visualization (hours):"
 msgstr ""
 
-#: functions/admin-function.php:155
+#: admin/popup-admin.php:159
 msgid "Set hours until the popup will appear again"
 msgstr ""
 
-#: functions/admin-function.php:158
+#: admin/popup-admin.php:162
 msgid "Popup position:"
 msgstr ""
 
-#: functions/admin-function.php:158
+#: admin/popup-admin.php:162
 msgid ""
 "Setting ABSOLUTE the popup will be static on the page. Setting FIXED it will "
 "scroll with the page."
 msgstr ""
 
-#: functions/admin-function.php:166
+#: admin/popup-admin.php:170
 msgid "Automatic top margin:"
 msgstr ""
 
-#: functions/admin-function.php:167
+#: admin/popup-admin.php:171
 msgid ""
 "The system will try to auto center the popup, in case of problem deselect "
 "this option"
 msgstr ""
 
-#: functions/admin-function.php:170
+#: admin/popup-admin.php:174
 msgid "Popup top margin:"
 msgstr ""
 
-#: functions/admin-function.php:170
+#: admin/popup-admin.php:174
 msgid ""
 "Select manually the top margin to vertical align the popup i.e.: 20px or 10%"
 msgstr ""
 
-#: functions/admin-function.php:174
+#: admin/popup-admin.php:178
 msgid "Popup width:"
 msgstr ""
 
-#: functions/admin-function.php:174
+#: admin/popup-admin.php:178
 msgid ""
 "Use the % to change width dinamically with the browser window , or px for "
 "fixed dimension i.e: 30% or 200px"
 msgstr ""
 
-#: functions/admin-function.php:176
+#: admin/popup-admin.php:180
 msgid "Popup height:"
 msgstr ""
 
-#: functions/admin-function.php:179
+#: admin/popup-admin.php:183
 msgid "Popup background color"
 msgstr ""
 
-#: functions/admin-function.php:181
+#: admin/popup-admin.php:185
 msgid "Popup border color:"
 msgstr ""
 
-#: functions/admin-function.php:185
+#: admin/popup-admin.php:189
 msgid "DECIDE WHERE POPUP WILL BE DISPLAYED"
 msgstr ""
 
-#: functions/admin-function.php:188
+#: admin/popup-admin.php:192
 msgid "Blog homepage"
 msgstr ""
 
-#: functions/admin-function.php:188
+#: admin/popup-admin.php:192
 msgid ""
 "If in your Settings->Reading you have set 'Front page displays: Your latest "
 "posts' and want to display the popup in the home, check this box."
 msgstr ""
 
-#: functions/admin-function.php:191
+#: admin/popup-admin.php:195
 msgid "Only selected pages"
 msgstr ""
 
-#: functions/admin-function.php:191
+#: admin/popup-admin.php:195
 msgid "Multiple choise with CTRL+Click or SHIFT+Arrow up or down"
 msgstr ""
 
-#: functions/admin-function.php:192
+#: admin/popup-admin.php:196
 msgid "All pages"
 msgstr ""
 
-#: functions/admin-function.php:193
+#: admin/popup-admin.php:197
 msgid "Any pages"
 msgstr ""
 
-#: functions/admin-function.php:203
+#: admin/popup-admin.php:207
 msgid "Age restriction settings:"
 msgstr ""
 
-#: functions/admin-function.php:208
+#: admin/popup-admin.php:212
 msgid "Enable age validation"
 msgstr ""
 
-#: functions/admin-function.php:211
+#: admin/popup-admin.php:215
 msgid "Enter button text:"
 msgstr ""
 
-#: functions/admin-function.php:212
+#: admin/popup-admin.php:216
 msgid "i.e.: I AM OVER 18 - ENTER"
 msgstr ""
 
-#: functions/admin-function.php:214
+#: admin/popup-admin.php:218
 msgid "Enter button background color:"
 msgstr ""
 
-#: functions/admin-function.php:217
+#: admin/popup-admin.php:221
 msgid "Enter button border color:"
 msgstr ""
 
-#: functions/admin-function.php:220
+#: admin/popup-admin.php:224
 msgid "Enter button font color:"
 msgstr ""
 
-#: functions/admin-function.php:223
+#: admin/popup-admin.php:227
 msgid "Leave button text:"
 msgstr ""
 
-#: functions/admin-function.php:224
+#: admin/popup-admin.php:228
 msgid "i.e.: I AM UNDER 18 - LEAVE"
 msgstr ""
 
-#: functions/admin-function.php:226
+#: admin/popup-admin.php:230
 msgid "Leave button url:"
 msgstr ""
 
-#: functions/admin-function.php:227
+#: admin/popup-admin.php:231
 msgid "i.e.: http://www.mysite.com/leave.html"
 msgstr ""
 
-#: functions/admin-function.php:229
+#: admin/popup-admin.php:233
 msgid "Leave button background color:"
 msgstr ""
 
-#: functions/admin-function.php:232
+#: admin/popup-admin.php:236
 msgid "Leave button border color:"
 msgstr ""
 
-#: functions/admin-function.php:235
+#: admin/popup-admin.php:239
 msgid "Leave button font color:"
 msgstr ""
 
-#: functions/admin-function.php:243 functions/admin-function.php:278
+#: admin/popup-admin.php:247 admin/popup-admin.php:282
 msgid "Preview page"
 msgstr ""
 
-#: functions/admin-function.php:251
+#: admin/popup-admin.php:255
 msgid "Your text (or HTML code:)"
 msgstr ""
 
-#: functions/admin-function.php:257
+#: admin/popup-admin.php:261
 msgid "BACKGROUND IMAGE"
 msgstr ""
 
-#: functions/admin-function.php:258
+#: admin/popup-admin.php:262
 msgid "Show image"
 msgstr ""
 
-#: functions/admin-function.php:264
+#: admin/popup-admin.php:268
 msgid "Where are my old images?"
 msgstr ""
 
-#: functions/admin-function.php:265
+#: admin/popup-admin.php:269
 msgid ""
 "If your plugin version is older than 3.4 here you can found your old "
 "uploaded images."
 msgstr ""
 
-#: functions/admin-function.php:271
+#: admin/popup-admin.php:275
 msgid "No background"
 msgstr ""
 
-#: functions/admin-function.php:274
+#: admin/popup-admin.php:278
 msgid "Upload Image"
 msgstr ""
 
-#: functions/admin-function.php:286
+#: admin/popup-admin.php:290
 msgid "Like it? Offer us a coffee! ;-)"
 msgstr ""
 
-#: functions/admin-function.php:291
+#: admin/popup-admin.php:295
 msgid "Make your donation"
 msgstr ""
 
-#: functions/admin-function.php:292 functions/admin-function.php:294
+#: admin/popup-admin.php:296 admin/popup-admin.php:298
 msgid "thiny donation"
 msgstr ""
 
-#: functions/admin-function.php:293
+#: admin/popup-admin.php:297
 msgid "little donation"
 msgstr ""
 
-#: functions/admin-function.php:295
+#: admin/popup-admin.php:299
 msgid "normal donation"
 msgstr ""
 
-#: functions/admin-function.php:296
+#: admin/popup-admin.php:300
 msgid "good donation"
 msgstr ""
 
-#: functions/admin-function.php:297
+#: admin/popup-admin.php:301
 msgid "great donation"
 msgstr ""
 
@@ -270,6 +291,6 @@ msgstr ""
 msgid "CLOSE"
 msgstr ""
 
-#: templates/itro-popup-template.php:19
+#: templates/itro-popup-template.php:17
 msgid "This popup will be closed in: "
 msgstr ""

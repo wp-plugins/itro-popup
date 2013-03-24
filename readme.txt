@@ -4,7 +4,7 @@ Donate link: http://www.itro.eu/index.php/donate/
 Tags: popup, age, restriction, block, violence, compability, ie9, age validation, internet explorer compability, adult, adult content
 Requires at least: 3.0.1
 Tested up to: 3.5.1
-Stable tag: 3.5
+Stable tag: 3.5.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -17,7 +17,8 @@ ITRO Popup is a very lightweight (less than 200Kb!) Plugin which allow users to 
 It has a very user-friendly interface, which allow users to easily modify all settings needed for a popup, without coding. 
 With "Age restricted site"  option, the popup block the navigation (for age validation) until the user declare that is above the local country legal age. 
 It is useful for adult content site (tobacco & alcohol selling, violence, bad language, etc...). The leave and the enter button 
-are separately customizable. Is embedded the Wordpress editor to simply put whatever you want in your popup.
+are separately customizable. Is embedded the Wordpress editor to simplify input whatever you want in your popup.
+Popup can be rendered unlockable with the option "Unlockable popup" so it will close only with countdown.
 This plugin is basic-user oriented, no code knowledge is required.
 It also fix the Internet Explorer complabiliy problem, for all IE version.
 
@@ -56,6 +57,10 @@ In the first one are stored all small data options, in the other one bigger data
 no screenshot avaliable
 
 == Changelog ==
+= 3.5.1 =
+Popup can be rendered unlockable. Added time delay before popup will be displayed. If countdown is hidden
+it run anyway.
+
 = 3.5 =
 WP editor visualization bug fixed. Better visualization for countdown and close cross. UI more friendly.
 
