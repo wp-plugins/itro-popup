@@ -8,8 +8,10 @@ Stable tag: 3.5.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-ITRO Popup Plugin enable user to add a full-optional popup to their Wordpress site, also with age validation for adult-content site and
-custom text.
+ITRO Popup display a popup to your WP site:
+* Age validation for adult-content site 
+* Fully customizable with WP Post Editor
+* Very easy to use
 
 == Description ==
 
