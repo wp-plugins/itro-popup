@@ -22,7 +22,7 @@ It is useful for adult content site (tobacco & alcohol selling, violence, bad la
 are separately customizable. Is embedded the Wordpress editor to simplify input whatever you want in your popup.
 Popup can be rendered unlockable with the option "Unlockable popup" so it will close only with countdown.
 This plugin is basic-user oriented, no code knowledge is required.
-It also fix the Internet Explorer complabiliy problem, for all IE version.
+It also fix the Internet Explorer compatibility problem, for all IE version.
 
 MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
 
