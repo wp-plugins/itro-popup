@@ -27,7 +27,7 @@ It also fix the Internet Explorer compatibility problem, for all IE version.
 MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
 
 Any suggestions for new features implementation which you need?
-Need something for your interest or your bisiness?
+Need something for your interest or your business?
 Email to support.itro@live.com
 
 == Installation ==
