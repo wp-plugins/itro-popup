@@ -134,4 +134,4 @@ function reverse_wpautop($s)
     $s = str_replace("</p>", "\n\n", $s);       
 
     return $s;      
-}
+} ?>

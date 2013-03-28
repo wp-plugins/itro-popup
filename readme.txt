@@ -4,7 +4,7 @@ Donate link: http://www.itro.eu/index.php/donate/
 Tags: popup, age, restriction, block, violence, compatibility, ie9, age validation, internet explorer compatibility, adult, adult content, content warning
 Requires at least: 3.0.1
 Tested up to: 3.5.1
-Stable tag: 3.5.1
+Stable tag: 3.5.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -59,6 +59,9 @@ In the first one are stored all small data options, in the other one bigger data
 no screenshot avaliable
 
 == Changelog ==
+= 3.5.2 =
+Header already send problem solved.
+
 = 3.5.1 =
 Popup can be rendered unlockable. Added time delay before popup will be displayed. If countdown is hidden
 it run anyway.
@@ -132,7 +135,7 @@ bug fixed: color table now works in admin pannel.
 First released version.
 
 == Upgrade Notice ==
-WP editor visualization bug fixed. Better visualization for countdown and close cross. UI more friendly.
+Header already send problem solved.
 
 == Notes ==
 
