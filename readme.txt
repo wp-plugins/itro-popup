@@ -9,6 +9,7 @@ License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 ITRO Popup display a popup to your WP site:
+
 * Age validation for adult-content site 
 * Fully customizable with WP Post Editor
 * Very easy to use
