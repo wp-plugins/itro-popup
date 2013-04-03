@@ -25,6 +25,7 @@ This plugin is basic-user oriented, no code knowledge is required.
 It also fix the Internet Explorer compatibility problem, for all IE version.
 
 FEATURES
+
 * Fix Internet Explorer compatibility problem for your WP site, also whith no popup displayed.
 * Can be multiple selcted pages where user want to display the popup. NO SHORTCUTS NEEDED!.
 * Fully translated in Italian. Ready for multilingual translation.
