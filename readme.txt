@@ -4,7 +4,7 @@ Donate link: http://www.itro.eu/index.php/donate/
 Tags: popup, age, restriction, block, violence, compatibility, ie9, age validation, internet explorer compatibility, adult, adult content, content warning
 Requires at least: 3.0.1
 Tested up to: 3.5.1
-Stable tag: 3.5.2
+Stable tag: 3.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -24,15 +24,29 @@ Popup can be rendered unlockable with the option "Unlockable popup" so it will c
 This plugin is basic-user oriented, no code knowledge is required.
 It also fix the Internet Explorer compatibility problem, for all IE version.
 
+FEATURES
+* Fix Internet Explorer compatibility problem for your WP site, also whith no popup displayed.
+* Can be multiple selcted pages where user want to display the popup. NO SHORTCUTS NEEDED!.
+* Fully translated in Italian. Ready for multilingual translation.
+* Close popup with ESC button (not when "age restricted option" is checked).
+* Perfectly centered popup, also with resized windows.
+* Fully and easy customizable aspect (background, border, color, etc...).
+* Settable countdown for automatic closing.
+* Settable coockie expiration time for the next popup visualization.
+* Add age validation for adult-content site.
+* Custom text to display whatever you want with WP editor.
+* All great explaned by tips in admin pannel.
+* All in a very easy way to use!
+
 MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
 
 Any suggestions for new features implementation which you need?
-Need something for your interest or your business?
+Need something for your interest or your bisiness?
 Email to support.itro@live.com
 
 == Installation ==
 
-1. Unzip `itro-plugin.zip` to the `/wp-content/plugins/` directory
+1. Unzip `itro-plugin.zip` to the `/wp-content/plugins/` directory or select it by "Add new" in the 'Plugins' menu in WordPress
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Go to "Settings->ITRO Popup" in the admin menu
 4. Enjoy
@@ -56,8 +70,9 @@ In the first one are stored all small data options, in the other one bigger data
 no screenshot avaliable
 
 == Changelog ==
-= 3.5.2 =
-Header already send problem solved.
+= 3.6 =
+New user interface, with slide-bar control. Customizable opacity and color of opaque background behind
+the pop-up.
 
 = 3.5.1 =
 Popup can be rendered unlockable. Added time delay before popup will be displayed. If countdown is hidden
@@ -132,7 +147,8 @@ bug fixed: color table now works in admin pannel.
 First released version.
 
 == Upgrade Notice ==
-Header already send problem solved.
+New user interface, with slide-bar control. Customizable opacity and color of opaque background behind
+the pop-up.
 
 == Notes ==
 

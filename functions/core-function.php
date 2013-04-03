@@ -27,10 +27,17 @@ function itro_init()
 	}
 	
 	//---------------create preview page
-	if ( get_bloginfo('language') == 'en-US') { $preview_text = 'ITRO - Preview page. This page is used to rightly diplay preview of your popup with site theme.'; }
-	if ( get_bloginfo('language') == 'it_IT') { $preview_text = 'ITRO - Pagina di anteprima. Questa pagina è utilizzata per visualizzare correttamente il popup, integrato con lo stile del tema.'; }
-	else {$preview_text = 'ITRO - Preview page. This page is used to rightly diplay preview of your popup with site theme.'; }
-	
+	switch(WPLANG)
+	{
+		case 'en_US':
+			$preview_text = 'ITRO - Preview page. This page is used to rightly display preview of your popup with site theme.';
+			break;
+		case 'it_IT':
+			$preview_text = 'ITRO - Pagina di anteprima. Questa pagina &egrave; utilizzata per visualizzare correttamente il popup, integrato con lo stile del tema.';
+			break;
+		default:
+			$preview_text = 'ITRO - Preview page. This page is used to rightly diplay preview of your popup with site theme.';
+	}
 	if ( itro_get_option('preview_id') == NULL )
 	{
 		// Create post object
@@ -47,9 +54,40 @@ function itro_init()
 		itro_update_option('preview_id',$preview_id);
 	}
 	
+	//-----load sample popup settings
+	if( itro_get_option('sample_popup') == NULL )
+	{
+		itro_update_option('popup_time',20);
+		itro_update_option('cookie_time_exp',6);
+		itro_update_option('popup_background','#FFFFFF');
+		itro_update_option('popup_border_color','#F7FF00');
+		itro_update_option('px_popup_width',300);
+		itro_update_option('px_popup_height',0);
+		itro_update_option('show_countdown','yes');
+		itro_update_option('auto_margin_check','yes');
+		itro_update_option('select_popup_width','px');
+		itro_update_option('select_popup_height','auto');
+		itro_update_option('popup_bg_opacity',0.4);
+		itro_update_option('opaco_bg_color','#8A8A8A');
+		itro_update_option('popup_position','fixed');
+		
+		switch(WPLANG)
+		{
+			case 'en_US':
+			$welcome_text = '<h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Hello, this is a pop-up sample.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">The basic stetting to get started are: Popup height, Popup time, Next visualization, Popup border color, Popup background.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Write watever you want in the Custom text editor and enjoy our plugin!</span></h1><p>&nbsp;</p>';
+				break;
+			case 'it_IT':
+			$welcome_text = '<p style="text-align: center;"><span style="color: #000000; font-size: 20;">Salve, questo &egrave; un esempio di popup.</span></p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;"><span style="color: #000000; font-size: 20;">Le impostazioni base per iniziare sono: Altezza popup, Tempo popup, Prossima visualizzazione, Colore bordo, Colore sfondo.</span></p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;"><span style="color: #000000; font-size: 20;">Scrivi qualunque cosa vuoi nell&#39;editor di testo di wordpress e buon lavoro!</span></p><p style="text-align: center;">&nbsp;</p>';
+				break;
+			default:
+				$welcome_text = '<h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Hello, this is a pop-up sample.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">The basic stetting to get started are: Popup height, Popup time, Next visualization, Popup border color, Popup background.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Write watever you want in the Custom text editor and enjoy our plugin!</span></h1><p>&nbsp;</p>';
+		}
+		itro_update_field('custom_html',$welcome_text);
+		
+		itro_update_option('sample_popup','done');
+	}
+	
 }
-
-
 
 //---------------------- SEND HEADER
 function itro_send_header() 
@@ -134,4 +172,6 @@ function reverse_wpautop($s)
     $s = str_replace("</p>", "\n\n", $s);       
 
     return $s;      
-} ?>
+}
+
+//---------------ITRO

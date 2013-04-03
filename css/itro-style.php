@@ -32,9 +32,9 @@ function itro_style() { ?>
 		#popup_content
 		{
 			<?php 
-			if( preg_match('/px/', itro_get_option('popup_height')) || preg_match('/%/', itro_get_option('popup_height')) ) 
-			{echo 'overflow-y:auto;';} 
-			else { echo 'overflow-y:hidden;'; }
+			if( itro_get_option('select_popup_height') == 'px' || itro_get_option('select_popup_height') == '%' ) 
+			{echo 'overflow-y:auto;' ;} 
+			else { echo 'overflow-y:hidden;' ;}
 			?>
 			overflow-x: auto;
 			height: 100%;
@@ -42,7 +42,7 @@ function itro_style() { ?>
 			
 		}
 		
-		#popup
+		#itro_popup
 		{
 			color: <?php echo itro_get_option('text_color') ?>;
 			position: <?php echo itro_get_option('popup_position');?>;
@@ -55,17 +55,23 @@ function itro_style() { ?>
 			font-size: 10px;
 			font-family: Verdana;
 			z-index: 999999;
-			<?php if( itro_get_option('auto_margin_check') == NULL  ) {echo 'margin-top:' . itro_get_option('popup_top_margin') . ';' ;}
+			<?php if( itro_get_option('auto_margin_check') == NULL  ) {echo 'margin-top:' . itro_get_option('popup_top_margin') . 'px;' ;}
 			if (itro_get_option('popup_border_color') != NULL ) {echo 'border: 4px solid' . itro_get_option('popup_border_color') . ';';}?>			
 			border-radius: 8px 8px 8px 8px;
-			width: <?php echo itro_get_option('popup_width');?>;
-			height: <?php echo itro_get_option('popup_height');?>;
+			width: <?php 
+					if( itro_get_option('select_popup_width') == 'px') { echo itro_get_option('px_popup_width') . 'px'; }
+					if( itro_get_option('select_popup_width') == 'perc') { echo itro_get_option('perc_popup_width') . '%'; }
+					?>;
+			height: <?php 
+					if( itro_get_option('select_popup_height') == 'px') { echo itro_get_option('px_popup_height') . 'px'; }
+					if( itro_get_option('select_popup_height') == 'perc') { echo itro_get_option('perc_popup_height') . '%'; }
+					?>;
 			background-color: <?php echo itro_get_option('popup_background'); ?>;
 			<?php if( itro_get_option('show_countdown') != NULL ) { echo 'padding-bottom: 15px;'; } ?>
+			<?php if( itro_get_option('popup_delay') != 0 ) { echo 'visibility:hidden;'; } ?>
 		}
 		
 		#close_cross
-		
 		{
 			cursor:pointer; 
 			width:20px; 
@@ -85,32 +91,31 @@ function itro_style() { ?>
 		{
 			color: <?php echo itro_get_option('count_font_color') ?>;
 			width: 100%;
-			bottom: 15px;
 			padding-top: <?php if( itro_get_option('show_countdown') != 'yes' ) { echo '0px'; } else {echo '3px';}?> ;
 			padding-bottom:<?php if( itro_get_option('show_countdown') != 'yes' ) { echo '0px'; } else {echo '3px';}?> ;
 			background-color: <?php echo itro_get_option('popup_border_color');?>;
 			height: <?php if( itro_get_option('show_countdown') != 'yes' ) { echo '0px'; }?> ;
 			overflow: hidden;
-			
-			
+			position:absolute;
 		}
 
-		#opaco{
+		#itro_opaco{
 			opacity:0.6;
 			position:fixed;
-			z-index:99997;
-			background-color: #eeeeee;
+			background-color:  <?php echo itro_get_option('opaco_bg_color'); ?>;
 			font-size: 10px;
 			font-family: Verdana;
 			top: 100px;    
 			width: 100%;
 			height: 100%;
-			z-index: 99998;
+			z-index: 9999;
 			left: 0px ;
 			right: 0px;
 			top: 0px;
 			bottom: 0px;
-			
+			<?php if( itro_get_option('popup_delay') != 0 ) { echo 'visibility:hidden;'; } ?>
+			opacity: <?php echo itro_get_option('popup_bg_opacity'); ?> ;
+			filter:alpha(opacity = <?php echo ( itro_get_option('popup_bg_opacity') * 100); ?>); /* For IE8 and earlier */
 		}
 
 		@media screen and (max-width: 480px){
@@ -176,4 +181,4 @@ function itro_admin_style ()
 		}
 	</style>
 <?php
-}
+} ?>

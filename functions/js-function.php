@@ -4,6 +4,8 @@ Copyright 2013  I.T.RO.® (email : support.itro@live.com)
 This file is part of ITRO Popup Plugin.
 All Right Reserved.
 */
+
+//------------ LOAD SCRIPTS FOR POPUP VISUALIZATION
 function itro_popup_js()
 {
 	echo '<script src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>'; ?>
@@ -17,25 +19,25 @@ function itro_popup_js()
 				{
 					event = event || window.event;
 					var key = event.keyCode;
-					if(key==27){popup.style.visibility='Hidden'; opaco.style.visibility='Hidden';} 
+					if(key==27){itro_popup.style.visibility='Hidden'; itro_opaco.style.visibility='Hidden';} 
 				}; <?php
 			}
-			if( itro_get_option('popup_delay') != NULL )
+			if( itro_get_option('popup_delay') != 0 )
 			{ ?>
 				var delay = <?php echo itro_get_option('popup_delay') . '+' . '1'; ?> ;
 				interval_id = setInterval(function(){popup_delay();},1000);
 				function popup_delay() 
 				{ 
 					delay--;
-					if(delay <= 0) { clearInterval(interval_id); popup.style.visibility = 'visible'; opaco.style.visibility = 'visible'; } 
+					if(delay <= 0) { clearInterval(interval_id); itro_popup.style.visibility = 'visible'; itro_opaco.style.visibility = 'visible'; } 
 				}
 			<?php
 			}
 			
-			if ( itro_get_option('popup_time') != NULL )
+			if ( itro_get_option('popup_time') != 0 )
 			{ ?>
 				var popTime=<?php 
-							if( itro_get_option('popup_delay')  != NULL ) { echo itro_get_option('popup_time') . '+' . itro_get_option('popup_delay'); }
+							if( itro_get_option('popup_delay')  != 0 ) { echo itro_get_option('popup_time') . '+' . itro_get_option('popup_delay'); }
 							else { echo itro_get_option('popup_time'); }
 							?>;
 				setInterval(function(){popTimer()},1000); //the countdown 
@@ -45,11 +47,13 @@ function itro_popup_js()
 					document.getElementById("timer").innerHTML=popTime;
 					popTime--;
 					}
-					else {popup.style.visibility='Hidden'; opaco.style.visibility='Hidden';
+					else {itro_popup.style.visibility='Hidden'; itro_opaco.style.visibility='Hidden';
 					}
 				} <?php
 			}
 		}
+		
+		//------- AUTOMATIC TOP MARGIN
 		if( itro_get_option('auto_margin_check') != NULL )
 		{?>
 			var browserWidth = 0, browserHeight = 0;
@@ -73,8 +77,8 @@ function itro_popup_js()
 					browserWidth = document.body.clientWidth;
 					browserHeight = document.body.clientHeight;
 				}
-				popupHeight = document.getElementById('popup').offsetHeight ; 			//get the actual px size of popup div
-				document.getElementById('popup').style.top = (browserHeight - popupHeight)/2; //update the top margin of popup					
+				popupHeight = document.getElementById('itro_popup').offsetHeight ; 			//get the actual px size of popup div
+				document.getElementById('itro_popup').style.top = (browserHeight - popupHeight)/2; //update the top margin of popup					
 			}
 		<?php 
 		}?>
@@ -82,9 +86,117 @@ function itro_popup_js()
 <?php	
 }
 
+//------------- LOAD SCRIPT TO SHOW SLIDEBAR
+function itro_slidebar($slider_target_id,$slider_value,$slider_min,$slider_max,$slider_step,$slider_tofixed,$multi_slider)
+{
+	if($multi_slider != NULL)
+	{
+		if( itro_get_option('select_' . $slider_target_id) != $multi_slider ) 
+		{ 
+			$slider_display = 'display:none;';
+			//$js_input_display = 'document.getElementById("'. $slider_target_id .'").style.display = "none";' ;
+		}
+		$target_opt_name = $slider_target_id;
+		$slider_container_id = $slider_target_id . '_slider_container';
+		
+		$js_slider_container_id = $multi_slider . '_' . $slider_target_id . '_slider_container';
+		$js_slider_id = $multi_slider . '_' . $slider_target_id . '_slider';
+		$slider_target_id = $multi_slider . '_' . $slider_target_id;
+	}
+	else
+	{
+		$js_slider_container_id = $slider_target_id . '_slider_container';
+		$js_slider_id = $slider_target_id . '_slider';
+	}
+	?>
+
+	<div id="<?php echo $js_slider_container_id; ?>" style="<?php echo $slider_display; ?>position: relative; float:right; top:12px; left:25px; width:150px; height:2px; background-color:black; border-radius:15px;">
+		<div id="<?php echo $js_slider_id; ?>" style="left:<?php echo ( (itro_get_option($slider_target_id)/$slider_max)*150 );  ?>px; border-radius:15px; position: relative; top:-5px; cursor:pointer; width:15px; height:12px; background-color:gray;"></div>
+	</div>
+	<script type="text/javascript">
+		document.getElementById("<?php echo $js_slider_container_id; ?>").addEventListener("mousedown", <?php echo $slider_target_id; ?>_start_slider,false);
+		document.addEventListener("mousemove", itro_pos,false);
+		
+		function <?php echo $slider_target_id ?>_start_slider()
+		{	
+			document.addEventListener("mousemove",<?php echo $slider_target_id ?>_move_slider);
+			document.addEventListener("mouseup",<?php echo $slider_target_id ?>_stop_slider)
+			if( (x_pos - document.getElementById("<?php echo $js_slider_container_id; ?>").getBoundingClientRect().left) >= 0 && (x_pos - document.getElementById("<?php echo $js_slider_container_id; ?>").getBoundingClientRect().left) <= parseInt(document.getElementById("<?php echo $js_slider_container_id; ?>").style.width))
+			{
+				document.getElementById("<?php echo $js_slider_id;?>").style.left = x_pos - document.getElementById("<?php echo $js_slider_container_id; ?>").getBoundingClientRect().left - 7 + "px";
+				document.getElementById("<?php echo $slider_target_id; ?>").value = (Math.round( ( (x_pos - document.getElementById("<?php echo $js_slider_container_id; ?>").getBoundingClientRect().left)/150*<?php echo $slider_max; ?> )/<?php echo $slider_step; ?> )*<?php echo $slider_step; ?>).toFixed(<?php echo $slider_tofixed; ?>);
+			}
+		}
+
+		function <?php echo $slider_target_id ?>_move_slider()
+		{
+			if( (x_pos - document.getElementById("<?php echo $js_slider_container_id; ?>").getBoundingClientRect().left) >= 0 && (x_pos - document.getElementById("<?php echo $js_slider_container_id; ?>").getBoundingClientRect().left) <= parseInt(document.getElementById("<?php echo $js_slider_container_id; ?>").style.width) )
+			{
+				document.getElementById("<?php echo $js_slider_id;?>").style.left = x_pos - document.getElementById("<?php echo $js_slider_container_id; ?>").getBoundingClientRect().left - 7 + "px";
+				document.getElementById("<?php echo $slider_target_id; ?>").value = (Math.round( ( (x_pos - document.getElementById("<?php echo $js_slider_container_id; ?>").getBoundingClientRect().left)/150*<?php echo $slider_max; ?> )/<?php echo $slider_step; ?> )*<?php echo $slider_step; ?>).toFixed(<?php echo $slider_tofixed; ?>);
+			}
+			if(x_pos - document.getElementById("<?php echo $js_slider_container_id; ?>").getBoundingClientRect().left < 0)
+			{
+				document.getElementById("<?php echo $js_slider_id;?>").style.left = -7 + "px";
+				<?php echo $slider_target_id; ?>_temp1 = 0;
+				document.getElementById("<?php echo $slider_target_id; ?>").value = <?php echo $slider_target_id; ?>_temp1.toFixed(<?php echo $slider_tofixed; ?>);
+			}
+			if(x_pos - document.getElementById("<?php echo $js_slider_container_id; ?>").getBoundingClientRect().left > parseInt(document.getElementById("<?php echo $js_slider_container_id; ?>").style.width))
+			{
+				document.getElementById("<?php echo $js_slider_id;?>").style.left = parseInt(document.getElementById("<?php echo $js_slider_container_id; ?>").style.width) - 7 + "px";
+				<?php echo $slider_target_id; ?>_temp2 = <?php echo $slider_max; ?>;
+				document.getElementById("<?php echo $slider_target_id; ?>").value = <?php echo $slider_target_id; ?>_temp2.toFixed(<?php echo $slider_tofixed; ?>);
+			}
+		}
+
+		function <?php echo $slider_target_id ?>_stop_slider()
+		{
+			document.removeEventListener("mousemove",<?php echo $slider_target_id ?>_move_slider)
+			
+		}
+		
+		<?php $slider_target_id = $target_opt_name; ?>
+		
+		//---function disable
+		function itro_disable_<?php echo $slider_target_id; ?>()
+		{
+			document.getElementById("px_<?php echo $slider_target_id; ?>").style.display = "none";
+			document.getElementById("perc_<?php echo $slider_target_id; ?>").style.display = "none";
+			document.getElementById("px_<?php echo $slider_container_id; ?>").style.display = "none";
+			document.getElementById("perc_<?php echo $slider_container_id; ?>").style.display = "none";
+		}
+		
+		//---function enable
+		function itro_enable_<?php echo $slider_target_id; ?>(dim_type)
+		{
+			if(dim_type == 'perc') 
+			{
+				document.getElementById("perc_<?php echo $slider_container_id; ?>").style.display = "block";
+				document.getElementById("perc_<?php echo $slider_target_id; ?>").style.display = "inline";
+				document.getElementById("px_<?php echo $slider_target_id; ?>").style.display = "none";
+				document.getElementById("px_<?php echo $slider_container_id; ?>").style.display = "none";
+			}
+			if(dim_type == 'px') 
+			{
+				document.getElementById("px_<?php echo $slider_container_id; ?>").style.display = "block";
+				document.getElementById("px_<?php echo $slider_target_id; ?>").style.display = "inline";
+				document.getElementById("perc_<?php echo $slider_target_id; ?>").style.display = "none";
+				document.getElementById("perc_<?php echo $slider_container_id; ?>").style.display = "none";
+			}
+		}
+	</script><?php
+}
+
+//-------------- LOAD SCRIPTS FOR ADMIN PANNEL
 function itro_admin_js()
 { ?>
-	<script>
+	<script type="text/javascript">
+		function itro_pos(e)
+		{
+			e = e || window.event;
+			x_pos = e.clientX;
+		}
+		
 		function itro_mutual_check(checkbox_id_1,checkbox_id_2,box)
 		{
 			if (!box)
@@ -130,6 +242,12 @@ function itro_admin_js()
 
 		
 		});
+		
+		function itro_show_hide()
+		{
+			if( document.getElementById("top_margin_slider").style.display == "none" ) { document.getElementById("top_margin_slider").style.display = "table" }
+			else { document.getElementById("top_margin_slider").style.display = "none" }
+		}
 	</script><?php
 } 
 
@@ -137,7 +255,7 @@ function itro_onOff($tag_id,$overflow){
 if( $overflow == 'hidden') {?>
 	<style>#<?php echo $tag_id;?>{overflow:hidden;}</style><?php
 } ?>
-<script>
+<script type="text/javascript">
 	var <?php echo $tag_id;?>_flag=true;
 	function onOff_<?php echo $tag_id;?>() {
 	   if (<?php echo $tag_id;?>_flag==true) { document.getElementById('<?php echo $tag_id;?>').style.height='0px'; }
@@ -151,7 +269,7 @@ if( $overflow == 'hidden') {?>
 function itro_onOff_checkbox($box_id,$tag_id,$init_state){
 ?>
 <style>#<?php echo $tag_id;?>{overflow:hidden;}</style>
-<script>
+<script type="text/javascript">
 	function <?php echo $box_id;?>_checkbox_<?php echo $tag_id;?>()
 	{
 		if (<?php echo $box_id;?>.checked==<?php echo $init_state ?>) {document.getElementById('<?php echo $tag_id;?>').style.height='0px';}
