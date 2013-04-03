@@ -38,7 +38,7 @@ function itro_init()
 		default:
 			$preview_text = 'ITRO - Preview page. This page is used to rightly diplay preview of your popup with site theme.';
 	}
-	if ( false)//itro_get_option('preview_id') == NULL )
+	if ( itro_get_option('preview_id') == NULL )
 	{
 		// Create post object
 		$preview_post = array(
@@ -55,7 +55,7 @@ function itro_init()
 	}
 	
 	//-----load sample popup settings
-	if( itro_get_option('sample_popup') == NULL )
+	if( get_option("itro_curr_ver") == NULL )
 	{
 		itro_update_option('popup_time',20);
 		itro_update_option('cookie_time_exp',6);
