@@ -38,7 +38,7 @@ function itro_init()
 		default:
 			$preview_text = 'ITRO - Preview page. This page is used to rightly diplay preview of your popup with site theme.';
 	}
-	if ( itro_get_option('preview_id') == NULL )
+	if ( false)//itro_get_option('preview_id') == NULL )
 	{
 		// Create post object
 		$preview_post = array(
