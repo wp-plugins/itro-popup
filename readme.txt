@@ -4,7 +4,7 @@ Donate link: http://www.itro.eu/index.php/donate/
 Tags: popup, age, restriction, block, violence, compatibility, ie9, age validation, internet explorer compatibility, adult, adult content, content warning
 Requires at least: 3.0.1
 Tested up to: 3.5.1
-Stable tag: 3.6
+Stable tag: 3.6.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -71,6 +71,9 @@ In the first one are stored all small data options, in the other one bigger data
 no screenshot avaliable
 
 == Changelog ==
+= 3.6.1 =
+minor bugs fixed.
+
 = 3.6 =
 New user interface, with slide-bar control. Customizable opacity and color of opaque background behind
 the pop-up.
@@ -148,6 +151,10 @@ bug fixed: color table now works in admin pannel.
 First released version.
 
 == Upgrade Notice ==
+= 3.6.1 =
+minor bugs fixed.
+
+= 3.6 =
 New user interface, with slide-bar control. Customizable opacity and color of opaque background behind
 the pop-up.
 
