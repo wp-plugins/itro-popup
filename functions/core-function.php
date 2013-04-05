@@ -118,7 +118,7 @@ function itro_display_popup()
 	if( ($id_match != NULL) || (itro_get_option('page_selection')=='all') )
 	{
 		echo itro_popup_js();
-		include( 'wp-content/plugins/itro-popup/templates/itro-popup-template.php' );
+		echo itro_popup_template();
 	}
 }
 
