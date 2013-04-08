@@ -53,19 +53,7 @@ Email to support.itro@live.com
 4. Enjoy
 
 == Frequently Asked Questions ==
-= What is the "ITRO - Preview" in my pages? =
-This page is automatically created to correctly display preview. DO NOT DELETE IT. Popup cookie doesn't
-work in this page.
-
-= How can i have a preview of my settings? =
-Save settings than click on preview button. Will be opened a preview page, this is needed to display 
-correctly the popup, with theme style.
-
-= Does the plugin add some tables in my Wordpress database? =
-Yes. The tables are "wp_itro_plugin_option" "wp_itro_plugin_field".
-
-= What are they for? =
-In the first one are stored all small data options, in the other one bigger data as custom HTML code.
+VISIT OFFICIAL SITE FAQ [CLICK HERE!](http://www.itro.eu/index.php/donate/)http://www.itro.eu/index.php/faq/
 
 == Screenshots ==
 no screenshot avaliable
