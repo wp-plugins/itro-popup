@@ -53,7 +53,7 @@ Email to support.itro@live.com
 4. Enjoy
 
 == Frequently Asked Questions ==
-VISIT OFFICIAL SITE FAQ [CLICK HERE!](http://www.itro.eu/index.php/donate/)http://www.itro.eu/index.php/faq/
+VISIT OFFICIAL SITE FAQ [CLICK HERE!](http://www.itro.eu/index.php/faq/)
 
 == Screenshots ==
 no screenshot avaliable
