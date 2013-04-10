@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mc-plugin\n"
-"POT-Creation-Date: 2013-04-10 18:54+0100\n"
-"PO-Revision-Date: 2013-04-10 18:54+0100\n"
+"POT-Creation-Date: 2013-04-10 19:29+0100\n"
+"PO-Revision-Date: 2013-04-10 19:32+0100\n"
 "Last-Translator: \n"
 "Language-Team: ITRO Corp\n"
 "Language: ITALIANO\n"
@@ -27,7 +27,6 @@ msgid "General Popup Option:"
 msgstr "Impostazioni Generali"
 
 #: admin/popup-admin.php:150
-#, fuzzy
 msgid "Enable IE compatibility"
 msgstr "Usare la compatibilit&agrave; per IE:"
 
@@ -56,11 +55,11 @@ msgstr "Secondi popup:"
 
 #: admin/popup-admin.php:162
 msgid ""
-"Set seconds until the popup automatically close. Leave it blank to disable "
+"Set seconds until the popup automatically close. Set it to zero to disable "
 "countdown."
 msgstr ""
-"Imposta i secondi prima che il popup si chiuda automaticamente. Lasciare "
-"vuoto per disabilitare il conto alla rovescia."
+"Imposta i secondi prima che il popup si chiuda automaticamente. Lasciare a "
+"zero per disabilitare il conto alla rovescia."
 
 #: admin/popup-admin.php:170
 msgid "Popup delay:"

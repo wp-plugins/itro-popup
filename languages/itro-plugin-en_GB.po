@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mc-plugin\n"
-"POT-Creation-Date: 2013-04-10 18:54+0100\n"
-"PO-Revision-Date: 2013-04-10 18:54+0100\n"
+"POT-Creation-Date: 2013-04-10 19:29+0100\n"
+"PO-Revision-Date: 2013-04-10 19:29+0100\n"
 "Last-Translator: \n"
 "Language-Team: ITRO Corp\n"
 "MIME-Version: 1.0\n"
@@ -50,7 +50,7 @@ msgstr ""
 
 #: admin/popup-admin.php:162
 msgid ""
-"Set seconds until the popup automatically close. Leave it blank to disable "
+"Set seconds until the popup automatically close. Set it to zero to disable "
 "countdown."
 msgstr ""
 
