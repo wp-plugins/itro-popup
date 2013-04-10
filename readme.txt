@@ -24,6 +24,8 @@ Popup can be rendered unlockable with the option "Unlockable popup" so it will c
 This plugin is basic-user oriented, no code knowledge is required.
 It also fix the Internet Explorer compatibility problem, for all IE version.
 
+FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE[CLICK HERE!](http://www.itro.eu/index.php/faq/)
+
 FEATURES
 
 * Fix Internet Explorer compatibility problem for your WP site, also whith no popup displayed.
@@ -53,7 +55,7 @@ Email to support.itro@live.com
 4. Enjoy
 
 == Frequently Asked Questions ==
-VISIT OFFICIAL SITE FAQ [CLICK HERE!](http://www.itro.eu/index.php/faq/)
+FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE[CLICK HERE!](http://www.itro.eu/index.php/faq/)
 
 == Screenshots ==
 no screenshot avaliable
