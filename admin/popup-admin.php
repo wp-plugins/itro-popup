@@ -159,7 +159,7 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' ) {
 				
 				<!-- popup seconds!-->
 				<div style="display:table; height:10px; padding-bottom:5px;">
-					<span style="float:left;" ><?php _e("Popup seconds:", 'itro-plugin' ); ?> <img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e("Set seconds until the popup automatically close. Leave it blank to disable countdown.",'itro-plugin');?>" ></span>
+					<span style="float:left;" ><?php _e("Popup seconds:", 'itro-plugin' ); ?> <img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e("Set seconds until the popup automatically close. Set it to zero to disable countdown.",'itro-plugin');?>" ></span>
 					&nbsp;&nbsp;&nbsp;
 					<?php itro_slidebar( $opt_name[0] , $opt_val[0] , 0 , 120 , 1, 0, '') ?>
 					<input type="text" style="color: #f6931f; font-weight: bold; position:relative; left:10px;" id="<?php echo $opt_name[0]; ?>" name="<?php echo $opt_name[0]; ?>" value="<?php echo $opt_val[0]; ?>" size="1">
