@@ -4,7 +4,7 @@ Donate link: http://www.itro.eu/index.php/donate/
 Tags: popup, age, restriction, block, violence, compatibility, ie9, age validation, internet explorer compatibility, adult, adult content, content warning
 Requires at least: 3.0.1
 Tested up to: 3.5.1
-Stable tag: 3.6.3
+Stable tag: 3.6.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -59,6 +59,10 @@ VISIT OFFICIAL SITE FAQ [CLICK HERE!](http://www.itro.eu/index.php/faq/)
 no screenshot avaliable
 
 == Changelog ==
+= 3.6.4 =
+IMPORTANT!
+Big bug fixed: broken media blank page resolved!
+
 = 3.6.3 =
 Now user can unistall plugin whithout delete settings.
 
@@ -145,6 +149,8 @@ bug fixed: color table now works in admin pannel.
 First released version.
 
 == Upgrade Notice ==
+IMPORTANT!
+Big bug fixed: broken media blank page resolved!
 Now user can unistall plugin whithout delete settings.
 
 == Notes ==

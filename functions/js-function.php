@@ -236,11 +236,8 @@ function itro_admin_js()
 		document.getElementById('yes_bg').checked=true
 		tb_remove();
 		};
-		
 		return false;
 		});
-
-		
 		});
 		
 		function itro_show_hide()

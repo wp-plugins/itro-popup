@@ -95,7 +95,10 @@ function itro_send_header()
 	$expiration_time = itro_get_option('cookie_time_exp') ;
 	if (!isset($_COOKIE['popup_cookie'])) {
 	setcookie("popup_cookie" , "one_time_popup" , time() + $expiration_time * 3600) ; }
-	
+}
+
+function ie_compatibility()
+{	
 	//add meta tag for IE compability
 	if ( itro_get_option('ie_compability') == 'yes' )
 	{ echo '<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>'; }
