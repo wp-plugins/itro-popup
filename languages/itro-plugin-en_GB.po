@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mc-plugin\n"
-"POT-Creation-Date: 2013-04-03 15:36+0100\n"
-"PO-Revision-Date: 2013-04-03 15:36+0100\n"
+"POT-Creation-Date: 2013-04-10 18:54+0100\n"
+"PO-Revision-Date: 2013-04-10 18:54+0100\n"
 "Last-Translator: \n"
 "Language-Team: ITRO Corp\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgid "General Popup Option:"
 msgstr ""
 
 #: admin/popup-admin.php:150
-msgid "Enable IE compability"
+msgid "Enable IE compatibility"
 msgstr ""
 
 #: admin/popup-admin.php:151
@@ -242,76 +242,77 @@ msgstr ""
 msgid "Leave button font color:"
 msgstr ""
 
-#: admin/popup-admin.php:342 admin/popup-admin.php:377
+#: admin/popup-admin.php:343 admin/popup-admin.php:369
 msgid "Preview page"
 msgstr ""
 
-#: admin/popup-admin.php:350
+#: admin/popup-admin.php:351
 msgid "Your text (or HTML code:)"
 msgstr ""
 
-#: admin/popup-admin.php:356
+#: admin/popup-admin.php:357
 msgid "BACKGROUND IMAGE"
 msgstr ""
 
-#: admin/popup-admin.php:357
+#: admin/popup-admin.php:358
 msgid "Show image"
 msgstr ""
 
-#: admin/popup-admin.php:363
-msgid "Where are my old images?"
-msgstr ""
-
-#: admin/popup-admin.php:364
-msgid ""
-"If your plugin version is older than 3.4 here you can found your old "
-"uploaded images."
-msgstr ""
-
-#: admin/popup-admin.php:370
+#: admin/popup-admin.php:361
 msgid "No background"
 msgstr ""
 
-#: admin/popup-admin.php:373
+#: admin/popup-admin.php:364
 msgid "Upload Image"
 msgstr ""
 
-#: admin/popup-admin.php:385
+#: admin/popup-admin.php:377
 msgid "Like it? Offer us a coffee! ;-)"
 msgstr ""
 
-#: admin/popup-admin.php:390
+#: admin/popup-admin.php:382
 msgid "Make your donation"
 msgstr ""
 
-#: admin/popup-admin.php:391
+#: admin/popup-admin.php:383
 msgid "thiny donation"
 msgstr ""
 
-#: admin/popup-admin.php:392
+#: admin/popup-admin.php:384
 msgid "little donation"
 msgstr ""
 
-#: admin/popup-admin.php:393
+#: admin/popup-admin.php:385
 msgid "right donation"
 msgstr ""
 
-#: admin/popup-admin.php:394
+#: admin/popup-admin.php:386
 msgid "normal donation"
 msgstr ""
 
-#: admin/popup-admin.php:395
+#: admin/popup-admin.php:387
 msgid "good donation"
 msgstr ""
 
-#: admin/popup-admin.php:396
+#: admin/popup-admin.php:388
 msgid "great donation"
 msgstr ""
 
-#: templates/itro-popup-template.php:16
+#: admin/popup-admin.php:404
+msgid "DELETE ALL DATA ON PLUGIN UNISTALL"
+msgstr ""
+
+#: admin/popup-admin.php:405
+msgid ""
+"Check this box if you want to delete or maintain database tables. It is "
+"usefull if you have to try to install again the plugin, without lost your "
+"settings."
+msgstr ""
+
+#: templates/itro-popup-template.php:19
 msgid "CLOSE"
 msgstr ""
 
-#: templates/itro-popup-template.php:17
+#: templates/itro-popup-template.php:20
 msgid "This popup will be closed in: "
 msgstr ""

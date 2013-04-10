@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mc-plugin\n"
-"POT-Creation-Date: 2013-04-03 15:36+0100\n"
-"PO-Revision-Date: 2013-04-03 15:37+0100\n"
+"POT-Creation-Date: 2013-04-10 18:54+0100\n"
+"PO-Revision-Date: 2013-04-10 18:54+0100\n"
 "Last-Translator: \n"
 "Language-Team: ITRO Corp\n"
 "Language: ITALIANO\n"
@@ -27,7 +27,8 @@ msgid "General Popup Option:"
 msgstr "Impostazioni Generali"
 
 #: admin/popup-admin.php:150
-msgid "Enable IE compability"
+#, fuzzy
+msgid "Enable IE compatibility"
 msgstr "Usare la compatibilit&agrave; per IE:"
 
 #: admin/popup-admin.php:151
@@ -263,81 +264,92 @@ msgstr "Colore bordo pulsante allontanamento:"
 msgid "Leave button font color:"
 msgstr "Colore font pulsante allontanamento:"
 
-#: admin/popup-admin.php:342 admin/popup-admin.php:377
+#: admin/popup-admin.php:343 admin/popup-admin.php:369
 msgid "Preview page"
 msgstr "Pagina di anteprima"
 
-#: admin/popup-admin.php:350
+#: admin/popup-admin.php:351
 msgid "Your text (or HTML code:)"
 msgstr "Il tuo testo (o il codice HTML)"
 
-#: admin/popup-admin.php:356
+#: admin/popup-admin.php:357
 msgid "BACKGROUND IMAGE"
 msgstr "IMMAGINE DI SFONDO"
 
-#: admin/popup-admin.php:357
+#: admin/popup-admin.php:358
 msgid "Show image"
 msgstr "Visualizza immagine"
 
-#: admin/popup-admin.php:363
-msgid "Where are my old images?"
-msgstr "Dove sono le mie vecchie immagini?"
-
-#: admin/popup-admin.php:364
-msgid ""
-"If your plugin version is older than 3.4 here you can found your old "
-"uploaded images."
-msgstr ""
-"Se la versione installata del plugin è precedente alla 3.4 il link mostrerà "
-"le vecchie immagini caricate."
-
-#: admin/popup-admin.php:370
+#: admin/popup-admin.php:361
 msgid "No background"
 msgstr "Nessuno sfondo"
 
-#: admin/popup-admin.php:373
+#: admin/popup-admin.php:364
 msgid "Upload Image"
 msgstr "Carica Immagine"
 
-#: admin/popup-admin.php:385
+#: admin/popup-admin.php:377
 msgid "Like it? Offer us a coffee! ;-)"
 msgstr "Il plugin ti piace? Offrici un caffè! ;-)"
 
-#: admin/popup-admin.php:390
+#: admin/popup-admin.php:382
 msgid "Make your donation"
 msgstr "Fai la tua donazione"
 
-#: admin/popup-admin.php:391
+#: admin/popup-admin.php:383
 msgid "thiny donation"
 msgstr "donazione minima"
 
-#: admin/popup-admin.php:392
+#: admin/popup-admin.php:384
 msgid "little donation"
 msgstr "donazione piccola"
 
-#: admin/popup-admin.php:393
+#: admin/popup-admin.php:385
 msgid "right donation"
 msgstr "donazione giusta"
 
-#: admin/popup-admin.php:394
+#: admin/popup-admin.php:386
 msgid "normal donation"
 msgstr "donazione normale"
 
-#: admin/popup-admin.php:395
+#: admin/popup-admin.php:387
 msgid "good donation"
 msgstr "donazione corposa"
 
-#: admin/popup-admin.php:396
+#: admin/popup-admin.php:388
 msgid "great donation"
 msgstr "donazione grande"
 
-#: templates/itro-popup-template.php:16
+#: admin/popup-admin.php:404
+msgid "DELETE ALL DATA ON PLUGIN UNISTALL"
+msgstr "ELIMINA TUTTI DATI ALLA DISINSTALLAZIONE DEL PLUGIN"
+
+#: admin/popup-admin.php:405
+msgid ""
+"Check this box if you want to delete or maintain database tables. It is "
+"usefull if you have to try to install again the plugin, without lost your "
+"settings."
+msgstr ""
+"Selezionare questa casella se si desidera rimuovere tutte le tabelle dal "
+"database."
+
+#: templates/itro-popup-template.php:19
 msgid "CLOSE"
 msgstr "CHIUDI"
 
-#: templates/itro-popup-template.php:17
+#: templates/itro-popup-template.php:20
 msgid "This popup will be closed in: "
 msgstr "Questo popup verr&agrave; chiuso tra:"
+
+#~ msgid "Where are my old images?"
+#~ msgstr "Dove sono le mie vecchie immagini?"
+
+#~ msgid ""
+#~ "If your plugin version is older than 3.4 here you can found your old "
+#~ "uploaded images."
+#~ msgstr ""
+#~ "Se la versione installata del plugin è precedente alla 3.4 il link "
+#~ "mostrerà le vecchie immagini caricate."
 
 #~ msgid "Set hours until the popup will appear again"
 #~ msgstr ""

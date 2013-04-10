@@ -147,7 +147,7 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' ) {
 				<input type="hidden" name="<?php echo $submitted_form; ?>" value="Y">
 				<p>
 					<input type="checkbox" id="ie_compability" name="ie_compability" value="yes" <?php if(itro_get_option('ie_compability')=='yes' ){echo 'checked="checked"';} ?> />
-					<span onclick="itro_mutual_check('ie_compability','','')"><?php _e("Enable IE compability", 'itro-plugin' ); ?></span>
+					<span onclick="itro_mutual_check('ie_compability','','')"><?php _e("Enable IE compatibility", 'itro-plugin' ); ?></span>
 					<img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>"title="<?php _e('If your site is has visualization issues in Internet Explorer, check this box to solve the compatibility problem.','itro-plugin');?>" >
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					
@@ -337,6 +337,7 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' ) {
 				</div>
 			</div>
 		</div>
+		<hr>
 		<p class="submit">
 			<input type="submit" name="Submit" class="button-primary" value="<?php esc_attr_e('Save Changes') ?>" />&nbsp;&nbsp;&nbsp;&nbsp;
 			<input type="button" target="_blank" class="button" onClick="window.open('/?page_id=<?php echo itro_get_option('preview_id') ?>')" value="<?php echo _e('Preview page','itro-plugin' )?>">
@@ -356,21 +357,12 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' ) {
 			<h4><?php _e("BACKGROUND IMAGE",'itro-plugin');?></h4>
 			<a href="<?php if ( itro_get_option('background_source') == NULL ) {echo '#customHtmlForm';} else { echo itro_get_option('background_source'); }?>"><?php _e('Show image','itro-plugin')?></a>
 			
-			<?php //------------------- check version to retrieve old uploaded images 
-			if ( get_option('itro_prev_ver') < 3.4 || get_option('itro_prev_ver') == NULL ) 
-			{ ?>
-				<span style="float: right;">
-				<a href="<?php echo itroUploadUrl; ?>"><?php _e('Where are my old images?','itro-plugin'); ?></a>
-				<img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e("If your plugin version is older than 3.4 here you can found your old uploaded images.",'itro-plugin');?>" >
-				</span>
-				<br><?php 
-			} ?>
-			
 			<input type="radio" name="<?php echo $opt_name[22];?>" value="" <?php if($opt_val[22]== 'no' || $opt_val[22]== NULL ){echo 'checked="checked"';} ?>/>
 			<?php _e("No background",'itro-plugin');?><br>
 			<input type="radio" id="yes_bg" name="<?php echo $opt_name[22];?>" value="yes" <?php if( $opt_val[22]== 'yes' ){echo 'checked="checked"';} ?>/>
 			<input class="upload" onClick="select(); document.getElementById('yes_bg').checked=true" type="text" name="background_source" size="50" value="<?php echo itro_get_option('background_source'); ?>" />
 			<input class="button" id="upload_button" type="button" name="bg_upload_button" value="<?php _e('Upload Image','itro-plugin') ?>" />
+			<br><br>
 			<hr>
 			<p class="submit">
 				<input type="submit" name="Submit" class="button-primary" value="<?php esc_attr_e('Save Changes') ?>" />&nbsp;&nbsp;&nbsp;&nbsp;
@@ -402,3 +394,15 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' ) {
 		</form>
 	</div>
 </div>
+
+<?php if( isset($_POST['delete_data_hidden']) && $_POST['delete_data_hidden'] == 'Y' ) { itro_update_option('delete_data',$_POST['delete_data']); } ?>
+<form id="delete_data" method="post" style="clear:both;">
+	<br>
+	<hr>
+	<input type="hidden" name="delete_data_hidden" value="Y">
+	<input type="checkbox" id="delete_data" name="delete_data" value="yes" <?php if(itro_get_option('delete_data')=='yes' ){echo 'checked="checked"';} ?> />
+	<span><?php _e("DELETE ALL DATA ON PLUGIN UNISTALL", 'itro-plugin' ); ?></span>
+	<img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>"title="<?php _e('Check this box if you want to delete or maintain database tables. It is usefull if you have to try to install again the plugin, without lost your settings.','itro-plugin');?>" >
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="submit" name="Submit" class="button-primary" value="<?php esc_attr_e('Save Changes') ?>" />&nbsp;&nbsp;&nbsp;&nbsp;
+</form>
