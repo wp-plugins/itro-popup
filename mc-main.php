@@ -14,7 +14,7 @@ Author URI: http://www.itro.eu/
 */
 
 global $ITRO_VER;
-$ITRO_VER = 3.62;
+$ITRO_VER = 3.63;
 define('itroLocalPath', __DIR__);
 define('itroPath', plugins_url() . '/itro-popup/');
 define('itroImages', plugins_url() . '/itro-popup/images/');
