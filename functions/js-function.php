@@ -19,7 +19,10 @@ function itro_popup_js()
 				{
 					event = event || window.event;
 					var key = event.keyCode;
-					if(key==27){itro_popup.style.visibility='Hidden'; itro_opaco.style.visibility='Hidden';} 
+					if(key==27)
+					{
+						jQuery("#itro_popup").fadeOut(function() {itro_opaco.style.visibility='Hidden';});						
+					} 
 				}; <?php
 			}
 			if( itro_get_option('popup_delay') != 0 )
@@ -29,8 +32,23 @@ function itro_popup_js()
 				function popup_delay() 
 				{ 
 					delay--;
-					if(delay <= 0) { clearInterval(interval_id); itro_popup.style.visibility = 'visible'; itro_opaco.style.visibility = 'visible'; } 
+					if(delay <= 0) 
+					{
+						clearInterval(interval_id); 
+						jQuery("#itro_popup").fadeOut(1);
+						itro_popup.style.visibility = 'visible';
+						itro_opaco.style.visibility = 'visible'; 
+						jQuery("#itro_popup").fadeIn();
+					}
 				}
+			<?php
+			}
+			else
+			{?>
+				jQuery("#itro_popup").fadeOut(1);
+				itro_popup.style.visibility = 'visible';
+				itro_opaco.style.visibility = 'visible'; 
+				jQuery("#itro_popup").fadeIn();
 			<?php
 			}
 			

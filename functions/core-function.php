@@ -119,8 +119,8 @@ function itro_display_popup()
 	if( ( itro_get_option('page_selection')!='any' && !isset($_COOKIE['popup_cookie']) ) || itro_get_option('preview_id') == get_the_id())
 	if( ($id_match != NULL) || (itro_get_option('page_selection')=='all') )
 	{
-		echo itro_popup_js();
 		echo itro_popup_template();
+		echo itro_popup_js();
 	}
 }
 

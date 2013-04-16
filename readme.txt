@@ -4,7 +4,7 @@ Donate link: http://www.itro.eu/index.php/donate/
 Tags: popup, age, restriction, block, violence, compatibility, ie9, age validation, internet explorer compatibility, adult, adult content, content warning
 Requires at least: 3.0.1
 Tested up to: 3.5.1
-Stable tag: 3.6.4
+Stable tag: 3.6.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -15,6 +15,10 @@ ITRO Popup display a popup to your WP site:
 
 == Description ==
 
+FOR ANY INFORMATION AND FETURES INFO PLEASE VISIT THE OFFICIAL SITE [www.itro.eu](http://www.itro.eu/)
+
+MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
+
 ITRO Popup is a very lightweight Plugin which allow users to add a fully-customizable  and perfectly centered popup. 
 It has a very user-friendly interface, which allow users to easily modify all settings needed for a popup, without coding. 
 With "Age restricted site"  option, the popup block the navigation (for age validation) until the user declare that is above the local country legal age. 
@@ -24,27 +28,8 @@ Popup can be rendered unlockable with the option "Unlockable popup" so it will c
 This plugin is basic-user oriented, no code knowledge is required.
 It also fix the Internet Explorer compatibility problem, for all IE version.
 
-FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE[CLICK HERE!](http://www.itro.eu/index.php/faq/)
-
-FEATURES
-
-* Fix Internet Explorer compatibility problem for your WP site, also whith no popup displayed.
-* Can be multiple selcted pages where user want to display the popup. NO SHORTCUTS NEEDED!.
-* Fully translated in Italian. Ready for multilingual translation.
-* Close popup with ESC button (not when "age restricted option" is checked).
-* Perfectly centered popup, also with resized windows.
-* Fully and easy customizable aspect (background, border, color, etc...).
-* Settable countdown for automatic closing.
-* Settable coockie expiration time for the next popup visualization.
-* Add age validation for adult-content site.
-* Custom text to display whatever you want with WP editor.
-* All great explaned by tips in admin pannel.
-* All in a very easy way to use!
-
-MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
-
 Any suggestions for new features implementation which you need?
-Need something for your interest or your bisiness?
+Need something for your interest or your business?
 Email to support.itro@live.com
 
 == Installation ==
@@ -55,12 +40,15 @@ Email to support.itro@live.com
 4. Enjoy
 
 == Frequently Asked Questions ==
-FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE[CLICK HERE!](http://www.itro.eu/index.php/faq/)
+FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/index.php/faq/)
 
 == Screenshots ==
 no screenshot avaliable
 
 == Changelog ==
+= 3.6.5 =
+Added fade-in and fade-out animation.
+
 = 3.6.4 =
 IMPORTANT!
 Big bug fixed: broken media blank page resolved!
@@ -151,9 +139,7 @@ bug fixed: color table now works in admin pannel.
 First released version.
 
 == Upgrade Notice ==
-IMPORTANT!
-Big bug fixed: broken media blank page resolved!
-Now user can unistall plugin whithout delete settings.
+Added fade-in and fade out animation.
 
 == Notes ==
 
@@ -163,15 +149,5 @@ to help us continue our work.
 Thanks to Jan Odvarko for jscolor: http://jscolor.com/
 
 == Features ==
-* Fix Internet Explorer compatibility problem for your WP site, also whith no popup displayed.
-* Can be multiple selcted pages where user want to display the popup. NO SHORTCUTS NEEDED!.
-* Fully translated in Italian. Ready for multilingual translation.
-* Close popup with ESC button (not when "age restricted option" is checked).
-* Perfectly centered popup, also with resized windows.
-* Fully and easy customizable aspect (background, border, color, etc...).
-* Settable countdown for automatic closing.
-* Settable coockie expiration time for the next popup visualization.
-* Add block for adult-content site.
-* Custom text to display whatever you want with WP editor.
-* All great explaned by tips in admin pannel.
-* All in a very easy way to use!
+
+FOR ANY INFORMATION AND FETURES INFO PLEASE VISIT THE OFFICIAL SITE [www.itro.eu](http://www.itro.eu/)
