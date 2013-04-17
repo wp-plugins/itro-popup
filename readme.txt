@@ -15,7 +15,7 @@ ITRO Popup display a popup to your WP site:
 
 == Description ==
 
-FOR ANY INFORMATION AND FETURES INFO PLEASE VISIT THE OFFICIAL SITE [www.itro.eu](http://www.itro.eu/)
+FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/index.php/faq/)
 
 MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
 
@@ -28,8 +28,25 @@ Popup can be rendered unlockable with the option "Unlockable popup" so it will c
 This plugin is basic-user oriented, no code knowledge is required.
 It also fix the Internet Explorer compatibility problem, for all IE version.
 
+FEATURES
+
+* Pretty fade-in and fade-out animation.
+* Fix Internet Explorer compatibility problem for your WP site, also whith no popup displayed.
+* Need to remove plugin and save data? It is possible!
+* Can be multiple selcted pages where user want to display the popup. NO SHORTCUTS NEEDED!.
+* Fully translated in Italian. Ready for multilingual translation.
+* Close popup with ESC button (not when "age restricted option" is checked).
+* Perfectly centered popup, also with resized windows.
+* Fully and easy customizable aspect (background, border, color, etc...).
+* Settable countdown for automatic closing.
+* Settable coockie expiration time for the next popup visualization.
+* Add age validation for adult-content site.
+* Custom text to display whatever you want with WP editor.
+* All great explaned by tips in admin pannel.
+* All in a very easy way to use!
+
 Any suggestions for new features implementation which you need?
-Need something for your interest or your business?
+Need something for your interest or your bisiness?
 Email to support.itro@live.com
 
 == Installation ==
@@ -40,14 +57,14 @@ Email to support.itro@live.com
 4. Enjoy
 
 == Frequently Asked Questions ==
-FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/index.php/faq/)
+FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE[CLICK HERE!](http://www.itro.eu/index.php/faq/)
 
 == Screenshots ==
 no screenshot avaliable
 
 == Changelog ==
 = 3.6.5 =
-Added fade-in and fade-out animation.
+Added fade-in and fade out animation.
 
 = 3.6.4 =
 IMPORTANT!
@@ -149,5 +166,15 @@ to help us continue our work.
 Thanks to Jan Odvarko for jscolor: http://jscolor.com/
 
 == Features ==
-
-FOR ANY INFORMATION AND FETURES INFO PLEASE VISIT THE OFFICIAL SITE [www.itro.eu](http://www.itro.eu/)
+* Fix Internet Explorer compatibility problem for your WP site, also whith no popup displayed.
+* Can be multiple selcted pages where user want to display the popup. NO SHORTCUTS NEEDED!.
+* Fully translated in Italian. Ready for multilingual translation.
+* Close popup with ESC button (not when "age restricted option" is checked).
+* Perfectly centered popup, also with resized windows.
+* Fully and easy customizable aspect (background, border, color, etc...).
+* Settable countdown for automatic closing.
+* Settable coockie expiration time for the next popup visualization.
+* Add block for adult-content site.
+* Custom text to display whatever you want with WP editor.
+* All great explaned by tips in admin pannel.
+* All in a very easy way to use!
