@@ -51,15 +51,27 @@ Email to support.itro@live.com
 
 == Installation ==
 
+FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/index.php/faq/)
+
+MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
+
 1. Unzip `itro-plugin.zip` to the `/wp-content/plugins/` directory or select it by "Add new" in the 'Plugins' menu in WordPress
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Go to "Settings->ITRO Popup" in the admin menu
 4. Enjoy
 
 == Frequently Asked Questions ==
-FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE[CLICK HERE!](http://www.itro.eu/index.php/faq/)
+
+FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/index.php/faq/)
+
+MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
 
 == Screenshots ==
+
+FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/index.php/faq/)
+
+MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
+
 no screenshot avaliable
 
 == Changelog ==
