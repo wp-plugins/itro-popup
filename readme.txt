@@ -1,7 +1,7 @@
-=== ITRO Popup Plugin ===
+=== ITRO Popup ===
 Contributors: ITRO
 Donate link: http://www.itro.eu/index.php/donate/
-Tags: popup, age, restriction, block, violence, compatibility, ie9, age validation, internet explorer compatibility, adult, adult content, content warning
+Tags: popup, age, restriction, block, violence, compatibility, ie9, age validation, internet explorer compatibility, adult, adult content, content warning, wp editor, fancy box, fancy popup
 Requires at least: 3.0.1
 Tested up to: 3.5.1
 Stable tag: 3.6.5
@@ -9,7 +9,7 @@ License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 ITRO Popup display a popup to your WP site:
-* Age validation for adult-content site 
+* Age validation for adult-content site
 * Fully customizable with WP Post Editor
 * Very easy to use
 
