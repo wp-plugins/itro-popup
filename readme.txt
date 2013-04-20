@@ -33,7 +33,7 @@ FEATURES
 * Pretty fade-in and fade-out animation.
 * Fix Internet Explorer compatibility problem for your WP site, also whith no popup displayed.
 * Need to remove plugin and save data? It is possible!
-* Can be multiple selcted pages where user want to display the popup. NO SHORTCUTS NEEDED!.
+* Can be multiple selcted pages where user want to display the popup. NO SHORTCODES NEEDED!
 * Fully translated in Italian. Ready for multilingual translation.
 * Close popup with ESC button (not when "age restricted option" is checked).
 * Perfectly centered popup, also with resized windows.
