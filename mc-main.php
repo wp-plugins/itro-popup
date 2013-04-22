@@ -44,7 +44,7 @@ function itro_admin_styles()
 if ( !is_admin() )
 {
 	add_action( 'init' , 'itro_send_header' );
-	//add_action( 'init' , 'ie_compatibility' );
+	add_action( 'init' , 'ie_compatibility' );
 	add_action( 'init' , 'itro_style');
 	add_action( 'init' , 'itro_load_script' );
 }
