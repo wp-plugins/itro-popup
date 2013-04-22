@@ -69,7 +69,7 @@ function itro_init()
 			$preview_text = 'ITRO - Pagina di anteprima. Questa pagina &egrave; utilizzata per visualizzare correttamente il popup, integrato con lo stile del tema.';
 			break;
 		default:
-			$preview_text = 'ITRO - Preview page. This page is used to rightly diplay preview of your popup with site theme.';
+			$preview_text = 'ITRO - Preview page. This page is used to rightly display preview of your popup with site theme.';
 	}
 	if ( itro_get_option('preview_id') == NULL )
 	{
@@ -98,10 +98,13 @@ function itro_send_header()
 }
 
 function ie_compatibility()
-{	
-	//add meta tag for IE compability
-	if ( itro_get_option('ie_compability') == 'yes' )
-	{ echo '<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>'; }
+{
+	if ( !is_admin() )
+	{
+		//add meta tag for IE compability
+		if ( itro_get_option('ie_compability') == 'yes' )
+		{ echo '<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>'; }
+	}
 }
 
 //--------------------------DISPLAY THE POPUP

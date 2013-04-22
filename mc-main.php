@@ -9,12 +9,12 @@ Plugin URI: http://www.itro.eu/
 Description: EN - Show a perfecly centered customizable popup and a popup-system for age-restricted site and allow to insert own HTML code. IT - Visualizza un popup perfettamente centrato e personalizzabile con possibile blocco per i siti con restrizioni di eta' e permette di inserire il proprio codice HTML.
 Author: I.T.RO.(c) Sez. Informatica
 E-mail: support.itro@live.com
-Version: 3.6.5
+Version: 3.6.6
 Author URI: http://www.itro.eu/
 */
 
 global $ITRO_VER;
-$ITRO_VER = 3.65;
+$ITRO_VER = 3.66;
 define('itroLocalPath', __DIR__);
 define('itroPath', plugins_url() . '/itro-popup/');
 define('itroImages', plugins_url() . '/itro-popup/images/');
@@ -25,6 +25,8 @@ include_once ('functions/js-function.php');
 include_once ('templates/itro-popup-template.php');
 include_once ('css/itro-style.php');
 load_plugin_textdomain('itro-plugin', false, basename( dirname( __FILE__ ) ) . '/languages' );
+
+global $post;
 
 register_activation_hook( __FILE__, 'itro_init' );
 
@@ -39,15 +41,24 @@ function itro_admin_styles()
 	wp_enqueue_style('thickbox');
 }
 
-add_action( 'init','itro_send_header' );
+if ( !is_admin() )
+{
+	add_action( 'init' , 'itro_send_header' );
+	add_action( 'init' , 'ie_compatibility' );
+	add_action( 'init' , 'itro_style');
+	add_action( 'init' , 'itro_load_script' );
+}
 
-add_action( 'get_header','ie_compatibility' );
-add_action( 'get_header','itro_style' );
-add_action( 'get_header','itro_display_popup' );
+function itro_load_script()
+{
+	wp_enqueue_script('jquery');
+}
+
+add_action( 'wp_head','itro_display_popup');
 
 add_action('admin_head', 'itro_admin_js');
 add_action('admin_print_scripts', 'itro_admin_scripts');
 add_action('admin_print_styles', 'itro_admin_styles');
-add_action( 'admin_menu', 'itro_plugin_menu' );
+add_action('admin_menu', 'itro_plugin_menu');
 
 ?>

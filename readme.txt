@@ -4,7 +4,7 @@ Donate link: http://www.itro.eu/index.php/donate/
 Tags: popup, age, restriction, block, violence, compatibility, ie9, age validation, internet explorer compatibility, adult, adult content, content warning, wp editor, fancy box, fancy popup
 Requires at least: 3.0.1
 Tested up to: 3.5.1
-Stable tag: 3.6.5
+Stable tag: 3.6.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -15,10 +15,6 @@ ITRO Popup display a popup to your WP site:
 
 == Description ==
 
-FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/index.php/faq/)
-
-MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
-
 ITRO Popup is a very lightweight Plugin which allow users to add a fully-customizable  and perfectly centered popup. 
 It has a very user-friendly interface, which allow users to easily modify all settings needed for a popup, without coding. 
 With "Age restricted site"  option, the popup block the navigation (for age validation) until the user declare that is above the local country legal age. 
@@ -27,6 +23,10 @@ are separately customizable. Is embedded the Wordpress editor to simplify input 
 Popup can be rendered unlockable with the option "Unlockable popup" so it will close only with countdown.
 This plugin is basic-user oriented, no code knowledge is required.
 It also fix the Internet Explorer compatibility problem, for all IE version.
+
+FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/index.php/faq/)
+
+MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
 
 FEATURES
 
@@ -75,11 +75,13 @@ MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu
 no screenshot avaliable
 
 == Changelog ==
+= 3.6.6 =
+Improved themes compatibility. Minor bug fixed.
+
 = 3.6.5 =
 Added fade-in and fade out animation.
 
 = 3.6.4 =
-IMPORTANT!
 Big bug fixed: broken media blank page resolved!
 
 = 3.6.3 =
@@ -168,13 +170,14 @@ bug fixed: color table now works in admin pannel.
 First released version.
 
 == Upgrade Notice ==
-Added fade-in and fade out animation.
+Improved themes compatibility. Minor bug fixed.
 
 == Notes ==
+FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [www.itro.eu](http://www.itro.eu/index.php/faq/)
 
-This is a totaly free software we have spent a lot of time to develop it. In the future we'll update 
-and add new features and we accept all kind of (smart) suggestion. So please donate something 
-to help us continue our work.
+MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
+
+We accept all kind of (smart) suggestion.
 Thanks to Jan Odvarko for jscolor: http://jscolor.com/
 
 == Features ==

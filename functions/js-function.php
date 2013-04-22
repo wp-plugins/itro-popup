@@ -7,8 +7,7 @@ All Right Reserved.
 
 //------------ LOAD SCRIPTS FOR POPUP VISUALIZATION
 function itro_popup_js()
-{
-	echo '<script src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>'; ?>
+{ ?>
 	<script type="text/javascript">		
 		<?php
 		if (itro_get_option('age_restriction') == NULL) //insert script here to show when is not age restricted
