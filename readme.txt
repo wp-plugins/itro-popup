@@ -1,7 +1,7 @@
 === ITRO Popup Plugin ===
 Contributors: ITRO
 Donate link: http://www.itro.eu/index.php/donate/
-Tags: popup, age, restriction, block, violence, compatibility, ie9, age validation, internet explorer compatibility, adult, adult content, content warning, wp editor, fancy box, fancy popup
+Tags: popup, age, restriction, block, violence, age validation, adult, adult content, content warning, wp editor, fancy box, fancy popup
 Requires at least: 3.0.1
 Tested up to: 3.5.1
 Stable tag: 3.6.8
@@ -22,7 +22,6 @@ It is useful for adult content site (tobacco & alcohol selling, violence, bad la
 are separately customizable. Is embedded the Wordpress editor to simplify input whatever you want in your popup.
 Popup can be rendered unlockable with the option "Unlockable popup" so it will close only with countdown.
 This plugin is basic-user oriented, no code knowledge is required.
-It also fix the Internet Explorer compatibility problem, for all IE version.
 
 FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/index.php/faq/)
 
@@ -31,7 +30,6 @@ MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu
 FEATURES
 
 * Pretty fade-in and fade-out animation.
-* Fix Internet Explorer compatibility problem for your WP site, also whith no popup displayed.
 * Need to remove plugin and save data? It is possible!
 * Can be multiple selcted pages where user want to display the popup. NO SHORTCODES NEEDED!
 * Fully translated in Italian. Ready for multilingual translation.
@@ -194,15 +192,17 @@ We accept all kind of (smart) suggestion.
 Thanks to Jan Odvarko for jscolor: http://jscolor.com/
 
 == Features ==
-* Fix Internet Explorer compatibility problem for your WP site, also whith no popup displayed.
-* Can be multiple selcted pages where user want to display the popup. NO SHORTCUTS NEEDED!.
+
+* Pretty fade-in and fade-out animation.
+* Need to remove plugin and save data? It is possible!
+* Can be multiple selcted pages where user want to display the popup. NO SHORTCODES NEEDED!
 * Fully translated in Italian. Ready for multilingual translation.
 * Close popup with ESC button (not when "age restricted option" is checked).
 * Perfectly centered popup, also with resized windows.
 * Fully and easy customizable aspect (background, border, color, etc...).
 * Settable countdown for automatic closing.
 * Settable coockie expiration time for the next popup visualization.
-* Add block for adult-content site.
+* Add age validation for adult-content site.
 * Custom text to display whatever you want with WP editor.
 * All great explaned by tips in admin pannel.
 * All in a very easy way to use!
