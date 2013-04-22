@@ -1,4 +1,4 @@
-=== ITRO Popup ===
+=== ITRO Popup Plugin ===
 Contributors: ITRO
 Donate link: http://www.itro.eu/index.php/donate/
 Tags: popup, age, restriction, block, violence, compatibility, ie9, age validation, internet explorer compatibility, adult, adult content, content warning, wp editor, fancy box, fancy popup
