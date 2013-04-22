@@ -9,12 +9,12 @@ Plugin URI: http://www.itro.eu/
 Description: EN - Show a perfecly centered customizable popup and a popup-system for age-restricted site and allow to insert own HTML code. IT - Visualizza un popup perfettamente centrato e personalizzabile con possibile blocco per i siti con restrizioni di eta' e permette di inserire il proprio codice HTML.
 Author: I.T.RO.(c) Sez. Informatica
 E-mail: support.itro@live.com
-Version: 3.6.7
+Version: 3.6.8
 Author URI: http://www.itro.eu/
 */
 
 global $ITRO_VER;
-$ITRO_VER = 3.67;
+$ITRO_VER = 3.68;
 define('itroLocalPath', __DIR__);
 define('itroPath', plugins_url() . '/itro-popup/');
 define('itroImages', plugins_url() . '/itro-popup/images/');
@@ -44,7 +44,6 @@ function itro_admin_styles()
 if ( !is_admin() )
 {
 	add_action( 'init' , 'itro_send_header' );
-	add_action( 'init' , 'ie_compatibility' );
 	add_action( 'init' , 'itro_style');
 	add_action( 'init' , 'itro_load_script' );
 }

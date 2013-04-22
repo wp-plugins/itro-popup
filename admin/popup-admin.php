@@ -110,9 +110,6 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y')
 	if( isset($_POST['auto_margin_check']) ) { itro_update_option('auto_margin_check',$_POST['auto_margin_check']); }
 	else { itro_update_option('auto_margin_check',NULL); }
 	
-	if( isset($_POST['ie_compability']) ) { itro_update_option('ie_compability',$_POST['ie_compability']); }
-	else { itro_update_option('ie_compability',NULL); }
-	
 	if( isset($_POST['show_countdown']) ) { itro_update_option('show_countdown',$_POST['show_countdown']); }
 	else { itro_update_option('show_countdown',NULL); }
 	
@@ -145,13 +142,9 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' ) {
 			<p class="wpstyle" onClick="onOff_genOption();"><?php _e("General Popup Option:", 'itro-plugin' ); ?> </p>
 			<div id="genOption">
 				<input type="hidden" name="<?php echo $submitted_form; ?>" value="Y">
-				<p>
-					<input type="checkbox" id="ie_compability" name="ie_compability" value="yes" <?php if(itro_get_option('ie_compability')=='yes' ){echo 'checked="checked"';} ?> />
-					<span onclick="itro_mutual_check('ie_compability','','')"><?php _e("Enable IE compatibility", 'itro-plugin' ); ?></span>
-					<img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>"title="<?php _e('If your site is has visualization issues in Internet Explorer, check this box to solve the compatibility problem.','itro-plugin');?>" >
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					
+				
 				<!-- disable esc key !-->
+				<p>
 					<input type="checkbox" id="<?php echo $opt_name[24]; ?>" name="<?php echo $opt_name[24]; ?>" value="yes" <?php if($opt_val[24] == 'yes' ){echo 'checked="checked"';} ?> />
 					<span onclick="itro_mutual_check('<?php echo $opt_name[24]; ?>','','')"><?php _e("Disable ESC key", 'itro-plugin' ); ?></span>
 					<img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>"title="<?php _e('If you set this option popup can not be closed with ESC button of keyboard.','itro-plugin');?>" >

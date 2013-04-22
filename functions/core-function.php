@@ -97,16 +97,6 @@ function itro_send_header()
 	setcookie("popup_cookie" , "one_time_popup" , time() + $expiration_time * 3600) ; }
 }
 
-function ie_compatibility()
-{
-	if ( !is_admin() )
-	{
-		//add meta tag for IE compability
-		if ( itro_get_option('ie_compability') == 'yes' )
-		{ echo '<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>'; }
-	}
-}
-
 //--------------------------DISPLAY THE POPUP
 function itro_display_popup()
 {
