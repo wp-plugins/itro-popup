@@ -282,7 +282,7 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' ) {
 					<fieldset>
 						<?php _e("Only selected pages", 'itro-plugin' ); ?><img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e("Multiple choise with CTRL+Click or SHIFT+Arrow up or down",'itro-plugin');?>"><input type="radio" name="<?php echo $opt_name[18];?>" value="some"<?php if($opt_val[18]=='some'){echo 'checked="checked"';} ?>/>&nbsp;&nbsp;&nbsp;
 						<?php _e("All pages", 'itro-plugin' ); ?><input type="radio" name="<?php echo $opt_name[18];?>" value="all" <?php if($opt_val[18]=='all' ){echo 'checked="checked"';} ?>/>&nbsp;&nbsp;&nbsp;
-						<?php _e("Any pages", 'itro-plugin' ); ?><input type="radio" name="<?php echo $opt_name[18];?>" value="any" <?php if($opt_val[18]=='any' || $opt_val[18]== NULL){echo 'checked="checked"';} ?>/>
+						<?php _e("No pages", 'itro-plugin' ); ?><input type="radio" name="<?php echo $opt_name[18];?>" value="any" <?php if($opt_val[18]=='any' || $opt_val[18]== NULL){echo 'checked="checked"';} ?>/>
 					</fieldset><br>
 					<?php
 					itro_list_pages();
