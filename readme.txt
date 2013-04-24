@@ -1,7 +1,7 @@
 === ITRO Popup Plugin ===
 Contributors: ITRO
 Donate link: http://www.itro.eu/index.php/donate/
-Tags: popup, age, restriction, block, violence, age validation, adult, adult content, content warning, wp editor, fancy box, fancy popup
+Tags: popup, age, restriction, block, violence, age validation, adult, adult content, content warning, wp editor, fancy box, fancy popup,
 Requires at least: 3.0.1
 Tested up to: 3.5.1
 Stable tag: 3.6.8
