@@ -2,7 +2,6 @@
 /*
 Copyright 2013  I.T.RO.® (email : support.itro@live.com)
 This file is part of ITRO Popup Plugin.
-All Right Reserved.
 
 Plugin Name: ITRO Popup Plugin
 Plugin URI: http://www.itro.eu/
