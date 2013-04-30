@@ -55,9 +55,17 @@ function itro_style() { ?>
 			font-size: 10px;
 			font-family: Verdana;
 			z-index: 9999999;
-			<?php if( itro_get_option('auto_margin_check') == NULL  ) {echo 'margin-top:' . itro_get_option('popup_top_margin') . 'px;' ;}
+			<?php 
+			if( itro_get_option('auto_margin_check') == NULL  ) 
+			{ 
+				if (itro_get_option('popup_top_margin') != NULL ) 
+				{ echo 'top:' . itro_get_option('popup_top_margin') . 'px;' ; }
+				else 
+				{echo 'top: 0px;' ;}
+			}
 			if (itro_get_option('popup_border_color') != NULL ) {echo 'border: 4px solid' . itro_get_option('popup_border_color') . ';';}?>			
-			border-radius: 8px 8px 8px 8px;
+			border-radius: <?php echo itro_get_option('popup_border_radius'); ?>px;
+			border-width: <?php echo itro_get_option('popup_border_width'); ?>;
 			width: <?php 
 					if( itro_get_option('select_popup_width') == 'px') { echo itro_get_option('px_popup_width') . 'px'; }
 					if( itro_get_option('select_popup_width') == 'perc') { echo itro_get_option('perc_popup_width') . '%'; }

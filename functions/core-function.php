@@ -33,18 +33,20 @@ function itro_init()
 		itro_update_option('select_popup_height','auto');
 		itro_update_option('popup_bg_opacity',0.4);
 		itro_update_option('opaco_bg_color','#8A8A8A');
-		itro_update_option('popup_position','fixed');
+		itro_update_option('popup_position','fixed'); 
+		itro_update_option('popup_border_width',3);
+		itro_update_option('popup_border_radius',8);
 		
 		switch(WPLANG)
 		{
 			case 'en_US':
-			$welcome_text = '<h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Hello, this is a pop-up sample.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">The basic stetting to get started are: Popup height, Popup time, Next visualization, Popup border color, Popup background.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Write watever you want in the Custom text editor and enjoy our plugin!</span></h1><p>&nbsp;</p>';
+			$welcome_text = '<h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Hello, this is a pop-up sample.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">The basic stetting to get started are: Popup height, Popup width, Popup time, Next visualization, Popup border color, Popup background.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Write watever you want in the Custom text editor and enjoy our plugin!</span></h1><p>&nbsp;</p>';
 				break;
 			case 'it_IT':
-			$welcome_text = '<p style="text-align: center;"><span style="color: #000000; font-size: 20;">Salve, questo &egrave; un esempio di popup.</span></p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;"><span style="color: #000000; font-size: 20;">Le impostazioni base per iniziare sono: Altezza popup, Tempo popup, Prossima visualizzazione, Colore bordo, Colore sfondo.</span></p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;"><span style="color: #000000; font-size: 20;">Scrivi qualunque cosa vuoi nell&#39;editor di testo di wordpress e buon lavoro!</span></p><p style="text-align: center;">&nbsp;</p>';
+			$welcome_text = '<p style="text-align: center;"><span style="color: #000000; font-size: 20;">Salve, questo &egrave; un esempio di popup.</span></p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;"><span style="color: #000000; font-size: 20;">Le impostazioni base per iniziare sono: Altezza popup, Larghezza popup, Tempo popup, Prossima visualizzazione, Colore bordo, Colore sfondo.</span></p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;"><span style="color: #000000; font-size: 20;">Scrivi qualunque cosa vuoi nell&#39;editor di testo di wordpress e buon lavoro!</span></p><p style="text-align: center;">&nbsp;</p>';
 				break;
 			default:
-				$welcome_text = '<h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Hello, this is a pop-up sample.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">The basic stetting to get started are: Popup height, Popup time, Next visualization, Popup border color, Popup background.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Write watever you want in the Custom text editor and enjoy our plugin!</span></h1><p>&nbsp;</p>';
+				$welcome_text = '<h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Hello, this is a pop-up sample.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">The basic stetting to get started are: Popup height, Popup width, Popup time, Next visualization, Popup border color, Popup background.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Write watever you want in the Custom text editor and enjoy our plugin!</span></h1><p>&nbsp;</p>';
 		}
 		itro_update_field('custom_html',$welcome_text);
 		
@@ -57,6 +59,14 @@ function itro_init()
 		$ver = get_option('itro_curr_ver');
 		update_option('itro_prev_ver',$ver);
 		update_option('itro_curr_ver', $GLOBALS['ITRO_VER']);
+	}
+	
+	
+	if ( get_option('itro_prev_ver') <= 3.68 && itro_get_option('version_flag') == false )
+	{
+		itro_update_option('popup_border_width',3);
+		itro_update_option('popup_border_radius',8);
+		itro_update_option('version_flag', 'true');
 	}
 	
 	//---------------create preview page
@@ -95,6 +105,8 @@ function itro_send_header()
 	$expiration_time = itro_get_option('cookie_time_exp') ;
 	if (!isset($_COOKIE['popup_cookie'])) {
 	setcookie("popup_cookie" , "one_time_popup" , time() + $expiration_time * 3600) ; }
+	if ( isset($_COOKIE['popup_cookie']) && (itro_get_option('cookie_time_exp') == 0 || NULL) ) {
+	setcookie("popup_cookie" , "one_time_popup" , time() - 3600 ) ; }
 }
 
 //--------------------------DISPLAY THE POPUP
@@ -108,7 +120,7 @@ function itro_display_popup()
 		foreach ($selected_page_id as $single_id)
 		{if ($single_id==get_the_id()) $id_match++; }
 	}
-	if ( is_home() && itro_get_option('blog_home') == 'yes' || itro_get_option('preview_id') == get_the_id() ) { $id_match++; }
+	if ( is_front_page() && itro_get_option('blog_home') == 'yes' || itro_get_option('preview_id') == get_the_id() ) { $id_match++; }
 	if( ( itro_get_option('page_selection')!='any' && !isset($_COOKIE['popup_cookie']) ) || itro_get_option('preview_id') == get_the_id())
 	if( ($id_match != NULL) || (itro_get_option('page_selection')=='all') )
 	{

@@ -8,7 +8,7 @@ function itro_popup_template()
 			if ( itro_get_option('age_restriction') == 'yes' ) 
 			{?>
 				<p id="age_button_area" align="center">
-				<input type="button" id="ageEnterButton" onClick="itro_popup.style.visibility='Hidden',itro_opaco.style.visibility='Hidden'" value="<?php echo itro_get_option('enter_button_text');?>">
+				<input type="button" id="ageEnterButton" onClick="jQuery('#itro_popup').fadeOut(function(){itro_opaco.style.visibility='hidden';})" value="<?php echo itro_get_option('enter_button_text');?>">
 				<input type="button" id="ageLeaveButton" onClick="javascript:window.open('<?php echo itro_get_option('leave_button_url')?>','_self');" value="<?php echo itro_get_option('leave_button_text');?>">
 				</p><?php
 			}

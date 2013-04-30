@@ -24,7 +24,8 @@ function itro_popup_js()
 					} 
 				}; <?php
 			}
-			if( itro_get_option('popup_delay') != 0 )
+			
+			if( itro_get_option('popup_delay') != 0 ) //if there is not delay
 			{ ?>
 				var delay = <?php echo itro_get_option('popup_delay') . '+' . '1'; ?> ;
 				interval_id = setInterval(function(){popup_delay();},1000);
@@ -35,19 +36,21 @@ function itro_popup_js()
 					{
 						clearInterval(interval_id); 
 						jQuery("#itro_popup").fadeOut(1);
+						jQuery("#itro_opaco").fadeOut(1);
 						itro_popup.style.visibility = 'visible';
 						itro_opaco.style.visibility = 'visible'; 
-						jQuery("#itro_popup").fadeIn();
+						jQuery("#itro_opaco").fadeIn(function() {jQuery("#itro_popup").fadeIn();});
 					}
 				}
 			<?php
 			}
-			else
+			else //if popup delay is setted
 			{?>
 				jQuery("#itro_popup").fadeOut(1);
+				jQuery("#itro_opaco").fadeOut(1);
 				itro_popup.style.visibility = 'visible';
 				itro_opaco.style.visibility = 'visible'; 
-				jQuery("#itro_popup").fadeIn();
+				jQuery("#itro_opaco").fadeIn(function() {jQuery("#itro_popup").fadeIn();});
 			<?php
 			}
 			
@@ -67,6 +70,38 @@ function itro_popup_js()
 					else {itro_popup.style.visibility='Hidden'; itro_opaco.style.visibility='Hidden';
 					}
 				} <?php
+			}
+		}
+		//if age restriction is enabled
+		else
+		{
+			if( itro_get_option('popup_delay') != 0 )
+			{ ?>
+				var delay = <?php echo itro_get_option('popup_delay') . '+' . '1'; ?> ;
+				interval_id = setInterval(function(){popup_delay();},1000);
+				function popup_delay() 
+				{ 
+					delay--;
+					if(delay <= 0) 
+					{
+						clearInterval(interval_id); 
+						jQuery("#itro_popup").fadeOut(1);
+						jQuery("#itro_opaco").fadeOut(1);
+						itro_popup.style.visibility = 'visible';
+						itro_opaco.style.visibility = 'visible'; 
+						jQuery("#itro_opaco").fadeIn(function() {jQuery("#itro_popup").fadeIn();});
+					}
+				}
+			<?php
+			}
+			else
+			{?>
+				jQuery("#itro_popup").fadeOut(1);
+				jQuery("#itro_opaco").fadeOut(1);
+				itro_popup.style.visibility = 'visible';
+				itro_opaco.style.visibility = 'visible'; 
+				jQuery("#itro_opaco").fadeIn(function() {jQuery("#itro_popup").fadeIn();});
+			  <?php
 			}
 		}
 		
@@ -256,14 +291,70 @@ function itro_admin_js()
 		return false;
 		});
 		});
-		
-		function itro_show_hide()
-		{
-			if( document.getElementById("top_margin_slider").style.display == "none" ) { document.getElementById("top_margin_slider").style.display = "table" }
-			else { document.getElementById("top_margin_slider").style.display = "none" }
-		}
 	</script><?php
 } 
+
+//show and hide parts of admin pannel such as top margin and basic settings
+function itro_show_hide($hide_target_id, $hide_shooter_id, $display_val, $inverted, $highlight_opt)
+{?>
+	<script type="text/javascript">
+	
+	<?php 
+	if ($inverted == 'false') //decide if elements start hidden or visible: if inverted==true -> if $hide_shooter_id is checked -> start visible else start hidden
+	{ $check_condition = 'yes'; }
+	else
+	{ $check_condition = NULL; }
+	
+	if( itro_get_option($hide_shooter_id) == $check_condition)
+	{
+		foreach($hide_target_id as $single_targer_id)
+		{
+			echo 'document.getElementById("' . $single_targer_id . '").style.display = "table";';
+		}
+		unset($single_targer_id);
+	}
+	else
+	{
+		foreach($hide_target_id as $single_targer_id)
+		{
+			echo 'document.getElementById("' . $single_targer_id . '").style.display = "none";';
+		}
+		unset($single_targer_id);
+	}
+	?>
+
+	function <?php echo $hide_shooter_id; ?>_itro_show_hide()
+	{<?php
+		foreach($hide_target_id as $single_targer_id)
+		{?>
+			if( document.getElementById("<?php echo $single_targer_id; ?>").style.display != "none" ) 
+				{jQuery("#<?php echo $single_targer_id; ?>").fadeOut("fast");}
+			else 
+				{
+					jQuery("#<?php echo $single_targer_id; ?>").fadeIn("fast" , function() {jQuery("#<?php echo $single_targer_id; ?>").effect( "highlight", {color:"<?php echo $highlight_opt[0];?>"}, <?php echo $highlight_opt[1];?> );});
+					document.getElementById("<?php echo $single_targer_id; ?>").style.display = "table";
+				}<?php
+		}
+		unset($single_targer_id);?>
+	}
+	
+	function <?php echo $hide_shooter_id; ?>_stop_anim()
+	{ <?php
+		foreach($hide_target_id as $single_targer_id)
+		{ ?>
+			if ( document.getElementById("<?php echo $single_targer_id; ?>").style.display != "none" )
+			{ jQuery("#<?php echo $single_targer_id; ?>").stop(true, true); } <?php
+		} ?>
+	}
+	
+	document.getElementById("<?php echo 'span_' . $hide_shooter_id; ?>").addEventListener("mousedown" , <?php echo $hide_shooter_id; ?>_stop_anim);
+	document.getElementById("<?php echo $hide_shooter_id; ?>").addEventListener("mousedown" , <?php echo $hide_shooter_id; ?>_stop_anim);
+	
+	document.getElementById("<?php echo 'span_' . $hide_shooter_id; ?>").addEventListener("mousedown" , <?php echo $hide_shooter_id; ?>_itro_show_hide);
+	document.getElementById("<?php echo $hide_shooter_id; ?>").addEventListener("mousedown" , <?php echo $hide_shooter_id; ?>_itro_show_hide);
+	
+	</script> <?php
+}
 
 function itro_onOff($tag_id,$overflow){
 if( $overflow == 'hidden') {?>

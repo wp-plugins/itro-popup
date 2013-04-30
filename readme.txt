@@ -1,10 +1,10 @@
 === ITRO Popup Plugin ===
 Contributors: ITRO
 Donate link: http://www.itro.eu/index.php/donate/
-Tags: popup, age, restriction, block, violence, age validation, adult, adult content, content warning, wp editor, fancy box, fancy popup,
+Tags: popup, age, restriction, block, violence, age validation, adult, adult content, content warning, wp editor, fancy box, fancy popup, custom popup, advertising popup, ads, ads popup, pop-up,
 Requires at least: 3.0.1
 Tested up to: 3.5.1
-Stable tag: 3.6.8
+Stable tag: 4.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -23,9 +23,9 @@ are separately customizable. Is embedded the Wordpress editor to simplify input 
 Popup can be rendered unlockable with the option "Unlockable popup" so it will close only with countdown.
 This plugin is basic-user oriented, no code knowledge is required.
 
-FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [www.itro.eu](http://www.itro.eu/?page_id=254)
+FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/index.php/faq/)
 
-MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_id=32)
+MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
 
 FEATURES
 
@@ -49,9 +49,9 @@ Email to support.itro@live.com
 
 == Installation ==
 
-FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [www.itro.eu](http://www.itro.eu/?page_id=254)
+FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/index.php/faq/)
 
-MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_id=32)
+MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
 
 1. Unzip `itro-plugin.zip` to the `/wp-content/plugins/` directory or select it by "Add new" in the 'Plugins' menu in WordPress
 2. Activate the plugin through the 'Plugins' menu in WordPress
@@ -60,19 +60,23 @@ MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu
 
 == Frequently Asked Questions ==
 
-FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [www.itro.eu](http://www.itro.eu/?page_id=254)
+FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [www.itro.eu](http://www.itro.eu/index.php/faq/)
 
-MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_id=32)
+MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
 
 == Screenshots ==
 
-FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [www.itro.eu](http://www.itro.eu/?page_id=254)
+FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [www.itro.eu](http://www.itro.eu/index.php/faq/)
 
-MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_id=32)
+MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
 
 no screenshot avaliable
 
 == Changelog ==
+= 4.0 =
+User interface improved, now can be selected only basic settings. Age validation bug fixed, now works right.
+Added border radius and width. Minor bugs fixed.
+
 = 3.6.8 =
 IE compatibility removed.
 
@@ -181,12 +185,13 @@ IE compatibility removed.
 header bug fixed.
 
 = 3.6.6 =
-Improved themes compatibility. Minor bug fixed.
+User interface improved, now can be selected only basic settings. Age validation bug fixed, now works right.
+Added border radius and width. Minor bugs fixed.
 
 == Notes ==
-FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [www.itro.eu](http://www.itro.eu/?page_id=254)
+FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [www.itro.eu](http://www.itro.eu/index.php/faq/)
 
-MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_id=32)
+MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
 
 We accept all kind of (smart) suggestion.
 Thanks to Jan Odvarko for jscolor: http://jscolor.com/
