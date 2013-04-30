@@ -23,9 +23,9 @@ are separately customizable. Is embedded the Wordpress editor to simplify input 
 Popup can be rendered unlockable with the option "Unlockable popup" so it will close only with countdown.
 This plugin is basic-user oriented, no code knowledge is required.
 
-FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/index.php/faq/)
+FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/?page_id=254)
 
-MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
+MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_id=32)
 
 FEATURES
 
@@ -49,9 +49,9 @@ Email to support.itro@live.com
 
 == Installation ==
 
-FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/index.php/faq/)
+FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/?page_id=254)
 
-MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
+MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_id=32)
 
 1. Unzip `itro-plugin.zip` to the `/wp-content/plugins/` directory or select it by "Add new" in the 'Plugins' menu in WordPress
 2. Activate the plugin through the 'Plugins' menu in WordPress
@@ -60,15 +60,15 @@ MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu
 
 == Frequently Asked Questions ==
 
-FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [www.itro.eu](http://www.itro.eu/index.php/faq/)
+FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/?page_id=254)
 
-MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
+MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_id=32)
 
 == Screenshots ==
 
-FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [www.itro.eu](http://www.itro.eu/index.php/faq/)
+FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/?page_id=254)
 
-MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
+MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_id=32)
 
 no screenshot avaliable
 
@@ -189,9 +189,9 @@ User interface improved, now can be selected only basic settings. Age validation
 Added border radius and width. Minor bugs fixed.
 
 == Notes ==
-FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [www.itro.eu](http://www.itro.eu/index.php/faq/)
+FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/?page_id=254)
 
-MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/index.php/donate/)
+MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_id=32)
 
 We accept all kind of (smart) suggestion.
 Thanks to Jan Odvarko for jscolor: http://jscolor.com/
