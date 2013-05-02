@@ -83,7 +83,7 @@ function itro_popup_js()
 					delay--;
 					if(delay <= 0) 
 					{
-						clearInterval(interval_id);
+						clearInterval(interval_id); 
 						jQuery("#itro_popup").fadeOut(1);
 						jQuery("#itro_opaco").fadeOut(1);
 						itro_popup.style.visibility = 'visible';
@@ -129,7 +129,7 @@ function itro_popup_js()
 					browserHeight = document.body.clientHeight;
 				}
 				popupHeight = document.getElementById('itro_popup').offsetHeight ; 			//get the actual px size of popup div
-				document.getElementById('itro_popup').style.top = (browserHeight - popupHeight)/2 + "px"; //update the top margin of popup					
+				document.getElementById('itro_popup').style.top = (browserHeight - popupHeight)/2; //update the top margin of popup					
 			}
 		<?php 
 		}?>
@@ -290,18 +290,6 @@ function itro_admin_js()
 		return false;
 		});
 		});
-		
-		var itro_option_state;
-		function itro_check_state(state_check_id)
-		{
-			itro_option_state = state_check_id.selected;
-		}
-
-		function itro_select(target_id)
-		{
-			target_id.selected = !itro_option_state;
-			itro_option_state = !itro_option_state;
-		}
 	</script><?php
 } 
 

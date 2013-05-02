@@ -39,13 +39,13 @@ function itro_init()
 		switch(WPLANG)
 		{
 			case 'en_US':
-			$welcome_text = '<h1 style="text-align: center;"><span style="color: #000000; font-size: 200%;">Hello, this is a pop-up sample.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">By default you see only the basic settings.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Write watever you want in the Custom text editor and enjoy our plugin!</span></h1><p>&nbsp;</p>';
+			$welcome_text = '<h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Hello, this is a pop-up sample.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">The basic stetting to get started are: Popup height, Popup width, Popup time, Next visualization, Popup border color, Popup background.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Write watever you want in the Custom text editor and enjoy our plugin!</span></h1><p>&nbsp;</p>';
 				break;
 			case 'it_IT':
-			$welcome_text = '<p style="text-align: center;"><span style="color: #000000; font-size: 200%;">Salve, questo &egrave; un esempio di popup.</span></p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;"><span style="color: #000000; font-size: 20;">Come impostazione predefinita sono visibili solo le opzioni base.</span></p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;"><span style="color: #000000; font-size: 20;">Scrivi qualunque cosa vuoi nell&#39;editor di testo di wordpress e buon lavoro!</span></p><p style="text-align: center;">&nbsp;</p>';
+			$welcome_text = '<p style="text-align: center;"><span style="color: #000000; font-size: 20;">Salve, questo &egrave; un esempio di popup.</span></p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;"><span style="color: #000000; font-size: 20;">Le impostazioni base per iniziare sono: Altezza popup, Larghezza popup, Tempo popup, Prossima visualizzazione, Colore bordo, Colore sfondo.</span></p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;"><span style="color: #000000; font-size: 20;">Scrivi qualunque cosa vuoi nell&#39;editor di testo di wordpress e buon lavoro!</span></p><p style="text-align: center;">&nbsp;</p>';
 				break;
 			default:
-				$welcome_text = '<h1 style="text-align: center;"><span style="color: #000000; font-size: 200%;">Hello, this is a pop-up sample.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">By default you see only the basic settings.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Write watever you want in the Custom text editor and enjoy our plugin!</span></h1><p>&nbsp;</p>';
+				$welcome_text = '<h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Hello, this is a pop-up sample.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">The basic stetting to get started are: Popup height, Popup width, Popup time, Next visualization, Popup border color, Popup background.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Write watever you want in the Custom text editor and enjoy our plugin!</span></h1><p>&nbsp;</p>';
 		}
 		itro_update_field('custom_html',$welcome_text);
 		
@@ -119,13 +119,12 @@ function itro_display_popup()
 		foreach ($selected_page_id as $single_id)
 		{if ($single_id==get_the_id()) $id_match++; }
 	}
-	if ( is_front_page() && itro_get_option('blog_home') == 'yes' || is_home() && itro_get_option('blog_home') || itro_get_option('preview_id') == get_the_id() ) { $id_match++; }
+	if ( is_front_page() && itro_get_option('blog_home') == 'yes' || itro_get_option('preview_id') == get_the_id() ) { $id_match++; }
 	if( ( itro_get_option('page_selection')!='any' && !isset($_COOKIE['popup_cookie']) ) || itro_get_option('preview_id') == get_the_id())
 	if( ($id_match != NULL) || (itro_get_option('page_selection')=='all') )
 	{
-		itro_style();
-		itro_popup_template();
-		itro_popup_js();
+		echo itro_popup_template();
+		echo itro_popup_js();
 	}
 }
 
@@ -153,7 +152,7 @@ function itro_list_pages()
 	  {
 		$option = '<option value="'. $page->ID .'"';
 		if(itro_check_selected_id($page->ID)){$option .='selected="select"';} 
-		$option .= 'onmouseover="itro_check_state(this)" onmouseup="itro_select(this);">';
+		$option .= '>';
 		$option .= $page->post_title;
 		$option .= '</option>';
 		echo $option;

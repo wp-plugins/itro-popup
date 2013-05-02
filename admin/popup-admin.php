@@ -151,20 +151,20 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 				<!-- popup display location!-->
 				<p>
 					<h3><?php _e("DECIDE WHERE POPUP WILL BE DISPLAYED","itro-plugin")?></h3>
+					<p>
+						<input type="checkbox" id="<?php echo $opt_name[19]; ?>" name="<?php echo $opt_name[19]; ?>" value="yes" <?php if($opt_val[19]=='yes' ){echo 'checked="checked"';} ?>>
+						<span onclick="itro_mutual_check('<?php echo $opt_name[19]; ?>','','');"><?php _e("Blog homepage","itro-plugin")?></span>
+						<img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e('If in your Settings->Reading you have set \'Front page displays: Your latest posts\' and want to display the popup in the home, check this box.','itro-plugin');?>" />
+					</p>
 					<fieldset>
 						<input type="radio" id="only_selected" name="<?php echo $opt_name[18];?>" value="some"<?php if($opt_val[18]=='some'){echo 'checked="checked"';} ?>/><?php _e("Only selected pages", 'itro-plugin' ); ?><img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e("Multiple choise with CTRL+Click or SHIFT+Arrow up or down",'itro-plugin');?>">&nbsp;&nbsp;&nbsp;
 						<input type="radio" name="<?php echo $opt_name[18];?>" value="all" <?php if($opt_val[18]=='all' ){echo 'checked="checked"';} ?>/><?php _e("All pages", 'itro-plugin' ); ?>&nbsp;&nbsp;&nbsp;
-						<input type="radio" name="<?php echo $opt_name[18];?>" value="any" <?php if($opt_val[18]=='any' || $opt_val[18]== NULL){echo 'checked="checked"';} ?>/><?php _e("No page", 'itro-plugin' ); ?>
-					</fieldset>
+						<input type="radio" name="<?php echo $opt_name[18];?>" value="any" <?php if($opt_val[18]=='any' || $opt_val[18]== NULL){echo 'checked="checked"';} ?>/><?php _e("Any pages", 'itro-plugin' ); ?>
+					</fieldset><br>
 					<div onClick="document.getElementById('only_selected').checked = true;">
-						<select name="<?php echo $opt_name[19]; ?>" multiple size="1">
-							<option onmouseover="itro_check_state(this)" onmouseup="itro_select(this);" value="yes" <?php if($opt_val[19]=='yes' ){echo 'selected="select"';} ?> ><?php _e("Blog homepage","itro-plugin")?></span>
-						<select>
-						<img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e('If in your Settings->Reading you have set \'Front page displays: Your latest posts\' and want to display the popup in the home, check this box.','itro-plugin');?>" />
-						<br>
-						<?php // list of published pages
-						itro_list_pages();
-						?>
+					<?php
+					itro_list_pages();
+					?>
 					</div>
 				</p>
 				
@@ -263,14 +263,6 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 					&nbsp;&nbsp;&nbsp;
 					<?php itro_slidebar( $opt_name[27] , $opt_val[27] , 0 , 50 , 1, 0, '') ?>				
 					<input type="text" style="color: #f6931f; font-weight: bold; position:relative; left:10px;" id="<?php echo $opt_name[27]; ?>" name="<?php echo $opt_name[27]; ?>" value="<?php echo $opt_val[27]; ?>" size="1">
-				</div>
-				
-				<!-- popup padding !-->
-				<div id="<?php echo $opt_name[31]; ?>_div" style="display:table; height:10px; padding-bottom:5px;" >
-					<span style="float:left;" ><?php _e("Popup padding(px):", 'itro-plugin' ); ?></span>
-					&nbsp;&nbsp;&nbsp;
-					<?php itro_slidebar( $opt_name[31] , $opt_val[31] , 0 , 50 , 1, 0, '') ?>				
-					<input type="text" style="color: #f6931f; font-weight: bold; position:relative; left:10px;" id="<?php echo $opt_name[31]; ?>" name="<?php echo $opt_name[31]; ?>" value="<?php echo $opt_val[31]; ?>" size="1">
 				</div>
 				
 				<!-- background image !-->
@@ -458,7 +450,6 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 				$opt_name[20] . '_div',
 				$opt_name[27] . '_div',
 				$opt_name[30] . '_div',
-				$opt_name[31] . '_div',
 				$opt_name[23] . '_div',
 				$opt_name[6] . '_advanced_1',
 				$opt_name[6] . '_advanced_2',
