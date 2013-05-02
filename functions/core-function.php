@@ -21,7 +21,7 @@ function itro_init()
 	if( get_option("itro_curr_ver") == NULL )
 	{
 		itro_update_option('popup_time',20);
-		itro_update_option('cookie_time_exp',6);
+		itro_update_option('cookie_time_exp',0);
 		itro_update_option('popup_background','#FFFFFF');
 		itro_update_option('popup_border_color','#F7FF00');
 		itro_update_option('px_popup_width',300);
