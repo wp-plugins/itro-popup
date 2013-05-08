@@ -97,17 +97,6 @@ function itro_init()
 	}	
 }
 
-//---------------------- SEND HEADER
-function itro_send_header() 
-{
-	//set the cookie for one-time visualization
-	$expiration_time = itro_get_option('cookie_time_exp') ;
-	if (!isset($_COOKIE['popup_cookie'])) {
-	setcookie("popup_cookie" , "one_time_popup" , time() + $expiration_time * 3600) ; }
-	if ( isset($_COOKIE['popup_cookie']) && (itro_get_option('cookie_time_exp') == 0 || NULL) ) {
-	setcookie("popup_cookie" , "one_time_popup" , time() - 3600 ) ; }
-}
-
 //--------------------------DISPLAY THE POPUP
 function itro_display_popup()
 {

@@ -7,10 +7,21 @@ This file is part of ITRO Popup Plugin.
 //------------ LOAD SCRIPTS FOR POPUP VISUALIZATION
 function itro_popup_js()
 { ?>
-	<script type="text/javascript">		
-		<?php
-		if (itro_get_option('age_restriction') == NULL) //insert script here to show when is not age restricted
+	<script type="text/javascript"> <?php
+		if (itro_get_option('age_restriction') == NULL) //OFF age validation
 		{
+			if ( itro_get_option('preview_id') != get_the_id() )
+			{ ?>
+				function itro_set_cookie(c_name,value,exhours)
+				{
+					var exdate=new Date();
+					exdate.setTime(exdate.getTime() + (exhours * 3600 * 1000));
+					var c_value=escape(value) + ((exhours==null) ? "" : "; expires="+exdate.toUTCString());
+					document.cookie=c_name + "=" + c_value + "; path=/";
+				} 
+				itro_set_cookie("popup_cookie","one_time_popup",<?php echo itro_get_option('cookie_time_exp'); ?>); <?php
+			}
+			
 			if( itro_get_option('popup_unlockable') != 'yes' )
 			{ ?>
 				document.onkeydown = function(event) 
@@ -301,6 +312,14 @@ function itro_admin_js()
 		{
 			target_id.selected = !itro_option_state;
 			itro_option_state = !itro_option_state;
+		}
+		
+		function itro_set_cookie(c_name,value,exhours)
+		{
+			var exdate=new Date();
+			exdate.setTime(exdate.getTime() + (exhours * 3600 * 1000));
+			var c_value=escape(value) + ((exhours==null) ? "" : "; expires="+exdate.toUTCString());
+			document.cookie=c_name + "=" + c_value + "; path=/";
 		}
 	</script><?php
 } 

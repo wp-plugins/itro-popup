@@ -204,6 +204,9 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 					<input type="text" style="color: #f6931f; font-weight: bold; position:relative; left:10px;" id="<?php echo $opt_name[2]; ?>" name="<?php echo $opt_name[2]; ?>" value="<?php echo $opt_val[2]; ?>" size="1">
 				</div>
 				
+				<input value="<?php _e("Delete cookie", 'itro-plugin' ); ?>" type="button" class="button" onclick="itro_set_cookie('popup_cookie','one_time_popup',-100); jQuery('#cookie_msg').stop(true, true); jQuery('#cookie_msg').fadeIn(function() {jQuery('#cookie_msg').fadeOut(6000);});">
+				<span id="cookie_msg" style="display:none;background-color:green;"><?php _e("Cookie deleted!", 'itro-plugin' ); ?></span>
+				
 				<!-- countdown settings !-->
 				<p id="<?php echo $opt_name[29]; ?>_div">
 					<input type="checkbox" name="<?php echo $opt_name[29]; ?>" id="<?php echo $opt_name[29]; ?>" value="yes" <?php if(itro_get_option($opt_name[29])=='yes' ){echo 'checked="checked"';} ?> />&nbsp;&nbsp;
@@ -427,7 +430,6 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 			<input type="hidden" name="hosted_button_id" value="L2QKQKSPMY3RU">
 			<table style="float:right;">
 				<tr><td><input type="hidden" name="on0" value="Make your donation"><?php _e('Make your donation','itro-plugin') ?></td></tr><tr><td><select name="os0">
-				<option value="thiny donation"><?php _e('thiny donation','itro-plugin') ?>   &#8364;1,00 EUR</option>
 				<option value="little donation"><?php _e('little donation','itro-plugin') ?> &#8364;2,00 EUR</option>
 				<option value="right donation"><?php _e('right donation','itro-plugin') ?>   &#8364;5,00 EUR</option>
 				<option value="normal donation"><?php _e('normal donation','itro-plugin') ?> &#8364;10,00 EUR</option>
