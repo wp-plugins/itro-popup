@@ -12,13 +12,6 @@ function itro_popup_js()
 		{
 			if ( itro_get_option('preview_id') != get_the_id() )
 			{ ?>
-				function itro_set_cookie(c_name,value,exhours)
-				{
-					var exdate=new Date();
-					exdate.setTime(exdate.getTime() + (exhours * 3600 * 1000));
-					var c_value=escape(value) + ((exhours==null) ? "" : "; expires="+exdate.toUTCString());
-					document.cookie=c_name + "=" + c_value + "; path=/";
-				} 
 				itro_set_cookie("popup_cookie","one_time_popup",<?php echo itro_get_option('cookie_time_exp'); ?>); <?php
 			}
 			
@@ -35,7 +28,7 @@ function itro_popup_js()
 				}; <?php
 			}
 			
-			if( itro_get_option('popup_delay') != 0 ) //if there is not delay
+			if( itro_get_option('popup_delay') != 0 ) //if is set the delay
 			{ ?>
 				var delay = <?php echo itro_get_option('popup_delay') . '+' . '1'; ?> ;
 				interval_id = setInterval(function(){popup_delay();},1000);
@@ -54,7 +47,7 @@ function itro_popup_js()
 				}
 			<?php
 			}
-			else //if popup delay is setted
+			else //if popup delay is not setted
 			{?>
 				jQuery("#itro_popup").fadeOut(1);
 				jQuery("#itro_opaco").fadeOut(1);
@@ -64,6 +57,7 @@ function itro_popup_js()
 			<?php
 			}
 			
+			//start the timer only if popup seconds are != 0 to avoid js errors
 			if ( itro_get_option('popup_time') != 0 )
 			{ ?>
 				var popTime=<?php 
@@ -113,8 +107,16 @@ function itro_popup_js()
 				jQuery("#itro_opaco").fadeIn(function() {jQuery("#itro_popup").fadeIn();});
 			  <?php
 			}
-		}
+		}?>
 		
+		function itro_set_cookie(c_name,value,exhours)
+				{
+					var exdate=new Date();
+					exdate.setTime(exdate.getTime() + (exhours * 3600 * 1000));
+					var c_value=escape(value) + ((exhours==null) ? "" : "; expires="+exdate.toUTCString());
+					document.cookie=c_name + "=" + c_value + "; path=/";
+				} 
+		<?php
 		//------- AUTOMATIC TOP MARGIN
 		if( itro_get_option('auto_margin_check') != NULL )
 		{?>

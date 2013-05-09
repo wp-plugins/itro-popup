@@ -50,6 +50,7 @@ function itro_style() { ?>
 			left:30px;
 			right:30px;
 			z-index: 9999999;
+			<?php if( itro_get_option('popup_padding') != NULL ) { echo 'padding:' . itro_get_option('popup_padding') . 'px !important;'; }?>
 			<?php 
 			if( itro_get_option('auto_margin_check') == NULL  ) 
 			{ 
@@ -60,7 +61,7 @@ function itro_style() { ?>
 			}
 			if (itro_get_option('popup_border_color') != NULL ) {echo 'border: 4px solid' . itro_get_option('popup_border_color') . ';';}?>			
 			border-radius: <?php echo itro_get_option('popup_border_radius'); ?>px;
-			border-width: <?php echo itro_get_option('popup_border_width'); ?>;
+			border-width: <?php echo itro_get_option('popup_border_width'); ?>px;
 			width: <?php 
 					if( itro_get_option('select_popup_width') == 'px') { echo itro_get_option('px_popup_width') . 'px'; }
 					if( itro_get_option('select_popup_width') == 'perc') { echo itro_get_option('perc_popup_width') . '%'; }
@@ -71,7 +72,6 @@ function itro_style() { ?>
 					?>;
 			background-color: <?php echo itro_get_option('popup_background'); ?>;
 			<?php if( itro_get_option('show_countdown') != NULL ) { echo 'padding-bottom: 15px;'; } ?>
-			<?php if( itro_get_option('popup_delay') != 0 ) { echo 'visibility:hidden;'; } ?>
 		}
 		
 		#close_cross
@@ -81,13 +81,6 @@ function itro_style() { ?>
 			position:absolute; 
 			top:-22px; 
 			right:-22px;
-		}
-
-		#popup_image
-		{
-			width: <?php echo itro_get_option('image_width'); ?>%;
-			margin: 0 auto;
-			display:block;
 		}
 
 		#popup_countdown 
@@ -123,11 +116,6 @@ function itro_style() { ?>
 			<?php if( itro_get_option('popup_delay') != 0 ) { echo 'visibility:hidden;'; } ?>
 			opacity: <?php echo itro_get_option('popup_bg_opacity'); ?> ;
 			filter:alpha(opacity = <?php echo ( itro_get_option('popup_bg_opacity') * 100); ?>); /* For IE8 and earlier */
-		}
-
-		@media screen and (max-width: 480px){
-			 #popup_image2{width:80%;}
-			 #popup_text2{width:100%;margin-top:80%;}
 		}
 	</style>
 <?php 

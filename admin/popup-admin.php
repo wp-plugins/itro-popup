@@ -42,6 +42,7 @@ if( !isset($submitted_form ))
 	/*opt 28*/'advanced_settings',
 	/*opt 29*/'show_countdown',
 	/*opt 30*/'auto_margin_check',
+	/*opt 31*/'popup_padding',
 	);
 	$field_name=array(
 	/*fld 0*/'custom_html',
@@ -67,7 +68,7 @@ for($i=0;$i<count($opt_name); $i++)
 		else{$opt_val[$i] = NULL;}
 		
 		// Save the posted value in the database
-		itro_update_option( $opt_name[$i], $opt_val[$i] );
+		echo itro_update_option( $opt_name[$i], $opt_val[$i] );
 		
 		if( isset($_POST['select_' . $opt_name[$i]]) )
 		{
@@ -276,7 +277,7 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 				<div id="<?php echo $opt_name[31]; ?>_div" style="display:table; height:10px; padding-bottom:5px;" >
 					<span style="float:left;" ><?php _e("Popup padding(px):", 'itro-plugin' ); ?></span>
 					&nbsp;&nbsp;&nbsp;
-					<?php itro_slidebar( $opt_name[31] , $opt_val[31] , 0 , 50 , 1, 0, '') ?>				
+					<?php itro_slidebar( $opt_name[31] , $opt_val[31] , 0 , 100 , 1, 0, '') ?>				
 					<input type="text" style="color: #f6931f; font-weight: bold; position:relative; left:10px;" id="<?php echo $opt_name[31]; ?>" name="<?php echo $opt_name[31]; ?>" value="<?php echo $opt_val[31]; ?>" size="1">
 				</div>
 				
@@ -300,50 +301,48 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 				
 				<!-- automatic margin !-->
 				<div id="<?php echo $opt_name[30]; ?>_div">
-				
-				<p>
-					<input id="<?php echo $opt_name[30]; ?>" type="checkbox" name="<?php echo $opt_name[30]; ?>" value="yes" <?php if(itro_get_option($opt_name[30])=='yes' ){echo 'checked="checked"';} ?> />
-					<span id="span_<?php echo $opt_name[30]; ?>" onclick="itro_mutual_check('<?php echo $opt_name[30]; ?>','','');"><?php _e("Automatic top margin:", 'itro-plugin' ); ?></span>
-					<img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e("The system will try to auto center the popup, in case of problem deselect this option",'itro-plugin');?>" >
-				</p>
-				
-				<!-- popup top margin !-->
-				<div id="top_margin_slider" style=" <?php if(itro_get_option($opt_name[30])=='yes' ){echo 'display:none';} else {echo 'display:table';} ?>; height:10px; padding-bottom:5px;" >
-					<span style="float:left;" ><?php _e("Popup top margin(px):", 'itro-plugin' ); ?></span>
-					&nbsp;&nbsp;&nbsp;
-					<?php itro_slidebar( $opt_name[1] , $opt_val[1] , 0 , 750 , 5, 0, '') ?>				
-					<input type="text" style="color: #f6931f; font-weight: bold; position:relative; left:10px;" id="<?php echo $opt_name[1]; ?>" name="<?php echo $opt_name[1]; ?>" value="<?php echo $opt_val[1]; ?>" size="1">
-				</div>
-				<?php echo itro_show_hide(array('top_margin_slider'), $opt_name[30], 'table',false, array('yellow',300)); ?>
-				
-				
-				<!-- background opacity !-->
-				<div style="display:table; height:10px; padding-bottom:5px;">
-					<span style="float:left;" ><?php _e("Background opacity", 'itro-plugin' ); ?> <img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e("Set the opacity of opaque background under the popup.",'itro-plugin');?>" ></span>
-					&nbsp;&nbsp;&nbsp;
-					<?php itro_slidebar( $opt_name[25] , $opt_val[25] , 0 , 1 , 0.05 , 2 , '' ) ?>
-					<input type="text" style="color: #f6931f; font-weight: bold; position:relative; left:10px;" id="<?php echo $opt_name[25]; ?>" name="<?php echo $opt_name[25]; ?>" value="<?php echo $opt_val[25];?>" size="1">
-				</div>
-				<script type="text/javascript">
-					document.getElementById("<?php echo $opt_name[25]; ?>_slider_container").addEventListener("mousedown", update, false);
-					document.getElementById("<?php echo $opt_name[25]; ?>_slider_container").addEventListener("mouseup", update, false);
-					document.getElementById("<?php echo $opt_name[25]; ?>_slider_container").addEventListener("keydown", update, false);
-					function update()
-					{
-						document.getElementById("<?php echo $opt_name[26]; ?>").style.opacity = document.getElementById("<?php echo $opt_name[25]; ?>").value
-						document.addEventListener("mousemove", update, false);
-					}
-					function stop()
-					{
-						document.removeEventListener("mousemove", update, false);
-					}
-				</script
-				
-				<!-- opaco color !-->
-				<p><?php _e("Opaque background color", 'itro-plugin' ); ?>
-					<input type="text" class="color" id="<?php echo $opt_name[26]; ?>" name="<?php echo $opt_name[26]; ?>" style="opacity:<?php echo $opt_val[25];?> ;" value="<?php echo $opt_val[26]; ?>" size="10">&nbsp;&nbsp;&nbsp;&nbsp;
-				</p>
-				
+					<p>
+						<input id="<?php echo $opt_name[30]; ?>" type="checkbox" name="<?php echo $opt_name[30]; ?>" value="yes" <?php if(itro_get_option($opt_name[30])=='yes' ){echo 'checked="checked"';} ?> />
+						<span id="span_<?php echo $opt_name[30]; ?>" onclick="itro_mutual_check('<?php echo $opt_name[30]; ?>','','');"><?php _e("Automatic top margin:", 'itro-plugin' ); ?></span>
+						<img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e("The system will try to auto center the popup, in case of problem deselect this option",'itro-plugin');?>" >
+					</p>
+					
+					<!-- popup top margin !-->
+					<div id="top_margin_slider" style=" <?php if(itro_get_option($opt_name[30])=='yes' ){echo 'display:none';} else {echo 'display:table';} ?>; height:10px; padding-bottom:5px;" >
+						<span style="float:left;" ><?php _e("Popup top margin(px):", 'itro-plugin' ); ?></span>
+						&nbsp;&nbsp;&nbsp;
+						<?php itro_slidebar( $opt_name[1] , $opt_val[1] , 0 , 750 , 5, 0, '') ?>				
+						<input type="text" style="color: #f6931f; font-weight: bold; position:relative; left:10px;" id="<?php echo $opt_name[1]; ?>" name="<?php echo $opt_name[1]; ?>" value="<?php echo $opt_val[1]; ?>" size="1">
+					</div>
+					<?php echo itro_show_hide(array('top_margin_slider'), $opt_name[30], 'table',false, array('yellow',300)); ?>
+					
+					
+					<!-- background opacity !-->
+					<div style="display:table; height:10px; padding-bottom:5px;">
+						<span style="float:left;" ><?php _e("Background opacity", 'itro-plugin' ); ?> <img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e("Set the opacity of opaque background under the popup.",'itro-plugin');?>" ></span>
+						&nbsp;&nbsp;&nbsp;
+						<?php itro_slidebar( $opt_name[25] , $opt_val[25] , 0 , 1 , 0.05 , 2 , '' ) ?>
+						<input type="text" style="color: #f6931f; font-weight: bold; position:relative; left:10px;" id="<?php echo $opt_name[25]; ?>" name="<?php echo $opt_name[25]; ?>" value="<?php echo $opt_val[25];?>" size="1">
+					</div>
+					<script type="text/javascript">
+						document.getElementById("<?php echo $opt_name[25]; ?>_slider_container").addEventListener("mousedown", update, false);
+						document.getElementById("<?php echo $opt_name[25]; ?>_slider_container").addEventListener("mouseup", update, false);
+						document.getElementById("<?php echo $opt_name[25]; ?>_slider_container").addEventListener("keydown", update, false);
+						function update()
+						{
+							document.getElementById("<?php echo $opt_name[26]; ?>").style.opacity = document.getElementById("<?php echo $opt_name[25]; ?>").value
+							document.addEventListener("mousemove", update, false);
+						}
+						function stop()
+						{
+							document.removeEventListener("mousemove", update, false);
+						}
+					</script
+					
+					<!-- opaco color !-->
+					<p><?php _e("Opaque background color", 'itro-plugin' ); ?>
+						<input type="text" class="color" id="<?php echo $opt_name[26]; ?>" name="<?php echo $opt_name[26]; ?>" style="opacity:<?php echo $opt_val[25];?> ;" value="<?php echo $opt_val[26]; ?>" size="10">&nbsp;&nbsp;&nbsp;&nbsp;
+					</p>
 				</div>
 				
 			</div>
@@ -362,15 +361,15 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 					</p>
 					
 					<div id="<?php echo $opt_name[6] . '_advanced_1'; ?>">				
-					<p><?php _e("Enter button background color:", 'itro-plugin' ); ?> 
-						<input type="text" class="color" name="<?php echo $opt_name[10]; ?>" value="<?php echo $opt_val[10]; ?>" size="10">
-					</p>
-					<p><?php _e("Enter button border color:", 'itro-plugin' ); ?> 
-						<input type="text" class="color" name="<?php echo $opt_name[11]; ?>" value="<?php echo $opt_val[11]; ?>" size="10">
-					</p>
-					<p><?php _e("Enter button font color:", 'itro-plugin' ); ?> 
-						<input type="text" class="color" name="<?php echo $opt_name[14]; ?>" value="<?php echo $opt_val[14]; ?>" size="10">
-					</p>
+						<p><?php _e("Enter button background color:", 'itro-plugin' ); ?> 
+							<input type="text" class="color" name="<?php echo $opt_name[10]; ?>" value="<?php echo $opt_val[10]; ?>" size="10">
+						</p>
+						<p><?php _e("Enter button border color:", 'itro-plugin' ); ?> 
+							<input type="text" class="color" name="<?php echo $opt_name[11]; ?>" value="<?php echo $opt_val[11]; ?>" size="10">
+						</p>
+						<p><?php _e("Enter button font color:", 'itro-plugin' ); ?> 
+							<input type="text" class="color" name="<?php echo $opt_name[14]; ?>" value="<?php echo $opt_val[14]; ?>" size="10">
+						</p>
 					</div>
 						
 					<p><?php _e("Leave button text:", 'itro-plugin' ); ?> 
@@ -381,15 +380,15 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 					</p>
 					
 					<div id="<?php echo $opt_name[6] . '_advanced_2'; ?>">
-					<p><?php _e("Leave button background color:", 'itro-plugin' ); ?> 
-						<input type="text" name="<?php echo $opt_name[12]; ?>" value="<?php echo $opt_val[12]; ?>" size="10">
-					</p>
-					<p><?php _e("Leave button border color:", 'itro-plugin' ); ?> 
-						<input type="text" class="color" name="<?php echo $opt_name[13]; ?>" value="<?php echo $opt_val[13]; ?>" size="10">
-					</p>
-					<p><?php _e("Leave button font color:", 'itro-plugin' ); ?> 
-						<input type="text" class="color" name="<?php echo $opt_name[15]; ?>" value="<?php echo $opt_val[15]; ?>" size="10">
-					</p>
+						<p><?php _e("Leave button background color:", 'itro-plugin' ); ?> 
+							<input type="text" name="<?php echo $opt_name[12]; ?>" value="<?php echo $opt_val[12]; ?>" size="10">
+						</p>
+						<p><?php _e("Leave button border color:", 'itro-plugin' ); ?> 
+							<input type="text" class="color" name="<?php echo $opt_name[13]; ?>" value="<?php echo $opt_val[13]; ?>" size="10">
+						</p>
+						<p><?php _e("Leave button font color:", 'itro-plugin' ); ?> 
+							<input type="text" class="color" name="<?php echo $opt_name[15]; ?>" value="<?php echo $opt_val[15]; ?>" size="10">
+						</p>
 					</div>
 					
 				</div>
