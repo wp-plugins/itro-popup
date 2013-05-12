@@ -18,8 +18,8 @@ function itro_init()
 	itro_db_init();
 	
 	//-----load sample popup settings
-	// if( get_option("itro_curr_ver") == NULL )
-	// {
+	if( get_option("itro_curr_ver") == NULL )
+	{
 		itro_update_option('popup_time',20);
 		itro_update_option('cookie_time_exp',0);
 		itro_update_option('popup_background','#FFFFFF');
@@ -51,7 +51,7 @@ function itro_init()
 		itro_update_field('custom_html',$welcome_text);
 		
 		itro_update_option('sample_popup','done');
-	// }
+	}
 	
 	//-------- check version
 	if( $GLOBALS['ITRO_VER'] != get_option('itro_curr_ver') )

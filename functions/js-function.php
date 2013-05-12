@@ -110,12 +110,12 @@ function itro_popup_js()
 		}?>
 		
 		function itro_set_cookie(c_name,value,exhours)
-				{
-					var exdate=new Date();
-					exdate.setTime(exdate.getTime() + (exhours * 3600 * 1000));
-					var c_value=escape(value) + ((exhours==null) ? "" : "; expires="+exdate.toUTCString());
-					document.cookie=c_name + "=" + c_value + "; path=/";
-				} 
+		{
+			var exdate=new Date();
+			exdate.setTime(exdate.getTime() + (exhours * 3600 * 1000));
+			var c_value=escape(value) + ((exhours==null) ? "" : "; expires="+exdate.toUTCString());
+			document.cookie=c_name + "=" + c_value + "; path=/";
+		} 
 		<?php
 		//------- AUTOMATIC TOP MARGIN
 		if( itro_get_option('auto_margin_check') != NULL )
@@ -143,8 +143,7 @@ function itro_popup_js()
 				}
 				popupHeight = document.getElementById('itro_popup').offsetHeight ; 			//get the actual px size of popup div
 				document.getElementById('itro_popup').style.top = (browserHeight - popupHeight)/2 + "px"; //update the top margin of popup					
-			}
-		<?php 
+			}<?php 
 		}?>
 	</script>
 <?php	
