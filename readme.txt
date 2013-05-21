@@ -15,13 +15,14 @@ ITRO Popup display a popup to your WP site:
 
 == Description ==
 
-ITRO Popup is a very lightweight Plugin which allow users to add a fully-customizable  and perfectly centered popup. 
-It has a very user-friendly interface, which allow users to easily modify all settings needed for a popup, without coding. 
+ITRO Popup is a very lightweight Plugin for Wordpress which allow users to add a fully-customizable  and perfectly centered popup. 
+It has a very user-friendly interface, which allow Wordpress users to easily modify all settings needed for a popup, without coding. 
 With "Age restricted site"  option, the popup block the navigation (for age validation) until the user declare that is above the local country legal age. 
-It is useful for adult content site (tobacco & alcohol selling, violence, bad language, etc...). The leave and the enter button 
+It is useful for adult content Wordpress site (tobacco & alcohol selling, violence, bad language, etc...). The leave and the enter button 
 are separately customizable. Is embedded the Wordpress editor to simplify input whatever you want in your popup.
 Popup can be rendered unlockable with the option "Unlockable popup" so it will close only with countdown.
 This plugin is basic-user oriented, no code knowledge is required.
+Simply the best Wordpress popup plugin!
 
 FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/?page_id=390)
 
