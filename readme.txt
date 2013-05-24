@@ -26,33 +26,34 @@ Simply the best Wordpress popup plugin!
 
 FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/?page_id=390)
 
-MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_id=396)
+DONATE NOW! - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_id=396)
 
 FEATURES
 
 * Pretty fade-in and fade-out animation.
 * Need to remove plugin and save data? It is possible!
-* Can be multiple selcted pages where user want to display the popup. NO SHORTCODES NEEDED!
+* Selcted pages where you want to display the popup, by a scrollable list. NO SHORTCODES NEEDED!
 * Fully translated in Italian. Ready for multilingual translation.
-* Close popup with ESC button (not when "age restricted option" is checked).
-* Perfectly centered popup, also with resized windows.
+* Close popup with ESC button (not with "age restricted option" checked).
+* Automatic popup centering in browser page.
 * Fully and easy customizable aspect (background, border, color, etc...).
 * Settable countdown for automatic closing.
 * Settable coockie expiration time for the next popup visualization.
-* Add age validation for adult-content site.
+* Age validation for adult-content site.
 * Custom text to display whatever you want with WP editor.
 * All great explaned by tips in admin pannel.
+* Great and fast support for all your problem with our popup plugin.
 * All in a very easy way to use!
 
 Any suggestions for new features implementation which you need?
-Need something for your interest or your bisiness?
+Need something for your interest or your business?
 Email to support.itro@live.com
 
 == Installation ==
 
 FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/?page_id=390)
 
-MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_id=396)
+DONATE NOW! - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_id=396)
 
 1. Unzip `itro-plugin.zip` to the `/wp-content/plugins/` directory or select it by "Add new" in the 'Plugins' menu in WordPress
 2. Activate the plugin through the 'Plugins' menu in WordPress
@@ -63,13 +64,13 @@ MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu
 
 FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/?page_id=390)
 
-MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_id=396)
+DONATE NOW! - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_id=396)
 
 == Screenshots ==
 
 FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/?page_id=390)
 
-MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_id=396)
+DONATE NOW! - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_id=396)
 
 no screenshot avaliable
 
@@ -203,9 +204,9 @@ New hook for better compatibility.
 == Notes ==
 FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/?page_id=390)
 
-MAKE YOUR DONATION - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_id=396)
+DONATE NOW! - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_id=396)
 
-We accept all kind of (smart) suggestion.
+We accept all kind of suggestion.
 Thanks to Jan Odvarko for jscolor: http://jscolor.com/
 
 == Features ==
