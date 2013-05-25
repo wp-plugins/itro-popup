@@ -154,10 +154,14 @@ function itro_slidebar($slider_target_id,$slider_value,$slider_min,$slider_max,$
 {
 	if($multi_slider != NULL)
 	{
-		if( itro_get_option('select_' . $slider_target_id) != $multi_slider ) 
+		if( itro_get_option('select_' . $slider_target_id) != $multi_slider ) //esempio select_popup_width = 'px' o 'perc'
 		{ 
 			$slider_display = 'display:none;';
 			//$js_input_display = 'document.getElementById("'. $slider_target_id .'").style.display = "none";' ;
+		}
+		else 
+		{
+			$slider_display = '';
 		}
 		$target_opt_name = $slider_target_id;
 		$slider_container_id = $slider_target_id . '_slider_container';
@@ -170,6 +174,7 @@ function itro_slidebar($slider_target_id,$slider_value,$slider_min,$slider_max,$
 	{
 		$js_slider_container_id = $slider_target_id . '_slider_container';
 		$js_slider_id = $slider_target_id . '_slider';
+		$slider_display = '';
 	}
 	?>
 
@@ -218,35 +223,39 @@ function itro_slidebar($slider_target_id,$slider_value,$slider_min,$slider_max,$
 			
 		}
 		
-		<?php $slider_target_id = $target_opt_name; ?>
-		
-		//---function disable
-		function itro_disable_<?php echo $slider_target_id; ?>()
+		<?php 
+		if($multi_slider != NULL)
 		{
-			document.getElementById("px_<?php echo $slider_target_id; ?>").style.display = "none";
-			document.getElementById("perc_<?php echo $slider_target_id; ?>").style.display = "none";
-			document.getElementById("px_<?php echo $slider_container_id; ?>").style.display = "none";
-			document.getElementById("perc_<?php echo $slider_container_id; ?>").style.display = "none";
-		}
+			$slider_target_id = $target_opt_name; ?>
 		
-		//---function enable
-		function itro_enable_<?php echo $slider_target_id; ?>(dim_type)
-		{
-			if(dim_type == 'perc') 
+			//---function disable
+			function itro_disable_<?php echo $slider_target_id; ?>()
 			{
-				document.getElementById("perc_<?php echo $slider_container_id; ?>").style.display = "block";
-				document.getElementById("perc_<?php echo $slider_target_id; ?>").style.display = "inline";
 				document.getElementById("px_<?php echo $slider_target_id; ?>").style.display = "none";
-				document.getElementById("px_<?php echo $slider_container_id; ?>").style.display = "none";
-			}
-			if(dim_type == 'px') 
-			{
-				document.getElementById("px_<?php echo $slider_container_id; ?>").style.display = "block";
-				document.getElementById("px_<?php echo $slider_target_id; ?>").style.display = "inline";
 				document.getElementById("perc_<?php echo $slider_target_id; ?>").style.display = "none";
+				document.getElementById("px_<?php echo $slider_container_id; ?>").style.display = "none";
 				document.getElementById("perc_<?php echo $slider_container_id; ?>").style.display = "none";
 			}
-		}
+			
+			//---function enable
+			function itro_enable_<?php echo $slider_target_id; ?>(dim_type)
+			{
+				if(dim_type == 'perc') 
+				{
+					document.getElementById("perc_<?php echo $slider_container_id; ?>").style.display = "block";
+					document.getElementById("perc_<?php echo $slider_target_id; ?>").style.display = "inline";
+					document.getElementById("px_<?php echo $slider_target_id; ?>").style.display = "none";
+					document.getElementById("px_<?php echo $slider_container_id; ?>").style.display = "none";
+				}
+				if(dim_type == 'px') 
+				{
+					document.getElementById("px_<?php echo $slider_container_id; ?>").style.display = "block";
+					document.getElementById("px_<?php echo $slider_target_id; ?>").style.display = "inline";
+					document.getElementById("perc_<?php echo $slider_target_id; ?>").style.display = "none";
+					document.getElementById("perc_<?php echo $slider_container_id; ?>").style.display = "none";
+				}
+			} <?php
+		} ?>
 	</script><?php
 }
 

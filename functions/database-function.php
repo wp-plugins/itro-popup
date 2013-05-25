@@ -7,7 +7,7 @@ This file is part of ITRO Popup Plugin.
 //-------Create plugin tables
 function itro_db_init()
 {
-	global $wpdb;
+	$con = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
 	
 	//------------------Option table
 	//$option_table_name = $wpdb->prefix . "itro_plugin_option";
@@ -17,8 +17,7 @@ function itro_db_init()
 	PRIMARY KEY(option_name),
 	option_val varchar(255)
 	)";
-	require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-	dbDelta( $sql );
+	mysqli_query($con, $sql);
 	
 	//--------------Custom field table
 	//$field_table_name = $wpdb->prefix . "itro_plugin_field";
@@ -28,57 +27,54 @@ function itro_db_init()
 	PRIMARY KEY(field_name),
 	field_value TEXT
 	)";
-	require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-	dbDelta( $sql );
+	mysqli_query($con, $sql);
 	
 	update_option('itro_db_init','true');	
 }
 
 //------------------ PLUGIN OPTION DB MANAGEMENT -------------- 
-function itro_update_option($opt_name,$opt_val)
+function itro_update_option($opt_name,$opt_value)
 {
-	global $wpdb;
-	$data_to_send = array('option_val'=> $opt_val);
-	$where_line = array('option_name' => $opt_name);
-	if ( !$wpdb->update( 'wp_itro_plugin_option' , $data_to_send, $where_line ) )
-	{
-		$wpdb->insert( 'wp_itro_plugin_option' , $where_line);
-		$wpdb->update( 'wp_itro_plugin_option' , $data_to_send, $where_line );
-	}
+	$con = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
+	$sql = "DELETE FROM wp_itro_plugin_option WHERE option_name='$opt_name'";
+	mysqli_query($con, $sql);
+	$sql = "INSERT INTO wp_itro_plugin_option (option_name, option_val) VALUES ('$opt_name', '$opt_value')";
+	mysqli_query($con, $sql);
 }
 
 function itro_get_option($opt_name)
 {
-	global $wpdb;
-	$result = $wpdb->get_results("SELECT * FROM wp_itro_plugin_option WHERE option_name='$opt_name'");
-	foreach($result as $pippo)
+	$con = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
+	$sql = "SELECT * FROM wp_itro_plugin_option WHERE option_name='$opt_name'";
+	$result = mysqli_query($con, $sql);
+	if($result)
 	{
-		$opt_val = $pippo->option_val;
+		$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+		return ($row['option_val']);
 	}
-	return $opt_val;
+	else return(NULL);
 }
 
 //------------------ CUSTOM FIELD CONTENT DB MANAGEMENT -------------- 
 function itro_update_field($field_name,$field_value)
 {
-	global $wpdb;
-	$data_to_send = array('field_value'=> $field_value);
-	$where_line = array('field_name' => $field_name);
-	if ( !$wpdb->update( 'wp_itro_plugin_field' , $data_to_send, $where_line ) )
-	{
-		$wpdb->insert( 'wp_itro_plugin_field' , $where_line);
-		$wpdb->update( 'wp_itro_plugin_field' , $data_to_send, $where_line );
-	}
+	$con = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
+	$sql = "DELETE FROM wp_itro_plugin_field WHERE field_name='$field_name'";
+	mysqli_query($con, $sql);
+	$sql = "INSERT INTO wp_itro_plugin_field (field_name, field_value) VALUES ('$field_name', '$field_value')";
+	mysqli_query($con, $sql);
 }
 
 function itro_get_field($field_name)
 {
-	global $wpdb;
-	$result = $wpdb->get_results("SELECT * FROM wp_itro_plugin_field WHERE field_name='$field_name'");
-	foreach($result as $pippo)
+	$con = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
+	$sql = "SELECT * FROM wp_itro_plugin_field WHERE field_name='$field_name'";
+	$result = mysqli_query($con, $sql);
+	if($result)
 	{
-		$field_value = $pippo->field_value;
+		$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+		return ($row['field_value']);
 	}
-	return $field_value;
+	else return(NULL);
 }
 ?>
