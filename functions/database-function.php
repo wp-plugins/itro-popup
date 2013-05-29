@@ -4,9 +4,9 @@ Copyright 2013  I.T.RO.® (email : support.itro@live.com)
 This file is part of ITRO Popup Plugin.
 */
 global $wpdb;
-define ('OPTION_TABLE_NAME', $wpdb->prefix . 'itro_plugin_option');
-define ('FIELD_TABLE_NAME', $wpdb->prefix . 'itro_plugin_field');
-
+define ('OPTION_TABLE_NAME', 'wp_itro_plugin_option');
+define ('FIELD_TABLE_NAME', 'wp_itro_plugin_field');
+//$wpdb->prefix
 //-------Create plugin tables
 function itro_db_init()
 {
