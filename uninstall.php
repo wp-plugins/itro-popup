@@ -13,12 +13,10 @@ else
 		delete_option('itro_prev_ver');
 		delete_option('delete_data');
 		
-		$con = mysql_connect(DB_HOST,DB_USER,DB_PASSWORD);
-		if (!$con){die('Could not connect: ' . mysql_error());}
-		mysql_select_db(DB_NAME);
+		$con = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
 		
-		mysql_query('DROP TABLE wp_itro_plugin_option');
-		mysql_query('DROP TABLE wp_itro_plugin_field');
+		mysqli_query($con, 'DROP TABLE wp_itro_plugin_option');
+		mysqli_query($con, 'DROP TABLE wp_itro_plugin_field');
 	}
 }
 ?>
