@@ -1,4 +1,4 @@
-=== ITRO Popup Plugin ===
+﻿=== ITRO Popup Plugin ===
 Contributors: ITRO
 Donate link: http://www.itro.eu/index.php/donate/
 Tags: popup, age restriction, block, violence, age validation, adult, adult content, content warning, wp editor, fancy box, fancy popup, custom popup, advertising popup, ads, ads popup, pop-up, lightbox, lightbox popup,
@@ -9,9 +9,9 @@ License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 ITRO Popup display a popup to your WP site:
-* Age validation for adult-content site
-* Fully customizable with WP Post Editor
-* Very easy to use
+★ Age validation for adult-content site
+★ Fully customizable with WP Post Editor
+★ Very easy to use
 
 == Description ==
 
@@ -30,20 +30,20 @@ DONATE NOW! - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_
 
 FEATURES
 
-* Pretty fade-in and fade-out animation.
-* Need to remove plugin and save data? It is possible!
-* Selcted pages where you want to display the popup, by a scrollable list. NO SHORTCODES NEEDED!
-* Fully translated in Italian. Ready for multilingual translation.
-* Close popup with ESC button (not with "age restricted option" checked).
-* Automatic popup centering in browser page.
-* Fully and easy customizable aspect (background, border, color, etc...).
-* Settable countdown for automatic closing.
-* Settable coockie expiration time for the next popup visualization.
-* Age validation for adult-content site.
-* Custom text to display whatever you want with WP editor.
-* All great explaned by tips in admin pannel.
-* Great and fast support for all your problem with our popup plugin.
-* All in a very easy way to use!
+	★ Pretty fade-in and fade-out animation.
+	★ Need to remove plugin and save data? It is possible!
+	★ Selcted pages where you want to display the popup, by a scrollable list. NO SHORTCODES NEEDED!
+	★ Fully translated in Italian. Ready for multilingual translation.
+	★ Close popup with ESC button (not with "age restricted option" checked).
+	★ Automatic popup centering in browser page.
+	★ Fully and easy customizable aspect (background, border, color, etc...).
+	★ Settable countdown for automatic closing.
+	★ Settable coockie expiration time for the next popup visualization.
+	★ Age validation for adult-content site.
+	★ Custom text to display whatever you want with WP editor.
+	★ All great explaned by tips in admin pannel.
+	★ Great and fast support for all your problem with our popup plugin.
+	★ All in a very easy way to use!
 
 Any suggestions for new features implementation which you need?
 Need something for your interest or your business?
@@ -211,16 +211,16 @@ Thanks to Jan Odvarko for jscolor: http://jscolor.com/
 
 == Features ==
 
-* Pretty fade-in and fade-out animation.
-* Need to remove plugin and save data? It is possible!
-* Can be multiple selcted pages where user want to display the popup. NO SHORTCODES NEEDED!
-* Fully translated in Italian. Ready for multilingual translation.
-* Close popup with ESC button (not when "age restricted option" is checked).
-* Perfectly centered popup, also with resized windows.
-* Fully and easy customizable aspect (background, border, color, etc...).
-* Settable countdown for automatic closing.
-* Settable coockie expiration time for the next popup visualization.
-* Add age validation for adult-content site.
-* Custom text to display whatever you want with WP editor.
-* All great explaned by tips in admin pannel.
-* All in a very easy way to use!
+★ Pretty fade-in and fade-out animation.
+★ Need to remove plugin and save data? It is possible!
+★ Can be multiple selcted pages where user want to display the popup. NO SHORTCODES NEEDED!
+★ Fully translated in Italian. Ready for multilingual translation.
+★ Close popup with ESC button (not when "age restricted option" is checked).
+★ Perfectly centered popup, also with resized windows.
+★ Fully and easy customizable aspect (background, border, color, etc...).
+★ Settable countdown for automatic closing.
+★ Settable coockie expiration time for the next popup visualization.
+★ Add age validation for adult-content site.
+★ Custom text to display whatever you want with WP editor.
+★ All great explaned by tips in admin pannel.
+★ All in a very easy way to use!
