@@ -16,6 +16,7 @@ ITRO Popup display a popup to your WP site:
 == Description ==
 
 ITRO Popup Plugin - The BEST WP Popup Plugin
+
 	★ Pretty fade-in and fade-out animation.
 	★ Need to remove plugin and save data? It is possible!
 	★ Selcted pages where you want to display the popup, by a scrollable list. NO SHORTCODES NEEDED!
