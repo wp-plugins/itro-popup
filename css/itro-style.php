@@ -117,6 +117,7 @@ function itro_style() { ?>
 			opacity: <?php echo itro_get_option('popup_bg_opacity'); ?> ;
 			filter:alpha(opacity = <?php echo ( itro_get_option('popup_bg_opacity') * 100); ?>); /* For IE8 and earlier */
 		}
+		
 	</style>
 <?php 
 }

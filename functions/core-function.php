@@ -101,13 +101,35 @@ function itro_init()
 //--------------------------DISPLAY THE POPUP
 function itro_display_popup()
 {
+	//woocommerce shop page identification
+	if( function_exists('is_shop') && function_exists('woocommerce_get_page_id') ) //if this functions exist, woocommerce is installed!
+	{
+		if ( is_shop() ) // if the actual page is the standard woocommerce shop page
+		{
+			$woo_shop = true;
+			$woo_shop_id = woocommerce_get_page_id( 'shop' );
+		}
+	}
+	else
+	{
+		$woo_shop = NULL;
+		$woo_shop_id = NULL;
+	}
+	
+	
 	//this condition, control if the popup must or not by displayed in a specified page
+	
 	$selected_page_id = json_decode(itro_get_option('selected_page_id'));
 	$id_match = NULL;
 	if( isset($selected_page_id) ) 
 	{
 		foreach ($selected_page_id as $single_id)
-		{if ($single_id==get_the_id()) $id_match++; }
+		{
+			if ( $single_id == get_the_id() || ( $single_id == $woo_shop_id && $woo_shop ) ) //if the selected id is the current page id popup will be displayed OR if the woo_shop_id has been selected and you are in the woocommerce standard shop page ($woo_shop == true), popup will be displayed. 
+			{
+				$id_match++;
+			}
+		}
 	}
 	if ( (is_front_page() && itro_get_option('blog_home') == 'yes') || (is_home() && itro_get_option('blog_home') == 'yes') || itro_get_option('preview_id') == get_the_id() ) { $id_match++; }
 	if( ( itro_get_option('page_selection')!='any' && !isset($_COOKIE['popup_cookie']) ) || itro_get_option('preview_id') == get_the_id())
