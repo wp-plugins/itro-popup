@@ -14,12 +14,29 @@ function itro_popup_template()
 			}
 			?>
 		</div> <?php
-		if ( itro_get_option('age_restriction') == NULL ) 
-			{?>
-				<img id="close_cross" src="<?php echo itroPath . 'images/close-icon.png'; ?>" title="<?php _e('CLOSE','itro-plugin'); ?>" onclick="jQuery('#itro_popup').fadeOut(function(){itro_opaco.style.visibility='hidden';})">
-				<div id="popup_countdown" align="center"><?php _e('This popup will be closed in: ','itro-plugin'); ?> <b id="timer"></b></div>
-				<?php
-			} ?>
+		if( itro_get_option('age_restriction') == NULL )
+		{
+			if( itro_get_option('popup_time') != 0 )
+			{
+				echo '<div id="popup_countdown" align="center">';
+				_e('This popup will be closed in: ','itro-plugin');
+				echo '<b id="timer"></b></div>';
+			}
+			
+			$selected_cross = itroPath . 'images/close-icon.png'; //default image (black cross)
+			switch( itro_get_option('cross_selected') )
+			{
+				case 'white':
+					$selected_cross = itroPath . 'images/close-icon-white.png';
+				break;
+				case 'white_border':
+					$selected_cross = itroPath . 'images/close-icon-white-border.png';
+				break;
+			}
+			echo '<img id="close_cross" src="' . $selected_cross . '" title="';
+			_e('CLOSE','itro-plugin');
+			echo '" onclick="jQuery(\'#itro_popup\').fadeOut(function(){itro_opaco.style.visibility=\'hidden\';})">';
+		}?>
 	</div>
 	<div id="itro_opaco" style="visibility:hidden"></div>
 <?php

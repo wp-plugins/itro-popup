@@ -43,6 +43,8 @@ if( !isset($submitted_form ))
 	/*opt 29*/'show_countdown',
 	/*opt 30*/'auto_margin_check',
 	/*opt 31*/'popup_padding',
+	/*opt 32*/'disable_mobile',
+	/*opt 33*/'cross_selected',
 	);
 	$field_name=array(
 	/*fld 0*/'custom_html',
@@ -173,9 +175,13 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 					</div>
 				</p>
 				
-				<!-- disable esc key !-->
+				<!-- disable esc key and mobile !-->
 				<h3><?php _e("GENERAL SETTINGS","itro-plugin")?></h3>
 				<p id="<?php echo $opt_name[24]; ?>_div">
+					<input type="checkbox" id="<?php echo $opt_name[32]; ?>" name="<?php echo $opt_name[32]; ?>" value="yes" <?php if($opt_val[32] == 'yes' ){echo 'checked="checked"';} ?> />
+					<span onclick="itro_mutual_check('<?php echo $opt_name[32]; ?>','','')"><?php _e("Disable on mobile device", 'itro-plugin' ); ?></span>
+					<img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>"title="<?php _e('Check this to disable popup on mobile devices','itro-plugin');?>" >
+					&nbsp;&nbsp;&nbsp;
 					<input type="checkbox" id="<?php echo $opt_name[24]; ?>" name="<?php echo $opt_name[24]; ?>" value="yes" <?php if($opt_val[24] == 'yes' ){echo 'checked="checked"';} ?> />
 					<span onclick="itro_mutual_check('<?php echo $opt_name[24]; ?>','','')"><?php _e("Disable ESC key", 'itro-plugin' ); ?></span>
 					<img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>"title="<?php _e('If you set this option popup can not be closed with ESC button of keyboard.','itro-plugin');?>" >
@@ -343,6 +349,15 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 					<p><?php _e("Opaque background color", 'itro-plugin' ); ?>
 						<input type="text" class="color" id="<?php echo $opt_name[26]; ?>" name="<?php echo $opt_name[26]; ?>" style="opacity:<?php echo $opt_val[25];?> ;" value="<?php echo $opt_val[26]; ?>" size="10">&nbsp;&nbsp;&nbsp;&nbsp;
 					</p>
+					
+					<!-- close cross selection !-->
+					<p><?php _e("Close cross", 'itro-plugin' ); ?> <img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e("Select the colour combination of the closing cross on the upper right of popup.",'itro-plugin');?>" >
+						<select name="<?php echo $opt_name[33]; ?>"  style="min-width:100px;">
+							<option value="black" <?php if(itro_get_option($opt_name[33])=='black') {echo 'selected="select"';} ?> ><?php _e("Black", 'itro-plugin' ); ?></option>
+							<option value="white" <?php if(itro_get_option($opt_name[33])=='white') {echo 'selected="select"';} ?> ><?php _e("White", 'itro-plugin' ); ?></option>
+							<option value="white_border" <?php if(itro_get_option($opt_name[33])=='white_border') {echo 'selected="select"';} ?> ><?php _e("White with border", 'itro-plugin' ); ?></option>
+						</select>
+					</p>
 				</div>
 				
 			</div>
@@ -398,7 +413,7 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 		<hr>
 		<p class="submit">
 			<input type="submit" name="Submit" class="button-primary" value="<?php esc_attr_e('Save Changes') ?>" />&nbsp;&nbsp;&nbsp;&nbsp;
-			<input type="button" target="_blank" class="button" onClick="window.open('/?page_id=<?php echo itro_get_option('preview_id') ?>')" value="<?php echo _e('Preview page','itro-plugin' )?>">
+			<input type="button" target="_blank" class="button" onClick="window.open('<?php echo get_site_url() . '/?page_id=' . itro_get_option('preview_id'); ?>')" value="<?php echo _e('Preview page','itro-plugin' )?>">
 		</p>
 	</div>
 
@@ -415,7 +430,7 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 			<hr>
 			<p class="submit">
 				<input type="submit" name="Submit" class="button-primary" value="<?php esc_attr_e('Save Changes') ?>" />&nbsp;&nbsp;&nbsp;&nbsp;
-				<input type="button" target="_blank" class="button" onClick="window.open('/?page_id=<?php echo itro_get_option('preview_id') ?>')" value="<?php echo _e('Preview page','itro-plugin' )?>">
+				<input type="button" target="_blank" class="button" onClick="window.open('<?php echo get_site_url() . '/?page_id=' . itro_get_option('preview_id'); ?>')" value="<?php echo _e('Preview page','itro-plugin' )?>">
 			</p>
 		</div>
 	</div>

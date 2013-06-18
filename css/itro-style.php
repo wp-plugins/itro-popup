@@ -49,7 +49,7 @@ function itro_style() { ?>
 			margin: 0 auto;
 			left:30px;
 			right:30px;
-			z-index: 9999999;
+			z-index: 2147483647 !important;
 			<?php if( itro_get_option('popup_padding') != NULL ) { echo 'padding:' . itro_get_option('popup_padding') . 'px !important;'; }?>
 			<?php 
 			if( itro_get_option('auto_margin_check') == NULL  ) 
@@ -108,7 +108,7 @@ function itro_style() { ?>
 			top: 100px;    
 			width: 100%;
 			height: 100%;
-			z-index: 999999;
+			z-index: 2147483646 !important;
 			left: 0px ;
 			right: 0px;
 			top: 0px;
@@ -116,8 +116,17 @@ function itro_style() { ?>
 			<?php if( itro_get_option('popup_delay') != 0 ) { echo 'visibility:hidden;'; } ?>
 			opacity: <?php echo itro_get_option('popup_bg_opacity'); ?> ;
 			filter:alpha(opacity = <?php echo ( itro_get_option('popup_bg_opacity') * 100); ?>); /* For IE8 and earlier */
-		}
+		}<?php
 		
+		if( itro_get_option('disable_mobile') == 'yes' )
+		{
+			echo '
+			@media screen and (max-width: 1024px)
+			{
+				#itro_popup{display: none !important;}
+				#itro_opaco{display: none !important;}
+			}';
+		}?>
 	</style>
 <?php 
 }
