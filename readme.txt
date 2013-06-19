@@ -3,7 +3,7 @@ Contributors: ITRO
 Donate link: http://www.itro.eu/index.php/donate/
 Tags: popup, age restriction, block, violence, age validation, adult, adult content, content warning, wp editor, fancy box, fancy popup, custom popup, advertising popup, ads, ads popup, pop-up, lightbox, lightbox popup,
 Requires at least: 3.0.1
-Tested up to: 3.5.1
+Tested up to: 3.3
 Stable tag: 4.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
