@@ -44,7 +44,7 @@ Simply the best Wordpress popup plugin!
 FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/?page_id=390)
 
 DONATE NOW! - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_id=396)
-
+ 
 Any suggestions for new features implementation which you need?
 Need something for your interest or your business?
 Email to support.itro@live.com
