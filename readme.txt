@@ -17,16 +17,16 @@ ITRO Popup display a popup to your WP site:
 
 ITRO Popup Plugin - The BEST WP Popup Plugin
 
+	★ Fully and easy customizable aspect (background, border, color, etc...).
+	★ Age validation for adult-content site.
 	★ Pretty fade-in and fade-out animation.
+	★ Easy selection of the pages where you want to display the popup, by a scrollable list. NO SHORTCODES NEEDED!
+	★ Settable coockie expiration time for the next popup visualization.
 	★ Need to remove plugin and save data? It is possible!
-	★ Selcted pages where you want to display the popup, by a scrollable list. NO SHORTCODES NEEDED!
 	★ Fully translated in Italian. Ready for multilingual translation.
 	★ Close popup with ESC button (not with "age restricted option" checked).
 	★ Automatic popup centering in browser page.
-	★ Fully and easy customizable aspect (background, border, color, etc...).
 	★ Settable countdown for automatic closing.
-	★ Settable coockie expiration time for the next popup visualization.
-	★ Age validation for adult-content site.
 	★ Custom text to display whatever you want with WP editor.
 	★ All great explaned by tips in admin pannel.
 	★ Great and fast support for all your problem with our popup plugin.
