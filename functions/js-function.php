@@ -7,7 +7,18 @@ This file is part of ITRO Popup Plugin.
 //------------ LOAD SCRIPTS FOR POPUP VISUALIZATION
 function itro_popup_js()
 { ?>
-	<script type="text/javascript"> <?php
+	<script type="text/javascript">
+	//manage fade in animation
+	function itro_enter_anim()
+	{
+		itro_popup.style.visibility = '';
+		itro_opaco.style.visibility = '';
+		itro_popup.style.display = 'none';
+		itro_opaco.style.display = 'none';
+		jQuery("#itro_opaco").fadeIn(function() {jQuery("#itro_popup").fadeIn();});
+	}
+	
+	<?php
 		if (itro_get_option('age_restriction') == NULL) //OFF age validation
 		{
 			if ( itro_get_option('preview_id') != get_the_id() )
@@ -23,7 +34,7 @@ function itro_popup_js()
 					var key = event.keyCode;
 					if(key==27)
 					{
-						jQuery("#itro_popup").fadeOut(function() {itro_opaco.style.visibility='Hidden';});						
+						jQuery("#itro_popup").fadeOut(function() {itro_opaco.style.visibility='Hidden';});
 					} 
 				}; <?php
 			}
@@ -31,29 +42,21 @@ function itro_popup_js()
 			if( itro_get_option('popup_delay') != 0 ) //if is set the delay
 			{ ?>
 				var delay = <?php echo itro_get_option('popup_delay') . '+' . '1'; ?> ;
-				interval_id = setInterval(function(){popup_delay();},1000);
+				interval_id_delay = setInterval(function(){popup_delay();},1000);
 				function popup_delay() 
 				{ 
 					delay--;
 					if(delay <= 0) 
 					{
-						clearInterval(interval_id); 
-						jQuery("#itro_popup").fadeOut(1);
-						jQuery("#itro_opaco").fadeOut(1);
-						itro_popup.style.visibility = 'visible';
-						itro_opaco.style.visibility = 'visible'; 
-						jQuery("#itro_opaco").fadeIn(function() {jQuery("#itro_popup").fadeIn();});
+						clearInterval(interval_id_delay);
+						itro_enter_anim();
 					}
 				}
 			<?php
 			}
 			else //if popup delay is not setted
 			{?>
-				jQuery("#itro_popup").fadeOut(1);
-				jQuery("#itro_opaco").fadeOut(1);
-				itro_popup.style.visibility = 'visible';
-				itro_opaco.style.visibility = 'visible'; 
-				jQuery("#itro_opaco").fadeIn(function() {jQuery("#itro_popup").fadeIn();});
+				itro_enter_anim();
 			<?php
 			}
 			
@@ -61,23 +64,32 @@ function itro_popup_js()
 			if ( itro_get_option('popup_time') != 0 )
 			{ ?>
 				var popTime=<?php 
-							if( itro_get_option('popup_delay')  != 0 ) { echo itro_get_option('popup_time') . '+' . itro_get_option('popup_delay'); }
-							else { echo itro_get_option('popup_time'); }
+							if( itro_get_option('popup_delay')  != 0 )
+							{
+								echo itro_get_option('popup_time') . '+' . itro_get_option('popup_delay');
+							}
+							else
+							{
+								echo itro_get_option('popup_time');
+							}
 							?>;
-				setInterval(function(){popTimer()},1000); //the countdown 
+				interval_id = setInterval(function(){popTimer()},1000); //the countdown 
 				function popTimer()
 				{
-					if (popTime>0){
-					document.getElementById("timer").innerHTML=popTime;
-					popTime--;
+					if (popTime>0)
+					{
+						document.getElementById("timer").innerHTML=popTime;
+						popTime--;
 					}
-					else {itro_popup.style.visibility='Hidden'; itro_opaco.style.visibility='Hidden';
+					else
+					{
+						clearInterval(interval_id);
+						jQuery("#itro_popup").fadeOut(function() {itro_opaco.style.visibility='Hidden';});
 					}
 				} <?php
 			}
 		}
-		//if age restriction is enabled
-		else
+		else //if age restriction is enabled
 		{
 			if( itro_get_option('popup_delay') != 0 )
 			{ ?>
@@ -89,22 +101,14 @@ function itro_popup_js()
 					if(delay <= 0) 
 					{
 						clearInterval(interval_id);
-						jQuery("#itro_popup").fadeOut(1);
-						jQuery("#itro_opaco").fadeOut(1);
-						itro_popup.style.visibility = 'visible';
-						itro_opaco.style.visibility = 'visible'; 
-						jQuery("#itro_opaco").fadeIn(function() {jQuery("#itro_popup").fadeIn();});
+						itro_enter_anim();
 					}
 				}
 			<?php
 			}
 			else
 			{?>
-				jQuery("#itro_popup").fadeOut(1);
-				jQuery("#itro_opaco").fadeOut(1);
-				itro_popup.style.visibility = 'visible';
-				itro_opaco.style.visibility = 'visible'; 
-				jQuery("#itro_opaco").fadeIn(function() {jQuery("#itro_popup").fadeIn();});
+				itro_enter_anim();
 			  <?php
 			}
 		}?>

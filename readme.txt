@@ -4,7 +4,7 @@ Donate link: http://www.itro.eu/index.php/donate/
 Tags: popup, age restriction, block, violence, age validation, adult, adult content, content warning, wp editor, fancy box, fancy popup, custom popup, advertising popup, ads, ads popup, pop-up, lightbox, lightbox popup,
 Requires at least: 3.0.1
 Tested up to: 3.3
-Stable tag: 4.4
+Stable tag: 4.4.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -17,16 +17,16 @@ ITRO Popup display a popup to your WP site:
 
 ITRO Popup Plugin - The BEST WP Popup Plugin
 
-	★ Fully and easy customizable aspect (background, border, color, etc...).
-	★ Age validation for adult-content site.
 	★ Pretty fade-in and fade-out animation.
-	★ Easy selection of the pages where you want to display the popup, by a scrollable list. NO SHORTCODES NEEDED!
-	★ Settable coockie expiration time for the next popup visualization.
 	★ Need to remove plugin and save data? It is possible!
+	★ Selcted pages where you want to display the popup, by a scrollable list. NO SHORTCODES NEEDED!
 	★ Fully translated in Italian. Ready for multilingual translation.
 	★ Close popup with ESC button (not with "age restricted option" checked).
 	★ Automatic popup centering in browser page.
+	★ Fully and easy customizable aspect (background, border, color, etc...).
 	★ Settable countdown for automatic closing.
+	★ Settable coockie expiration time for the next popup visualization.
+	★ Age validation for adult-content site.
 	★ Custom text to display whatever you want with WP editor.
 	★ All great explaned by tips in admin pannel.
 	★ Great and fast support for all your problem with our popup plugin.
@@ -44,7 +44,7 @@ Simply the best Wordpress popup plugin!
 FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/?page_id=390)
 
 DONATE NOW! - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_id=396)
- 
+
 Any suggestions for new features implementation which you need?
 Need something for your interest or your business?
 Email to support.itro@live.com
@@ -56,9 +56,9 @@ FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/?p
 DONATE NOW! - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_id=396)
 
 1. Unzip `itro-plugin.zip` to the `/wp-content/plugins/` directory or select it by "Add new" in the 'Plugins' menu in WordPress
-2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Go to "Settings->ITRO Popup" in the admin menu.
-4. Enjoy!
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Go to "Settings->ITRO Popup" in the admin menu
+4. Enjoy
 
 == Frequently Asked Questions ==
 
@@ -75,6 +75,9 @@ DONATE NOW! - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_
 no screenshot avaliable
 
 == Changelog ==
+= 4.4.1 =
+Code maintenance. Some bug for popup visualization fixed.
+
 = 4.4 =
 Popup can be disabled for mobile devices. Close cross can be changed for dark or light background.
 
@@ -205,6 +208,9 @@ bug fixed: color table now works in admin pannel.
 First released version.
 
 == Upgrade Notice ==
+= 4.4.1 =
+Code maintenance. Some bug for popup visualization fixed.
+= 4.4 =
 Popup can be disabled for mobile devices. Close cross can be changed for dark or light background.
 
 == Notes ==

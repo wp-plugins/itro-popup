@@ -3,7 +3,13 @@
 Copyright 2013  I.T.RO.® (email : support.itro@live.com)
 This file is part of ITRO Popup Plugin.
 */
-
+//---------------------- SEND HEADER
+function itro_send_header() 
+{	
+	//add meta tag for IE compability
+	//if ( itro_get_option('ie_compability') == 'yes' )
+	echo '<meta http-equiv="X-UA-Compatible" content="IE=edge" />';
+}
 
 //------------------ADD MENU PAGE
 function itro_plugin_menu() {
@@ -114,30 +120,53 @@ function itro_display_popup()
 	{
 		$woo_shop = NULL;
 		$woo_shop_id = NULL;
-	}
-	
+	}	
 	
 	//this condition, control if the popup must or not by displayed in a specified page
-	
 	$selected_page_id = json_decode(itro_get_option('selected_page_id'));
 	$id_match = NULL;
-	if( isset($selected_page_id) ) 
+	
+	switch (itro_get_option('page_selection'))
 	{
-		foreach ($selected_page_id as $single_id)
-		{
-			if ( $single_id == get_the_id() || ( $single_id == $woo_shop_id && $woo_shop ) ) //if the selected id is the current page id popup will be displayed OR if the woo_shop_id has been selected and you are in the woocommerce standard shop page ($woo_shop == true), popup will be displayed. 
+		case 'some':
+			if( isset($selected_page_id) ) 
+			{
+				foreach ($selected_page_id as $single_id)
+				{
+					if ( $single_id == get_the_id() || ( $single_id == $woo_shop_id && $woo_shop ) ) //if the selected id is the current page id popup will be displayed OR if the woo_shop_id has been selected and you are in the woocommerce standard shop page ($woo_shop == true), popup will be displayed. 
+					{
+						$id_match++;
+					}
+				}
+			}
+			if( (is_front_page() && itro_get_option('blog_home') == 'yes') || (is_home() && itro_get_option('blog_home') == 'yes') )
 			{
 				$id_match++;
 			}
-		}
-	}
-	if ( (is_front_page() && itro_get_option('blog_home') == 'yes') || (is_home() && itro_get_option('blog_home') == 'yes') || itro_get_option('preview_id') == get_the_id() ) { $id_match++; }
-	if( ( itro_get_option('page_selection')!='any' && !isset($_COOKIE['popup_cookie']) ) || itro_get_option('preview_id') == get_the_id())
-	if( ($id_match != NULL) || (itro_get_option('page_selection')=='all') )
-	{
-		itro_style();
-		itro_popup_template();
-		itro_popup_js();
+			if( ($id_match != NULL && !isset($_COOKIE['popup_cookie'])) || itro_get_option('preview_id') == get_the_id() )
+			{
+				itro_style();
+				itro_popup_template();
+				itro_popup_js();
+			}
+		break;
+		case 'all':
+			if( !isset($_COOKIE['popup_cookie']) || itro_get_option('preview_id') == get_the_id() )
+			{
+				itro_style();
+				itro_popup_template();
+				itro_popup_js();
+			}
+		break;
+		case 'none':
+			if( itro_get_option('preview_id') == get_the_id() )
+			{
+				itro_style();
+				itro_popup_template();
+				itro_popup_js();
+			}
+		break;
+		
 	}
 }
 

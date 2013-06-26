@@ -59,7 +59,12 @@ function itro_style() { ?>
 				else 
 				{echo 'top: 0px;' ;}
 			}
-			if (itro_get_option('popup_border_color') != NULL ) {echo 'border: 4px solid' . itro_get_option('popup_border_color') . ';';}?>			
+			if (itro_get_option('popup_border_color') != NULL )
+			{
+				echo 'border: solid;';
+				echo 'border-color:' . itro_get_option('popup_border_color') . ';';
+			}
+			?>
 			border-radius: <?php echo itro_get_option('popup_border_radius'); ?>px;
 			border-width: <?php echo itro_get_option('popup_border_width'); ?>px;
 			width: <?php 
