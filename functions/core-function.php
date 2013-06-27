@@ -42,6 +42,7 @@ function itro_init()
 		itro_update_option('popup_border_width',3);
 		itro_update_option('popup_border_radius',8);
 		itro_update_option('popup_padding',2);
+		itro_update_option('page_selection','none');
 		
 		switch(WPLANG)
 		{
