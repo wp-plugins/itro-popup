@@ -3,7 +3,7 @@ function itro_popup_template()
 { ?>
 	<div id="itro_popup" style="visibility:hidden">
 	<?php
-		if( itro_get_option('age_restriction') == NULL ) //age restriction off
+		if( itro_get_option('age_restriction') == NULL ) /* age restriction off */
 		{
 			if( itro_get_option('popup_time') != 0 )
 			{
@@ -12,7 +12,7 @@ function itro_popup_template()
 				echo '<b id="timer"></b></div>';
 			}
 			
-			$selected_cross = itroPath . 'images/close-icon.png'; //default image (black cross)
+			$selected_cross = itroPath . 'images/close-icon.png'; /* default image (black cross) */
 			switch( itro_get_option('cross_selected') )
 			{
 				case 'white':
@@ -27,8 +27,8 @@ function itro_popup_template()
 			echo '" onclick="jQuery(\'#itro_popup\').fadeOut(function(){itro_opaco.style.visibility=\'hidden\';})">';
 		}?>
 		<div id="popup_content"><?php
-			$custom_field = stripslashes(itro_get_field('custom_html')); //insert custom html code 
-			echo str_replace("\r\n",'',$custom_field); //return the string whitout new line
+			$custom_field = stripslashes(itro_get_field('custom_html')); /* insert custom html code  */
+			echo str_replace("\r\n",'',$custom_field); /* return the string whitout new line */
 			if ( itro_get_option('age_restriction') == 'yes' ) 
 			{?>
 				<p id="age_button_area" align="center">

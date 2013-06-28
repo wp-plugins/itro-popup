@@ -7,7 +7,7 @@ This file is part of ITRO Popup Plugin.
 if ( !current_user_can( 'manage_options' ) )  {
 	wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
 }
-// variables for the field and option names
+/* variables for the field and option names */
 if( !isset($submitted_form )) 
 {
 	$opt_name=array(
@@ -54,22 +54,22 @@ if( !isset($submitted_form ))
 
 
 
-//ordered options
+/* ordered options */
 for($i=0;$i<count($opt_name); $i++)
 {
-	// Read in existing option value from database
+	/* Read in existing option value from database */
 	$opt_val[$i] = itro_get_option( $opt_name[$i] );
 	$px_opt_val[$i] = itro_get_option( 'px_' . $opt_name[$i] );
 	$perc_opt_val[$i] = itro_get_option( 'perc_' . $opt_name[$i] );
-	// See if the user has posted us some information 
-	// If they did, this hidden field will be set to 'Y'
+	/* See if the user has posted us some information  */
+	/* If they did, this hidden field will be set to 'Y' */
 	if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' )
 	{
-		// Read their posted value
+		/* Read their posted value */
 		if(isset($_POST[$opt_name[$i]])){$opt_val[$i] = $_POST[ $opt_name[$i] ];}
 		else{$opt_val[$i] = NULL;}
 		
-		// Save the posted value in the database
+		/* Save the posted value in the database */
 		itro_update_option( $opt_name[$i], $opt_val[$i] );
 		
 		if( isset($_POST['select_' . $opt_name[$i]]) )
@@ -85,27 +85,27 @@ for($i=0;$i<count($opt_name); $i++)
 	}
 }
 
-//ordered field
+/* ordered field */
 for($i=0;$i<count($field_name); $i++)
 {
-	// Read in existing option value from database
+	/* Read in existing option value from database */
 	
 	$field_value[$i] = itro_get_field( $field_name[$i] );
 
-	// See if the user has posted us some information
-	// If they did, this hidden field will be set to 'Y'
+	/* See if the user has posted us some information */
+	/* If they did, this hidden field will be set to 'Y' */
 	if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' ) 
 	{
-		// Read their posted value
+		/* Read their posted value */
 		if(isset($_POST[$field_name[$i]])) {$field_value[$i] = $_POST[ $field_name[$i] ]; }
 		else{$field_value[$i] = NULL;}
 		
-		// Save the posted value in the database
+		/* Save the posted value in the database */
 		itro_update_field( $field_name[$i], $field_value[$i] );
 	}
 }
 
-//unsorted option and field
+/* unsorted option and field */
 if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y')
 {
 	if( isset($_POST['selected_page_id']) ) 
@@ -122,7 +122,7 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y')
 	else { itro_update_option('background_source',$_POST['background_source']); }
 }
 itro_admin_style();
-// Put an settings updated message on the screen
+/* Put an settings updated message on the screen */
 if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isset($_POST['delete_data_hidden']) && $_POST['delete_data_hidden'] == 'Y' ) {
 	?>
 	<div class="updated"><p><strong><?php _e('settings saved.', 'itro-plugin' ); ?></strong></p></div>
@@ -169,7 +169,8 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 						</select>
 						<img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e('If in your Settings->Reading you have set \'Front page displays: Your latest posts\' and want to display the popup in the home, check this box.','itro-plugin');?>" />
 						<br>
-						<?php // list of published pages
+						<?php 
+						/* list of published pages */
 						itro_list_pages();
 						?>
 					</div>
@@ -336,7 +337,7 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 						document.getElementById("<?php echo $opt_name[25]; ?>_slider_container").addEventListener("keydown", update, false);
 						function update()
 						{
-							document.getElementById("<?php echo $opt_name[26]; ?>").style.opacity = document.getElementById("<?php echo $opt_name[25]; ?>").value
+							document.getElementById("<?php echo $opt_name[26]; ?>").style.opacity = document.getElementById("<?php echo $opt_name[25]; ?>").value;
 							document.addEventListener("mousemove", update, false);
 						}
 						function stop()

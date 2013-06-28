@@ -4,7 +4,7 @@ Donate link: http://www.itro.eu/index.php/donate/
 Tags: popup, age restriction, block, violence, age validation, adult, adult content, content warning, wp editor, fancy box, fancy popup, custom popup, advertising popup, ads, ads popup, pop-up, lightbox, lightbox popup,
 Requires at least: 3.0.1
 Tested up to: 3.3
-Stable tag: 4.4.2
+Stable tag: 4.4.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -75,6 +75,9 @@ DONATE NOW! - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_
 no screenshot avaliable
 
 == Changelog ==
+= 4.4.3 =
+Code maintenance, some js errors fixed in admin page.
+
 = 4.4.2 =
 Bug on first installation fixed (preview page not working)
 
@@ -211,6 +214,8 @@ bug fixed: color table now works in admin pannel.
 First released version.
 
 == Upgrade Notice ==
+= 4.4.3 =
+Code maintenance, some js errors fixed in admin page.
 = 4.4.2 =
 Bug on first installation fixed (preview page not working)
 = 4.4.1 =

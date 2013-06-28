@@ -3,27 +3,26 @@
 Copyright 2013  I.T.RO.® (email : support.itro@live.com)
 This file is part of ITRO Popup Plugin.
 */
-//---------------------- SEND HEADER
+/* ---------------------- SEND HEADER */
 function itro_send_header() 
 {	
-	//add meta tag for IE compability
-	//if ( itro_get_option('ie_compability') == 'yes' )
+	/* add meta tag for IE compability */
 	echo '<meta http-equiv="X-UA-Compatible" content="IE=edge" />';
 }
 
-//------------------ADD MENU PAGE
+/* ------------------ADD MENU PAGE */
 function itro_plugin_menu() {
 	add_options_page( 'Popup Plugin Options', 'ITRO Popup', 'manage_options', 'itro-popup/admin/popup-admin.php', '' );
 }
 
-//-------------- INITIALIZATION
+/* -------------- INITIALIZATION */
 
 function itro_init()
 {
-	//--------- initialize database
+	/* --------- initialize database */
 	itro_db_init();
 	
-	//-----load sample popup settings
+	/* -----load sample popup settings */
 	if( get_option("itro_curr_ver") == NULL )
 	{
 		itro_update_option('popup_time',20);
@@ -60,7 +59,7 @@ function itro_init()
 		itro_update_option('sample_popup','done');
 	}
 	
-	//-------- check version
+	/* -------- check version */
 	if( $GLOBALS['ITRO_VER'] != get_option('itro_curr_ver') )
 	{
 		$ver = get_option('itro_curr_ver');
@@ -76,7 +75,7 @@ function itro_init()
 		itro_update_option('version_flag', 'true');
 	}
 	
-	//---------------create preview page
+	/* ---------------create preview page */
 	switch(WPLANG)
 	{
 		case 'en_US':
@@ -90,7 +89,7 @@ function itro_init()
 	}
 	if ( itro_get_option('preview_id') == NULL )
 	{
-		// Create post object
+		/* Create post object */
 		$preview_post = array(
 		  'post_title'    => 'ITRO - Preview',
 		  'post_name'    => 'itro-preview',
@@ -99,19 +98,19 @@ function itro_init()
 		  'post_author'   => 1,
 		  'post_type'   => 'page',
 		);
-		// Insert the post into the database
+		/* Insert the post into the database */
 		$preview_id = wp_insert_post( $preview_post );
 		itro_update_option('preview_id',$preview_id);
 	}	
 }
 
-//--------------------------DISPLAY THE POPUP
+/* --------------------------DISPLAY THE POPUP */
 function itro_display_popup()
 {
-	//woocommerce shop page identification
-	if( function_exists('is_shop') && function_exists('woocommerce_get_page_id') ) //if this functions exist, woocommerce is installed!
+	/* woocommerce shop page identification */
+	if( function_exists('is_shop') && function_exists('woocommerce_get_page_id') ) /* if this functions exist, woocommerce is installed! */
 	{
-		if ( is_shop() ) // if the actual page is the standard woocommerce shop page
+		if ( is_shop() ) /* if the actual page is the standard woocommerce shop page */
 		{
 			$woo_shop = true;
 			$woo_shop_id = woocommerce_get_page_id( 'shop' );
@@ -123,7 +122,7 @@ function itro_display_popup()
 		$woo_shop_id = NULL;
 	}	
 	
-	//this condition, control if the popup must or not by displayed in a specified page
+	/* this condition, control if the popup must or not by displayed in a specified page */
 	$selected_page_id = json_decode(itro_get_option('selected_page_id'));
 	$id_match = NULL;
 	
@@ -134,7 +133,7 @@ function itro_display_popup()
 			{
 				foreach ($selected_page_id as $single_id)
 				{
-					if ( $single_id == get_the_id() || ( $single_id == $woo_shop_id && $woo_shop ) ) //if the selected id is the current page id popup will be displayed OR if the woo_shop_id has been selected and you are in the woocommerce standard shop page ($woo_shop == true), popup will be displayed. 
+					if ( $single_id == get_the_id() || ( $single_id == $woo_shop_id && $woo_shop ) ) /* if the selected id is the current page id popup will be displayed OR if the woo_shop_id has been selected and you are in the woocommerce standard shop page ($woo_shop == true), popup will be displayed.  */
 					{
 						$id_match++;
 					}
@@ -171,7 +170,7 @@ function itro_display_popup()
 	}
 }
 
-//------------------------- SELECT PAGES FUNCTIONS
+/* ------------------------- SELECT PAGES FUNCTIONS */
 function itro_check_selected_id($id_to_check)
 {
 	if(itro_get_option('selected_page_id') != NULL)
@@ -204,21 +203,4 @@ function itro_list_pages()
 	</select>
 <?php
 }
-
-//---------------REVERSE WPAUTOP
-function reverse_wpautop($s)
-{
-    //remove any new lines already in there
-    $s = str_replace("\n", "", $s);
-
-    //remove all <p>
-    $s = str_replace("<p>", "", $s);
-
-    //replace <br /> with \n
-    $s = str_replace(array("<br />", "<br>", "<br/>"), "\n", $s);
-
-    //replace </p> with \n\n
-    $s = str_replace("</p>", "\n\n", $s);       
-
-    return $s;      
-}?>
+?>

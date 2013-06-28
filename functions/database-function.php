@@ -6,12 +6,11 @@ This file is part of ITRO Popup Plugin.
 global $wpdb;
 define ('OPTION_TABLE_NAME', 'wp_itro_plugin_option');
 define ('FIELD_TABLE_NAME', 'wp_itro_plugin_field');
-//$wpdb->prefix
-//-------Create plugin tables
+/* -------Create plugin tables */
 function itro_db_init()
 {
 	global $wpdb;
-	//------------------Option table
+	/* ------------------Option table */
 	$option_table_name = OPTION_TABLE_NAME;
 	$sql = "CREATE TABLE IF NOT EXISTS $option_table_name 
 	(
@@ -23,7 +22,7 @@ function itro_db_init()
 	require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 	dbDelta( $sql );
 	
-	//--------------Custom field table
+	/* --------------Custom field table */
 	$field_table_name = FIELD_TABLE_NAME;
 	$sql = "CREATE TABLE IF NOT EXISTS $field_table_name
 	(
@@ -36,7 +35,7 @@ function itro_db_init()
 	dbDelta( $sql );	
 }
 
-//------------------ PLUGIN OPTION DB MANAGEMENT -------------- 
+/* ------------------ PLUGIN OPTION DB MANAGEMENT --------------  */
 function itro_update_option($opt_name,$opt_val)
 {
 	global $wpdb;
@@ -68,7 +67,7 @@ function itro_get_option($opt_name)
 	else {return (NULL);}
 }
 
-//------------------ CUSTOM FIELD CONTENT DB MANAGEMENT -------------- 
+/* ------------------ CUSTOM FIELD CONTENT DB MANAGEMENT --------------  */
 function itro_update_field($field_name,$field_value)
 {
 	global $wpdb;
