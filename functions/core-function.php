@@ -19,12 +19,12 @@ function itro_plugin_menu() {
 
 function itro_init()
 {
-	/* --------- initialize database */
-	itro_db_init();
-	
 	/* -----load sample popup settings */
 	if( get_option("itro_curr_ver") == NULL )
 	{
+		/* --------- initialize database */
+		itro_db_init();
+		
 		itro_update_option('popup_time',20);
 		itro_update_option('cookie_time_exp',0);
 		itro_update_option('popup_background','#FFFFFF');

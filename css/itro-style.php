@@ -105,7 +105,6 @@ function itro_style() { ?>
 		}
 
 		#itro_opaco{
-			opacity:0.6;
 			position:fixed;
 			background-color:  <?php echo itro_get_option('opaco_bg_color'); ?>;
 			font-size: 10px;
@@ -118,7 +117,6 @@ function itro_style() { ?>
 			right: 0px;
 			top: 0px;
 			bottom: 0px;
-			<?php if( itro_get_option('popup_delay') != 0 ) { echo 'visibility:hidden;'; } ?>
 			opacity: <?php echo itro_get_option('popup_bg_opacity'); ?> ;
 			filter:alpha(opacity = <?php echo ( itro_get_option('popup_bg_opacity') * 100); ?>); /* For IE8 and earlier */
 		}<?php
