@@ -18,6 +18,63 @@ function itro_popup_js()
 		jQuery("#itro_opaco").fadeIn(function() {jQuery("#itro_popup").fadeIn();});
 	}
 	
+	/* function for automatic top margin refresh, to center the popup vertically */
+	function marginRefresh()
+	{	
+		if( typeof( window.innerWidth ) == 'number' ) 
+		{
+			/* Non-IE */
+			browserWidth = window.innerWidth;
+			browserHeight = window.innerHeight;
+		} else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) 
+		{
+			/* IE 6+ in 'standards compliant mode' */
+			browserWidth = document.documentElement.clientWidth;
+			browserHeight = document.documentElement.clientHeight;
+		} else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) 
+		{
+			/* IE 4 compatible */
+			browserWidth = document.body.clientWidth;
+			browserHeight = document.body.clientHeight;
+		}
+		popupHeight = document.getElementById('itro_popup').offsetHeight ; 			/* get the actual px size of popup div */
+		document.getElementById('itro_popup').style.top = (browserHeight - popupHeight)/2 + "px"; /* update the top margin of popup					 */
+	}
+	
+	/* function for countdown to show popup when the delay is set */
+	function popup_delay() 
+	{ 
+		delay--;
+		if(delay <= 0) 
+		{
+			clearInterval(interval_id_delay);
+			itro_enter_anim();
+		}
+	}
+	
+	/* countdown for automatic closing */
+	function popTimer()
+	{
+		if (popTime>0)
+		{
+			document.getElementById("timer").innerHTML=popTime;
+			popTime--;
+		}
+		else
+		{
+			clearInterval(interval_id);
+			jQuery("#itro_popup").fadeOut(function() {itro_opaco.style.visibility='Hidden';});
+		}
+	}
+	
+	/* function use to set the cookie for next visualization time */
+	function itro_set_cookie(c_name,value,exhours)
+	{
+		var exdate=new Date();
+		exdate.setTime(exdate.getTime() + (exhours * 3600 * 1000));
+		var c_value=escape(value) + ((exhours==null) ? "" : "; expires="+exdate.toUTCString());
+		document.cookie=c_name + "=" + c_value + "; path=/";
+	}
 	<?php
 		if (itro_get_option('age_restriction') == NULL) /* OFF age validation */
 		{
@@ -43,15 +100,6 @@ function itro_popup_js()
 			{ ?>
 				var delay = <?php echo itro_get_option('popup_delay') . '+' . '1'; ?> ;
 				interval_id_delay = setInterval(function(){popup_delay();},1000);
-				function popup_delay() 
-				{ 
-					delay--;
-					if(delay <= 0) 
-					{
-						clearInterval(interval_id_delay);
-						itro_enter_anim();
-					}
-				}
 			<?php
 			}
 			else /* if popup delay is not setted */
@@ -74,19 +122,7 @@ function itro_popup_js()
 							}
 							?>;
 				interval_id = setInterval(function(){popTimer()},1000); /* the countdown  */
-				function popTimer()
-				{
-					if (popTime>0)
-					{
-						document.getElementById("timer").innerHTML=popTime;
-						popTime--;
-					}
-					else
-					{
-						clearInterval(interval_id);
-						jQuery("#itro_popup").fadeOut(function() {itro_opaco.style.visibility='Hidden';});
-					}
-				} <?php
+				<?php
 			}
 		}
 		else /* if age restriction is enabled */
@@ -95,15 +131,6 @@ function itro_popup_js()
 			{ ?>
 				var delay = <?php echo itro_get_option('popup_delay') . '+' . '1'; ?> ;
 				interval_id = setInterval(function(){popup_delay();},1000);
-				function popup_delay() 
-				{ 
-					delay--;
-					if(delay <= 0) 
-					{
-						clearInterval(interval_id);
-						itro_enter_anim();
-					}
-				}
 			<?php
 			}
 			else
@@ -111,43 +138,14 @@ function itro_popup_js()
 				itro_enter_anim();
 			  <?php
 			}
-		}?>
+		}
 		
-		function itro_set_cookie(c_name,value,exhours)
-		{
-			var exdate=new Date();
-			exdate.setTime(exdate.getTime() + (exhours * 3600 * 1000));
-			var c_value=escape(value) + ((exhours==null) ? "" : "; expires="+exdate.toUTCString());
-			document.cookie=c_name + "=" + c_value + "; path=/";
-		} 
-		<?php
 		/* ------- AUTOMATIC TOP MARGIN */
 		if( itro_get_option('auto_margin_check') != NULL )
 		{?>
 			var browserWidth = 0, browserHeight = 0;
-			
 			setInterval(function(){marginRefresh()},100); /* refresh every 0.1 second the popup top margin (needed for browser window resizeing) */
-			function marginRefresh()
-			{	
-				if( typeof( window.innerWidth ) == 'number' ) 
-				{
-					/* Non-IE */
-					browserWidth = window.innerWidth;
-					browserHeight = window.innerHeight;
-				} else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) 
-				{
-					/* IE 6+ in 'standards compliant mode' */
-					browserWidth = document.documentElement.clientWidth;
-					browserHeight = document.documentElement.clientHeight;
-				} else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) 
-				{
-					/* IE 4 compatible */
-					browserWidth = document.body.clientWidth;
-					browserHeight = document.body.clientHeight;
-				}
-				popupHeight = document.getElementById('itro_popup').offsetHeight ; 			/* get the actual px size of popup div */
-				document.getElementById('itro_popup').style.top = (browserHeight - popupHeight)/2 + "px"; /* update the top margin of popup					 */
-			}<?php 
+			<?php 
 		}?>
 	</script>
 <?php	
