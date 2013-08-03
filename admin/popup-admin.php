@@ -421,7 +421,8 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 	<div id="rightColumn">
 		<input type="hidden" name="<?php echo $submitted_form; ?>" value="Y">
 		<!------- Custom html field -------->
-		<p class="wpstyle" onClick="jQuery('#customHtmlForm').toggle();"><?php _e("Your text (or HTML code:)", 'itro-plugin' ); ?> </p>
+		<?php echo itro_onOff('customHtmlForm','hidden');?>
+		<p class="wpstyle" onClick="onOff_customHtmlForm();"><?php _e("Your text (or HTML code:)", 'itro-plugin' ); ?> </p>
 		<div id="customHtmlForm">
 			<?php					
 			$content = stripslashes($field_value[0]);
@@ -456,10 +457,6 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 			<img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
 		</form>
 	</div>
-	<p class="wpstyle" onClick="jQuery('#debug_info').toggle();"><?php _e("System Status", 'itro-plugin' ); ?> </p>
-	<form method="POST" action="" id="debug_info" style="display:none;">
-		<?php echo itro_get_serverinfo(); ?>
-	</form>
 </div>
 
 <?php if( isset($_POST['delete_data_hidden']) && $_POST['delete_data_hidden'] == 'Y' ) { itro_update_option('delete_data',$_POST['delete_data']); } ?>
