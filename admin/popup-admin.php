@@ -3,6 +3,7 @@
 Copyright 2013  I.T.RO.® (email : support.itro@live.com)
 This file is part of ITRO Popup Plugin.
 */
+global $ITRO_VER;
 
 if ( !current_user_can( 'manage_options' ) )  {
 	wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
@@ -133,7 +134,7 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 
 <div style="display:table; width:100%;">
 	<h1 style="float:left;"><?php _e( 'I.T.RO. Popup Plugin - Settings', 'itro-plugin');?></h1>
-	<h4 style="float:right; margin-right:30px;">VER <?php echo get_option('itro_curr_ver');	?></h4>
+	<h4 style="float:right; margin-right:30px;">VER: <?php echo $ITRO_VER; ?></h4>
 </div>
 
 <form id="optionForm" method="post">
