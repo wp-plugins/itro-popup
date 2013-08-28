@@ -1,10 +1,10 @@
 ﻿=== ITRO Popup Plugin ===
 Contributors: ITRO
 Donate link: http://www.itro.eu/index.php/donate/
-Tags: popup, popup message, popup box, popup ads, popup advertising, age restriction, popup block, violence, age validation, adult, adult content, content warning, content warning popup, wp editor, fancy box, fancy popup, custom popup, advertising popup, pop-up, lightbox, lightbox popup,
+Tags: popup, popup message, popup box, popup ads, popup advertising, age restriction, popup block, popup violence, age validation popup, adult, adult content, content warning, content warning popup, fancy box, fancy popup, custom popup, advertising popup, pop-up, lightbox, lightbox popup,
 Requires at least: 3.0.1
 Tested up to: 3.3
-Stable tag: 4.5.1
+Stable tag: 4.5.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -75,6 +75,9 @@ DONATE NOW! - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_
 no screenshot avaliable
 
 == Changelog ==
+= 4.5.2 =
+Admin bug fixed for delete data on uninstall. Age validatition and popup delay bug fixed.
+
 = 4.5.1 =
 jQuery conflict resolved. Main js function now are rightly loaded by wp_enqueue_scripts.
 
@@ -224,6 +227,9 @@ bug fixed: color table now works in admin pannel.
 First released version.
 
 == Upgrade Notice ==
+= 4.5.2 =
+Admin bug fixed for delete data on uninstall. Age validatition and popup delay bug fixed.
+
 = 4.5.1 =
 jQuery conflict resolved. Main js function now are rightly loaded by wp_enqueue_scripts func.
 

@@ -64,7 +64,7 @@ function itro_popup_js()
 			if( itro_get_option('popup_delay') != 0 )
 			{ ?>
 				var delay = <?php echo itro_get_option('popup_delay') . '+' . '1'; ?> ;
-				interval_id = setInterval(function(){popup_delay();},1000);
+				interval_id_delay = setInterval(function(){popup_delay();},1000);
 			<?php
 			}
 			else

@@ -53,8 +53,6 @@ if( !isset($submitted_form ))
 	$submitted_form = 'mt_submit_hidden';
 }
 
-
-
 /* ordered options */
 for($i=0;$i<count($opt_name); $i++)
 {
@@ -62,6 +60,7 @@ for($i=0;$i<count($opt_name); $i++)
 	$opt_val[$i] = itro_get_option( $opt_name[$i] );
 	$px_opt_val[$i] = itro_get_option( 'px_' . $opt_name[$i] );
 	$perc_opt_val[$i] = itro_get_option( 'perc_' . $opt_name[$i] );
+	
 	/* See if the user has posted us some information  */
 	/* If they did, this hidden field will be set to 'Y' */
 	if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' )
@@ -122,6 +121,20 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y')
 	if( empty($_POST['background_source']) ) { $opt_val[22] = NULL; itro_update_option('background_source',NULL); }
 	else { itro_update_option('background_source',$_POST['background_source']); }
 }
+
+/* delete tables on plugin uninstall option */
+if( isset($_POST['delete_data_hidden']) && $_POST['delete_data_hidden'] == 'Y' )
+{
+	if( isset($_POST['delete_data']) )
+	{
+		itro_update_option('delete_data', $_POST['delete_data']);
+	}
+	else
+	{
+		itro_update_option('delete_data', NULL);
+	}
+}
+
 itro_admin_style();
 /* Put an settings updated message on the screen */
 if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isset($_POST['delete_data_hidden']) && $_POST['delete_data_hidden'] == 'Y' ) {
@@ -463,7 +476,6 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 	</form>
 </div>
 
-<?php if( isset($_POST['delete_data_hidden']) && $_POST['delete_data_hidden'] == 'Y' ) { itro_update_option('delete_data',$_POST['delete_data']); } ?>
 <form id="delete_data" method="post" style="clear:both;">
 	<br>
 	<hr>
