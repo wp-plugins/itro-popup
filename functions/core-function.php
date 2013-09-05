@@ -3,13 +3,6 @@
 Copyright 2013  I.T.RO.® (email : support.itro@live.com)
 This file is part of ITRO Popup Plugin.
 */
-/* ---------------------- SEND HEADER */
-function itro_send_header() 
-{	
-	/* add meta tag for IE compability */
-	echo '<meta http-equiv="X-UA-Compatible" content="IE=edge" />';
-}
-
 /* ------------------ADD MENU PAGE */
 function itro_plugin_menu() {
 	add_options_page( 'Popup Plugin Options', 'ITRO Popup', 'manage_options', 'itro-popup/admin/popup-admin.php', '' );
@@ -46,13 +39,13 @@ function itro_init()
 		switch(WPLANG)
 		{
 			case 'en_US':
-			$welcome_text = '<h1 style="text-align: center;"><span style="color: #000000; font-size: 200%;">Hello, this is a pop-up sample.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">By default you see only the basic settings.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Write watever you want in the Custom text editor and enjoy our plugin!</span></h1><p>&nbsp;</p>';
+			$welcome_text = '<h1 style="text-align: center;"><span style="color: #000000; font-size: 200%;">Hello, this is a pop-up sample.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">By default you see only the basic settings.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Write whatever you want in the Custom text editor and enjoy our plugin!</span></h1><p>&nbsp;</p>';
 				break;
 			case 'it_IT':
 			$welcome_text = '<p style="text-align: center;"><span style="color: #000000; font-size: 200%;">Salve, questo &egrave; un esempio di popup.</span></p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;"><span style="color: #000000; font-size: 20;">Come impostazione predefinita sono visibili solo le opzioni base.</span></p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;"><span style="color: #000000; font-size: 20;">Scrivi qualunque cosa vuoi nell&#39;editor di testo di wordpress e buon lavoro!</span></p><p style="text-align: center;">&nbsp;</p>';
 				break;
 			default:
-				$welcome_text = '<h1 style="text-align: center;"><span style="color: #000000; font-size: 200%;">Hello, this is a pop-up sample.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">By default you see only the basic settings.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Write watever you want in the Custom text editor and enjoy our plugin!</span></h1><p>&nbsp;</p>';
+				$welcome_text = '<h1 style="text-align: center;"><span style="color: #000000; font-size: 200%;">Hello, this is a pop-up sample.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">By default you see only the basic settings.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Write whatever you want in the Custom text editor and enjoy our plugin!</span></h1><p>&nbsp;</p>';
 		}
 		itro_update_field('custom_html',$welcome_text);
 		
