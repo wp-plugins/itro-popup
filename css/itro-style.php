@@ -155,20 +155,20 @@ function itro_admin_style ()
 		
 		#wp-custom_html-editor-container #custom_html_ifr
 		{ 
-			width: 510px !important;
+			width: 450px !important;
 		}
 		
 		#leftColumn
 		{
 			float:left;
-			width:510px;
+			width:450px;
 		}
 
 		#rightColumn
 		{
 			float:right;
 			margin-right:10%;
-			width:510px;
+			width:450px;
 		}
 		
 		#rightColumn2
@@ -176,7 +176,7 @@ function itro_admin_style ()
 			clear:right;
 			float:right;
 			margin-right:10%;
-			width:510px;
+			width:450px;
 		}
 		
 		#customHtmlForm
