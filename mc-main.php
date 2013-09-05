@@ -35,6 +35,7 @@ function itro_admin_scripts()
 	wp_enqueue_script('thickbox');
 	wp_enqueue_script('jquery-effects-highlight');
 	wp_enqueue_script('jquery-effects-fade');
+	wp_enqueue_script('jquery-effects-blind');
 	wp_register_script( 'itro-admin-scripts', itroPath . 'scripts/itro-admin-scripts.js', array( 'jquery' ) );
 	wp_enqueue_script( 'itro-admin-scripts' );
 }
