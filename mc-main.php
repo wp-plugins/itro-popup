@@ -34,7 +34,6 @@ function itro_admin_scripts()
 	wp_enqueue_script('media-upload');
 	wp_enqueue_script('thickbox');
 	wp_enqueue_script('jquery-effects-highlight');
-	wp_enqueue_script('jquery-effects-blind');
 	wp_enqueue_script('jquery-effects-fade');
 	wp_register_script( 'itro-admin-scripts', itroPath . 'scripts/itro-admin-scripts.js', array( 'jquery' ) );
 	wp_enqueue_script( 'itro-admin-scripts' );
@@ -59,7 +58,7 @@ function itro_get_woo_shop_id()
 add_action( 'woocommerce_before_shop_loop' , 'itro_get_woo_shop_id' );
 
 add_action( 'wp_footer','itro_display_popup');
-add_action( 'wp_enqueue_script' , 'itro_load_script' );
+add_action( 'wp_enqueue_scripts' , 'itro_load_script' );
 
 add_action('admin_print_scripts', 'itro_admin_scripts');
 add_action('admin_print_styles', 'itro_load_admin_styles');
