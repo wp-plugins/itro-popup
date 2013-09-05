@@ -17,10 +17,6 @@ ITRO Popup display a popup to your WP site:
 
 ITRO Popup Plugin - The BEST WP Popup Plugin
 
-WANT MORE FEATURES? Try ITRO Popup Premium for free and purchase it at only:
---->>> €6.99 <<<---
-[TRY IT FOR FREE!](http://www.itro.eu/ccount12/click.php?id=4)
-
 	★ Pretty fade-in and fade-out animation.
 	★ Need to remove plugin and save data? It is possible!
 	★ Selcted pages where you want to display the popup, by a scrollable list. NO SHORTCODES NEEDED!
@@ -35,6 +31,10 @@ WANT MORE FEATURES? Try ITRO Popup Premium for free and purchase it at only:
 	★ All great explaned by tips in admin pannel.
 	★ Great and fast support for all your problem with our popup plugin.
 	★ All in a very easy way to use!
+	
+WANT MORE FEATURES? Try ITRO Popup Premium for free and purchase it at only:
+--->>> €6.99 <<<---
+[TRY IT FOR FREE!](http://www.itro.eu/ccount12/click.php?id=4)
 
 ITRO Popup is a very lightweight Plugin for Wordpress which allow users to add a fully-customizable  and perfectly centered popup. 
 It has a very user-friendly interface, which allow Wordpress users to easily modify all settings needed for a popup, without coding. 
