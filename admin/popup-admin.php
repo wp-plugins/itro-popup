@@ -433,10 +433,10 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 	</div>
 
 	<div id="rightColumn">
-		<!-- Please do not remove, we use it to quickly comunicate with you about premium and free! !-->
+		<!-- A simple not annoying banner, please do not remove, we use it to quickly comunicate with you about premium and free! !-->
 		<p class="wpstyle" onClick="jQuery('#premium_ads').toggle('blind');"><?php _e('ITRO Popup messages', 'itro-plugin'); ?> </p>
 		<div id="premium_ads" style="text-align: center;">
-			<a target="_blank" href="http://www.itro.eu/index.php/itro-popup-premium"><img title="TRY IT FOR FREE!!!" src="http://www.itroteam.com/plugins/premium_banner.png"></a>
+			<a target="_blank" href="http://www.itro.eu/ccount12/click.php?id=5"><img title="TRY IT FOR FREE!!!" src="http://www.itroteam.com/plugins/premium_banner.png"></a>
 		</div>
 		
 		<input type="hidden" name="<?php echo $submitted_form; ?>" value="Y">
