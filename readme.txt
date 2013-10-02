@@ -57,7 +57,8 @@ For any problem, please contact us at: support.itro@live.com
 
 ITRO Premium - more than popups (only 5€)
 	
-    ★ RESPONSIVE POPUP for perfect visualization on every mobile device.
+    ★ ON-CLICK POPUP to display the pop-up by clicking everything you want (texts, images, links, buttons…) 
+	★ RESPONSIVE POPUP for perfect visualization on every mobile device.
     ★ SHORTCODE for popup visualization and to add contact form everywhere you want also without popups, and more...
     ★ MAILCHIMP INTEGRATION fast and easy, via API Key and List ID.
     ★ LINK CLICKS COUNTER is your little Analytics system! Want to control how impressive are your ads and messages? Do it by monitoring number of clicks on your specific link.
