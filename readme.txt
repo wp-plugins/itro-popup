@@ -55,7 +55,7 @@ DONATE NOW! - KEEP IT FREE! [DONATE NOW](http://www.itro.eu/?page_id=396)
 
 For any problem, please contact us at: support.itro@live.com
 
-ITRO Premium - more than popups (only 5€)
+ITRO Premium - more than popups...
 	
     ★ ON-CLICK POPUP to display the pop-up by clicking everything you want (texts, images, links, buttons…) 
 	★ RESPONSIVE POPUP for perfect visualization on every mobile device.
