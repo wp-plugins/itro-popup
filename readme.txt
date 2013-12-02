@@ -52,7 +52,7 @@ TRANSLATED IN FOLLOWING LANGUAGES:
 FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/?page_id=390)
 DONATE NOW! - KEEP IT FREE! [DONATE NOW](http://www.itro.eu/?page_id=396)
 
-For any problem, please contact us at: support@itro.eu
+For any problem, please contact us at: support.itro@live.com
 
 ITRO Premium - more than popups...
 	
