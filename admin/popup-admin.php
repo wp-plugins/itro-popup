@@ -459,21 +459,11 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 	<!-- Donation form - please don't change or remove!!! thanks !-->
 	<div id="donateForm">
 		<h3><?php _e("Like it? Offer us a coffee! ;-)","itro-plugin")?> <img width="35px" src="<?php echo itroImages . 'coffee.png';?>"></h3>
-		<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-			<input type="hidden" name="cmd" value="_s-xclick">
-			<input type="hidden" name="hosted_button_id" value="L2QKQKSPMY3RU">
-			<table style="float:right;">
-				<tr><td><input type="hidden" name="on0" value="Make your donation"><?php _e('Make your donation','itro-plugin') ?></td></tr><tr><td><select name="os0">
-				<option value="little donation"><?php _e('little donation','itro-plugin') ?> &#8364;2,00 EUR</option>
-				<option value="right donation"><?php _e('right donation','itro-plugin') ?>   &#8364;5,00 EUR</option>
-				<option value="normal donation"><?php _e('normal donation','itro-plugin') ?> &#8364;10,00 EUR</option>
-				<option value="good donation"><?php _e('good donation','itro-plugin') ?>     &#8364;20,00 EUR</option>
-				<option value="great donation"><?php _e('great donation','itro-plugin') ?>   &#8364;50,00 EUR</option>
-				</select> </td></tr>
-			</table>
-			<input type="hidden" name="currency_code" value="EUR">
-			<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-			<img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+			<input type="hidden" name="cmd" value="_s-xclick"/>
+			<input type="hidden" name="hosted_button_id" value="WNRVCFYD3ULQ8"/>
+			<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"/>
+			<img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1"/>
 		</form>
 	</div>
 	<p class="wpstyle" onClick="jQuery('#debug_info').toggle();"><?php _e("System Status", 'itro-plugin' ); ?> </p>
