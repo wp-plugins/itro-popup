@@ -33,7 +33,7 @@ ITRO Popup Plugin - The BEST WP Popup Plugin
 	★ All in a very easy way to use!
 	
 WANT MORE FEATURES? Try ITRO Popup Premium for free!
-[TRY IT FOR FREE!](http://www.itro.eu/ccount12/click.php?id=4)
+[TRY IT FOR FREE!](http://www.itro.eu/)
 
 ITRO Popup is a very lightweight Plugin for Wordpress which allow users to add a fully-customizable  and perfectly centered popup. 
 It has a very user-friendly interface, which allow Wordpress users to easily modify all settings needed for a popup, without coding. 
@@ -69,7 +69,7 @@ ITRO Premium - more than popups...
     ★ SHORTCODES work in the popup!
     ★ VIDEO EMBEDDING for a fast integration of your Youtube and Vimeo videos by simply inserting your video ID. The video automatically fit on popup dimension and you can select the aspect ratio.
 
-[TRY IT FOR FREE!](http://www.itro.eu/ccount12/click.php?id=4)
+[TRY IT FOR FREE!](http://www.itro.eu/)
 
 == Installation ==
 
