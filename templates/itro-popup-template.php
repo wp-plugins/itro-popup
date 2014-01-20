@@ -28,7 +28,7 @@ function itro_popup_template()
 		}?>
 		<div id="popup_content"><?php
 			$custom_field = stripslashes(itro_get_field('custom_html')); /* insert custom html code  */
-			echo str_replace("\r\n",'',$custom_field); /* return the string whitout new line */
+			echo do_shortcode( str_replace("\r\n",'',$custom_field) ); /* return the string whitout new line */
 			if ( itro_get_option('age_restriction') == 'yes' ) 
 			{?>
 				<p id="age_button_area" align="center">

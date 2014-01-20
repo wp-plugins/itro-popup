@@ -135,7 +135,6 @@ if( isset($_POST['delete_data_hidden']) && $_POST['delete_data_hidden'] == 'Y' )
 	}
 }
 
-itro_admin_style();
 /* Put an settings updated message on the screen */
 if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isset($_POST['delete_data_hidden']) && $_POST['delete_data_hidden'] == 'Y' ) {
 	?>
@@ -207,7 +206,7 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 					<span style="float:left;" ><?php _e("Popup seconds:", 'itro-plugin' ); ?> <img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e("Set seconds until the popup automatically close. Set it to zero to disable countdown.",'itro-plugin');?>" ></span>
 					&nbsp;&nbsp;&nbsp;
 					<?php itro_slidebar( $opt_name[0] , $opt_val[0] , 0 , 120 , 1, 0, '') ?>
-					<input type="text" style="color: #f6931f; font-weight: bold; position:relative; left:10px;" id="<?php echo $opt_name[0]; ?>" name="<?php echo $opt_name[0]; ?>" value="<?php echo $opt_val[0]; ?>" size="1">
+					<input type="text" class="itro_text_input" id="<?php echo $opt_name[0]; ?>" name="<?php echo $opt_name[0]; ?>" value="<?php echo $opt_val[0]; ?>" size="1">
 				</div>
 				
 				<!-- popup delay!-->
@@ -215,7 +214,7 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 					<span style="float:left;" ><?php _e("Popup delay:", 'itro-plugin' ); ?> <img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e("Set seconds before the popup will be displayed",'itro-plugin');?>" ></span>
 					&nbsp;&nbsp;&nbsp;
 					<?php itro_slidebar( $opt_name[23] , $opt_val[23] , 0 , 120 , 1, 0, '') ?>
-					<input type="text" style="color: #f6931f; font-weight: bold; position:relative; left:10px;" id="<?php echo $opt_name[23]; ?>" name="<?php echo $opt_name[23]; ?>" value="<?php echo $opt_val[23]; ?>" size="1">
+					<input type="text" class="itro_text_input" id="<?php echo $opt_name[23]; ?>" name="<?php echo $opt_name[23]; ?>" value="<?php echo $opt_val[23]; ?>" size="1">
 				</div>
 				
 				<!-- next time visualization !-->
@@ -223,7 +222,7 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 					<span style="float:left;" ><?php _e("Next visualization (hours):", 'itro-plugin' ); ?> <img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e("Set time for the next visualization of popup, to prevent annoying repeated visualizations, when someone visit pages",'itro-plugin');?>" ></span>
 					&nbsp;&nbsp;&nbsp;
 					<?php itro_slidebar( $opt_name[2] , $opt_val[2] , 0 , 720 , 6, 0, '') ?>
-					<input type="text" style="color: #f6931f; font-weight: bold; position:relative; left:10px;" id="<?php echo $opt_name[2]; ?>" name="<?php echo $opt_name[2]; ?>" value="<?php echo $opt_val[2]; ?>" size="1">
+					<input type="text" class="itro_text_input" id="<?php echo $opt_name[2]; ?>" name="<?php echo $opt_name[2]; ?>" value="<?php echo $opt_val[2]; ?>" size="1">
 				</div>
 				
 				<input value="<?php _e("Delete cookie", 'itro-plugin' ); ?>" type="button" class="button" onclick="itro_set_cookie('popup_cookie','one_time_popup',-100); jQuery('#cookie_msg').stop(true, true); jQuery('#cookie_msg').fadeIn(function() {jQuery('#cookie_msg').fadeOut(6000);});">
@@ -248,8 +247,8 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 					&nbsp;&nbsp;&nbsp;
 					<?php itro_slidebar( $opt_name[3] , $opt_val[3] , 0 , 1500 , 10, 0, 'px') ?>
 					<?php itro_slidebar( $opt_name[3] , $opt_val[3] , 0 , 100 , 1, 0, 'perc') ?>
-					<input type="text" style="color: #f6931f; font-weight: bold; position:relative; left:7px;<?php if( itro_get_option('select_' . $opt_name[3]) != 'px' ) { echo 'display:none;'; } ?>" id="<?php echo 'px_' . $opt_name[3]; ?>" name="<?php echo 'px_' . $opt_name[3]; ?>" value="<?php echo $px_opt_val[3]; ?>" size="1">
-					<input type="text" style="color: #f6931f; font-weight: bold; position:relative; left:7px;<?php if( itro_get_option('select_' . $opt_name[3]) != 'perc' ) { echo 'display:none;'; } ?>" id="<?php echo 'perc_' . $opt_name[3]; ?>" name="<?php echo 'perc_' . $opt_name[3]; ?>" value="<?php echo $perc_opt_val[3]; ?>" size="1">
+					<input type="text" class="itro_text_input" style="<?php if( itro_get_option('select_' . $opt_name[3]) != 'px' ) { echo 'display:none;'; } ?>" id="<?php echo 'px_' . $opt_name[3]; ?>" name="<?php echo 'px_' . $opt_name[3]; ?>" value="<?php echo $px_opt_val[3]; ?>" size="1">
+					<input type="text" class="itro_text_input" style="<?php if( itro_get_option('select_' . $opt_name[3]) != 'perc' ) { echo 'display:none;'; } ?>" id="<?php echo 'perc_' . $opt_name[3]; ?>" name="<?php echo 'perc_' . $opt_name[3]; ?>" value="<?php echo $perc_opt_val[3]; ?>" size="1">
 					<select id="select_<?php echo $opt_name[3]; ?>" name="select_<?php echo $opt_name[3]; ?>" style="position:relative; left:7px;">
 						<option value="px" onClick="itro_enable_<?php echo $opt_name[3]; ?>('px')" <?php if(itro_get_option('select_' . $opt_name[3])=='px') {echo 'selected="select"';} ?>>px</option>
 						<option value="perc" onClick="itro_enable_<?php echo $opt_name[3]; ?>('perc')" <?php if(itro_get_option('select_' . $opt_name[3])=='perc') {echo 'selected="select"';} ?>>%</option>
@@ -262,8 +261,8 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 					&nbsp;&nbsp;&nbsp;
 					<?php itro_slidebar( $opt_name[17] , $opt_val[17] , 0 , 750 , 5, 0, 'px') ?>
 					<?php itro_slidebar( $opt_name[17] , $opt_val[17] , 0 , 100 , 1, 0, 'perc') ?>
-					<input type="text" style="color: #f6931f; font-weight: bold; position:relative; left:7px;<?php if( itro_get_option('select_' . $opt_name[17]) != 'px' ) { echo 'display:none;'; } ?>" id="<?php echo 'px_' . $opt_name[17]; ?>" name="<?php echo 'px_' . $opt_name[17]; ?>" value="<?php echo $px_opt_val[17]; ?>" size="1">
-					<input type="text" style="color: #f6931f; font-weight: bold; position:relative; left:7px;<?php if( itro_get_option('select_' . $opt_name[17]) != 'perc' ) { echo 'display:none;'; } ?>" id="<?php echo 'perc_' . $opt_name[17]; ?>" name="<?php echo 'perc_' . $opt_name[17]; ?>" value="<?php echo $perc_opt_val[17]; ?>" size="1">
+					<input type="text" class="itro_text_input" style="<?php if( itro_get_option('select_' . $opt_name[17]) != 'px' ) { echo 'display:none;'; } ?>" id="<?php echo 'px_' . $opt_name[17]; ?>" name="<?php echo 'px_' . $opt_name[17]; ?>" value="<?php echo $px_opt_val[17]; ?>" size="1">
+					<input type="text" class="itro_text_input" style="<?php if( itro_get_option('select_' . $opt_name[17]) != 'perc' ) { echo 'display:none;'; } ?>" id="<?php echo 'perc_' . $opt_name[17]; ?>" name="<?php echo 'perc_' . $opt_name[17]; ?>" value="<?php echo $perc_opt_val[17]; ?>" size="1">
 					<select id="select_<?php echo $opt_name[17]; ?>" name="select_<?php echo $opt_name[17]; ?>" style="position:relative; left:7px;">
 						<option value="px" onClick="itro_enable_<?php echo $opt_name[17]; ?>('px')" <?php if(itro_get_option('select_' . $opt_name[17])=='px') {echo 'selected="select"';} ?>>px</option>
 						<option value="perc" onClick="itro_enable_<?php echo $opt_name[17]; ?>('perc')" <?php if(itro_get_option('select_' . $opt_name[17])=='perc') {echo 'selected="select"';} ?>>%</option>
@@ -283,7 +282,7 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 					<span style="float:left;" ><?php _e("Popup border radius(px):", 'itro-plugin' ); ?></span>
 					&nbsp;&nbsp;&nbsp;
 					<?php itro_slidebar( $opt_name[20] , $opt_val[20] , 0 , 200 , 1, 0, '') ?>				
-					<input type="text" style="color: #f6931f; font-weight: bold; position:relative; left:10px;" id="<?php echo $opt_name[20]; ?>" name="<?php echo $opt_name[20]; ?>" value="<?php echo $opt_val[20]; ?>" size="1">
+					<input type="text" class="itro_text_input" id="<?php echo $opt_name[20]; ?>" name="<?php echo $opt_name[20]; ?>" value="<?php echo $opt_val[20]; ?>" size="1">
 				</div>
 				
 				<!-- border width !-->
@@ -291,7 +290,7 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 					<span style="float:left;" ><?php _e("Popup border width(px):", 'itro-plugin' ); ?></span>
 					&nbsp;&nbsp;&nbsp;
 					<?php itro_slidebar( $opt_name[27] , $opt_val[27] , 0 , 50 , 1, 0, '') ?>				
-					<input type="text" style="color: #f6931f; font-weight: bold; position:relative; left:10px;" id="<?php echo $opt_name[27]; ?>" name="<?php echo $opt_name[27]; ?>" value="<?php echo $opt_val[27]; ?>" size="1">
+					<input type="text" class="itro_text_input" id="<?php echo $opt_name[27]; ?>" name="<?php echo $opt_name[27]; ?>" value="<?php echo $opt_val[27]; ?>" size="1">
 				</div>
 				
 				<!-- popup padding !-->
@@ -299,7 +298,7 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 					<span style="float:left;" ><?php _e("Popup padding(px):", 'itro-plugin' ); ?></span>
 					&nbsp;&nbsp;&nbsp;
 					<?php itro_slidebar( $opt_name[31] , $opt_val[31] , 0 , 100 , 1, 0, '') ?>				
-					<input type="text" style="color: #f6931f; font-weight: bold; position:relative; left:10px;" id="<?php echo $opt_name[31]; ?>" name="<?php echo $opt_name[31]; ?>" value="<?php echo $opt_val[31]; ?>" size="1">
+					<input type="text" class="itro_text_input" id="<?php echo $opt_name[31]; ?>" name="<?php echo $opt_name[31]; ?>" value="<?php echo $opt_val[31]; ?>" size="1">
 				</div>
 				
 				<!-- background image !-->
@@ -333,7 +332,7 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 						<span style="float:left;" ><?php _e("Popup top margin(px):", 'itro-plugin' ); ?></span>
 						&nbsp;&nbsp;&nbsp;
 						<?php itro_slidebar( $opt_name[1] , $opt_val[1] , 0 , 750 , 5, 0, '') ?>				
-						<input type="text" style="color: #f6931f; font-weight: bold; position:relative; left:10px;" id="<?php echo $opt_name[1]; ?>" name="<?php echo $opt_name[1]; ?>" value="<?php echo $opt_val[1]; ?>" size="1">
+						<input type="text" class="itro_text_input"  id="<?php echo $opt_name[1]; ?>" name="<?php echo $opt_name[1]; ?>" value="<?php echo $opt_val[1]; ?>" size="1">
 					</div>
 					<?php echo itro_show_hide(array('top_margin_slider'), $opt_name[30], 'table',false, array('yellow',300)); ?>
 					
@@ -343,7 +342,7 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 						<span style="float:left;" ><?php _e("Background opacity", 'itro-plugin' ); ?> <img style="vertical-align:super; cursor:help" src="<?php echo itroImages . 'question_mark.png' ; ?>" title="<?php _e("Set the opacity of opaque background under the popup.",'itro-plugin');?>" ></span>
 						&nbsp;&nbsp;&nbsp;
 						<?php itro_slidebar( $opt_name[25] , $opt_val[25] , 0 , 1 , 0.05 , 2 , '' ) ?>
-						<input type="text" style="color: #f6931f; font-weight: bold; position:relative; left:10px;" id="<?php echo $opt_name[25]; ?>" name="<?php echo $opt_name[25]; ?>" value="<?php echo $opt_val[25];?>" size="1">
+						<input type="text" class="itro_text_input" id="<?php echo $opt_name[25]; ?>" name="<?php echo $opt_name[25]; ?>" value="<?php echo $opt_val[25];?>" size="1">
 					</div>
 					<script type="text/javascript">
 						document.getElementById("<?php echo $opt_name[25]; ?>_slider_container").addEventListener("mousedown", update, false);
@@ -436,7 +435,7 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 		<!-- A simple not annoying banner, please do not remove, we use it to quickly comunicate with you about premium and free! !-->
 		<p class="wpstyle" onClick="jQuery('#premium_ads').toggle('blind');"><?php _e('ITRO Popup messages', 'itro-plugin'); ?> </p>
 		<div id="premium_ads" style="text-align: center;">
-			<a target="_blank" href="http://www.itro.eu/ccount12/click.php?id=5"><img title="TRY IT FOR FREE!!!" src="http://www.itroteam.com/plugins/premium_banner.png"></a>
+			<a target="_blank" href="http://www.itro.eu"><img title="TRY IT FOR FREE!!!" src="http://www.itroteam.com/plugins/premium_banner.png"></a>
 		</div>
 		
 		<input type="hidden" name="<?php echo $submitted_form; ?>" value="Y">

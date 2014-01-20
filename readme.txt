@@ -4,7 +4,7 @@ Donate link: http://www.itro.eu/index.php/donate/
 Tags: popup, popup message, popup box, popup ads, popup advertising, jquery popup, popup jquery, automatic popup, age restriction, popup block, popup violence, age validation popup, adult, adult content, content warning, content warning popup, fancy box, fancy popup, custom popup, advertising popup, pop-up, lightbox, lightbox popup
 Requires at least: 3.0.1
 Tested up to: 3.8
-Stable tag: 4.5.5
+Stable tag: 4.5.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -32,7 +32,7 @@ ITRO Popup Plugin - The BEST WP Popup Plugin
 	★ Great and fast support for all your problem with our popup plugin.
 	★ All in a very easy way to use!
 	
-WANT MORE FEATURES? Try ITRO Popup Premium for free!
+WANT MORE FEATURES? Try ITRO Wordpress Marketing for free!
 [TRY IT FOR FREE!](http://www.itro.eu/)
 
 ITRO Popup is a very lightweight Plugin for Wordpress which allow users to add a fully-customizable  and perfectly centered popup. 
@@ -54,7 +54,7 @@ DONATE NOW! - KEEP IT FREE! [DONATE NOW](http://www.itro.eu/?page_id=396)
 
 For any problem, please contact us at our site: [CONTACT US](http://www.itro.eu/?page_id=247)
 
-ITRO Premium - more than popups...
+ITRO Wordpress Marketing - more than popups...
 	
     ★ ON-CLICK POPUP to display the pop-up by clicking everything you want (texts, images, links, buttons…) 
 	★ RESPONSIVE POPUP for perfect visualization on every mobile device.
@@ -97,6 +97,9 @@ DONATE NOW! - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_
 no screenshot avaliable
 
 == Changelog ==
+= 4.5.6 =
+Admin style in proper css file. Shortcodes now work.
+
 = 4.5.5 =
 New paypal donation form.
 
@@ -259,12 +262,8 @@ bug fixed: color table now works in admin pannel.
 First released version.
 
 == Upgrade Notice ==
-= 4.5.3 =
-Added French translation, deleted send_header function with IE metadata for compatibility,
-English errors found. Minor bug fixed.
-
-= 4.5.2 =
-Admin bug fixed for delete data on uninstall. Age validatition and popup delay bug fixed.
+= 4.5.6 =
+Admin style in proper css file. Shortcodes now work.
 
 == Notes ==
 FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/?page_id=390)
