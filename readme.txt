@@ -54,20 +54,21 @@ DONATE NOW! - KEEP IT FREE! [DONATE NOW](http://www.itro.eu/?page_id=396)
 
 For any problem, please contact us at our site: [CONTACT US](http://www.itro.eu/?page_id=247)
 
-ITRO Wordpress Marketing - more than popups...
+Want a more powerful marketing tools?
+Try ITRO Wordpress Marketing PRO with a 7 days free trial.
 	
-    ★ ON-CLICK POPUP to display the pop-up by clicking everything you want (texts, images, links, buttons…) 
-	★ RESPONSIVE POPUP for perfect visualization on every mobile device.
-    ★ SHORTCODE for popup visualization and to add contact form everywhere you want also without popups, and more...
-    ★ MAILCHIMP INTEGRATION fast and easy, via API Key and List ID.
-    ★ LINK CLICKS COUNTER is your little Analytics system! Want to control how impressive are your ads and messages? Do it by monitoring number of clicks on your specific link.
-    ★ CONTACT POPUP with fully customizable contact form (fields such as “Email” or “Name”…, field positioning, send button text, etc…) and SMTP Auth autoresponder, a secure way to send email which saves your e-address to be signed in ESP (Email Service Provider) spamming black-list.
-    ★ SUPPORT REQUEST MANAGEMENT SYSTEM allows you to easily manage requests sent by your visitors via contact form. This system prevent clients spamming you and much more. All integrated with Contact Popup, Autoresponder, and MailChimp.
-    ★ AUTORESPONDER to send only to your subscribers everithing you want, such as discount codes or secret links for file download. You can also set an email sending limit for free email account (@live, @gmail…) to avoid the account block from your mail provider.
-    ★ POPUP ANIMATION (bounce, explode, fold, etc… jQery no flash) to make you message more effective or simply more funny!
-    ★ SOCIAL POPUP to grow up you social pages subscribers! ( currently only Facebook integration).
-    ★ SHORTCODES work in the popup!
-    ★ VIDEO EMBEDDING for a fast integration of your Youtube and Vimeo videos by simply inserting your video ID. The video automatically fit on popup dimension and you can select the aspect ratio.
+    ★ MULTIPLE POPUPS
+    ★ ON-CLICK POPUP
+	★ RESPONSIVE POPUP
+    ★ SHORTCODES (on click popup, automatic popup, contact forms...)
+    ★ MAILCHIMP INTEGRATION with autoresponder different for each contact form
+    ★ LINK CLICKS COUNTER (or DOWNLOAD COUNTER)
+    ★ CONTACT POPUPS
+    ★ SUPPORT REQUEST MANAGEMENT SYSTEM
+    ★ SMTP AUTH AUTORESPONDER
+    ★ POPUP ANIMATIONS
+    ★ SOCIAL POPUPS
+    ★ VIDEO EMBEDDING (Youtube and Vimeo)
 
 [TRY IT FOR FREE!](http://www.itro.eu/)
 
