@@ -98,6 +98,9 @@ DONATE NOW! - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_
 no screenshot avaliable
 
 == Changelog ==
+= 4.5.7 =
+Content warnig button centerd in the popup
+
 = 4.5.6 =
 Admin style in proper css file. Shortcodes now work.
 
@@ -263,8 +266,8 @@ bug fixed: color table now works in admin pannel.
 First released version.
 
 == Upgrade Notice ==
-= 4.5.6 =
-Admin style in proper css file. Shortcodes now work.
+= 4.5.7 =
+Content warnig button centerd in the popup
 
 == Notes ==
 FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/?page_id=390)
