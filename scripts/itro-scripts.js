@@ -1,10 +1,12 @@
 /* init variables */
 var itro_is_preview;
+var itro_cookie_expiration;
+var itro_age_restriction;
 
 /* manage fade in animation */
 function itro_enter_anim()
 {
-	if( !document.cookie.indexOf("popup_cookie") >= 0 || itro_is_preview === true )
+	if( document.cookie.indexOf("popup_cookie") == -1 || itro_is_preview === true )
 	{
 		itro_popup.style.visibility = '';
 		itro_opaco.style.visibility = '';
@@ -13,6 +15,10 @@ function itro_enter_anim()
 		jQuery("#itro_opaco").fadeIn(function()
 		{
 			jQuery("#itro_popup").fadeIn();
+			if( itro_age_restriction === false )
+			{
+				itro_set_cookie("popup_cookie","one_time_popup", itro_cookie_expiration);
+			}
 		});
 	}
 	

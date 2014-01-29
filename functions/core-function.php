@@ -39,13 +39,13 @@ function itro_init()
 		switch(WPLANG)
 		{
 			case 'en_US':
-			$welcome_text = '<h1 style="text-align: center;"><span style="color: #000000; font-size: 200%;">Hello, this is a pop-up sample.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">By default you see only the basic settings.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Write whatever you want in the Custom text editor and enjoy our plugin!</span></h1><p>&nbsp;</p>';
+				$welcome_text = '<h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Hello, this is a pop-up sample.</span></h1><p style="text-align: center;"><span style="color: #000000; font-size: 20;">The basic stetting to get started are: Popup height, Popup time, Next visualization, Popup border color, Popup background.</span></p><p style="text-align: center;"><span style="color: #000000; font-size: 20;">Write watever you want in the Custom text editor and enjoy our plugin!</span></p><p>&nbsp;</p>';
 				break;
 			case 'it_IT':
-			$welcome_text = '<p style="text-align: center;"><span style="color: #000000; font-size: 200%;">Salve, questo &egrave; un esempio di popup.</span></p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;"><span style="color: #000000; font-size: 20;">Come impostazione predefinita sono visibili solo le opzioni base.</span></p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;"><span style="color: #000000; font-size: 20;">Scrivi qualunque cosa vuoi nell&#39;editor di testo di wordpress e buon lavoro!</span></p><p style="text-align: center;">&nbsp;</p>';
+				$welcome_text = '<h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Questo &egrave; un esempio di popup.</span></h1><p style="text-align: center;">&nbsp;</p><p style="text-align: center;"><span style="color: #000000; font-size: 20;">Le impostazioni base per iniziare sono: Altezza popup, Tempo popup, Prossima visualizzazione, Colore bordo, Colore sfondo.</span></p><p style="text-align: center;">&nbsp;</p><p style="text-align: center;"><span style="color: #000000; font-size: 20;">Scrivi qualunque cosa vuoi nell&#39;editor di testo di wordpress e buon lavoro!</span></p><p style="text-align: center;">&nbsp;</p>';
 				break;
 			default:
-				$welcome_text = '<h1 style="text-align: center;"><span style="color: #000000; font-size: 200%;">Hello, this is a pop-up sample.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">By default you see only the basic settings.</span></h1><h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Write whatever you want in the Custom text editor and enjoy our plugin!</span></h1><p>&nbsp;</p>';
+				$welcome_text = '<h1 style="text-align: center;"><span style="color: #000000; font-size: 20;">Hello, this is a pop-up sample.</span></h1><p style="text-align: center;"><span style="color: #000000; font-size: 20;">The basic stetting to get started are: Popup height, Popup time, Next visualization, Popup border color, Popup background.</span></p><p style="text-align: center;"><span style="color: #000000; font-size: 20;">Write watever you want in the Custom text editor and enjoy our plugin!</span></p><p>&nbsp;</p>';
 		}
 		itro_update_field('custom_html',$welcome_text);
 		
@@ -136,7 +136,7 @@ function itro_display_popup()
 			{
 				$id_match++;
 			}
-			if( ($id_match != NULL && !isset($_COOKIE['popup_cookie'])) || itro_get_option('preview_id') == get_the_id() )
+			if( $id_match != NULL || itro_get_option('preview_id') == get_the_id() )
 			{
 				itro_style();
 				itro_popup_template();
@@ -144,12 +144,9 @@ function itro_display_popup()
 			}
 		break;
 		case 'all':
-			if( !isset($_COOKIE['popup_cookie']) || itro_get_option('preview_id') == get_the_id() )
-			{
-				itro_style();
-				itro_popup_template();
-				itro_popup_js();
-			}
+			itro_style();
+			itro_popup_template();
+			itro_popup_js();
 		break;
 		case 'none':
 			if( itro_get_option('preview_id') == get_the_id() )
