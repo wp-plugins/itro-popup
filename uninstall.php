@@ -3,6 +3,8 @@
 if ( !defined( 'WP_UNINSTALL_PLUGIN' ) ) {exit ();}
 else
 {
+	global $wpdb;
+	
 	include_once ('functions/database-function.php');
 	if( itro_get_option('delete_data') == 'yes' )
 	{
@@ -12,8 +14,8 @@ else
 		delete_option('itro_curr_ver');
 		delete_option('itro_prev_ver');
 		
-		$wpdb->query("DROP TABLE wp_itro_plugin_option");
-		$wpdb->query("DROP TABLE wp_itro_plugin_field");
+		$wpdb->query("DROP TABLE " . $wpdb->prefix . "itro_plugin_option");
+		$wpdb->query("DROP TABLE " . $wpdb->prefix . "itro_plugin_field");
 	}
 }
 ?>
