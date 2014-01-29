@@ -1,11 +1,21 @@
+/* init variables */
+var itro_is_preview;
+
 /* manage fade in animation */
 function itro_enter_anim()
 {
-	itro_popup.style.visibility = '';
-	itro_opaco.style.visibility = '';
-	itro_popup.style.display = 'none';
-	itro_opaco.style.display = 'none';
-	jQuery("#itro_opaco").fadeIn(function() {jQuery("#itro_popup").fadeIn();});
+	if( !document.cookie.indexOf("popup_cookie") >= 0 || itro_is_preview === true )
+	{
+		itro_popup.style.visibility = '';
+		itro_opaco.style.visibility = '';
+		itro_popup.style.display = 'none';
+		itro_opaco.style.display = 'none';
+		jQuery("#itro_opaco").fadeIn(function()
+		{
+			jQuery("#itro_popup").fadeIn();
+		});
+	}
+	
 }
 
 /* function for automatic top margin refresh, to center the popup vertically */

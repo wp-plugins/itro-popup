@@ -4,8 +4,9 @@ Copyright 2013  I.T.RO.® (email : support.itro@live.com)
 This file is part of ITRO Popup Plugin.
 */
 global $wpdb;
-define ('OPTION_TABLE_NAME', 'wp_itro_plugin_option');
-define ('FIELD_TABLE_NAME', 'wp_itro_plugin_field');
+define ('OPTION_TABLE_NAME', $wpdb->prefix . 'itro_plugin_option');
+define ('FIELD_TABLE_NAME', $wpdb->prefix . 'itro_plugin_field');
+
 /* -------Create plugin tables */
 function itro_db_init()
 {
@@ -33,6 +34,23 @@ function itro_db_init()
 	)";
 	require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 	dbDelta( $sql );	
+}
+
+/* update old fixed 'wp_' prefix to the current one' */
+function itro_update_db()
+{
+	global $wpdb;
+	if ( get_option('itro_prev_ver') <= 3.68 )
+	{
+		itro_update_option('popup_border_width',3);
+		itro_update_option('popup_border_radius',8);
+	}
+	
+	if( get_option('itro_prev_ver') <= 4.58 && $wpdb->prefix != 'wp_' )
+	{
+		$wpdb->query("RENAME TABLE wp_itro_plugin_option TO ". $wpdb->prefix ."itro_plugin_option");
+		$wpdb->query("RENAME TABLE wp_itro_plugin_field TO ". $wpdb->prefix ."itro_plugin_field");
+	}
 }
 
 /* ------------------ PLUGIN OPTION DB MANAGEMENT --------------  */

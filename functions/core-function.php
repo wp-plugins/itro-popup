@@ -52,22 +52,6 @@ function itro_init()
 		itro_update_option('sample_popup','done');
 	}
 	
-	/* -------- check version */
-	if( $GLOBALS['ITRO_VER'] != get_option('itro_curr_ver') )
-	{
-		$ver = get_option('itro_curr_ver');
-		update_option('itro_prev_ver',$ver);
-		update_option('itro_curr_ver', $GLOBALS['ITRO_VER']);
-	}
-	
-	
-	if ( get_option('itro_prev_ver') <= 3.68 && itro_get_option('version_flag') == false )
-	{
-		itro_update_option('popup_border_width',3);
-		itro_update_option('popup_border_radius',8);
-		itro_update_option('version_flag', 'true');
-	}
-	
 	/* ---------------create preview page */
 	switch(WPLANG)
 	{
@@ -95,6 +79,22 @@ function itro_init()
 		@$preview_id = wp_insert_post( $preview_post );
 		itro_update_option('preview_id',$preview_id);
 	}	
+}
+
+/* --------------------------CHECK THE PLUGIN VERSION */
+function itro_check_ver()
+{
+	ob_start();
+	if( $GLOBALS['ITRO_VER'] != get_option('itro_curr_ver') )
+	{
+		/* check and update the db */
+		itro_update_db();
+		
+		$ver = get_option('itro_curr_ver');
+		update_option('itro_prev_ver',$ver);
+		update_option('itro_curr_ver', $GLOBALS['ITRO_VER']);
+	}
+	ob_end_clean();
 }
 
 /* --------------------------DISPLAY THE POPUP */

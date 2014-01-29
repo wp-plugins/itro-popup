@@ -8,7 +8,8 @@ This file is part of ITRO Popup Plugin.
 function itro_popup_js()
 { ?>
 	<script type="text/javascript">
-	
+	/* pass true if is the preview page. used for cookie control via js due W3 total cache or similar */
+	itro_is_preview = <?php if( itro_get_option('preview_id') == get_the_id() ){ echo 'true'; }else{ echo 'false'; } ?>;
 	<?php
 		if (itro_get_option('age_restriction') == NULL) /* OFF age validation */
 		{
