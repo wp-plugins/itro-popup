@@ -46,7 +46,7 @@ function itro_update_db()
 		itro_update_option('popup_border_radius',8);
 	}
 	
-	if( get_option('itro_prev_ver') <= 4.6 && $wpdb->prefix != 'wp_' )
+	if( get_option('itro_prev_ver') <= 4.58 && $wpdb->prefix != 'wp_' )
 	{
 		$wpdb->query("RENAME TABLE wp_itro_plugin_option TO ". $wpdb->prefix ."itro_plugin_option");
 		$wpdb->query("RENAME TABLE wp_itro_plugin_field TO ". $wpdb->prefix ."itro_plugin_field");
