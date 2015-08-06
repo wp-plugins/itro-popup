@@ -39,7 +39,7 @@ function itro_popup_template()
 			?>
 		</div> 
 	</div>
-	<div id="itro_opaco" style="visibility:hidden"></div>
+	<div id="itro_opaco" style="visibility:hidden"  onclick="jQuery('#itro_popup').fadeOut(function(){itro_opaco.style.visibility='hidden';})"></div>
 <?php
 }
 ?>

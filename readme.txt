@@ -1,10 +1,10 @@
 ﻿=== ITRO Popup Plugin ===
 Contributors: ITRO
-Donate link: http://www.itro.eu/index.php/donate/
+Donate link: http://www.itro.eu/
 Tags: popup, popup message, popup box, popup ads, popup advertising, jquery popup, popup jquery, automatic popup, age restriction, popup block, popup violence, age validation popup, adult, adult content, content warning, content warning popup, fancy box, fancy popup, custom popup, advertising popup, pop-up, lightbox, lightbox popup
 Requires at least: 3.0.1
-Tested up to: 4.0
-Stable tag: 4.6.2
+Tested up to: 4.2.4
+Stable tag: 4.6.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -47,7 +47,8 @@ Simply the best Wordpress popup plugin!
 TRANSLATED IN FOLLOWING LANGUAGES:
 - Italian
 - English
-- French
+- French (thanks to Patrice CHASSAING)
+- Serbo-Croatian (thanks to Andrijana Nikolic www.webhostinggeeks.com)
 
 FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/?page_id=390)
 DONATE NOW! - KEEP IT FREE! [DONATE NOW](http://www.itro.eu/?page_id=396)
@@ -94,6 +95,11 @@ DONATE NOW! - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_
 VIEW NOW DEMOS ON OUR OFFICIAL SITE - [CLICK HERE!](http://www.itro.eu/?page_id=3056)
 
 == Changelog ==
+= 4.6.3 =
+ADDED: Popup closing by outside clicking.
+ADDED: Serbo-Croatian language translation, thanks to Andrijana Nikolic www.webhostinggeeks.com
+FIXED: Improved French and English transaltion thanks to Patrice CHASSAING.
+
 = 4.6.2 =
 FIXED: visualization bugs.
 FIXED: "only selected pages" doesn't work for pages set as blog hompage in Settings->Reading.
