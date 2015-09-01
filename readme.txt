@@ -3,8 +3,8 @@ Contributors: ITRO
 Donate link: http://www.itro.eu/
 Tags: popup, popup message, popup box, popup ads, popup advertising, jquery popup, popup jquery, automatic popup, age restriction, popup block, popup violence, age validation popup, adult, adult content, content warning, content warning popup, fancy box, fancy popup, custom popup, advertising popup, pop-up, lightbox, lightbox popup
 Requires at least: 3.0.1
-Tested up to: 4.2.4
-Stable tag: 4.6.3
+Tested up to: 4.3
+Stable tag: 4.6.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -49,14 +49,15 @@ TRANSLATED IN FOLLOWING LANGUAGES:
 - English
 - French (thanks to Patrice CHASSAING)
 - Serbo-Croatian (thanks to Andrijana Nikolic www.webhostinggeeks.com)
+- Nederlands (thanks to Descamps Gino)
 
 FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/?page_id=390)
-DONATE NOW! - KEEP IT FREE! [DONATE NOW](http://www.itro.eu/?page_id=396)
+DONATE NOW! [DONATE NOW](http://www.itro.eu/?page_id=396)
 
 For any problem, please contact us at our site: [CONTACT US](http://www.itro.eu/?page_id=247)
 
 Want a more powerful marketing tools?
-Try ITRO Wordpress Marketing PRO with a 7 days free trial.
+Try ITRO Wordpress Marketing PRO with a 14 days free trial.
 	
     ★ MULTIPLE POPUPS
     ★ ON-CLICK POPUP
@@ -95,6 +96,9 @@ DONATE NOW! - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_
 VIEW NOW DEMOS ON OUR OFFICIAL SITE - [CLICK HERE!](http://www.itro.eu/?page_id=3056)
 
 == Changelog ==
+= 4.6.4 =
+ADDED: Nederlands translation, thanks to Descamps Gino.
+
 = 4.6.3 =
 ADDED: Popup closing by outside clicking.
 ADDED: Serbo-Croatian language translation, thanks to Andrijana Nikolic www.webhostinggeeks.com
