@@ -45,6 +45,7 @@ This plugin is basic-user oriented, no code knowledge is required.
 Simply the best Wordpress popup plugin!
 
 TRANSLATED IN FOLLOWING LANGUAGES:
+
 	★ Italian
     ★ English
 	★ French (thanks to Patrice CHASSAING)
