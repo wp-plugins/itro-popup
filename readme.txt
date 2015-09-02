@@ -45,11 +45,11 @@ This plugin is basic-user oriented, no code knowledge is required.
 Simply the best Wordpress popup plugin!
 
 TRANSLATED IN FOLLOWING LANGUAGES:
-- Italian
-- English
-- French (thanks to Patrice CHASSAING)
-- Serbo-Croatian (thanks to Andrijana Nikolic www.webhostinggeeks.com)
-- Nederlands (thanks to Descamps Gino)
+	★ Italian
+    ★ English
+	★ French (thanks to Patrice CHASSAING)
+    ★ Serbo-Croatian (thanks to Andrijana Nikolic www.webhostinggeeks.com)
+    ★ Nederlands (thanks to Descamps Gino)
 
 FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/?page_id=390)
 DONATE NOW! [DONATE NOW](http://www.itro.eu/?page_id=396)
