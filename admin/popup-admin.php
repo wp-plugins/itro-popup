@@ -46,6 +46,7 @@ if( !isset($submitted_form ))
 	/*opt 31*/'popup_padding',
 	/*opt 32*/'disable_mobile',
 	/*opt 33*/'cross_selected',
+	/*opt 34*/'enter_button_url',
 	);
 	$field_name=array(
 	/*fld 0*/'custom_html',
@@ -387,6 +388,9 @@ if( isset($_POST[ $submitted_form ]) && $_POST[ $submitted_form ] == 'Y' || isse
 				<div id="<?php echo $opt_name[6]; ?>_div">
 					<p><?php _e("Enter button text:", 'itro-plugin' ); ?> 
 						<input type="text" name="<?php echo $opt_name[7]; ?>" value="<?php echo $opt_val[7]; ?>" placeholder="<?php _e("i.e.: I AM OVER 18 - ENTER", 'itro-plugin' ); ?>"  size="40">
+					</p>
+					<p><?php _e("Enter button url:", 'itro-plugin' ); ?> 
+						<input type="text" name="<?php echo $opt_name[34]; ?>" value="<?php echo $opt_val[34]; ?>" placeholder="<?php _e("i.e.: http://www.mysite.com/enter.html", 'itro-plugin' ); ?>" size="40">
 					</p>
 					
 					<div id="<?php echo $opt_name[6] . '_advanced_1'; ?>">				

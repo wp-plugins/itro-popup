@@ -1,16 +1,16 @@
 ﻿=== ITRO Popup Plugin ===
 Contributors: ITRO
 Donate link: http://www.itro.eu/
-Tags: popup, popup message, popup box, popup ads, popup advertising, jquery popup, popup jquery, automatic popup, age restriction, popup block, popup violence, age validation popup, adult, adult content, content warning, content warning popup, fancy box, fancy popup, custom popup, advertising popup, pop-up, lightbox, lightbox popup
+Tags: popup, popup message, popup box, popup ads, popup advertising, jquery popup, popup jquery, multilingual popup, automatic popup, age restriction, popup block, popup violence, age validation popup, adult, adult content, content warning, content warning popup, fancy box, fancy popup, custom popup, advertising popup, pop-up, lightbox, lightbox popup
 Requires at least: 3.0.1
-Tested up to: 4.3
-Stable tag: 4.6.4
+Tested up to: 4.3.1
+Stable tag: 4.7.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 ITRO Popup display a popup to your WP site:
-★ Age validation for adult-content site
-★ Fully customizable with WP Post Editor
+★ Age restriction for adult-content site
+★ Multilanguage popup with qTransalte-X
 ★ Very easy to use
 
 == Description ==
@@ -20,7 +20,7 @@ ITRO Popup Plugin - The BEST WP Popup Plugin
 	★ Pretty fade-in and fade-out animation.
 	★ Need to remove plugin and save data? It is possible!
 	★ Selcted pages where you want to display the popup, by a scrollable list. NO SHORTCODES NEEDED!
-	★ Fully translated in Italian. Ready for multilingual translation.
+	★ Multilanguage popup with qTransalte-X.
 	★ Close popup with ESC button (not with "age restricted option" checked).
 	★ Automatic popup centering in browser page.
 	★ Fully and easy customizable aspect (background, border, color, etc...).
@@ -35,7 +35,7 @@ ITRO Popup Plugin - The BEST WP Popup Plugin
 WANT MORE FEATURES? Try ITRO Wordpress Marketing for free!
 [TRY IT FOR FREE!](http://www.itro.eu/)
 
-ITRO Popup is a very lightweight Plugin for Wordpress which allow users to add a fully-customizable  and perfectly centered popup. 
+ITRO Popup is a very lightweight Plugin for Wordpress which allow users to add a fully-customizable, multilanguage pop-up thanks to qTranslate-X. 
 It has a very user-friendly interface, which allow Wordpress users to easily modify all settings needed for a popup, without coding. 
 With "Age restricted site"  option, the popup block the navigation (for age validation) until the user declare that is above the local country legal age. 
 It is useful for adult content Wordpress site (tobacco & alcohol selling, violence, bad language, etc...). The leave and the enter button 
@@ -45,12 +45,11 @@ This plugin is basic-user oriented, no code knowledge is required.
 Simply the best Wordpress popup plugin!
 
 TRANSLATED IN FOLLOWING LANGUAGES:
-
-	★ Italian
-    ★ English
-	★ French (thanks to Patrice CHASSAING)
-    ★ Serbo-Croatian (thanks to Andrijana Nikolic www.webhostinggeeks.com)
-    ★ Nederlands (thanks to Descamps Gino)
+- Italian
+- English
+- French (thanks to Patrice CHASSAING)
+- Serbo-Croatian (thanks to Andrijana Nikolic www.webhostinggeeks.com)
+- Nederlands (thanks to Descamps Gino)
 
 FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/?page_id=390)
 DONATE NOW! [DONATE NOW](http://www.itro.eu/?page_id=396)
@@ -94,9 +93,19 @@ DONATE NOW! - HELP US TO DEVELOP FOR YOU! [DONATE NOW](http://www.itro.eu/?page_
 
 == Screenshots ==
 
-VIEW NOW DEMOS ON OUR OFFICIAL SITE - [CLICK HERE!](http://www.itro.eu/?page_id=3056)
+VIEW NOW DEMOS ON OUR OFFICIAL SITE - [CLICK HERE!](http://www.itro.eu/index.php/itro-wordpress-plugins-demos/)
 
 == Changelog ==
+= 4.7.2 =
+FIXED: Popup closing by clicking outside with age restriction.
+
+= 4.7.1 =
+FIXED: shortcodes not working in the popup contents
+
+= 4.7 =
+ADDED: Multilingual compatibility with qtranslate X.
+ADDED: Url for the enter button of age validation.
+
 = 4.6.4 =
 ADDED: Nederlands translation, thanks to Descamps Gino.
 
@@ -290,15 +299,15 @@ bug fixed: color table now works in admin pannel.
 First released version.
 
 == Upgrade Notice ==
-= 4.6 =
-database error fixed
+= 4.7.2 =
+FIXED: Popup closing by clicking outside with age restriction.
 
-= 4.5.9 =
-improved caching compatibility
+= 4.7.1 =
+FIXED: shortcodes not working in the popup contents
 
-= 4.5.8 =
-wp_ prefix bug fixed. Now the table has the right wordpress table prefix.
-Caching issue resolved (W3 super cache and similar) now "Next visualization time" works
+= 4.7 =
+ADDED: Multilingual compatibility with qtranslate X.
+ADDED: Url for the enter button of age validation.
 
 == Notes ==
 FOR TUTORIAL AND FAQ VISIT THE OFFICIAL SITE [CLICK HERE!](http://www.itro.eu/?page_id=390)
