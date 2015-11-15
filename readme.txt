@@ -1,7 +1,7 @@
 ﻿=== ITRO Popup Plugin ===
 Contributors: ITRO
 Donate link: http://www.itro.eu/
-Tags: popup, popup message, popup box, popup ads, popup advertising, jquery popup, popup jquery, multilingual popup, automatic popup, age restriction, popup block, popup violence, age validation popup, adult, adult content, content warning, content warning popup, fancy box, fancy popup, custom popup, advertising popup, pop-up, lightbox, lightbox popup
+Tags: age restriction, age verification, auto open, automatic popup, conversion, conversions, custom popup, dialog box, exit-intent, fancy box, fancy popup, form modal, full page popup, full screen pop, full screen popup, marketing, modal, Modals, onclick popup, optin popup, pop-up, pop-ups, popup, popup ads, popup advertising, popup box, popup form, popup message, popup window, popups, unblockable, wordpress popup
 Requires at least: 3.0.1
 Tested up to: 4.3.1
 Stable tag: 4.7.2
